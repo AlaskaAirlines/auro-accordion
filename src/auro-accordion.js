@@ -16,9 +16,12 @@ import styleCss from "./style-css.js";
 
 // See https://git.io/JJ6SJ for "How to document your components using JSDoc"
 /**
- * auro-accordion provides users a way to ...
+ * auro-accordion provides users a way to have collapsable content on a page.
+ * Use auro-accordion-group if you want to have auto closing accordion components when others are selected.
  *
- * @attr {String} cssClass - Applies designated CSS class to DOM element.
+ * @attr {String} id - used to generate the ID for the elements inside the component
+ * @attr {String} header - used to provide the header text of the Accordion
+ * @attr {Boolean} expanded - toggles the panel on and off
  */
 
 // build the component class
@@ -30,6 +33,7 @@ class AuroAccordion extends LitElement {
   // function to define props used within the scope of thie component
   static get properties() {
     return {
+      id: { type: String },
       header: { type: String },
       expanded: {
         type: Boolean,
@@ -56,8 +60,18 @@ class AuroAccordion extends LitElement {
    return html`${svg}`;
   }
 
+  /**
+   * Internal function to handle the click event to trigger the expansion of the accordion
+   * @param {object} event - Standard event parameter
+   * @returns {nothing} - Returns nothing
+   */
   handleClick(event) {
     this.expanded = !this.expanded;
+    this.dispatchEvent(new CustomEvent('toggleExpanded', {
+      bubbles: true,
+      composed: true,
+      target: event.target
+    }));
   }
 
   // function that renders the HTML and CSS into  the scope of the component
@@ -67,16 +81,19 @@ class AuroAccordion extends LitElement {
     }
 
     return html`
-      <button 
+      <button
+        id="${this.id}Heading"
         class="${classMap(buttonClasses)}"
-        ?aria-expanded=${this.expanded}
+        aria-expanded="${this.expanded}"
         @click=${this.handleClick}
       >
         ${this.header}
         ${this.generateIconHtml(this.expanded ? chevronUp.svg : chevronDown.svg)}
       </button>
 
-      <div 
+      <div
+        id="${this.id}Panel"
+        aria-labelledby="${this.id}Heading"
         class="panel"
         ?hidden=${!this.expanded}
       >

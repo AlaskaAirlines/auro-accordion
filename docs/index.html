@@ -20,9 +20,7 @@
     }
 
     .wc-wrapper auro-accordion {
-      display: inline-block;
-      margin-bottom: var(--auro-size-md);
-      margin-right: var(--auro-size-md);
+      display: block;
     }
 
     .codeWrapper {
@@ -51,7 +49,18 @@
     }
 
     var auroAccordion = [
-      '<auro-accordion cssClass="testClass">Hello World</auro-accordion>'
+      '<auro-accordion id="Demo" header="Hello">World!</auro-accordion>'
+    ]
+
+    var auroAccordionGroup = [
+      `<auro-accordion-group>
+        <auro-accordion id="Demo1" header="Hello">
+          World!
+        </auro-accordion>
+        <auro-accordion id="Demo2" header="Hello To The">
+          World Again!
+        </auro-accordion>
+      </auro-accordion-group>`
     ]
   </script>
 </head>
@@ -77,6 +86,23 @@
         </code>
       </div>
     </section>
+    <section class="wc-wrapper">
+      <h3>auro-accordion: group</h3>
+      <script>
+        for (i = 0; i < auroAccordionGroup.length; i++) {
+          document.write(auroAccordionGroup[i])
+        }
+      </script>
+      <div class="codeWrapper margin">
+        <code>
+          <script>
+            for (i = 0; i < auroAccordionGroup.length; i++) {
+              document.write("<p> ".concat(escapeHTML(auroAccordionGroup[i]), " </p>"));
+            }
+          </script>
+        </code>
+      </div>
+    </section>
 
   </main>
   <div id="assets">
@@ -88,6 +114,7 @@
 
     <!-- for initial build and test only -->
     <script src="./polyfills.js"></script>
+    <script src="./auro-accordion-group__bundled.js"></script>
     <script src="./auro-accordion__bundled.js"></script>
 
     <!-- once first build has been released, update with the links below -->

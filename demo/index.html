@@ -13,6 +13,7 @@
       import '@polymer/iron-demo-helpers/demo-snippet';
     </script>
     <script type="module" src="../src/auro-accordion.js"></script>
+    <script type="module" src="../src/auro-accordion-group.js"></script>
     <custom-style>
       <style is="custom-style" include="demo-pages-shared-styles"></style>
     </custom-style>
@@ -25,9 +26,22 @@
 
       <demo-snippet>
         <template>
-          <auro-accordion header="Hello">
+          <auro-accordion id="Demo" header="Hello">
             World!
           </auro-accordion>
+        </template>
+      </demo-snippet>
+
+      <demo-snippet>
+        <template>
+          <auro-accordion-group>
+            <auro-accordion id="Demo1" header="Hello">
+              World!
+            </auro-accordion>
+            <auro-accordion id="Demo2" header="Hello To The">
+              World Again!
+            </auro-accordion>
+          </auro-accordion-group>
         </template>
       </demo-snippet>
     </div>

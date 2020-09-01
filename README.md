@@ -1,6 +1,6 @@
 ## auro-accordion
 
-`<auro-accordion>` is a [HTML custom element](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_custom_elements) for the purpose of ...
+`<auro-accordion>` and `<auro-accordion-gropu` are [HTML custom elements](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_custom_elements) for the purpose of providing collapsable content on a page. `<auro-accordion>` is usable on its own, but combined with `<auro-accordion-group>` enables you to auto collapse an expanded section when you select another section.
 
 ## UI development browser support
 
@@ -39,7 +39,14 @@ import "@alaskaairuxauro-accordion";
 **Reference component in HTML**
 
 ```html
-<auro-accordion>Hello World</auro-accordion>
+<auro-accordion id="Demo" header="Hello">World</auro-accordion>
+```
+
+```html
+<auro-accordion-group>
+  <auro-accordion id="Demo1" header="Hello">World</auro-accordion>
+  <auro-accordion id="Demo2" header="Hello One">World</auro-accordion>
+</auro-accordion-group>
 ```
 
 ## Install bundled assets from CDN
@@ -54,6 +61,7 @@ In cases where the project is not able to process JS assets, there are pre-proce
 
 <script src="https://unpkg.com/@alaskaairuxauro-accordion@:version/dist/polyfills.js"></script>
 <script src="https://unpkg.com/@alaskaairuxauro-accordion@:version/dist/auro-accordion__bundled.js"></script>
+<script src="https://unpkg.com/@alaskaairuxauro-accordion@:version/dist/auro-accordion-group__bundled.js"></script>
 ```
 
 ### polyfills.js
@@ -69,16 +77,25 @@ The `polyfills.js` is packaged with this component, but **IT IS NOT NEEDED** to 
 
 The `<auro-accordion>` element should be used in situations where users may:
 
-* ...
-* ...
-* ...
+* Need one or more collapsable sections
+
+The `auro-accordion-group` element should be used with `auro-accordion` in situations where users may:
+
+* Need to auto collapse the current open `auro-accordion` when a new one is clicked in the group
 
 ## API Code Examples
 
 Default auro-accordion
 
 ```html
-<auro-accordion>Hello World</auro-accordion>
+<auro-accordion id="Demo" header="Hello">World</auro-accordion>
+```
+
+```html
+<auro-accordion-group>
+  <auro-accordion id="Demo1" header="Hello">World</auro-accordion>
+  <auro-accordion id="Demo2" header="Hello One">World</auro-accordion>
+</auro-accordion-group>
 ```
 
 ## Development

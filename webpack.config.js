@@ -3,7 +3,8 @@ const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPl
 
 const config = {
   entry: {
-    ['auro-accordion__bundled']: './src/auro-accordion.js'
+    ['auro-accordion__bundled']: './src/auro-accordion.js',
+    ['auro-accordion-group__bundled']: './src/auro-accordion-group.js'
   },
   output: {
     path: path.resolve(__dirname, './dist'),
