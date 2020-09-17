@@ -16,25 +16,32 @@ import styleCss from "./style-css.js";
 
 // See https://git.io/JJ6SJ for "How to document your components using JSDoc"
 /**
- * auro-accordion provides users a way to have collapsable content on a page.
+ * auro-accordion provides users a way to have collapsible content on a page.
  * Use auro-accordion-group if you want to have auto closing accordion components when others are selected.
  *
- * @attr {String} id - used to generate the ID for the elements inside the component
- * @attr {String} header - used to provide the header text of the Accordion
- * @attr {Boolean} expanded - toggles the panel on and off
+ * @element auro-accordion
+ *
+ * @attr {String} id - Used to generate the ID for the elements inside the component
+ * @attr {Boolean} expanded - Toggles the panel on and off
+ * @event {Object} toggleExpanded - Returns target for auro-accordion group
+ * @slot header - Used to provide the header text of the Accordion
+ * @slot - Provide text for accordion details display
  */
 
 // build the component class
 class AuroAccordion extends LitElement {
-  // constructor() {
-  //   super();
-  // }
+  constructor() {
+    super();
 
-  // function to define props used within the scope of thie component
+    this.expanded = false;
+    this.short = 20;
+    this.long = 500;
+  }
+
+  // function to define props used within the scope of this component
   static get properties() {
     return {
       id: { type: String },
-      header: { type: String },
       expanded: {
         type: Boolean,
         reflect: true
@@ -67,37 +74,86 @@ class AuroAccordion extends LitElement {
    */
   handleClick(event) {
     this.expanded = !this.expanded;
+
+    this.scrollIntoView({
+      behavior: "smooth",
+      block: "nearest"
+    });
+
     this.dispatchEvent(new CustomEvent('toggleExpanded', {
       bubbles: true,
       composed: true,
       target: event.target
     }));
+
+    this.display();
+  }
+
+ /**
+   * Internal function to address Aria state
+   * @returns {string} - Returns true or false to be used as attribute value
+   */
+  ariaExpanded() {
+    return this.expanded ? 'true' : 'false';
+  }
+
+  display() {
+    const toggle = this.shadowRoot.getElementById(`${this.id}Panel`);
+    const isOpen = toggle.classList.contains('details--isOpen');
+
+    if (!isOpen) {
+      toggle.classList.remove('details--hidden');
+
+      setTimeout(() => {
+        toggle.style.height = `${toggle.scrollHeight}px`;
+      }, this.short);
+    }
+
+    if (isOpen) {
+      toggle.style.height = `0px`;
+
+      setTimeout(() => {
+        toggle.classList.add('details--hidden');
+      }, this.long);
+    }
   }
 
   // function that renders the HTML and CSS into  the scope of the component
   render() {
-    const buttonClasses = {
+
+    const triggerStyles = {
+      'detailsTrigger': true,
       'expanded': this.expanded
+    }
+
+    const detailStyles = {
+      'details': true,
+      'details--hidden': true,
+      'details--isOpen': this.expanded,
     }
 
     return html`
       <button
         id="${this.id}Heading"
-        class="${classMap(buttonClasses)}"
-        aria-expanded="${this.expanded}"
+        class="${classMap(triggerStyles)}"
+        aria-expanded="${this.ariaExpanded()}"
+        aria-controls="${this.id}Panel"
         @click=${this.handleClick}
       >
-        ${this.header}
-        ${this.generateIconHtml(this.expanded ? chevronUp.svg : chevronDown.svg)}
+        <div><slot name="trigger">Details trigger</slot></div>
+        <div>${this.generateIconHtml(this.expanded ? chevronUp.svg : chevronDown.svg)}</div>
       </button>
 
       <div
         id="${this.id}Panel"
         aria-labelledby="${this.id}Heading"
-        class="panel"
-        ?hidden=${!this.expanded}
+        aria-live="assertive"
+        role="region"
+        class="${classMap(detailStyles)}"
       >
-        <slot></slot>
+        <div class="details-slot">
+          <slot></slot>
+        </div>
       </div>
     `;
   }

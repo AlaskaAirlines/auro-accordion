@@ -10,15 +10,34 @@
 @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/breakpoints";
 @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/core";
 
-// container styles - defines the look of the outer custom componet
+// container styles - defines the look of the outer custom component
 
 
 // layout styles - define any layout specifications for UI that is contained WITHIN the component
-// never define layout that would cause effect on element ouside the scope of this component
+// never define layout that would cause effect on element outside the scope of this component
+
+@mixin hoverState {
+  border-left: var(--auro-border-width-thick) solid var(--auro-color-brand-breeze-300);
+}
+
+:host(.focus-visible) {
+  .detailsTrigger {
+    @include hoverState();
+    color: var(--auro-color-brand-breeze-300);
+    border-bottom-color: var(--auro-color-brand-breeze-300);
+
+    svg {
+      color: var(--auro-color-brand-breeze-300);
+    }
+  }
+}
 
 
-button {
+.detailsTrigger {
   cursor: pointer;
+  line-height: var(--auro-text-body-height-default);
+  display: flex;
+  justify-content: space-between;
   padding: var(--auro-size-lg);
   width: 100%;
   text-align: left;
@@ -30,25 +49,39 @@ button {
   font-weight: var(--auro-text-body-default-weight);
   color: var(--auro-color-text-primary-on-light);
 
-  &:hover,
   &.expanded {
-    border-left: var(--auro-border-width-thick) solid var(--auro-color-brand-breeze-300);
+    @include hoverState();
+  }
+
+  @media (hover: hover) {
+    &:hover {
+      @include hoverState();
+    }
   }
 
   & svg {
-    margin-right: 12px;
-    float: right;
     color: var(--auro-color-brand-midnight-300)
   }
 }
 
-.panel {
-  padding: var(--auro-size-lg);
+.details {
   border-left: var(--auro-border-width-thick) solid var(--auro-color-brand-breeze-100);
   border-bottom: var(--auro-border-width-thin) solid var(--auro-color-border-primary-on-light);
+  overflow: hidden;
+  height: 0;
+  opacity: 0;
+  transition: max-height 0.5s ease-in-out;
+  transition-property: opacity, height;
+
+  &-slot {
+    padding: var(--auro-size-lg);
+  }
+
+  &--hidden {
+    display: none;
+  }
 }
 
-// component shape styles
-// .auro-accordion {
-//   ...
-// }
+.details--isOpen {
+  opacity: 1;
+}

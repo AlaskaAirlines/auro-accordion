@@ -11,15 +11,18 @@ import "focus-visible/dist/focus-visible.min.js";
 // See https://git.io/JJ6SJ for "How to document your components using JSDoc"
 /**
  * auro-accordion-group provides users a way to group auro-accordion components so they auto collapse when one is selected.
- *
  * @attr {Array} items - Array of auro-accordion objects to collapse on toggle event
  */
 
 // build the component class
 class AuroAccordionGroup extends LitElement {
-  // constructor() {
-  //   super();
-  // }
+  constructor() {
+    super();
+
+    this.zero = 0;
+    this.short = 20;
+    this.long = 500;
+  }
 
   connectedCallback() {
     super.connectedCallback();
@@ -35,9 +38,21 @@ class AuroAccordionGroup extends LitElement {
    */
   handleToggleExpanded(event) {
     this.index = this.items.indexOf(event.target);
+
     this.items.forEach((item) => {
       if (item !== event.target) {
+        const isOpen = item.classList.contains('details--isOpen');
+
         item.expanded = false;
+
+        if (!isOpen) {
+          setTimeout(() => {
+            item.shadowRoot.querySelectorAll('[id*=Panel]')[this.zero].style.height = `0px`;
+          }, this.short);
+          setTimeout(() => {
+            item.shadowRoot.querySelectorAll('[id*=Panel]')[this.zero].classList.add('details--hidden');
+          }, this.long);
+        }
       }
     });
   }

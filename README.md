@@ -1,6 +1,6 @@
 ## auro-accordion
 
-`<auro-accordion>` and `<auro-accordion-gropu` are [HTML custom elements](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_custom_elements) for the purpose of providing collapsable content on a page. `<auro-accordion>` is usable on its own, but combined with `<auro-accordion-group>` enables you to auto collapse an expanded section when you select another section.
+`<auro-accordion>` and `<auro-accordion-group` are [HTML custom elements](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_custom_elements) for the purpose of providing collapsible content on a page. `<auro-accordion>` is usable on its own, but combined with `<auro-accordion-group>` enables you to auto collapse an expanded section when you select another section.
 
 ## UI development browser support
 
@@ -39,13 +39,22 @@ import "@alaskaairuxauro-accordion";
 **Reference component in HTML**
 
 ```html
-<auro-accordion id="Demo" header="Hello">World</auro-accordion>
+<auro-accordion id="epIV" expanded>
+  <span slot="trigger">Star Wars: A New Hope</span>
+  <p>It is a period of civil war. Rebel spaceships, striking from a hidden base, have won their first victory against the evil Galactic Empire.</p>
+</auro-accordion>
 ```
 
 ```html
 <auro-accordion-group>
-  <auro-accordion id="Demo1" header="Hello">World</auro-accordion>
-  <auro-accordion id="Demo2" header="Hello One">World</auro-accordion>
+  <auro-accordion id="epIV" expanded>
+    <span slot="trigger">Star Wars: A New Hope</span>
+    <p>It is a period of civil war. Rebel spaceships, striking from a hidden base, have won their first victory against the evil Galactic Empire.</p>
+  </auro-accordion>
+  <auro-accordion id="epV">
+    <span slot="trigger">Star Wars: The Empire Strikes Back</span>
+    <p>It is a dark time for the Rebellion. Although the Death Star has been destroyed, Imperial troops have driven the Rebel forces from their hidden base and pursued them across the galaxy.</p>
+  </auro-accordion>
 </auro-accordion-group>
 ```
 
@@ -53,20 +62,20 @@ import "@alaskaairuxauro-accordion";
 
 In cases where the project is not able to process JS assets, there are pre-processed assets available for use.
 
-**NOTE:** Be sure to replace `:version` in the URL with the version of the asset you want.
+**NOTE:** Replace `@latest` in the URL with the version of the asset you prefer if not latest.
 
 ```html
-<link rel="stylesheet" href="https://unpkg.com/@alaskaairux/orion-design-tokens@:version/dist/tokens/CSSTokenProperties.css" />
-<link rel="stylesheet" href="https://unpkg.com/@alaskaairux/orion-web-core-style-sheets@:version/dist/bundled/baseline.css" />
+<link rel="stylesheet" href="https://unpkg.com/@alaskaairux/orion-design-tokens@latest/dist/tokens/CSSTokenProperties.css" />
+<link rel="stylesheet" href="https://unpkg.com/@alaskaairux/orion-web-core-style-sheets@latest/dist/bundled/baseline.css" />
 
-<script src="https://unpkg.com/@alaskaairuxauro-accordion@:version/dist/polyfills.js"></script>
-<script src="https://unpkg.com/@alaskaairuxauro-accordion@:version/dist/auro-accordion__bundled.js"></script>
-<script src="https://unpkg.com/@alaskaairuxauro-accordion@:version/dist/auro-accordion-group__bundled.js"></script>
+<script src="https://unpkg.com/@alaskaairuxauro-accordion@latest/dist/polyfills.js"></script>
+<script src="https://unpkg.com/@alaskaairuxauro-accordion@latest/dist/auro-accordion__bundled.js"></script>
+<script src="https://unpkg.com/@alaskaairuxauro-accordion@latest/dist/auro-accordion-group__bundled.js"></script>
 ```
 
 ### polyfills.js
 
-The `polyfills.js` is packaged with this component, but **IT IS NOT NEEDED** to load a polyfill per component. The `polyfills.js` will work for all additional components added to the project.
+The `polyfills.js` is packaged with this component.
 
 ### IE11 Support
 
@@ -77,26 +86,11 @@ The `polyfills.js` is packaged with this component, but **IT IS NOT NEEDED** to 
 
 The `<auro-accordion>` element should be used in situations where users may:
 
-* Need one or more collapsable sections
+* Need one or more collapsible sections
 
 The `auro-accordion-group` element should be used with `auro-accordion` in situations where users may:
 
 * Need to auto collapse the current open `auro-accordion` when a new one is clicked in the group
-
-## API Code Examples
-
-Default auro-accordion
-
-```html
-<auro-accordion id="Demo" header="Hello">World</auro-accordion>
-```
-
-```html
-<auro-accordion-group>
-  <auro-accordion id="Demo1" header="Hello">World</auro-accordion>
-  <auro-accordion id="Demo2" header="Hello One">World</auro-accordion>
-</auro-accordion-group>
-```
 
 ## Development
 
