@@ -1,4 +1,4 @@
-## auro-accordion
+# auro-accordion
 
 `<auro-accordion>` and `<auro-accordion-group` are [HTML custom elements](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_custom_elements) for the purpose of providing collapsible content on a page. `<auro-accordion>` is usable on its own, but combined with `<auro-accordion-group>` enables you to auto collapse an expanded section when you select another section.
 
