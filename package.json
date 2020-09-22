@@ -18,8 +18,9 @@
   "main": "index.js",
   "license": "Apache-2.0",
   "dependencies": {
-    "lit-element": "^2.4.0",
-    "chalk": "^4.1.0"
+    "@alaskaairux/icons": "^3.3.0",
+    "chalk": "^4.1.0",
+    "lit-element": "^2.4.0"
   },
   "peerDependencies": {
     "@alaskaairux/orion-design-tokens": "^2.12.1",
@@ -87,7 +88,7 @@
   ],
   "scripts": {
     "build": "npm run ciBuild",
-    "apiBuild": "wca analyze 'src/auro-accordion.js' --outFiles docs/api.md",
+    "apiBuild": "wca analyze 'src/auro-*.js' --outFiles docs/api.md",
     "bundler": "webpack --mode=production",
     "bundle:test": "webpack-dev-server --host 0.0.0.0",
     "postinstall": "node packageScripts/postinstall.js",

@@ -4,6 +4,11 @@
 // ---------------------------------------------------------------------
 
 import { LitElement, html, css } from "lit-element";
+import { classMap } from 'lit-html/directives/class-map';
+
+// Import Icons
+import chevronUp from '@alaskaairux/icons/dist/icons/interface/chevron-up_es6.js';
+import chevronDown from '@alaskaairux/icons/dist/icons/interface/chevron-down_es6.js';
 
 // Import touch detection lib
 import "focus-visible/dist/focus-visible.min.js";
@@ -11,21 +16,36 @@ import styleCss from "./style-css.js";
 
 // See https://git.io/JJ6SJ for "How to document your components using JSDoc"
 /**
- * auro-accordion provides users a way to ...
+ * auro-accordion provides users a way to have collapsible content on a page.
+ * Use auro-accordion-group if you want to have auto closing accordion components when others are selected.
  *
- * @attr {String} cssClass - Applies designated CSS class to DOM element.
+ * @element auro-accordion
+ *
+ * @attr {String} id - Used to generate the ID for the elements inside the component
+ * @attr {Boolean} expanded - Toggles the panel on and off
+ * @event {Object} toggleExpanded - Returns target for auro-accordion group
+ * @slot header - Used to provide the header text of the Accordion
+ * @slot - Provide text for accordion details display
  */
 
 // build the component class
 class AuroAccordion extends LitElement {
-  // constructor() {
-  //   super();
-  // }
+  constructor() {
+    super();
 
-  // function to define props used within the scope of thie component
+    this.expanded = false;
+    this.short = 20;
+    this.long = 500;
+  }
+
+  // function to define props used within the scope of this component
   static get properties() {
     return {
-      cssClass:   { type: String }
+      id: { type: String },
+      expanded: {
+        type: Boolean,
+        reflect: true
+      }
     };
   }
 
@@ -35,11 +55,105 @@ class AuroAccordion extends LitElement {
     `;
   }
 
+  /**
+   * Internal function to generate the HTML for the icon to use
+   * @param {string} svgContent - The imported svg icon
+   * @returns {TemplateResult} - The html template for the icon
+   */
+  generateIconHtml(svgContent) {
+    const dom = new DOMParser().parseFromString(svgContent, 'text/html'),
+    svg = dom.body.firstChild;
+
+   return html`${svg}`;
+  }
+
+  /**
+   * Internal function to handle the click event to trigger the expansion of the accordion
+   * @param {object} event - Standard event parameter
+   * @returns {nothing} - Returns nothing
+   */
+  handleClick(event) {
+    this.expanded = !this.expanded;
+
+    this.scrollIntoView({
+      behavior: "smooth",
+      block: "nearest"
+    });
+
+    this.dispatchEvent(new CustomEvent('toggleExpanded', {
+      bubbles: true,
+      composed: true,
+      target: event.target
+    }));
+
+    this.display();
+  }
+
+ /**
+   * Internal function to address Aria state
+   * @returns {string} - Returns true or false to be used as attribute value
+   */
+  ariaExpanded() {
+    return this.expanded ? 'true' : 'false';
+  }
+
+  display() {
+    const toggle = this.shadowRoot.getElementById(`${this.id}Panel`);
+    const isOpen = toggle.classList.contains('details--isOpen');
+
+    if (!isOpen) {
+      toggle.classList.remove('details--hidden');
+
+      setTimeout(() => {
+        toggle.style.height = `${toggle.scrollHeight}px`;
+      }, this.short);
+    }
+
+    if (isOpen) {
+      toggle.style.height = `0px`;
+
+      setTimeout(() => {
+        toggle.classList.add('details--hidden');
+      }, this.long);
+    }
+  }
+
   // function that renders the HTML and CSS into  the scope of the component
   render() {
+
+    const triggerStyles = {
+      'detailsTrigger': true,
+      'expanded': this.expanded
+    }
+
+    const detailStyles = {
+      'details': true,
+      'details--hidden': true,
+      'details--isOpen': this.expanded,
+    }
+
     return html`
-      <div class=${this.cssClass}>
-        <slot></slot>
+      <button
+        id="${this.id}Heading"
+        class="${classMap(triggerStyles)}"
+        aria-expanded="${this.ariaExpanded()}"
+        aria-controls="${this.id}Panel"
+        @click=${this.handleClick}
+      >
+        <div><slot name="trigger">Details trigger</slot></div>
+        <div>${this.generateIconHtml(this.expanded ? chevronUp.svg : chevronDown.svg)}</div>
+      </button>
+
+      <div
+        id="${this.id}Panel"
+        aria-labelledby="${this.id}Heading"
+        aria-live="assertive"
+        role="region"
+        class="${classMap(detailStyles)}"
+      >
+        <div class="details-slot">
+          <slot></slot>
+        </div>
       </div>
     `;
   }
