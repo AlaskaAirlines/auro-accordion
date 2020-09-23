@@ -68,9 +68,9 @@ In cases where the project is not able to process JS assets, there are pre-proce
 <link rel="stylesheet" href="https://unpkg.com/@alaskaairux/orion-design-tokens@latest/dist/tokens/CSSTokenProperties.css" />
 <link rel="stylesheet" href="https://unpkg.com/@alaskaairux/orion-web-core-style-sheets@latest/dist/bundled/baseline.css" />
 
-<script src="https://unpkg.com/@alaskaairuxauro-accordion@latest/dist/polyfills.js"></script>
-<script src="https://unpkg.com/@alaskaairuxauro-accordion@latest/dist/auro-accordion__bundled.js"></script>
-<script src="https://unpkg.com/@alaskaairuxauro-accordion@latest/dist/auro-accordion-group__bundled.js"></script>
+<script src="https://unpkg.com/@alaskaairux/auro-accordion@latest/dist/polyfills.js"></script>
+<script src="https://unpkg.com/@alaskaairux/auro-accordion@latest/dist/auro-accordion__bundled.js"></script>
+<script src="https://unpkg.com/@alaskaairux/auro-accordion@latest/dist/auro-accordion-group__bundled.js"></script>
 ```
 
 ### polyfills.js
