@@ -1,4 +1,4 @@
-import { fixture, html, expect } from '@open-wc/testing';
+import { fixture, html, expect, waitUntil } from '@open-wc/testing';
 import sinon from 'sinon';
 import '../src/auro-accordion.js';
 
@@ -15,15 +15,87 @@ describe('auro-accordion', () => {
     await expect(el).to.be.accessible();
   });
 
-  it('auro-accordion is expanded', async () => {
+  it('auro-accordion is not expanded', async () => {
     const el = await fixture(html`
-      <auro-accordion expanded>
+      <auro-accordion id="test">
         <span slot="trigger">Star Wars: The Empire Strikes Back</span>
           <p>It is a dark time for the Rebellion. Although the Death Star has been destroyed, Imperial troops have driven the Rebel forces from their hidden base and pursued them across the galaxy.</p>
       </auro-accordion>
     `);
 
-    await expect(el).to.be.accessible();
+    const button = el.shadowRoot.querySelector('button');
+    const panel = el.shadowRoot.querySelector('#testPanel');
+
+    expect(button).to.not.have.class('expanded');
+    expect(button).to.have.class('detailsTrigger');
+    expect(panel).to.have.class('details');
+    expect(panel).to.have.class('details--hidden');
+    expect(panel).to.not.have.class('details--isOpen');
+    expect(el.ariaExpanded()).to.be.equal('false');
+  });
+
+  it('auro-accordion is expanded', async () => {
+    const el = await fixture(html`
+      <auro-accordion id="test" expanded>
+        <span slot="trigger">Star Wars: The Empire Strikes Back</span>
+          <p>It is a dark time for the Rebellion. Although the Death Star has been destroyed, Imperial troops have driven the Rebel forces from their hidden base and pursued them across the galaxy.</p>
+      </auro-accordion>
+    `);
+
+    const button = el.shadowRoot.querySelector('button');
+    const panel = el.shadowRoot.querySelector('#testPanel');
+
+    expect(button).to.have.class('expanded');
+    expect(button).to.have.class('detailsTrigger');
+    expect(panel).to.have.class('details');
+    expect(panel).to.have.class('details--hidden');
+    expect(panel).to.have.class('details--isOpen');
+    expect(el.ariaExpanded()).to.be.equal('true');
+  });
+
+  it('auro-accordion expands on click', async () => {
+    const el = await fixture(html`
+      <auro-accordion id="test">
+        <span slot="trigger">Star Wars: The Empire Strikes Back</span>
+          <p>It is a dark time for the Rebellion. Although the Death Star has been destroyed, Imperial troops have driven the Rebel forces from their hidden base and pursued them across the galaxy.</p>
+      </auro-accordion>
+    `);
+
+    const button = el.shadowRoot.querySelector('button');
+    const panel = el.shadowRoot.querySelector('#testPanel');
+
+    button.click();
+
+    await waitUntil(() => el.expanded, "Element did not trigger exapansion");
+
+    expect(button).to.have.class('expanded');
+    expect(button).to.have.class('detailsTrigger');
+    expect(panel).to.have.class('details');
+    expect(panel).to.have.class('details--isOpen');
+    expect(el.ariaExpanded()).to.be.equal('true');
+  });
+
+  it('auro-accordion collapses on click', async () => {
+    const el = await fixture(html`
+      <auro-accordion id="test" expanded>
+        <span slot="trigger">Star Wars: The Empire Strikes Back</span>
+          <p>It is a dark time for the Rebellion. Although the Death Star has been destroyed, Imperial troops have driven the Rebel forces from their hidden base and pursued them across the galaxy.</p>
+      </auro-accordion>
+    `);
+
+    const button = el.shadowRoot.querySelector('button');
+    const panel = el.shadowRoot.querySelector('#testPanel');
+
+    button.click();
+
+    await waitUntil(() => !el.expanded, "Element did not trigger exapansion");
+
+    expect(button).to.not.have.class('expanded');
+    expect(button).to.have.class('detailsTrigger');
+    expect(panel).to.have.class('details');
+    expect(panel).to.have.class('details--hidden');
+    expect(panel).to.not.have.class('details--isOpen');
+    expect(el.ariaExpanded()).to.be.equal('false');
   });
 
   it('auro-accordion custom element is defined', async () => {
