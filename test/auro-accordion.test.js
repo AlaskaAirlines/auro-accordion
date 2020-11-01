@@ -66,7 +66,7 @@ describe('auro-accordion', () => {
 
     button.click();
 
-    await waitUntil(() => el.expanded, "Element did not trigger exapansion");
+    await waitUntil(() => el.expanded, "Element did not trigger expansion");
 
     expect(button).to.have.class('expanded');
     expect(button).to.have.class('detailsTrigger');
@@ -88,7 +88,7 @@ describe('auro-accordion', () => {
 
     button.click();
 
-    await waitUntil(() => !el.expanded, "Element did not trigger exapansion");
+    await waitUntil(() => !el.expanded, "Element did not trigger expansion");
 
     expect(button).to.not.have.class('expanded');
     expect(button).to.have.class('detailsTrigger');
