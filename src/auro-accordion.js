@@ -23,7 +23,6 @@ import styleCss from "./style-css.js";
  *
  * @attr {String} id - Used to generate the ID for the elements inside the component
  * @attr {Boolean} expanded - Toggles the panel on and off
- * @event {Object} toggleExpanded - Returns target for auro-accordion group
  * @slot header - Used to provide the header text of the Accordion
  * @slot - Provide text for accordion details display
  */
@@ -56,7 +55,7 @@ class AuroAccordion extends LitElement {
   }
 
   /**
-   * Internal function to generate the HTML for the icon to use
+   * @private Internal function to generate the HTML for the icon to use
    * @param {string} svgContent - The imported svg icon
    * @returns {TemplateResult} - The html template for the icon
    */
@@ -68,7 +67,7 @@ class AuroAccordion extends LitElement {
   }
 
   /**
-   * Internal function to handle the click event to trigger the expansion of the accordion
+   * @private Internal function to handle the click event to trigger the expansion of the accordion
    * @param {object} event - Standard event parameter
    * @returns {nothing} - Returns nothing
    */
@@ -90,13 +89,17 @@ class AuroAccordion extends LitElement {
   }
 
  /**
-   * Internal function to address Aria state
+   * @private Internal function to address Aria state
    * @returns {string} - Returns true or false to be used as attribute value
    */
   ariaExpanded() {
     return this.expanded ? 'true' : 'false';
   }
 
+  /**
+   * @private Internal function to determine open state
+   * @returns {string} - Returns CSS Class on DOM
+   */
   display() {
     const toggle = this.shadowRoot.getElementById(`${this.id}Panel`);
     const isOpen = toggle.classList.contains('details--isOpen');

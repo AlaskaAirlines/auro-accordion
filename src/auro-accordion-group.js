@@ -32,7 +32,7 @@ class AuroAccordionGroup extends LitElement {
   }
 
   /**
-   * Internal function to toggle any expanded panels if it is not the one selected
+   * @private Internal function to toggle any expanded panels if it is not the one selected
    * @param {object} event - Standard event parameter
    * @returns {nothing} - Returns nothing
    */
