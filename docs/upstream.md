@@ -72,4 +72,4 @@ $ git merge upstream/master
 
 ## Maintain upstream
 
-Once you have connected your local forked clone to the upstream repo, maintenance is the key. It is important to
+Once you have connected your local forked clone to the upstream repo, maintenance is the key. It is important to ensure that your `master` branch is always updated BEFORE you create a new branch intended to be used with a new pull request. This will help to eliminate any potential issues with merging when the `master` branches are out of sync.
