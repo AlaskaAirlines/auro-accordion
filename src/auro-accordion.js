@@ -3,7 +3,7 @@
 
 // ---------------------------------------------------------------------
 
-import { LitElement, html, css } from "lit-element";
+import { LitElement, html } from "lit-element";
 import { classMap } from 'lit-html/directives/class-map';
 
 // Import Icons
@@ -13,6 +13,7 @@ import chevronDown from '@alaskaairux/icons/dist/icons/interface/chevron-down_es
 // Import touch detection lib
 import "focus-visible/dist/focus-visible.min.js";
 import styleCss from "./style-css.js";
+import styleCssFixed from "./style-fixed-css.js";
 
 // See https://git.io/JJ6SJ for "How to document your components using JSDoc"
 /**
@@ -23,6 +24,7 @@ import styleCss from "./style-css.js";
  *
  * @attr {String} id - Used to generate the ID for the elements inside the component
  * @attr {Boolean} expanded - Toggles the panel on and off
+ * @attr {Boolean} fixed - Uses px values instead of rem
  * @slot header - Used to provide the header text of the Accordion
  * @slot - Provide text for accordion details display
  */
@@ -49,9 +51,10 @@ class AuroAccordion extends LitElement {
   }
 
   static get styles() {
-    return css`
-      ${styleCss}
-    `;
+    return [
+      styleCss,
+      styleCssFixed
+    ]
   }
 
   /**
