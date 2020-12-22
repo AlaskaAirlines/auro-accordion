@@ -24,9 +24,11 @@ Use auro-accordion-group if you want to have auto closing accordion components w
 
 ## Attributes
 
-| Attribute | Type      | Description                   |
-|-----------|-----------|-------------------------------|
-| `fixed`   | `Boolean` | Uses px values instead of rem |
+| Attribute      | Type      | Description                                      |
+|----------------|-----------|--------------------------------------------------|
+| `fixed`        | `Boolean` | Uses px values instead of rem                    |
+| `justifyRight` | `Boolean` | Places trigger content to the right of the accordion |
+| `lowProfile`   | `Boolean` | Thinner version of auro-accordion w/o borders    |
 
 ## Properties
 

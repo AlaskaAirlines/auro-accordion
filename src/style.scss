@@ -17,7 +17,7 @@
 // never define layout that would cause effect on element outside the scope of this component
 
 @mixin hoverState {
-  border-left: var(--auro-border-width-thick) solid var(--auro-color-brand-breeze-300);
+  border-left: 2px solid var(--auro-color-brand-breeze-300);
 }
 
 :host(.focus-visible) {
@@ -41,8 +41,8 @@
   padding: var(--auro-size-lg);
   width: 100%;
   text-align: left;
-  border: var(--auro-border-width-thick) solid var(--auro-color-base-white);
-  border-bottom: var(--auro-border-width-thick) solid var(--auro-color-border-primary-on-light);
+  border: 2px solid var(--auro-color-base-white);
+  border-bottom: 2px solid var(--auro-color-border-primary-on-light);
   background-color: transparent;
   font-family: var(--auro-font-family-default);
   font-size: var(--auro-text-heading-400-px);
@@ -65,8 +65,8 @@
 }
 
 .details {
-  border-left: var(--auro-border-width-thick) solid var(--auro-color-brand-breeze-100);
-  border-bottom: var(--auro-border-width-thin) solid var(--auro-color-border-primary-on-light);
+  border-left: 2px solid var(--auro-color-brand-breeze-100);
+  border-bottom: 1px solid var(--auro-color-border-primary-on-light);
   overflow: hidden;
   height: 0;
   opacity: 0;
@@ -74,7 +74,7 @@
   transition-property: opacity, height;
 
   &-slot {
-    padding: var(--auro-size-lg);
+    padding: var(--auro-size-xl);
   }
 
   &--hidden {
@@ -84,4 +84,37 @@
 
 .details--isOpen {
   opacity: 1;
+}
+
+:host([lowProfile]) {
+  .detailsTrigger.expanded,
+  .details,
+  .detailsTrigger  {
+    border-color: transparent;
+  }
+
+  svg {
+    margin-left: 1rem;
+  }
+
+  .details-slot {
+    padding: var(--auro-size-sm);
+    padding-top: 0;
+  }
+
+  .detailsTrigger {
+    font-size: var(--auro-size-md);
+    font-weight: var(--auro-text-heading-display-weight);
+    padding: var(--auro-size-xs) var(--auro-size-lg);
+
+    div {
+      height: var(--auro-size-lg);
+    }
+  }
+}
+
+:host([justifyRight]) {
+  .detailsTrigger {
+    justify-content: flex-end;
+  }
 }
