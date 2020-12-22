@@ -112,7 +112,7 @@ $ npm run dev
 $ npm run serve
 ```
 
-Open [localhost:3001](http://localhost:3001/)
+Open [localhost:3001](http://localhost:8000/)
 
 ### Testing
 Automated tests are required for every Auro component. See `.\test\auro-accordion.test.js` for the tests for this component. Run `npm test` to run the tests and check code coverage. Tests must pass and meet a certain coverage threshold to commit. See [the testing documentation](https://auro.alaskaair.com/support/tests) for more details.
