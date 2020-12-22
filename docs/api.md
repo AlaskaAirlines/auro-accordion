@@ -22,6 +22,12 @@ auro-accordion-group provides users a way to group auro-accordion components so 
 auro-accordion provides users a way to have collapsible content on a page.
 Use auro-accordion-group if you want to have auto closing accordion components when others are selected.
 
+## Attributes
+
+| Attribute | Type      | Description                   |
+|-----------|-----------|-------------------------------|
+| `fixed`   | `Boolean` | Uses px values instead of rem |
+
 ## Properties
 
 | Property   | Attribute  | Type      | Default | Description                                      |
