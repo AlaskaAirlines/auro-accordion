@@ -8,19 +8,24 @@ import { LitElement, html } from "lit-element";
 // Import touch detection lib
 import "focus-visible/dist/focus-visible.min.js";
 
-// See https://git.io/JJ6SJ for "How to document your components using JSDoc"
-/**
- * auro-accordion-group provides users a way to group auro-accordion components so they auto collapse when one is selected.
- * @attr {Array} items - Array of auro-accordion objects to collapse on toggle event
- */
-
 // build the component class
 class AuroAccordionGroup extends LitElement {
   constructor() {
     super();
 
+    /**
+     * @private
+     */
     this.zero = 0;
+
+    /**
+     * @private
+     */
     this.short = 20;
+
+    /**
+     * @private
+     */
     this.long = 500;
   }
 

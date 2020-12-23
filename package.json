@@ -93,7 +93,7 @@
   ],
   "scripts": {
     "build": "npm run ciBuild",
-    "apiBuild": "wca analyze 'src/auro-*.js' --outFiles docs/api.md",
+    "apiBuild": "wca analyze 'src/auro-accordion.js' --outFiles docs/api.md",
     "bundler": "rollup -c",
     "bundle:test": "rollup -c -w",
     "serve": "web-dev-server --open demo/ --node-resolve --watch",

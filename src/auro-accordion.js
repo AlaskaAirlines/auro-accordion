@@ -36,8 +36,19 @@ class AuroAccordion extends LitElement {
   constructor() {
     super();
 
+    /**
+     * @private
+     */
     this.expanded = false;
+
+    /**
+     * @private
+     */
     this.short = 20;
+
+    /**
+     * @private
+     */
     this.long = 500;
   }
 
