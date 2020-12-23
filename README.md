@@ -62,15 +62,14 @@ import "@alaskaairux/auro-accordion";
 
 In cases where the project is not able to process JS assets, there are pre-processed assets available for use.
 
-**NOTE:** Replace `@latest` in the URL with the version of the asset you prefer if not latest.
+**NOTE:** Be sure to replace `@latest` in the URL with the version of the asset you want. @latest is NOT aware of any MAJOR releases, use at your own risk.
 
 ```html
-<link rel="stylesheet" href="https://unpkg.com/@alaskaairux/orion-design-tokens@latest/dist/tokens/CSSTokenProperties.css" />
-<link rel="stylesheet" href="https://unpkg.com/@alaskaairux/orion-web-core-style-sheets@latest/dist/bundled/baseline.css" />
+<link rel="stylesheet" href="https://unpkg.com/@alaskaairux/design-tokens@latest/dist/tokens/CSSCustomProperties.css" />
+<link rel="stylesheet" href="https://unpkg.com/@alaskaairux/webcorestylesheets@latest/dist/bundled/essentials.css" />
 
-<script src="https://unpkg.com/@alaskaairux/auro-accordion@latest/dist/polyfills.js"></script>
-<script src="https://unpkg.com/@alaskaairux/auro-accordion@latest/dist/auro-accordion__bundled.js"></script>
-<script src="https://unpkg.com/@alaskaairux/auro-accordion@latest/dist/auro-accordion-group__bundled.js"></script>
+<script src="https://unpkg.com/@alaskaairux/auro-accordion@latest/dist/auro-accordion__bundled.es5.js" nomodule></script>
+<script src="https://unpkg.com/@alaskaairux/auro-accordion@latest/dist/auro-accordion__bundled.js" type="module"></script>
 ```
 
 ### polyfills.js
