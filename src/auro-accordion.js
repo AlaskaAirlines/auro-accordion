@@ -29,7 +29,9 @@ import styleCssFixed from "./style-fixed-css.js";
  * @attr {Boolean} lowProfile - Thinner version of auro-accordion w/o borders
  * @attr {Boolean} justifyLeft - Places trigger content to the Left of the accordion
  * @attr {Boolean} justifyRight - Places trigger content to the Right of the accordion
+ * @attr {Boolean secondaryType - Sets accordion details to secondary type style
  * @slot header - Used to provide the header text of the Accordion
+ * @slot subTrigger - Use to provide subtext to trigger header
  * @slot - Provide text for accordion details display
  */
 
@@ -161,7 +163,7 @@ class AuroAccordion extends LitElement {
         aria-controls="${this.id}Panel"
         @click=${this.handleClick}
       >
-        <div><slot name="trigger">Details trigger</slot></div>
+        <div><slot name="trigger">Details trigger</slot><br><slot class="subTrigger" name="subTrigger"></slot></div>
         <div>${this.generateIconHtml(this.expanded ? chevronUp.svg : chevronDown.svg)}</div>
       </button>
 

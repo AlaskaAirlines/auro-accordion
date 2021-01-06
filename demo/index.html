@@ -26,7 +26,85 @@
 
       <demo-snippet>
         <template>
-          <auro-accordion id="epIV" noProfile justifyLeft>
+          <auro-accordion id="epIV" chromeLess>
+            <span slot="trigger">chromeLess</span>
+            <span slot="subTrigger">Supports trigger sub-title</span>
+            <p>chromeLess: accordion that does not have the border colors.</p>
+          </auro-accordion>
+          <auro-accordion id="epIV" chromeLess justifyLeft>
+            <span slot="trigger">chromeLess justifyLeft</span>
+            <span slot="subTrigger">Supports trigger sub-title</span>
+            <p>chromeLess: accordion that does not have the border colors.</p>
+            <p>justifyLeft: move trigger to be flush left</p>
+          </auro-accordion>
+          <auro-accordion id="epIV" chromeLess justifyRight>
+            <span slot="trigger">chromeLess justifyRight</span>
+            <span slot="subTrigger">Supports trigger sub-title</span>
+            <p>chromeLess: accordion that does not have the border colors.</p>
+            <p>justifyRight: move trigger to be flush right</p>
+          </auro-accordion>
+          <auro-accordion id="epIV" lowProfile>
+            <span slot="trigger">lowProfile</span>
+            <span slot="subTrigger">Does not support trigger sub-title</span>
+            <p>lowProfile: accordion w/o borders and displays at slimmer size. This type does NOT support a trigger sub-title.</p>
+          </auro-accordion>
+          <auro-accordion id="epIV" lowProfile justifyLeft>
+            <span slot="trigger">lowProfile justifyLeft</span>
+            <span slot="subTrigger">Does not support trigger sub-title</span>
+            <p>lowProfile: accordion w/o borders and displays at slimmer size. This type does NOT support a trigger sub-title.</p>
+            <p>justifyLeft: move trigger to be flush left</p>
+          </auro-accordion>
+          <auro-accordion id="epIV" lowProfile justifyRight>
+            <span slot="trigger">lowProfile justifyRight</span>
+            <span slot="subTrigger">Does not support trigger sub-title</span>
+            <p>lowProfile: accordion w/o borders and displays at slimmer size. This type does NOT support a trigger sub-title.</p>
+            <p>justifyRight: move trigger to be flush right</p>
+          </auro-accordion>
+          <auro-accordion id="epIV" noProfile>
+            <span slot="trigger">noProfile</span>
+            <span slot="subTrigger">Supports trigger sub-title</span>
+            <p>noProfile: property is not supported as an independent property, must be used with lowProfile prop.</p>
+          </auro-accordion>
+          <auro-accordion id="epIV" lowProfile noProfile>
+            <span slot="trigger">lowProfile noProfile</span>
+            <span slot="subTrigger">Does not support trigger sub-title</span>
+            <p>lowProfile noProfile: uses lowProfile style and removes all outer padding for flush placement.</p>
+          </auro-accordion>
+          <auro-accordion id="epIV" lowProfile noProfile justifyLeft>
+            <span slot="trigger">lowProfile noProfile</span>
+            <span slot="subTrigger">Does not support trigger sub-title</span>
+            <p>lowProfile noProfile: uses lowProfile style and removes all outer padding for flush placement.</p>
+            <p>justifyLeft: move trigger to be flush left</p>
+          </auro-accordion>
+          <auro-accordion id="epIV" lowProfile noProfile justifyRight>
+            <span slot="trigger">lowProfile noProfile</span>
+            <span slot="subTrigger">Does not support trigger sub-title</span>
+            <p>lowProfile noProfile: uses lowProfile style and removes all outer padding for flush placement.</p>
+            <p>justifyRight: move trigger to be flush right</p>
+          </auro-accordion>
+          <auro-accordion id="epIV" secondaryType>
+            <span slot="trigger">secondaryType</span>
+            <span slot="subTrigger">Supports trigger sub-title</span>
+            <p>secondaryType: uses secondary type style for displayed content.</p>
+          </auro-accordion>
+          <auro-accordion id="epIV" secondaryType justifyLeft>
+            <span slot="trigger">secondaryType</span>
+            <span slot="subTrigger">Supports trigger sub-title</span>
+            <p>secondaryType: uses secondary type style for displayed content.</p>
+            <p>justifyLeft: move trigger to be flush Left</p>
+          </auro-accordion>
+          <auro-accordion id="epIV" secondaryType justifyRight>
+            <span slot="trigger">secondaryType</span>
+            <span slot="subTrigger">Supports trigger sub-title</span>
+            <p>secondaryType: uses secondary type style for displayed content.</p>
+            <p>justifyRight: move trigger to be flush right</p>
+          </auro-accordion>
+        </template>
+      </demo-snippet>
+
+      <demo-snippet>
+        <template>
+          <auro-accordion id="epIV" lowProfile noProfile>
             <span slot="trigger">Star Wars: A New Hope</span>
             <p>It is a period of civil war. Rebel spaceships, striking from a hidden base, have won their first victory against the evil Galactic Empire.</p>
             <p>During the battle, Rebel spies managed to steal secret plans to the Empire's ultimate weapon, the DEATH STAR, an armored space station with enough power to destroy an entire planet.</p>
@@ -62,6 +140,7 @@
           <auro-accordion-group>
             <auro-accordion id="epV">
               <span slot="trigger">Star Wars: The Empire Strikes Back</span>
+              <span slot="subTrigger">This is the REAL first movie...</span>
               <button>Hey there!</button>
               <p>It is a dark time for the Rebellion. Although the Death Star has been destroyed, Imperial troops have driven the Rebel forces from their hidden base and pursued them across the galaxy.</p>
               <p>Evading the dreaded Imperial Starfleet, a group of freedom fighters led by Luke Skywalker has established a new secret base on the remote ice world of Hoth.</p>
