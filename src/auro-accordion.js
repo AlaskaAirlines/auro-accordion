@@ -25,8 +25,10 @@ import styleCssFixed from "./style-fixed-css.js";
  * @attr {String} id - Used to generate the ID for the elements inside the component
  * @attr {Boolean} expanded - Toggles the panel on and off
  * @attr {Boolean} fixed - Uses px values instead of rem
+ * @attr {Boolean} noProfile - Thinner version of auro-accordion w/0 padding
  * @attr {Boolean} lowProfile - Thinner version of auro-accordion w/o borders
- * @attr {Boolean} justifyRight - Places trigger content to the right of the accordion
+ * @attr {Boolean} justifyLeft - Places trigger content to the Left of the accordion
+ * @attr {Boolean} justifyRight - Places trigger content to the Right of the accordion
  * @slot header - Used to provide the header text of the Accordion
  * @slot - Provide text for accordion details display
  */
