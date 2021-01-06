@@ -27,7 +27,8 @@ Use auro-accordion-group if you want to have auto closing accordion components w
 
 ## Slots
 
-| Name     | Description                                      |
-|----------|--------------------------------------------------|
-|          | Provide text for accordion details display       |
-| `header` | Used to provide the header text of the Accordion |
+| Name         | Description                                      |
+|--------------|--------------------------------------------------|
+|              | Provide text for accordion details display       |
+| `header`     | Used to provide the header text of the Accordion |
+| `subTrigger` | Use to provide subtext to trigger header         |
