@@ -8,8 +8,10 @@ Use auro-accordion-group if you want to have auto closing accordion components w
 | Attribute      | Type      | Description                                      |
 |----------------|-----------|--------------------------------------------------|
 | `fixed`        | `Boolean` | Uses px values instead of rem                    |
-| `justifyRight` | `Boolean` | Places trigger content to the right of the accordion |
+| `justifyLeft`  | `Boolean` | Places trigger content to the Left of the accordion |
+| `justifyRight` | `Boolean` | Places trigger content to the Right of the accordion |
 | `lowProfile`   | `Boolean` | Thinner version of auro-accordion w/o borders    |
+| `noProfile`    | `Boolean` | Thinner version of auro-accordion w/0 padding    |
 
 ## Properties
 

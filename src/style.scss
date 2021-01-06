@@ -86,7 +86,8 @@
   opacity: 1;
 }
 
-:host([lowProfile]) {
+:host([lowProfile]),
+:host([noProfile]) {
   .detailsTrigger.expanded,
   .details,
   .detailsTrigger  {
@@ -98,7 +99,7 @@
   }
 
   .details-slot {
-    padding: var(--auro-size-sm);
+    padding: var(--auro-size-lg);
     padding-top: 0;
   }
 
@@ -113,8 +114,24 @@
   }
 }
 
+:host([noProfile]) {
+  .detailsTrigger {
+    padding: var(--auro-size-xs) 0;
+  }
+
+  .details-slot {
+    padding: 0;
+  }
+}
+
 :host([justifyRight]) {
   .detailsTrigger {
     justify-content: flex-end;
+  }
+}
+
+:host([justifyLeft]) {
+  .detailsTrigger {
+    justify-content: flex-start;
   }
 }
