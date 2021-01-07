@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [1.2.1](https://github.com/AlaskaAirlines/auro-accordion/compare/v1.2.0...v1.2.1) (2021-01-07)
+
+
+### Bug Fixes
+
+* address issue with dynamic content ([e164db9](https://github.com/AlaskaAirlines/auro-accordion/commit/e164db965a381c5f10834813aeaceae7eb2001b0))
+
 # [1.2.0](https://github.com/AlaskaAirlines/auro-accordion/compare/v1.1.0...v1.2.0) (2021-01-07)
 
 
