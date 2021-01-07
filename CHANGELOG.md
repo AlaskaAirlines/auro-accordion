@@ -1,5 +1,17 @@
 # Semantic Release Automated Changelog
 
+# [1.2.0](https://github.com/AlaskaAirlines/auro-accordion/compare/v1.1.0...v1.2.0) (2021-01-07)
+
+
+### Bug Fixes
+
+* update lowProfile options ([69ca2c9](https://github.com/AlaskaAirlines/auro-accordion/commit/69ca2c948d16b186a53b17560c657cc871446491))
+
+
+### Features
+
+* add new trigger sub-title and secondary type styles ([65d0166](https://github.com/AlaskaAirlines/auro-accordion/commit/65d01663bdaa1dc2cd868f9131af75924fad2d49))
+
 # [1.1.0](https://github.com/AlaskaAirlines/auro-accordion/compare/v1.0.0...v1.1.0) (2020-12-22)
 
 
