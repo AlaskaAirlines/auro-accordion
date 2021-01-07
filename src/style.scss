@@ -89,6 +89,7 @@
 
 .details--isOpen {
   opacity: 1;
+  overflow-y: auto;
 }
 
 :host([lowProfile]) {
