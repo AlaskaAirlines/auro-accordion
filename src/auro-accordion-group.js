@@ -10,25 +10,6 @@ import "focus-visible/dist/focus-visible.min.js";
 
 // build the component class
 class AuroAccordionGroup extends LitElement {
-  constructor() {
-    super();
-
-    /**
-     * @private
-     */
-    this.zero = 0;
-
-    /**
-     * @private
-     */
-    this.short = 20;
-
-    /**
-     * @private
-     */
-    this.long = 500;
-  }
-
   connectedCallback() {
     super.connectedCallback();
     this.items = Array.from(this.querySelectorAll('auro-accordion'));
