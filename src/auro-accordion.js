@@ -90,14 +90,6 @@ class AuroAccordion extends LitElement {
     }));
   }
 
- /**
-   * @private Internal function to address Aria state
-   * @returns {string} - Returns true or false to be used as attribute value
-   */
-  ariaExpanded() {
-    return this.expanded ? 'true' : 'false';
-  }
-
   /**
    * @private Internal function to transition the accordion's height when opening or closing
    * @param {boolean} opening - whether the accordion is opening or closing
@@ -126,7 +118,6 @@ class AuroAccordion extends LitElement {
 
   // function that renders the HTML and CSS into  the scope of the component
   render() {
-
     const triggerStyles = {
       'detailsTrigger': true,
       'expanded': this.expanded
@@ -141,7 +132,7 @@ class AuroAccordion extends LitElement {
       <button
         id="${this.id}Heading"
         class="${classMap(triggerStyles)}"
-        aria-expanded="${this.ariaExpanded()}"
+        aria-expanded="${this.expanded ? 'true' : 'false'}"
         aria-controls="${this.id}Panel"
         @click=${this.handleClick}
       >
