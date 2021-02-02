@@ -37,24 +37,6 @@ import styleCssFixed from "./style-fixed-css.js";
 
 // build the component class
 class AuroAccordion extends LitElement {
-  constructor() {
-    super();
-
-    /**
-     * @private
-     */
-    this.expanded = false;
-
-    /**
-     * @private
-     */
-    this.short = 20;
-
-    /**
-     * @private
-     */
-    this.long = 500;
-  }
 
   // function to define props used within the scope of this component
   static get properties() {
@@ -89,10 +71,12 @@ class AuroAccordion extends LitElement {
   /**
    * @private Internal function to handle the click event to trigger the expansion of the accordion
    * @param {object} event - Standard event parameter
-   * @returns {nothing} - Returns nothing
    */
   handleClick(event) {
-    this.expanded = !this.expanded;
+    const nextState = !this.expanded;
+
+    this.transitionHeight(nextState);
+    this.expanded = nextState;
 
     this.scrollIntoView({
       behavior: "smooth",
@@ -104,8 +88,6 @@ class AuroAccordion extends LitElement {
       composed: true,
       target: event.target
     }));
-
-    this.display();
   }
 
  /**
@@ -117,28 +99,29 @@ class AuroAccordion extends LitElement {
   }
 
   /**
-   * @private Internal function to determine open state
-   * @returns {string} - Returns CSS Class on DOM
+   * @private Internal function to transition the accordion's height when opening or closing
+   * @param {boolean} opening - whether the accordion is opening or closing
    */
-  display() {
-    const toggle = this.shadowRoot.getElementById(`${this.id}Panel`);
-    const isOpen = toggle.classList.contains('details--isOpen');
+  transitionHeight(opening) {
+    const HEIGHT_TIMEOUT = 10,
+      toggle = this.shadowRoot.getElementById(`${this.id}Panel`);
 
-    if (!isOpen) {
-      toggle.classList.remove('details--hidden');
+    toggle.style.height = `${toggle.scrollHeight}px`;
 
+    if (!opening) {
+      // set height to 0, triggering the CSS transition
       setTimeout(() => {
-        toggle.style.height = `${toggle.scrollHeight}px`;
-      }, this.short);
+        toggle.style.height = '0px';
+      }, HEIGHT_TIMEOUT);
     }
+  }
 
-    if (isOpen) {
-      toggle.style.height = `0px`;
-
-      setTimeout(() => {
-        toggle.classList.add('details--hidden');
-      }, this.long);
-    }
+  /**
+   * @private Removes inline height once transition has completed
+   * @param {object} event - event object
+   */
+  removeInlineHeight({ target }) {
+    target.style.height = null;
   }
 
   // function that renders the HTML and CSS into  the scope of the component
@@ -151,7 +134,6 @@ class AuroAccordion extends LitElement {
 
     const detailStyles = {
       'details': true,
-      'details--hidden': true,
       'details--isOpen': this.expanded,
     }
 
@@ -173,6 +155,7 @@ class AuroAccordion extends LitElement {
         aria-live="assertive"
         role="region"
         class="${classMap(detailStyles)}"
+        @transitionend=${this.removeInlineHeight}
       >
         <div class="details-slot">
           <slot></slot>

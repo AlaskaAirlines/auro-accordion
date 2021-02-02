@@ -1,5 +1,4 @@
 import { fixture, html, expect, waitUntil } from '@open-wc/testing';
-import sinon from 'sinon';
 import '../src/auro-accordion.js';
 
 describe('auro-accordion', () => {
@@ -29,7 +28,6 @@ describe('auro-accordion', () => {
     expect(button).to.not.have.class('expanded');
     expect(button).to.have.class('detailsTrigger');
     expect(panel).to.have.class('details');
-    expect(panel).to.have.class('details--hidden');
     expect(panel).to.not.have.class('details--isOpen');
     expect(el.ariaExpanded()).to.be.equal('false');
   });
@@ -48,7 +46,6 @@ describe('auro-accordion', () => {
     expect(button).to.have.class('expanded');
     expect(button).to.have.class('detailsTrigger');
     expect(panel).to.have.class('details');
-    expect(panel).to.have.class('details--hidden');
     expect(panel).to.have.class('details--isOpen');
     expect(el.ariaExpanded()).to.be.equal('true');
   });
@@ -93,7 +90,6 @@ describe('auro-accordion', () => {
     expect(button).to.not.have.class('expanded');
     expect(button).to.have.class('detailsTrigger');
     expect(panel).to.have.class('details');
-    expect(panel).to.have.class('details--hidden');
     expect(panel).to.not.have.class('details--isOpen');
     expect(el.ariaExpanded()).to.be.equal('false');
   });
