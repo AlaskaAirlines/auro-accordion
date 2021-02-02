@@ -75,21 +75,19 @@
   overflow: hidden;
   height: 0;
   opacity: 0;
-  transition: max-height 0.5s ease-in-out;
-  transition-property: opacity, height;
+  visibility: hidden;
+  transition: all 0.5s ease-in-out;
+  transition-property: opacity, height, visibility;
 
   &-slot {
     padding: var(--auro-size-xl);
-  }
-
-  &--hidden {
-    display: none;
   }
 }
 
 .details--isOpen {
   opacity: 1;
-  overflow-y: auto;
+  height: auto;
+  visibility: visible;
 }
 
 :host([lowProfile]) {

@@ -39,25 +39,13 @@ class AuroAccordionGroup extends LitElement {
   /**
    * @private Internal function to toggle any expanded panels if it is not the one selected
    * @param {object} event - Standard event parameter
-   * @returns {nothing} - Returns nothing
    */
   handleToggleExpanded(event) {
     this.index = this.items.indexOf(event.target);
-
     this.items.forEach((item) => {
-      if (item !== event.target) {
-        const isOpen = item.classList.contains('details--isOpen');
-
+      if (item !== event.target && item.expanded) {
+        item.transitionHeight(false);
         item.expanded = false;
-
-        if (!isOpen) {
-          setTimeout(() => {
-            item.shadowRoot.querySelectorAll('[id*=Panel]')[this.zero].style.height = `0px`;
-          }, this.short);
-          setTimeout(() => {
-            item.shadowRoot.querySelectorAll('[id*=Panel]')[this.zero].classList.add('details--hidden');
-          }, this.long);
-        }
       }
     });
   }
