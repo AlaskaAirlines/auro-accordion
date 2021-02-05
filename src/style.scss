@@ -16,18 +16,25 @@
 // layout styles - define any layout specifications for UI that is contained WITHIN the component
 // never define layout that would cause effect on element outside the scope of this component
 
+:focus {
+  outline: transparent auto 0;
+}
+
 @mixin hoverState {
-  border-left: 2px solid var(--auro-color-brand-breeze-300);
+  border-left: 2px solid var(--auro-color-brand-breeze-400);
 }
 
 :host(.focus-visible) {
   .detailsTrigger {
     @include hoverState();
-    color: var(--auro-color-brand-breeze-300);
-    border-bottom-color: var(--auro-color-brand-breeze-300);
+
+    color: var(--auro-color-brand-breeze-500);
+    border-bottom-color: var(--auro-color-brand-breeze-400);
+    border-left-color: var(--auro-color-brand-breeze-400);
+    text-decoration: underline;
 
     svg {
-      color: var(--auro-color-brand-breeze-300);
+      color: var(--auro-color-brand-breeze-500);
     }
   }
 }
@@ -57,7 +64,7 @@
   }
 
   & svg {
-    color: var(--auro-color-brand-midnight-300)
+    color: var(--auro-color-brand-midnight-500)
   }
 }
 
@@ -72,7 +79,7 @@
 }
 
 .details {
-  border-left: 2px solid var(--auro-color-brand-breeze-100);
+  border-left: 2px solid rgba($auro-color-brand-breeze-400, 0.3);
   border-bottom: 1px solid var(--auro-color-border-primary-on-light);
   overflow: hidden;
   height: 0;
