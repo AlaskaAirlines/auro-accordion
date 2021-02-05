@@ -98,7 +98,7 @@
     "bundle:test": "rollup -c -w",
     "serve": "web-dev-server --open demo/ --node-resolve --watch",
     "postinstall": "node packageScripts/postinstall.js",
-    "cssLint": "stylelint './src/*.css'",
+    "cssLint": "stylelint ./src/*.css",
     "dev": "npm run sassBuild:watch",
     "distJS": "copyfiles -u 1 -V './src/**/*.js' ./dist",
     "sassRender": "sass-render src/*.css -t ./scripts/staticStyles-template.js",
