@@ -69,7 +69,10 @@ In cases where the project is not able to process JS assets, there are pre-proce
 <link rel="stylesheet" href="https://unpkg.com/@alaskaairux/webcorestylesheets@latest/dist/bundled/essentials.css" />
 
 <script src="https://unpkg.com/@alaskaairux/auro-accordion@latest/dist/auro-accordion__bundled.es5.js" nomodule></script>
+<script src="https://unpkg.com/@alaskaairux/auro-accordion@latest/dist/auro-accordion-group__bundled.es5.js" nomodule></script>
+
 <script src="https://unpkg.com/@alaskaairux/auro-accordion@latest/dist/auro-accordion__bundled.js" type="module"></script>
+<script src="https://unpkg.com/@alaskaairux/auro-accordion@latest/dist/auro-accordion-group__bundled.js" type="module"></script>
 ```
 
 ### polyfills.js
