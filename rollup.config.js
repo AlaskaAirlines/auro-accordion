@@ -26,10 +26,13 @@ const getSharedPlugins = (isLegacy) => [
 ];
 
 const modernConfig = {
-  input: 'src/auro-accordion.js',
+  input: {
+    ['auro-accordion__bundled']: './src/auro-accordion.js',
+    ['auro-accordion-group__bundled']: './src/auro-accordion-group.js'
+  },
   output: {
     format: 'esm',
-    file: 'dist/auro-accordion__bundled.js'
+    dir: 'dist/'
   },
   plugins: [
     // remove shady DOM polyfill for modern browsers
@@ -60,4 +63,13 @@ const legacyConfig = {
   plugins: getSharedPlugins(true)
 };
 
-export default [modernConfig, legacyConfig];
+const legacyGroupConfig = {
+  input: 'src/es5.js',
+  output: {
+    format: 'iife',
+    file: 'dist/auro-accordion-group__bundled.es5.js'
+  },
+  plugins: getSharedPlugins(true)
+};
+
+export default [modernConfig, legacyConfig, legacyGroupConfig];
