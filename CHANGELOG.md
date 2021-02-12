@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [1.2.3](https://github.com/AlaskaAirlines/auro-accordion/compare/v1.2.2...v1.2.3) (2021-02-12)
+
+
+### Bug Fixes
+
+* [#5](https://github.com/AlaskaAirlines/auro-accordion/issues/5) address missing bundle ([cfe0e2d](https://github.com/AlaskaAirlines/auro-accordion/commit/cfe0e2dd2ae43230bfb7ccbc4345b4e9987bfff8))
+
 ## [1.2.2](https://github.com/AlaskaAirlines/auro-accordion/compare/v1.2.1...v1.2.2) (2021-02-05)
 
 
