@@ -24,6 +24,10 @@ import styleCssFixed from "./style-fixed-css.js";
  *
  * @attr {String} id - Used to generate the ID for the elements inside the component
  * @attr {Boolean} expanded - Toggles the panel on and off
+ * @attr {Boolean} shade - Accordion style with shade dropdown
+ * @attr {Boolean} information - Dependent on shade; informational styling
+ * @attr {Boolean} warning - Dependent on shade; warning styling
+ * @attr {Boolean} error - Dependent on shade; error styling
  * @attr {Boolean} fixed - Uses px values instead of rem
  * @attr {Boolean} noProfile - Thinner version of auro-accordion w/0 padding
  * @attr {Boolean} lowProfile - Thinner version of auro-accordion w/o borders
@@ -120,12 +124,12 @@ class AuroAccordion extends LitElement {
   render() {
     const triggerStyles = {
       'detailsTrigger': true,
-      'expanded': this.expanded
+      'detailsTrigger--isExpanded': this.expanded
     }
 
     const detailStyles = {
       'details': true,
-      'details--isOpen': this.expanded,
+      'details--isExpanded': this.expanded,
     }
 
     return html`
@@ -136,8 +140,16 @@ class AuroAccordion extends LitElement {
         aria-controls="${this.id}Panel"
         @click=${this.handleClick}
       >
-        <div><slot name="trigger">Details trigger</slot><br><slot class="subTrigger" name="subTrigger"></slot></div>
-        <div>${this.generateIconHtml(this.expanded ? chevronUp.svg : chevronDown.svg)}</div>
+        <div class="triggerContentWrapper">
+          <div>
+            <slot name="trigger" class="trigger"></slot>
+            <br>
+            <slot class="subTrigger" name="subTrigger"></slot>
+          </div>
+          <div>
+            ${this.generateIconHtml(this.expanded ? chevronUp.svg : chevronDown.svg)}
+          </div>
+        </div>
       </button>
 
       <div
@@ -148,7 +160,7 @@ class AuroAccordion extends LitElement {
         class="${classMap(detailStyles)}"
         @transitionend=${this.removeInlineHeight}
       >
-        <div class="details-slot">
+        <div class="detailsSlot">
           <slot></slot>
         </div>
       </div>

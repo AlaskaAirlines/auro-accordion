@@ -7,11 +7,15 @@ Use auro-accordion-group if you want to have auto closing accordion components w
 
 | Attribute      | Type      | Description                                      |
 |----------------|-----------|--------------------------------------------------|
+| `error`        | `Boolean` | Dependent on shade; error styling                |
 | `fixed`        | `Boolean` | Uses px values instead of rem                    |
+| `information`  | `Boolean` | Dependent on shade; informational styling        |
 | `justifyLeft`  | `Boolean` | Places trigger content to the Left of the accordion |
 | `justifyRight` | `Boolean` | Places trigger content to the Right of the accordion |
 | `lowProfile`   | `Boolean` | Thinner version of auro-accordion w/o borders    |
 | `noProfile`    | `Boolean` | Thinner version of auro-accordion w/0 padding    |
+| `shade`        | `Boolean` | Accordion style with shade dropdown              |
+| `warning`      | `Boolean` | Dependent on shade; warning styling              |
 
 ## Properties
 
