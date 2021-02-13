@@ -14,6 +14,7 @@
     </script>
     <script type="module" src="../src/auro-accordion.js"></script>
     <script type="module" src="../src/auro-accordion-group.js"></script>
+    <script src="https://unpkg.com/@alaskaairux/auro-icon@latest/dist/auro-icon__bundled.js" type="module"></script>
     <custom-style>
       <style is="custom-style" include="demo-pages-shared-styles"></style>
     </custom-style>
@@ -25,6 +26,52 @@
       <h1>auro-accordion</h1>
 
       <h2>New shade feature</h2>
+
+      <demo-snippet>
+        <template>
+          <auro-accordion id="shade01" shade information justifyLeft expanded>
+            <span slot="trigger">
+              <auro-icon category="alert" name="information-filled" customColor style="color: var(--auro-color-alert-notification-on-light)"></auro-icon>
+              Throwing some shade...
+            </span>
+            <p>During the battle, Rebel spies managed to steal secret plans to the Empire's ultimate weapon, the DEATH STAR, an armored space station with enough power to destroy an entire planet</p>
+          </auro-accordion>
+        </template>
+      </demo-snippet>
+
+      <demo-snippet>
+        <template>
+          <auro-accordion id="shade01" shade information justifyLeft expanded>
+            <h1 slot="trigger">
+              <auro-icon category="alert" name="information-filled" customColor style="color: var(--auro-color-alert-notification-on-light)"></auro-icon>
+              Throwing some shade...
+            </h1>
+            <p>During the battle, Rebel spies managed to steal secret plans to the Empire's ultimate weapon, the DEATH STAR, an armored space station with enough power to destroy an entire planet</p>
+          </auro-accordion>
+        </template>
+      </demo-snippet>
+
+      <demo-snippet>
+        <template>
+          <auro-accordion id="shade01" shade warning>
+            <h2 slot="trigger">
+              <auro-icon category="alert" name="warning-filled" customColor style="color: var(--auro-color-alert-warning-on-light)"></auro-icon>
+              Throwing some shade... </h2>
+            <p>During the battle, Rebel spies managed to steal secret plans to the Empire's ultimate weapon, the DEATH STAR, an armored space station with enough power to destroy an entire planet</p>
+          </auro-accordion>
+        </template>
+      </demo-snippet>
+
+      <demo-snippet>
+        <template>
+          <auro-accordion id="shade01" shade error>
+            <h3 slot="trigger">
+              <auro-icon category="alert" name="error" customColor style="color: var(--auro-color-alert-error-on-light)"></auro-icon>
+              Throwing some shade... </h3>
+            <p>During the battle, Rebel spies managed to steal secret plans to the Empire's ultimate weapon, the DEATH STAR, an armored space station with enough power to destroy an entire planet</p>
+          </auro-accordion>
+        </template>
+      </demo-snippet>
 
       <demo-snippet>
         <template>

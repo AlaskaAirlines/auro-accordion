@@ -32,12 +32,9 @@
   }
 }
 
-
 .detailsTrigger {
   cursor: pointer;
   line-height: var(--auro-text-body-height-default);
-  display: flex;
-  justify-content: space-between;
   padding: var(--auro-size-lg);
   width: 100%;
   text-align: left;
@@ -49,7 +46,7 @@
   font-weight: var(--auro-text-body-default-weight);
   color: var(--auro-color-text-primary-on-light);
 
-  &.expanded {
+  &--isExpanded {
     @include hoverState();
   }
 
@@ -62,6 +59,11 @@
   & svg {
     color: var(--auro-color-brand-midnight-300)
   }
+}
+
+.triggerContentWrapper {
+  display: flex;
+  justify-content: space-between;
 }
 
 .subTrigger {
@@ -79,19 +81,19 @@
   transition: all 0.5s ease-in-out;
   transition-property: opacity, height, visibility;
 
-  &-slot {
+  &Slot {
     padding: var(--auro-size-xl);
+  }
+
+  &--isExpanded {
+    opacity: 1;
+    height: auto;
+    visibility: visible;
   }
 }
 
-.details--isOpen {
-  opacity: 1;
-  height: auto;
-  visibility: visible;
-}
-
 %lowProfile {
-  .detailsTrigger.expanded,
+  .detailsTrigger--isExpanded,
   .details,
   .detailsTrigger  {
     border-color: transparent;
@@ -101,9 +103,8 @@
     margin-left: 1rem;
   }
 
-  .details-slot {
+  .detailsSlot {
     padding: var(--auro-size-lg);
-    padding-top: 0;
   }
 
   .detailsTrigger {
@@ -135,7 +136,7 @@
     }
   }
 
-  .details-slot {
+  .detailsSlot {
     padding-top: 0;
   }
 }
@@ -152,13 +153,13 @@
 }
 
 :host([justifyRight]) {
-  .detailsTrigger {
+  .triggerContentWrapper {
     justify-content: flex-end;
   }
 }
 
 :host([justifyLeft]) {
-  .detailsTrigger {
+  .triggerContentWrapper {
     justify-content: flex-start;
   }
 }
@@ -175,17 +176,140 @@
     padding: var(--auro-size-xs) 0;
   }
 
-  .details-slot {
+  .detailsSlot {
     padding: 0;
   }
 }
 
+// =-=-=-=-=-=-=-=-=-=-= shade =-=-=-=-=-=-=-=-=-=-=-=-
 :host([shade]) {
   @extend %chromeless;
   @extend %lowProfile;
 
+  position: relative;
+  display: block;
+
+  .details {
+    position: absolute;
+    width: 100%;
+    z-index: 1;
+    background-color: var(--auro-color-background-lighter);
+    transition: all 0.2s ease-in-out;
+  }
+
+  .trigger {
+    &::slotted(h1),
+    &::slotted(h2),
+    &::slotted(h3),
+    &::slotted(h4) {
+      margin: 0;
+      font-size: var(--auro-text-heading-400-size);
+      font-weight: var(--auro-text-body-default-weight);
+    }
+  }
+
   .detailsTrigger {
-    font-size: var(--auro-text-body-size-default);
+    font-size: var(--auro-text-heading-400-size);
     font-weight: var(--auro-text-body-default-weight);
+    background-color: var(--auro-color-background-lighter);
+    padding-top: var(--auro-size-sm);
+    padding-bottom: var(--auro-size-sm);
+
+    @include auro_breakpoint--md {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+
+  .detailsSlot,
+  .triggerContentWrapper {
+    max-width: 768px;
+    padding: 0 1rem;
+    margin: 0 auto;
+
+    @include auro_breakpoint--lg {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+}
+
+:host([shade][information]),
+:host([shade][warning]),
+:host([shade][error]) {
+  .details,
+  .detailsTrigger {
+    border-bottom-width: 4px;
+    border-bottom-style: solid;
+  }
+}
+
+:host([shade][information]) {
+  .detailsTrigger {
+    border-bottom-color: var(--auro-color-alert-notification-on-light);
+
+    &--isExpanded {
+      border-bottom-color: var(--auro-color-background-lighter);
+    }
+  }
+
+  .details {
+    border-bottom-color:  var(--auro-color-alert-notification-on-light);
+  }
+}
+
+:host([shade][warning]) {
+  .detailsTrigger {
+    border-bottom-color: var(--auro-color-alert-warning-on-light);
+
+    &--isExpanded {
+      border-bottom-color: var(--auro-color-background-lighter);
+    }
+  }
+
+  .details {
+    border-bottom-color:  var(--auro-color-alert-warning-on-light);
+  }
+}
+
+:host([shade][error]) {
+  .detailsTrigger {
+    border-bottom-color: var(--auro-color-alert-error-on-light);
+
+    &--isExpanded {
+      border-bottom-color: var(--auro-color-background-lighter);
+    }
+  }
+
+  .details {
+    border-bottom-color:  var(--auro-color-alert-error-on-light);
+  }
+}
+
+:host(.focus-visible[shade]) {
+  .detailsTrigger {
+    text-decoration: underline;
+
+    svg {
+      color: currentColor;
+    }
+  }
+}
+
+:host(.focus-visible[shade][information]) {
+  .detailsTrigger {
+    color: var(--auro-color-alert-notification-on-light);
+  }
+}
+
+:host(.focus-visible[shade][warning]) {
+  .detailsTrigger {
+    color: var(--auro-color-alert-warning-on-light);
+  }
+}
+
+:host(.focus-visible[shade][error]) {
+  .detailsTrigger {
+    color: var(--auro-color-alert-error-on-light);
   }
 }
