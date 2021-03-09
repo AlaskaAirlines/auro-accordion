@@ -1,5 +1,13 @@
 # Semantic Release Automated Changelog
 
+# [1.3.0](https://github.com/AlaskaAirlines/auro-accordion/compare/v1.2.3...v1.3.0) (2021-03-09)
+
+
+### Features
+
+* add new shade feature ([8708fa0](https://github.com/AlaskaAirlines/auro-accordion/commit/8708fa0865057c69249b5d2fbd86171c217ee744))
+* add new shade feature ([92926e5](https://github.com/AlaskaAirlines/auro-accordion/commit/92926e58bd5642bc2324af6856d1006d46593f10))
+
 ## [1.2.3](https://github.com/AlaskaAirlines/auro-accordion/compare/v1.2.2...v1.2.3) (2021-02-12)
 
 
