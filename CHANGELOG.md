@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [1.3.1](https://github.com/AlaskaAirlines/auro-accordion/compare/v1.3.0...v1.3.1) (2021-03-18)
+
+
+### Bug Fixes
+
+* update colors to address a11y issue ([e8ab999](https://github.com/AlaskaAirlines/auro-accordion/commit/e8ab999c283eea52672d95c7526bb548febe6a7d))
+
 # [1.3.0](https://github.com/AlaskaAirlines/auro-accordion/compare/v1.2.3...v1.3.0) (2021-03-09)
 
 
