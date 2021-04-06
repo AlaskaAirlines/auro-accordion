@@ -2,7 +2,7 @@
 name: Development Story
 about: Crate a new user story to address the development process
 title: 'auro-accordion; develop [feature]'
-labels: 'Status: Backlogged'
+labels: 'not-reviewed'
 ---
 
 # User story
