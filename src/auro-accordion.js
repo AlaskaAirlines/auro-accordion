@@ -41,6 +41,10 @@ import styleCssFixed from "./style-fixed-css.js";
 
 // build the component class
 class AuroAccordion extends LitElement {
+  constructor() {
+    super();
+    this.expanded = false;
+  }
 
   // function to define props used within the scope of this component
   static get properties() {
