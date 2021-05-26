@@ -12,8 +12,6 @@ import "focus-visible/dist/focus-visible.min.js";
 class AuroAccordionGroup extends LitElement {
   connectedCallback() {
     super.connectedCallback();
-    this.items = Array.from(this.querySelectorAll('auro-accordion'));
-
     this.addEventListener('toggleExpanded', this.handleToggleExpanded);
   }
 
@@ -31,10 +29,17 @@ class AuroAccordionGroup extends LitElement {
     });
   }
 
+  /**
+   * @private Internal function to update items when items are added or removed from the slot
+   */
+  handleSlotChange() {
+    this.items = Array.from(this.querySelectorAll('auro-accordion'));
+  }
+
   // function that renders the HTML and CSS into  the scope of the component
   render() {
     return html`
-        <slot></slot>
+        <slot @slotchange=${this.handleSlotChange}></slot>
     `;
   }
 }
