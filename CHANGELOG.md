@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [1.3.2](https://github.com/AlaskaAirlines/auro-accordion/compare/v1.3.1...v1.3.2) (2021-05-27)
+
+
+### Bug Fixes
+
+* default expanded to false [#19](https://github.com/AlaskaAirlines/auro-accordion/issues/19) ([d68ec5d](https://github.com/AlaskaAirlines/auro-accordion/commit/d68ec5de27e3cb8521ac6e42902dd7da9f427c4c))
+
 ## [1.3.1](https://github.com/AlaskaAirlines/auro-accordion/compare/v1.3.0...v1.3.1) (2021-03-18)
 
 
