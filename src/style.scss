@@ -133,6 +133,12 @@
   @extend %lowProfile;
 }
 
+:host([noIcon]) {
+  .iconContainer {
+    display: none;
+  }
+}
+
 %chromeless {
   .detailsTrigger,
   .details {

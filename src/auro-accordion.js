@@ -33,6 +33,7 @@ import styleCssFixed from "./style-fixed-css.js";
  * @attr {Boolean} lowProfile - Thinner version of auro-accordion w/o borders
  * @attr {Boolean} justifyLeft - Places trigger content to the Left of the accordion
  * @attr {Boolean} justifyRight - Places trigger content to the Right of the accordion
+ * @attr {Boolean} hideIcon - Hides the icon indicating expanded status
  * @attr {Boolean secondaryType - Sets accordion details to secondary type style
  * @slot header - Used to provide the header text of the Accordion
  * @slot subTrigger - Use to provide subtext to trigger header
@@ -150,7 +151,7 @@ class AuroAccordion extends LitElement {
             <br>
             <slot class="subTrigger" name="subTrigger"></slot>
           </div>
-          <div>
+          <div class="iconContainer">
             ${this.generateIconHtml(this.expanded ? chevronUp.svg : chevronDown.svg)}
           </div>
         </div>
