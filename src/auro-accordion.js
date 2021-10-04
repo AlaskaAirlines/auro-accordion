@@ -29,6 +29,7 @@ import styleCssFixed from "./style-fixed-css.js";
  * @attr {Boolean} warning - Dependent on shade; warning styling
  * @attr {Boolean} error - Dependent on shade; error styling
  * @attr {Boolean} fixed - Uses px values instead of rem
+ * @attr {Boolean} noanimation - Removes the animated opening and closing effect of the accordian
  * @attr {Boolean} noProfile - Thinner version of auro-accordion w/0 padding
  * @attr {Boolean} lowProfile - Thinner version of auro-accordion w/o borders
  * @attr {Boolean} justifyLeft - Places trigger content to the Left of the accordion
@@ -53,6 +54,9 @@ class AuroAccordion extends LitElement {
       expanded: {
         type: Boolean,
         reflect: true
+      },
+      noanimation: {
+        type: Boolean
       }
     };
   }
