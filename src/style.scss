@@ -320,3 +320,10 @@
     color: var(--auro-color-alert-error-on-light);
   }
 }
+
+:host([noanimation]) {
+  .details {
+    overflow: auto;
+    transition: all 0.0001s ease-in-out;
+  }
+}
