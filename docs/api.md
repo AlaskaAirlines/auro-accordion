@@ -37,3 +37,9 @@ Use auro-accordion-group if you want to have auto closing accordion components w
 |              | Provide text for accordion details display       |
 | `header`     | Used to provide the header text of the Accordion |
 | `subTrigger` | Use to provide subtext to trigger header         |
+
+## CSS Shadow Parts
+
+| Part      | Description                               |
+|-----------|-------------------------------------------|
+| `details` | Customize CSS for the `.details` selector |

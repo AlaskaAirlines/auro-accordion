@@ -196,10 +196,17 @@
         </template>
       </demo-snippet>
 
+
+      <style>
+        .custom-part::part(details) {
+          overflow: unset;
+        }
+      </style>
       <demo-snippet>
         <template>
           <auro-accordion-group>
-            <auro-accordion id="epV">
+
+            <auro-accordion id="epV" class="custom-part">
               <span slot="trigger">Star Wars: The Empire Strikes Back</span>
               <span slot="subTrigger">This is the REAL first movie...</span>
               <button>Hey there!</button>

@@ -34,6 +34,7 @@ import styleCssFixed from "./style-fixed-css.js";
  * @attr {Boolean} justifyLeft - Places trigger content to the Left of the accordion
  * @attr {Boolean} justifyRight - Places trigger content to the Right of the accordion
  * @attr {Boolean secondaryType - Sets accordion details to secondary type style
+ * @csspart {String} details - Customize CSS for the `.details` selector
  * @slot header - Used to provide the header text of the Accordion
  * @slot subTrigger - Use to provide subtext to trigger header
  * @slot - Provide text for accordion details display
@@ -162,6 +163,7 @@ class AuroAccordion extends LitElement {
         aria-live="assertive"
         role="region"
         class="${classMap(detailStyles)}"
+        part="details"
         @transitionend=${this.removeInlineHeight}
       >
         <div class="detailsSlot">
