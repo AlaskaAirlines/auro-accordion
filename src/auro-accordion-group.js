@@ -27,6 +27,11 @@ class AuroAccordionGroup extends LitElement {
         item.expanded = false;
       }
     });
+
+    this.scrollIntoView({
+      behavior: "smooth",
+      block: "nearest",
+    });
   }
 
   /**
