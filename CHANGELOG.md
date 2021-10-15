@@ -1,5 +1,17 @@
 # Semantic Release Automated Changelog
 
+# [1.4.0](https://github.com/AlaskaAirlines/auro-accordion/compare/v1.3.3...v1.4.0) (2021-10-15)
+
+
+### Bug Fixes
+
+* **scroll:** update scrollIntoView to group controller [#31](https://github.com/AlaskaAirlines/auro-accordion/issues/31) ([78a230b](https://github.com/AlaskaAirlines/auro-accordion/commit/78a230b687fc8299e0d43489addf987e5b03f978))
+
+
+### Features
+
+* **noanimation:** attribute to remove animation effect [#32](https://github.com/AlaskaAirlines/auro-accordion/issues/32) ([adef74d](https://github.com/AlaskaAirlines/auro-accordion/commit/adef74deb636dbe52815474b7706acd7576bf430))
+
 ## [1.3.3](https://github.com/AlaskaAirlines/auro-accordion/compare/v1.3.2...v1.3.3) (2021-05-27)
 
 
