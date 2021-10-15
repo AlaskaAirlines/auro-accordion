@@ -63,6 +63,16 @@ branches:
 
 # Labels: define labels for Issues and Pull Requests
 labels:
+  - name: auro-accordion
+    cat: default
+    color: fa23e4
+    description:
+    process: Apply to issues to identify project repo
+  - name: Release
+    cat: default
+    color: 1c872e
+    description: Defines release scope of work
+    process: Apply to any issue that is the designated parent issue for a release
   - name: duplicate
     color: cde6ff
     description: This Issue or Pull Request already exists
@@ -93,6 +103,11 @@ labels:
   - name: released
     color: A9A9A9
     description: Completed work has been released
+  - name: not-reviewed
+    cat: default
+    color: '222222'
+    description: Issue has not been reviewed by Auro team member
+    process: 'Automated: auto-applied with new issue, manually removed by reviewer'
   - name: 'Status: Backlogged'
     color: e2ffcd
     description: Backlogged item is a proposed question or solution, the user is requesting
