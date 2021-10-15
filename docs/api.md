@@ -19,10 +19,11 @@ Use auro-accordion-group if you want to have auto closing accordion components w
 
 ## Properties
 
-| Property   | Attribute  | Type      | Default | Description                                      |
-|------------|------------|-----------|---------|--------------------------------------------------|
-| `expanded` | `expanded` | `Boolean` | false   | Toggles the panel on and off                     |
-| `id`       | `id`       | `String`  |         | Used to generate the ID for the elements inside the component |
+| Property      | Attribute     | Type      | Default | Description                                      |
+|---------------|---------------|-----------|---------|--------------------------------------------------|
+| `expanded`    | `expanded`    | `Boolean` | false   | Toggles the panel on and off                     |
+| `id`          | `id`          | `String`  |         | Used to generate the ID for the elements inside the component |
+| `noanimation` | `noanimation` | `Boolean` |         | Removes the animated opening and closing effect of the accordion |
 
 ## Events
 
