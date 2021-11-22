@@ -321,6 +321,12 @@
   }
 }
 
+:host([showOverflow]) {
+  .details {
+    overflow: visible;
+  }
+}
+
 :host([noanimation]) {
   .details {
     overflow: auto;

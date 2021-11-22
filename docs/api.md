@@ -15,15 +15,15 @@ Use auro-accordion-group if you want to have auto closing accordion components w
 | `lowProfile`   | `Boolean` | Thinner version of auro-accordion w/o borders    |
 | `noProfile`    | `Boolean` | Thinner version of auro-accordion w/0 padding    |
 | `shade`        | `Boolean` | Accordion style with shade dropdown              |
+| `showOverflow` | `Boolean` | Allow .details content to overflow out of the accordion |
 | `warning`      | `Boolean` | Dependent on shade; warning styling              |
 
 ## Properties
 
-| Property      | Attribute     | Type      | Default | Description                                      |
-|---------------|---------------|-----------|---------|--------------------------------------------------|
-| `expanded`    | `expanded`    | `Boolean` | false   | Toggles the panel on and off                     |
-| `id`          | `id`          | `String`  |         | Used to generate the ID for the elements inside the component |
-| `noanimation` | `noanimation` | `Boolean` |         | Removes the animated opening and closing effect of the accordion |
+| Property   | Attribute  | Type      | Default | Description                                      |
+|------------|------------|-----------|---------|--------------------------------------------------|
+| `expanded` | `expanded` | `Boolean` | false   | Toggles the panel on and off                     |
+| `id`       | `id`       | `String`  |         | Used to generate the ID for the elements inside the component |
 
 ## Events
 
