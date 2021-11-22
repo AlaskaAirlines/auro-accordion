@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+# [1.5.0](https://github.com/AlaskaAirlines/auro-accordion/compare/v1.4.0...v1.5.0) (2021-11-22)
+
+
+### Features
+
+* **showOverflow:** add showOverflow attr to allow .details content to be visible outside of the accordion ([62af022](https://github.com/AlaskaAirlines/auro-accordion/commit/62af02283760bdae7d63265640b6947fcc23f54b))
+
 # [1.4.0](https://github.com/AlaskaAirlines/auro-accordion/compare/v1.3.3...v1.4.0) (2021-10-15)
 
 
