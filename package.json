@@ -25,7 +25,6 @@
   "peerDependencies": {
     "@alaskaairux/design-tokens": "^3.0.0",
     "@alaskaairux/orion-icons": "^2.1.5",
-    "@alaskaairux/webcorestylesheets": "^3.0.0",
     "@webcomponents/webcomponentsjs": "^2.4.4",
     "focus-visible": "^5.1.0"
   },
