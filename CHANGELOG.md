@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [1.5.1](https://github.com/AlaskaAirlines/auro-accordion/compare/v1.5.0...v1.5.1) (2021-12-07)
+
+
+### Bug Fixes
+
+* **a11y:** reset height for reduced motion [#42](https://github.com/AlaskaAirlines/auro-accordion/issues/42) ([a579f04](https://github.com/AlaskaAirlines/auro-accordion/commit/a579f04fe2f80a958c05851a6cedaf1cda8df022))
+
 # [1.5.0](https://github.com/AlaskaAirlines/auro-accordion/compare/v1.4.0...v1.5.0) (2021-11-22)
 
 
