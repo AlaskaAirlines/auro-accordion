@@ -25,7 +25,7 @@
     <div class="vertical-section-container">
       <h1>auro-accordion</h1>
 
-      <h2>No animation on accordion toggle</h2>
+      <h2>No animation/showOverflow on accordion toggle</h2>
 
       <demo-snippet>
         <template>
@@ -33,7 +33,43 @@
             <span slot="trigger">
               No animation...
             </span>
-            <p>During the battle, Rebel spies managed to steal secret plans to the Empire's ultimate weapon, the DEATH STAR, an armored space station with enough power to destroy an entire planet</p>
+            <p style="width: 1000px">During the battle, Rebel spies managed to steal secret plans to the Empire's ultimate weapon, the DEATH STAR, an armored space station with enough power to destroy an entire planet</p>
+          </auro-accordion>
+        </template>
+      </demo-snippet>
+
+      <demo-snippet>
+        <template>
+          <auro-accordion id="noAnimation1" showOverflow>
+            <span slot="trigger">
+              Show overflow...
+            </span>
+            <p style="width: 1000px">During the battle, Rebel spies managed to steal secret plans to the Empire's ultimate weapon, the DEATH STAR, an armored space station with enough power to destroy an entire planet</p>
+          </auro-accordion>
+        </template>
+      </demo-snippet>
+
+      <h2>Shadow CSS parts</h2>
+
+      <style>
+        #cssparts1::part(details) {
+          overflow-x: auto;
+        }
+
+        #cssparts1::part(content) {
+          padding-top: 1rem;
+          padding-bottom: 1rem;
+          color: orange;
+        }
+      </style>
+
+      <demo-snippet>
+        <template>
+          <auro-accordion id="cssparts1">
+            <span slot="trigger">
+              Shadow CSS parts...
+            </span>
+            <p style="width: 1000px">During the battle, Rebel spies managed to steal secret plans to the Empire's ultimate weapon, the DEATH STAR, an armored space station with enough power to destroy an entire planet</p>
           </auro-accordion>
         </template>
       </demo-snippet>

@@ -24,13 +24,13 @@ import styleCssFixed from "./style-fixed-css.js";
  *
  * @attr {String} id - Used to generate the ID for the elements inside the component
  * @attr {Boolean} expanded - Toggles the panel on and off
- * @attr {Boolean} shade - Accordion style with shade dropdown
+ * @attr {Boolean} shade - (deprecated) Accordion style with shade dropdown
  * @attr {Boolean} information - Dependent on shade; informational styling
  * @attr {Boolean} warning - Dependent on shade; warning styling
  * @attr {Boolean} error - Dependent on shade; error styling
  * @attr {Boolean} fixed - Uses px values instead of rem
- * @attr {Boolean} showOverflow - Allow .details content to overflow out of the accordion
- * @attr @deprecated {Boolean} noanimation - Removes the animated opening and closing effect of the accordion
+ * @attr {Boolean} showOverflow - (deprecated) Allow `.details` content to overflow out of the accordion
+ * @attr {Boolean} noanimation - (deprecated) Removes the animated opening and closing effect of the accordion
  * @attr {Boolean} noProfile - Thinner version of auro-accordion w/0 padding
  * @attr {Boolean} lowProfile - Thinner version of auro-accordion w/o borders
  * @attr {Boolean} justifyLeft - Places trigger content to the Left of the accordion
@@ -39,6 +39,8 @@ import styleCssFixed from "./style-fixed-css.js";
  * @slot header - Used to provide the header text of the Accordion
  * @slot subTrigger - Use to provide subtext to trigger header
  * @slot - Provide text for accordion details display
+ * @csspart details - Supports the outermost container of the content (animation and overflow)
+ * @csspart content - The details content container (inner padding)
  */
 
 // build the component class
@@ -160,8 +162,9 @@ class AuroAccordion extends LitElement {
         role="region"
         class="${classMap(detailStyles)}"
         @transitionend=${this.removeInlineHeight}
+        part="details"
       >
-        <div class="detailsSlot">
+        <div class="detailsSlot" part="content">
           <slot></slot>
         </div>
       </div>

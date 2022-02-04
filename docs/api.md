@@ -14,8 +14,9 @@ Use auro-accordion-group if you want to have auto closing accordion components w
 | `justifyRight` | `Boolean` | Places trigger content to the Right of the accordion |
 | `lowProfile`   | `Boolean` | Thinner version of auro-accordion w/o borders    |
 | `noProfile`    | `Boolean` | Thinner version of auro-accordion w/0 padding    |
-| `shade`        | `Boolean` | Accordion style with shade dropdown              |
-| `showOverflow` | `Boolean` | Allow .details content to overflow out of the accordion |
+| `noanimation`  | `Boolean` | (deprecated) Removes the animated opening and closing effect of the accordion |
+| `shade`        | `Boolean` | (deprecated) Accordion style with shade dropdown |
+| `showOverflow` | `Boolean` | (deprecated) Allow `.details` content to overflow out of the accordion |
 | `warning`      | `Boolean` | Dependent on shade; warning styling              |
 
 ## Properties
@@ -38,3 +39,10 @@ Use auro-accordion-group if you want to have auto closing accordion components w
 |              | Provide text for accordion details display       |
 | `header`     | Used to provide the header text of the Accordion |
 | `subTrigger` | Use to provide subtext to trigger header         |
+
+## CSS Shadow Parts
+
+| Part      | Description                                      |
+|-----------|--------------------------------------------------|
+| `content` | The details content container (inner padding)    |
+| `details` | Supports the outermost container of the content (animation and overflow) |
