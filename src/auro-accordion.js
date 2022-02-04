@@ -144,9 +144,8 @@ class AuroAccordion extends LitElement {
         @click=${this.handleClick}
       >
         <div class="triggerContentWrapper">
-          <div>
+          <div class="triggerContent">
             <slot name="trigger" class="trigger"></slot>
-            <br>
             <slot class="subTrigger" name="subTrigger"></slot>
           </div>
           <div>

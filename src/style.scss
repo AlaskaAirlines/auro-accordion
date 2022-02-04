@@ -73,7 +73,21 @@
   justify-content: space-between;
 }
 
+.triggerContent {
+  width: 100%;
+  padding-right: var(--auro-size-md);
+}
+
+// Applies initial opinion about content alignment
+// Users have total control over slotted content and styling
+// User styles in the light DOM will over-ride this opinion if needed
+.trigger::slotted(*) {
+  display: flex;
+  align-items: center;
+}
+
 .subTrigger {
+  display: block;
   font-size: var(--auro-text-body-size-default);
   font-weight: var(--auro-text-heading-display-weight);
 }

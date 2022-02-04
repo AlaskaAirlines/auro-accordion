@@ -15,6 +15,7 @@
     <script type="module" src="../src/auro-accordion.js"></script>
     <script type="module" src="../src/auro-accordion-group.js"></script>
     <script src="https://unpkg.com/@alaskaairux/auro-icon@latest/dist/auro-icon__bundled.js" type="module"></script>
+    <script src="https://unpkg.com/@alaskaairux/auro-badge@latest/dist/auro-badge__bundled.js" type="module"></script>
     <custom-style>
       <style is="custom-style" include="demo-pages-shared-styles"></style>
     </custom-style>
@@ -25,7 +26,35 @@
     <div class="vertical-section-container">
       <h1>auro-accordion</h1>
 
-      <h2>No animation/showOverflow on accordion toggle</h2>
+      <h2>Content (status badge / auro-icon) in trigger slot</h2>
+
+      <demo-snippet>
+        <template>
+          <auro-accordion id="status1">
+            <span slot="trigger" style="justify-content: space-between;">
+              <span>There is a thing</span>
+              <auro-badge space pill>12</auro-badge>
+            </span>
+            <p style="width: 1000px">During the battle, Rebel spies managed to steal secret plans to the Empire's ultimate weapon, the DEATH STAR, an armored space station with enough power to destroy an entire planet</p>
+          </auro-accordion>
+        </template>
+      </demo-snippet>
+
+      <demo-snippet>
+        <template>
+          <auro-accordion id="status2">
+            <span slot="trigger" style="justify-content: space-evenly;">
+              <auro-icon category="terminal" name="plane-diag-fill"></auro-icon>
+              <span>There is a thing</span>
+              <auro-icon category="terminal" name="plane-diag-fill"></auro-icon>
+            </span>
+            <span slot="subTrigger">This is a sub-trigger</span>
+            <p style="width: 1000px">During the battle, Rebel spies managed to steal secret plans to the Empire's ultimate weapon, the DEATH STAR, an armored space station with enough power to destroy an entire planet</p>
+          </auro-accordion>
+        </template>
+      </demo-snippet>
+
+      <h2>No animation on accordion toggle</h2>
 
       <demo-snippet>
         <template>
