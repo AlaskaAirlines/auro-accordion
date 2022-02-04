@@ -189,6 +189,7 @@
 }
 
 // =-=-=-=-=-=-=-=-=-=-= shade =-=-=-=-=-=-=-=-=-=-=-=-
+// deprecated - [shade] remove with next major release
 :host([shade]) {
   @extend %chromeless;
   @extend %lowProfile;
@@ -293,6 +294,7 @@
   }
 }
 
+
 :host(.focus-visible[shade]) {
   .detailsTrigger {
     text-decoration: underline;
@@ -303,11 +305,13 @@
   }
 }
 
+
 :host(.focus-visible[shade][information]) {
   .detailsTrigger {
     color: var(--auro-color-alert-notification-on-light);
   }
 }
+
 
 :host(.focus-visible[shade][warning]) {
   .detailsTrigger {
@@ -320,13 +324,17 @@
     color: var(--auro-color-alert-error-on-light);
   }
 }
+// deprecated [shade] - remove with next major release
+// =-=-=-=-=-=-=-=-=-=-= shade =-=-=-=-=-=-=-=-=-=-=-=-
 
+// deprecated selector - remove with next major release
 :host([showOverflow]) {
   .details {
     overflow: visible;
   }
 }
 
+// deprecated selector - remove with next major release
 :host([noanimation]) {
   .details {
     overflow: auto;
