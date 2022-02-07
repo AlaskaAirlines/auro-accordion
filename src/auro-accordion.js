@@ -148,7 +148,7 @@ class AuroAccordion extends LitElement {
             <slot name="trigger" class="trigger"></slot>
             <slot class="subTrigger" name="subTrigger"></slot>
           </div>
-          <div>
+          <div class="iconWrapper">
             ${this.generateIconHtml(this.expanded ? chevronUp.svg : chevronDown.svg)}
           </div>
         </div>

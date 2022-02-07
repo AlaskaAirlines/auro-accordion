@@ -78,6 +78,11 @@
   padding-right: var(--auro-size-md);
 }
 
+.iconWrapper {
+  display: flex;
+  align-items: center;
+}
+
 // Applies initial opinion about content alignment
 // Users have total control over slotted content and styling
 // User styles in the light DOM will over-ride this opinion if needed
