@@ -1,5 +1,13 @@
 # Semantic Release Automated Changelog
 
+## [1.6.1](https://github.com/AlaskaAirlines/auro-accordion/compare/v1.6.0...v1.6.1) (2022-02-08)
+
+
+### Bug Fixes
+
+* **chevron:** address layout position [#47](https://github.com/AlaskaAirlines/auro-accordion/issues/47) ([0a1e17d](https://github.com/AlaskaAirlines/auro-accordion/commit/0a1e17d0b23a2e1a803d0fbb986475a7cdd50b3c))
+* **trigger content:** update content alignment in trigger [#47](https://github.com/AlaskaAirlines/auro-accordion/issues/47) ([99032ba](https://github.com/AlaskaAirlines/auro-accordion/commit/99032baf822ee96e8773d7d46492a8e4b608e832))
+
 # [1.6.0](https://github.com/AlaskaAirlines/auro-accordion/compare/v1.5.1...v1.6.0) (2022-02-08)
 
 
