@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+# [1.6.0](https://github.com/AlaskaAirlines/auro-accordion/compare/v1.5.1...v1.6.0) (2022-02-08)
+
+
+### Features
+
+* **cssparts:** add support to customize content area [#46](https://github.com/AlaskaAirlines/auro-accordion/issues/46) ([71ed7ce](https://github.com/AlaskaAirlines/auro-accordion/commit/71ed7ceb5ca98dd88dcba9f4c83ab2551f6b5e8d)), closes [#33](https://github.com/AlaskaAirlines/auro-accordion/issues/33) [#40](https://github.com/AlaskaAirlines/auro-accordion/issues/40)
+
 ## [1.5.1](https://github.com/AlaskaAirlines/auro-accordion/compare/v1.5.0...v1.5.1) (2021-12-07)
 
 
