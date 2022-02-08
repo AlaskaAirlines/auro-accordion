@@ -78,6 +78,12 @@
   padding-right: var(--auro-size-md);
 }
 
+:host([justifyRight]) {
+  .triggerContent {
+    padding-right: 0;
+  }
+}
+
 .iconWrapper {
   display: flex;
   align-items: center;
@@ -86,7 +92,8 @@
 // Applies initial opinion about content alignment
 // Users have total control over slotted content and styling
 // User styles in the light DOM will over-ride this opinion if needed
-.trigger::slotted(*) {
+.trigger::slotted(*),
+.subTrigger::slotted(*) {
   display: flex;
   align-items: center;
 }
@@ -179,14 +186,9 @@
 }
 
 :host([justifyRight]) {
-  .triggerContentWrapper {
+  .trigger::slotted(*),
+  .subTrigger::slotted(*) {
     justify-content: flex-end;
-  }
-}
-
-:host([justifyLeft]) {
-  .triggerContentWrapper {
-    justify-content: flex-start;
   }
 }
 
