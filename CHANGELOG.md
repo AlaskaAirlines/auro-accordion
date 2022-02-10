@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [1.6.2](https://github.com/AlaskaAirlines/auro-accordion/compare/v1.6.1...v1.6.2) (2022-02-10)
+
+
+### Bug Fixes
+
+* **justify:** correct alignment bug [#51](https://github.com/AlaskaAirlines/auro-accordion/issues/51) ([9da57f3](https://github.com/AlaskaAirlines/auro-accordion/commit/9da57f3b368a55d98772fd6db5906a4248d4addb))
+
 ## [1.6.1](https://github.com/AlaskaAirlines/auro-accordion/compare/v1.6.0...v1.6.1) (2022-02-08)
 
 
