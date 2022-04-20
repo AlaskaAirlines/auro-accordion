@@ -73,12 +73,23 @@
   justify-content: space-between;
 }
 
+:host([justifyLeft]) {
+  .triggerContentWrapper {
+    justify-content: flex-start;
+  }
+
+  .triggerContent {
+    width: auto;
+  }
+}
+
 .triggerContent {
   width: 100%;
   padding-right: var(--auro-size-md);
 }
 
-:host([justifyRight]) {
+:host([justifyRight]),
+:host([justifyLeft])  {
   .triggerContent {
     padding-right: 0;
   }
@@ -189,6 +200,13 @@
   .trigger::slotted(*),
   .subTrigger::slotted(*) {
     justify-content: flex-end;
+  }
+}
+
+:host([justifyLeft]) {
+  .trigger::slotted(*),
+  .subTrigger::slotted(*) {
+    justify-content: flex-start;
   }
 }
 
