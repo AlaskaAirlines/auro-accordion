@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [1.6.3](https://github.com/AlaskaAirlines/auro-accordion/compare/v1.6.2...v1.6.3) (2022-04-25)
+
+
+### Bug Fixes
+
+* **justify:** address regression [#53](https://github.com/AlaskaAirlines/auro-accordion/issues/53) ([8601028](https://github.com/AlaskaAirlines/auro-accordion/commit/8601028f7ae1881cd3b3a47b74d92b34268cebfa))
+
 ## [1.6.2](https://github.com/AlaskaAirlines/auro-accordion/compare/v1.6.1...v1.6.2) (2022-02-10)
 
 
