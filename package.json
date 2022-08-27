@@ -20,7 +20,7 @@
   "dependencies": {
     "@alaskaairux/icons": "^4.15.0",
     "chalk": "^4.1.2",
-    "lit-element": "^2.4.0"
+    "lit-element": "^2.5.1"
   },
   "peerDependencies": {
     "@alaskaairux/design-tokens": "^3.0.0",
