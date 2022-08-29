@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [1.6.5](https://github.com/AlaskaAirlines/auro-accordion/compare/v1.6.4...v1.6.5) (2022-08-29)
+
+
+### Bug Fixes
+
+* **deps:** update peer dependencies ([aa3911f](https://github.com/AlaskaAirlines/auro-accordion/commit/aa3911fd79cc580d04dec31e8680713e2e2c983f))
+
 ## [1.6.4](https://github.com/AlaskaAirlines/auro-accordion/compare/v1.6.3...v1.6.4) (2022-08-29)
 
 
