@@ -23,7 +23,7 @@
     "lit-element": "^2.5.1"
   },
   "peerDependencies": {
-    "@alaskaairux/design-tokens": "^3.0.0",
+    "@alaskaairux/design-tokens": "^3.9.1",
     "@alaskaairux/orion-icons": "^2.1.5",
     "@webcomponents/webcomponentsjs": "^2.4.4",
     "focus-visible": "^5.1.0"
