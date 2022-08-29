@@ -1,5 +1,14 @@
 # Semantic Release Automated Changelog
 
+## [1.6.4](https://github.com/AlaskaAirlines/auro-accordion/compare/v1.6.3...v1.6.4) (2022-08-29)
+
+
+### Bug Fixes
+
+* upgrade @alaskaairux/design-tokens from 3.4.0 to 3.9.1 ([9c26e0a](https://github.com/AlaskaAirlines/auro-accordion/commit/9c26e0aa1f366c372f38538e3998ff8829f3ff57))
+* upgrade @alaskaairux/icons from 4.8.4 to 4.15.0 ([5d91b8c](https://github.com/AlaskaAirlines/auro-accordion/commit/5d91b8c76aa8a195d63fd0c4dbcbefd6f24d6226))
+* upgrade lit-element from 2.4.0 to 2.5.1 ([7ca88d8](https://github.com/AlaskaAirlines/auro-accordion/commit/7ca88d8fdffb88044aac7f89df45c6fcdec47149))
+
 ## [1.6.3](https://github.com/AlaskaAirlines/auro-accordion/compare/v1.6.2...v1.6.3) (2022-04-25)
 
 
