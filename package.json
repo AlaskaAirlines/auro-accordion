@@ -18,7 +18,7 @@
   "main": "index.js",
   "license": "Apache-2.0",
   "dependencies": {
-    "@alaskaairux/icons": "^4.16.0",
+    "@alaskaairux/icons": "^4.19.0",
     "chalk": "^4.1.2",
     "lit-element": "^2.5.1"
   },
@@ -29,7 +29,7 @@
     "focus-visible": "^5.1.0"
   },
   "devDependencies": {
-    "@alaskaairux/design-tokens": "^3.10.0",
+    "@alaskaairux/design-tokens": "^3.11.0",
     "@alaskaairux/orion-icons": "^2.1.5",
     "@alaskaairux/webcorestylesheets": "^3.7.3",
     "@babel/core": "^7.15.8",
