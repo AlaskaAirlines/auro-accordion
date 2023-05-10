@@ -5,9 +5,6 @@
 
 import { LitElement, html } from "lit-element";
 
-// Import touch detection lib
-import "focus-visible/dist/focus-visible.min.js";
-
 // build the component class
 class AuroAccordionGroup extends LitElement {
   connectedCallback() {

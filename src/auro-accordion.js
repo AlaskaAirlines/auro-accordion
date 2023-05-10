@@ -11,7 +11,6 @@ import chevronUp from '@alaskaairux/icons/dist/icons/interface/chevron-up_es6.js
 import chevronDown from '@alaskaairux/icons/dist/icons/interface/chevron-down_es6.js';
 
 // Import touch detection lib
-import "focus-visible/dist/focus-visible.min.js";
 import styleCss from "./style-css.js";
 import styleCssFixed from "./style-fixed-css.js";
 

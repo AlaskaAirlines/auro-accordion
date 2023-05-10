@@ -23,15 +23,12 @@
     "lit-element": "^2.5.1"
   },
   "peerDependencies": {
+    "@aurodesignsystem/webcorestylesheets": "^4.3.1",
     "@alaskaairux/design-tokens": "^3.9.1",
     "@alaskaairux/orion-icons": "^2.1.5",
-    "@webcomponents/webcomponentsjs": "^2.4.4",
-    "focus-visible": "^5.1.0"
+    "@webcomponents/webcomponentsjs": "^2.4.4"
   },
   "devDependencies": {
-    "@alaskaairux/design-tokens": "^3.11.0",
-    "@alaskaairux/orion-icons": "^2.1.5",
-    "@alaskaairux/webcorestylesheets": "^3.7.3",
     "@babel/core": "^7.15.8",
     "@babel/plugin-syntax-dynamic-import": "^7.8.3",
     "@babel/plugin-transform-runtime": "^7.15.8",
@@ -60,7 +57,6 @@
     "core-js": "^3.18.3",
     "eslint": "^7.21.0",
     "eslint-plugin-lit": "^1.6.0",
-    "focus-visible": "^5.2.0",
     "husky": "^4.3.8",
     "lodash": "^4.17.21",
     "marked": "^1.2.9",

@@ -7,8 +7,8 @@
 @import "./node_modules/@alaskaairux/design-tokens/dist/tokens/SCSSVariables";
 @import "./node_modules/@alaskaairux/design-tokens/dist/tokens/SassCustomProperties";
 
-@import "./node_modules/@alaskaairux/webcorestylesheets/dist/breakpoints";
-@import "./node_modules/@alaskaairux/webcorestylesheets/dist/core";
+@import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/breakpoints";
+@import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/core";
 
 // container styles - defines the look of the outer custom component
 
@@ -22,21 +22,6 @@
 
 @mixin hoverState {
   border-left: 2px solid var(--auro-color-brand-breeze-400);
-}
-
-:host(.focus-visible) {
-  .detailsTrigger {
-    @include hoverState();
-
-    color: var(--auro-color-brand-breeze-500);
-    border-bottom-color: var(--auro-color-brand-breeze-400);
-    border-left-color: var(--auro-color-brand-breeze-400);
-    text-decoration: underline;
-
-    svg {
-      color: var(--auro-color-brand-breeze-500);
-    }
-  }
 }
 
 .detailsTrigger {
@@ -333,36 +318,6 @@
   }
 }
 
-
-:host(.focus-visible[shade]) {
-  .detailsTrigger {
-    text-decoration: underline;
-
-    svg {
-      color: currentColor;
-    }
-  }
-}
-
-
-:host(.focus-visible[shade][information]) {
-  .detailsTrigger {
-    color: var(--auro-color-alert-notification-on-light);
-  }
-}
-
-
-:host(.focus-visible[shade][warning]) {
-  .detailsTrigger {
-    color: var(--auro-color-alert-warning-on-light);
-  }
-}
-
-:host(.focus-visible[shade][error]) {
-  .detailsTrigger {
-    color: var(--auro-color-alert-error-on-light);
-  }
-}
 // deprecated [shade] - remove with next major release
 // =-=-=-=-=-=-=-=-=-=-= shade =-=-=-=-=-=-=-=-=-=-=-=-
 
