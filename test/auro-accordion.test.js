@@ -10,7 +10,7 @@ describe('auro-accordion', () => {
       </auro-accordion>
     `);
 
-    await expect(el).to.be.accessible();
+    expect(el).to.be.accessible();
   });
 
   it('auro-accordion expands on click', async () => {
