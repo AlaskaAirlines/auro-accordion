@@ -129,22 +129,12 @@
   }
 
   &:not(&--isExpanded) {
-    .detailsSlot {
-      padding-top: 0;
-      padding-bottom: 0;
-    }
+    height: 0 !important;
   }
 
   &--isExpanded {
     opacity: 1;
-    height: auto;
   }
-}
-
-.detailsSlot {
-  height: 100%;
-  transition: all 0.5s ease-in-out;
-  transition-property: padding, height;
 }
 
 %lowProfile {
@@ -252,7 +242,6 @@
     width: 100%;
     z-index: 1;
     background-color: var(--auro-color-background-lighter);
-    transition: all 0.2s ease-in-out;
   }
 
   .trigger {

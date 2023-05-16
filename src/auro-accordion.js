@@ -87,7 +87,6 @@ class AuroAccordion extends LitElement {
   handleClick(event) {
     const nextState = !this.expanded;
 
-    this.transitionHeight(nextState);
     this.expanded = nextState;
 
     this.dispatchEvent(new CustomEvent('toggleExpanded', {
@@ -98,29 +97,14 @@ class AuroAccordion extends LitElement {
   }
 
   /**
-   * @private Internal function to transition the accordion's height when opening or closing
-   * @param {boolean} opening - whether the accordion is opening or closing
+   * @private Internal function to set a fixed height in slot content panel based on size of slot content. Necessary because CSS transitions won't work with height: auto.
    */
-  transitionHeight(opening) {
-    const HEIGHT_TIMEOUT = 10,
-      toggle = this.shadowRoot.getElementById(`${this.id}Panel`);
+  setHeight() {
+    const contentElemPanel = this.shadowRoot.querySelector(`#${this.id}Panel`);
+    const contentElem = contentElemPanel.querySelector(`.detailsSlot`);
+    const contentElemHeight = contentElem.offsetHeight;
 
-    toggle.style.height = `${toggle.scrollHeight}px`;
-
-    if (!opening) {
-      // set height to 0, triggering the CSS transition
-      setTimeout(() => {
-        toggle.style.height = '0px';
-      }, HEIGHT_TIMEOUT);
-    }
-  }
-
-  /**
-   * @private Removes inline height once transition has completed
-   * @param {object} event - event object
-   */
-  removeInlineHeight({ target }) {
-    target.style.height = null;
+    contentElemPanel.style.height = `${contentElemHeight}px`;
   }
 
   // function that renders the HTML and CSS into  the scope of the component
@@ -141,8 +125,7 @@ class AuroAccordion extends LitElement {
         class="${classMap(triggerStyles)}"
         aria-expanded="${this.expanded ? 'true' : 'false'}"
         aria-controls="${this.id}Panel"
-        @click=${this.handleClick}
-      >
+        @click=${this.handleClick}>
         <div class="triggerContentWrapper">
           <div class="triggerContent">
             <slot name="trigger" class="trigger"></slot>
@@ -160,11 +143,9 @@ class AuroAccordion extends LitElement {
         aria-live="assertive"
         role="region"
         class="${classMap(detailStyles)}"
-        @transitionend=${this.removeInlineHeight}
-        part="details"
-      >
+        part="details">
         <div class="detailsSlot" part="content">
-          <slot></slot>
+          <slot @slotchange="${this.setHeight}"></slot>
         </div>
       </div>
     `;
