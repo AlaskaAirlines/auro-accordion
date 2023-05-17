@@ -20,10 +20,8 @@ class AuroAccordionGroup extends LitElement {
    * @param {object} event - Standard event parameter
    */
   handleToggleExpanded(event) {
-    this.index = this.items.indexOf(event.target);
     this.items.forEach((item) => {
       if (item !== event.target && item.expanded) {
-        item.transitionHeight(false);
         item.expanded = false;
       }
     });
