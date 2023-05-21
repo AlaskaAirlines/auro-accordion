@@ -1,5 +1,19 @@
 # Semantic Release Automated Changelog
 
+## [1.6.6](https://github.com/AlaskaAirlines/auro-accordion/compare/v1.6.5...v1.6.6) (2023-05-21)
+
+
+### Bug Fixes
+
+* **animation:** correctly handle animation for accordian groups ([5c2abbe](https://github.com/AlaskaAirlines/auro-accordion/commit/5c2abbe8c906d8850cc7a2aae0f5330a3cf6038e))
+* **layout:** box model renders correctly ([d0b3d84](https://github.com/AlaskaAirlines/auro-accordion/commit/d0b3d84cca648da915392cbe32a4a51bc1f42add))
+* **layout:** hide slotted content entirely when collapsed [#71](https://github.com/AlaskaAirlines/auro-accordion/issues/71) ([9fd4f09](https://github.com/AlaskaAirlines/auro-accordion/commit/9fd4f09c46c0bdda0dc20d04f8151bda217bf50a))
+
+
+### Performance Improvements
+
+* **animation:** slim down and improve animation workflow ([859cb78](https://github.com/AlaskaAirlines/auro-accordion/commit/859cb78d8aee84968218fc8c2b55fd3fd228da7a))
+
 ## [1.6.5](https://github.com/AlaskaAirlines/auro-accordion/compare/v1.6.4...v1.6.5) (2022-08-29)
 
 
