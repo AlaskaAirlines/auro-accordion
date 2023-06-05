@@ -80,8 +80,8 @@ function formatApiTableContents(content, destination) {
 
   fs.writeFileSync(destination, result, { encoding: 'utf8'});
 
-  fs.readFile('./demo/apiExamples.md', 'utf8', function(err, data) {
-    formatTemplateFileContents(data, './demo/apiExamples.md');
+  fs.readFile('./demo/api.md', 'utf8', function(err, data) {
+    formatTemplateFileContents(data, './demo/api.md');
   });
 }
 
@@ -142,12 +142,12 @@ function processDemo() {
 
 function processApiExamples() {
   const callback = function(updatedContent, outputConfig) {
-    if (fs.existsSync('./demo/apiExamples.md')) {
-      fs.readFile('./demo/apiExamples.md', 'utf8', function(err, data) {
-        formatApiTableContents(data, './demo/apiExamples.md');
+    if (fs.existsSync('./demo/api.md')) {
+      fs.readFile('./demo/api.md', 'utf8', function(err, data) {
+        formatApiTableContents(data, './demo/api.md');
       });
     } else {
-      console.log('ERROR: ./demo/apiExamples.md file is missing');
+      console.log('ERROR: ./demo/api.md file is missing');
     }
   };
 
@@ -156,7 +156,7 @@ function processApiExamples() {
     outputDir: './demo'
   };
 
-  const markdownPath = path.join(__dirname, '../docs/partials/apiExamples.md');
+  const markdownPath = path.join(__dirname, '../docs/partials/api.md');
 
   markdownMagic(markdownPath, config, callback);
 }

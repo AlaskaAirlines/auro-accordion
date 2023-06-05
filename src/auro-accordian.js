@@ -6,11 +6,6 @@
 // If using litElement base class
 import { LitElement, html } from "lit";
 
-// If using auroElement base class
-// See instructions for importing auroElement base class https://git.io/JULq4
-// import { LitElement, html } from "lit";
-// import AuroElement from '@aurodesignsystem/webcorestylesheets/dist/auroElement/auroElement';
-
 // Import touch detection lib
 import styleCss from "./style-css.js";
 
@@ -18,15 +13,20 @@ import styleCss from "./style-css.js";
 /**
  * The auro-accordian element provides users a way to ... (it would be great if you fill this out).
  *
- * @attr {Boolean} fixed - Uses fixed pixel values for element shape
- * @attr {String} cssClass - Applies designated CSS class to demo element - you want to delete me!
+ * @attr {Boolean} expanded - If set, the accordian is expanded.
+ * @attr {Boolean} fluid - If set, the trigger and content will be 100% width.
+ * @attr {Boolean} alignRight - If set, the trigger content will align right.
+ * @slot - Default slot for the accordian content.
+ * @slot trigger - Defines the content of the trigger element.
  */
 
 // build the component class
 export class AuroAccordian extends LitElement {
-  // constructor() {
-  //   super();
-  // }
+  constructor() {
+    super();
+
+    this.expanded = false;
+  }
 
   // This function is to define props used within the scope of this component
   // Be sure to review  https://lit.dev/docs/components/properties/
@@ -35,8 +35,15 @@ export class AuroAccordian extends LitElement {
     return {
       // ...super.properties,
 
-      // this property is DEMO ONLY! Please delete.
-      cssClass:   { type: String }
+      fluid:   {
+        type: Boolean,
+        reflect: true
+      },
+
+      /**
+       * @private
+       */
+      expanded: { type: Object }
     };
   }
 
@@ -44,16 +51,47 @@ export class AuroAccordian extends LitElement {
     return [styleCss];
   }
 
-  // When using auroElement, use the following attribute and function when hiding content from screen readers.
-  // aria-hidden="${this.hideAudible(this.hiddenAudible)}"
+  /**
+   * Toggles the visibility of the accordian content.
+   * @returns {void}
+   */
+  toggle() {
+    this.expanded = !this.expanded;
+  }
+
+  /**
+   * Used to generate inline style heights of content so it animates correctly.
+   * @private
+   * @returns {void}
+   */
+  handleContentSlotChanges() {
+    const content = this.shadowRoot.querySelector('.content');
+    const container = this.shadowRoot.querySelector('.contentWrapper');
+    const height = container.offsetHeight;
+
+    content.style.height = `${height}px`;
+  }
+
+  updated(changedProperties) {
+    if (changedProperties.has('expanded')) {
+      this.setAttribute('aria-expanded', this.expanded);
+    }
+  }
 
   // function that renders the HTML and CSS into  the scope of the component
   render() {
     return html`
-
-      <!-- this is demo code, DO NOT USE IN YOUR ELEMENT -->
-      <div class=${this.cssClass} tabindex="0">
-        <slot></slot>
+      <div class="componentWrapper">
+        <div
+          class="trigger"
+          @click="${this.toggle}">
+          <slot name="trigger"></slot>
+        </div>
+        <div class="content">
+          <div class="contentWrapper">
+            <slot @slotchange="${this.handleContentSlotChanges}"></slot>
+          </div>
+        </div>
       </div>
     `;
   }
