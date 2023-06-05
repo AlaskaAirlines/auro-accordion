@@ -1,305 +1,48 @@
+<!--
+  Copyright (c) Alaska Air. All right reserved. Licensed under the Apache-2.0 license
+  See LICENSE in the project root for license information.
+
+  HTML in this document is standardized and NOT to be edited.
+  All demo code should be added/edited in ./demo/demo.md
+
+  With the exception of adding custom elements if needed for the demo.
+
+  ----------------------- DO NOT EDIT -----------------------------
+
+-->
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes"
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Auro Web Component Generator | auro-accordian custom element</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/prismjs@1.24.1/themes/prism.css"
     />
-    <title>Auro Web Component Generator | auro-accordion custom element</title>
-    <script src="../node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js"></script>
-    <script type="module">
-      import '@polymer/iron-demo-helpers/demo-pages-shared-styles';
-      import '@polymer/iron-demo-helpers/demo-snippet';
-    </script>
-    <script type="module" src="../src/auro-accordion.js"></script>
-    <script type="module" src="../src/auro-accordion-group.js"></script>
-    <script src="https://unpkg.com/@alaskaairux/auro-icon@latest/dist/auro-icon__bundled.js" type="module"></script>
-    <script src="https://unpkg.com/@alaskaairux/auro-badge@latest/dist/auro-badge__bundled.js" type="module"></script>
-    <custom-style>
-      <style is="custom-style" include="demo-pages-shared-styles"></style>
-    </custom-style>
-
-    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@alaskaairux/design-tokens@latest/dist/tokens/CSSCustomProperties.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@aurodesignsystem/webcorestylesheets@latest/dist/demoWrapper.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@aurodesignsystem/webcorestylesheets@latest/dist/elementDemoStyles.css" />
   </head>
-  <body>
-    <div class="vertical-section-container">
-      <h1>auro-accordion</h1>
+  <body class="auro-markdown">
+    <main></main>
 
-      <h2>Content (status badge / auro-icon) in trigger slot</h2>
-
-      <demo-snippet>
-        <template>
-          <auro-accordion id="status1">
-            <span slot="trigger" style="justify-content: space-between;">
-              <span>There is a thing</span>
-              <auro-badge space pill>12</auro-badge>
-            </span>
-            <p style="width: 1000px">During the battle, Rebel spies managed to steal secret plans to the Empire's ultimate weapon, the DEATH STAR, an armored space station with enough power to destroy an entire planet</p>
-          </auro-accordion>
-        </template>
-      </demo-snippet>
-
-      <demo-snippet>
-        <template>
-          <auro-accordion id="status2">
-            <span slot="trigger" style="justify-content: space-evenly;">
-              <auro-icon category="terminal" name="plane-diag-fill"></auro-icon>
-              <span>There is a thing</span>
-              <auro-icon category="terminal" name="plane-diag-fill"></auro-icon>
-            </span>
-            <span slot="subTrigger">This is a sub-trigger</span>
-            <p style="width: 1000px">During the battle, Rebel spies managed to steal secret plans to the Empire's ultimate weapon, the DEATH STAR, an armored space station with enough power to destroy an entire planet</p>
-          </auro-accordion>
-        </template>
-      </demo-snippet>
-
-      <h2>No animation on accordion toggle</h2>
-
-      <demo-snippet>
-        <template>
-          <auro-accordion id="noAnimation1" noanimation>
-            <span slot="trigger">
-              No animation...
-            </span>
-            <p style="width: 1000px">During the battle, Rebel spies managed to steal secret plans to the Empire's ultimate weapon, the DEATH STAR, an armored space station with enough power to destroy an entire planet</p>
-          </auro-accordion>
-        </template>
-      </demo-snippet>
-
-      <demo-snippet>
-        <template>
-          <auro-accordion id="noAnimation1" showOverflow>
-            <span slot="trigger">
-              Show overflow...
-            </span>
-            <p style="width: 1000px">During the battle, Rebel spies managed to steal secret plans to the Empire's ultimate weapon, the DEATH STAR, an armored space station with enough power to destroy an entire planet</p>
-          </auro-accordion>
-        </template>
-      </demo-snippet>
-
-      <h2>Shadow CSS parts</h2>
-
-      <style>
-        #cssparts1::part(details) {
-          overflow-x: auto;
-        }
-
-        #cssparts1::part(content) {
-          padding-top: 1rem;
-          padding-bottom: 1rem;
-          color: orange;
-        }
-      </style>
-
-      <demo-snippet>
-        <template>
-          <auro-accordion id="cssparts1">
-            <span slot="trigger">
-              Shadow CSS parts...
-            </span>
-            <p style="width: 1000px">During the battle, Rebel spies managed to steal secret plans to the Empire's ultimate weapon, the DEATH STAR, an armored space station with enough power to destroy an entire planet</p>
-          </auro-accordion>
-        </template>
-      </demo-snippet>
-
-      <h2>New shade feature</h2>
-
-      <demo-snippet>
-        <template>
-          <auro-accordion id="shade01" shade information justifyLeft expanded>
-            <span slot="trigger">
-              <auro-icon category="alert" name="information-filled" customColor style="color: var(--auro-color-alert-notification-on-light)"></auro-icon>
-              Throwing some shade...
-            </span>
-            <p>During the battle, Rebel spies managed to steal secret plans to the Empire's ultimate weapon, the DEATH STAR, an armored space station with enough power to destroy an entire planet</p>
-          </auro-accordion>
-        </template>
-      </demo-snippet>
-
-      <demo-snippet>
-        <template>
-          <auro-accordion id="shade01" shade information justifyLeft expanded>
-            <h1 slot="trigger">
-              <auro-icon category="alert" name="information-filled" customColor style="color: var(--auro-color-alert-notification-on-light)"></auro-icon>
-              Throwing some shade...
-            </h1>
-            <p>During the battle, Rebel spies managed to steal secret plans to the Empire's ultimate weapon, the DEATH STAR, an armored space station with enough power to destroy an entire planet</p>
-          </auro-accordion>
-        </template>
-      </demo-snippet>
-
-      <demo-snippet>
-        <template>
-          <auro-accordion id="shade01" shade warning>
-            <h2 slot="trigger">
-              <auro-icon category="alert" name="warning-filled" customColor style="color: var(--auro-color-alert-warning-on-light)"></auro-icon>
-              Throwing some shade... </h2>
-            <p>During the battle, Rebel spies managed to steal secret plans to the Empire's ultimate weapon, the DEATH STAR, an armored space station with enough power to destroy an entire planet</p>
-          </auro-accordion>
-        </template>
-      </demo-snippet>
-
-      <demo-snippet>
-        <template>
-          <auro-accordion id="shade01" shade error>
-            <h3 slot="trigger">
-              <auro-icon category="alert" name="error" customColor style="color: var(--auro-color-alert-error-on-light)"></auro-icon>
-              Throwing some shade... </h3>
-            <p>During the battle, Rebel spies managed to steal secret plans to the Empire's ultimate weapon, the DEATH STAR, an armored space station with enough power to destroy an entire planet</p>
-          </auro-accordion>
-        </template>
-      </demo-snippet>
-
-      <demo-snippet>
-        <template>
-          <auro-accordion id="shade01" shade>
-            <span slot="trigger">Throwing some shade... </span>
-            <p>During the battle, Rebel spies managed to steal secret plans to the Empire's ultimate weapon, the DEATH STAR, an armored space station with enough power to destroy an entire planet</p>
-          </auro-accordion>
-        </template>
-      </demo-snippet>
-
-
-      <h2>been there... done that</h2>
-
-      <demo-snippet>
-        <template>
-          <auro-accordion id="epIV" chromeLess>
-            <span slot="trigger">chromeLess</span>
-            <span slot="subTrigger">Supports trigger sub-title</span>
-            <p>chromeLess: accordion that does not have the border colors.</p>
-          </auro-accordion>
-          <auro-accordion id="epIV" chromeLess justifyLeft>
-            <span slot="trigger">chromeLess justifyLeft</span>
-            <span slot="subTrigger">Supports trigger sub-title</span>
-            <p>chromeLess: accordion that does not have the border colors.</p>
-            <p>justifyLeft: move trigger to be flush left</p>
-          </auro-accordion>
-          <auro-accordion id="epIV" chromeLess justifyRight>
-            <span slot="trigger">chromeLess justifyRight</span>
-            <span slot="subTrigger">Supports trigger sub-title</span>
-            <p>chromeLess: accordion that does not have the border colors.</p>
-            <p>justifyRight: move trigger to be flush right</p>
-          </auro-accordion>
-          <auro-accordion id="epIV" lowProfile>
-            <span slot="trigger">lowProfile</span>
-            <span slot="subTrigger">Does not support trigger sub-title</span>
-            <p>lowProfile: accordion w/o borders and displays at slimmer size. This type does NOT support a trigger sub-title.</p>
-          </auro-accordion>
-          <auro-accordion id="epIV" lowProfile justifyLeft>
-            <span slot="trigger">lowProfile justifyLeft</span>
-            <span slot="subTrigger">Does not support trigger sub-title</span>
-            <p>lowProfile: accordion w/o borders and displays at slimmer size. This type does NOT support a trigger sub-title.</p>
-            <p>justifyLeft: move trigger to be flush left</p>
-          </auro-accordion>
-          <auro-accordion id="epIV" lowProfile justifyRight>
-            <span slot="trigger">lowProfile justifyRight</span>
-            <span slot="subTrigger">Does not support trigger sub-title</span>
-            <p>lowProfile: accordion w/o borders and displays at slimmer size. This type does NOT support a trigger sub-title.</p>
-            <p>justifyRight: move trigger to be flush right</p>
-          </auro-accordion>
-          <auro-accordion id="epIV" noProfile>
-            <span slot="trigger">noProfile</span>
-            <span slot="subTrigger">Supports trigger sub-title</span>
-            <p>noProfile: property is not supported as an independent property, must be used with lowProfile prop.</p>
-          </auro-accordion>
-          <auro-accordion id="epIV" lowProfile noProfile>
-            <span slot="trigger">lowProfile noProfile</span>
-            <span slot="subTrigger">Does not support trigger sub-title</span>
-            <p>lowProfile noProfile: uses lowProfile style and removes all outer padding for flush placement.</p>
-          </auro-accordion>
-          <auro-accordion id="epIV" lowProfile noProfile justifyLeft>
-            <span slot="trigger">lowProfile noProfile</span>
-            <span slot="subTrigger">Does not support trigger sub-title</span>
-            <p>lowProfile noProfile: uses lowProfile style and removes all outer padding for flush placement.</p>
-            <p>justifyLeft: move trigger to be flush left</p>
-          </auro-accordion>
-          <auro-accordion id="epIV" lowProfile noProfile justifyRight>
-            <span slot="trigger">lowProfile noProfile</span>
-            <span slot="subTrigger">Does not support trigger sub-title</span>
-            <p>lowProfile noProfile: uses lowProfile style and removes all outer padding for flush placement.</p>
-            <p>justifyRight: move trigger to be flush right</p>
-          </auro-accordion>
-          <auro-accordion id="epIV" secondaryType>
-            <span slot="trigger">secondaryType</span>
-            <span slot="subTrigger">Supports trigger sub-title</span>
-            <p>secondaryType: uses secondary type style for displayed content.</p>
-          </auro-accordion>
-          <auro-accordion id="epIV" secondaryType justifyLeft>
-            <span slot="trigger">secondaryType</span>
-            <span slot="subTrigger">Supports trigger sub-title</span>
-            <p>secondaryType: uses secondary type style for displayed content.</p>
-            <p>justifyLeft: move trigger to be flush Left</p>
-          </auro-accordion>
-          <auro-accordion id="epIV" secondaryType justifyRight>
-            <span slot="trigger">secondaryType</span>
-            <span slot="subTrigger">Supports trigger sub-title</span>
-            <p>secondaryType: uses secondary type style for displayed content.</p>
-            <p>justifyRight: move trigger to be flush right</p>
-          </auro-accordion>
-        </template>
-      </demo-snippet>
-
-      <demo-snippet>
-        <template>
-          <auro-accordion id="epIV" lowProfile noProfile>
-            <span slot="trigger">Star Wars: A New Hope</span>
-            <p>It is a period of civil war. Rebel spaceships, striking from a hidden base, have won their first victory against the evil Galactic Empire.</p>
-            <p>During the battle, Rebel spies managed to steal secret plans to the Empire's ultimate weapon, the DEATH STAR, an armored space station with enough power to destroy an entire planet.</p>
-            <p>Pursued by the Empire's sinister agents, Princess Leia races home aboard her starship, custodian of the stolen plans that can save her people and restore freedom to the galaxy.....</p>
-          </auro-accordion>
-        </template>
-      </demo-snippet>
-
-      <demo-snippet>
-        <template>
-          <auro-accordion id="epIV" lowprofile>
-            <span slot="trigger">Star Wars: A New Hope</span>
-            <p>It is a period of civil war. Rebel spaceships, striking from a hidden base, have won their first victory against the evil Galactic Empire.</p>
-            <p>During the battle, Rebel spies managed to steal secret plans to the Empire's ultimate weapon, the DEATH STAR, an armored space station with enough power to destroy an entire planet.</p>
-            <p>Pursued by the Empire's sinister agents, Princess Leia races home aboard her starship, custodian of the stolen plans that can save her people and restore freedom to the galaxy.....</p>
-          </auro-accordion>
-        </template>
-      </demo-snippet>
-
-      <demo-snippet>
-        <template>
-          <auro-accordion id="epIV" lowprofile justifyRight>
-            <span slot="trigger">Star Wars: A New Hope</span>
-            <p>It is a period of civil war. Rebel spaceships, striking from a hidden base, have won their first victory against the evil Galactic Empire.</p>
-            <p>During the battle, Rebel spies managed to steal secret plans to the Empire's ultimate weapon, the DEATH STAR, an armored space station with enough power to destroy an entire planet.</p>
-            <p>Pursued by the Empire's sinister agents, Princess Leia races home aboard her starship, custodian of the stolen plans that can save her people and restore freedom to the galaxy.....</p>
-          </auro-accordion>
-        </template>
-      </demo-snippet>
-
-      <demo-snippet>
-        <template>
-          <auro-accordion-group>
-            <auro-accordion id="epV">
-              <span slot="trigger">Star Wars: The Empire Strikes Back</span>
-              <span slot="subTrigger">This is the REAL first movie...</span>
-              <button>Hey there!</button>
-              <p>It is a dark time for the Rebellion. Although the Death Star has been destroyed, Imperial troops have driven the Rebel forces from their hidden base and pursued them across the galaxy.</p>
-              <p>Evading the dreaded Imperial Starfleet, a group of freedom fighters led by Luke Skywalker has established a new secret base on the remote ice world of Hoth.</p>
-              <p>The evil lord Darth Vader, obsessed with finding young Skywalker, has dispatched thousands of remote probes into the far reaches of space....</p>
-            </auro-accordion>
-            <auro-accordion id="epVI">
-              <span slot="trigger">Star Wars: Return of the Jedi</span>
-              <p>Luke Skywalker has returned to his home planet of Tatooine in an attempt to rescue his friend Han Solo from the clutches of the vile gangster Jabba the Hutt.</p>
-              <p>Little does Luke know that the GALACTIC EMPIRE has secretly begun construction on a new armored space station even more powerful than the first dreaded Death Star.</p>
-              <p>When completed, this ultimate weapon will spell certain doom for the small band of rebels struggling to restore freedom to the galaxy...</p>
-            </auro-accordion>
-            <auro-accordion id="epVII">
-                <span slot="trigger">Star Wars: The Force Awakens</span>
-                <p>Luke Skywalker has vanished. In his absence, the sinister FIRST ORDER has risen from the ashes of the Empire and will not rest until Skywalker, the last Jedi, has been destroyed.</p>
-                <p>With the support of the REPUBLIC, General Leia Organa leads a brave RESISTANCE. She is desperate to find her brother Luke and gain his help in restoring peace and justice to the galaxy.</p>
-                <p>Leia has sent her most daring pilot on a secret mission to Jakku, where an old ally has discovered a clue to Luke's whereabouts....</p>
-              </auro-accordion>
-          </auro-accordion-group>
-        </template>
-      </demo-snippet>
-    </div>
+    <script type="module">
+      import 'https://cdn.jsdelivr.net/npm/marked@latest/marked.min.js';
+      import 'https://cdn.jsdelivr.net/npm/prismjs@latest/prism.js';
+      fetch('/demo/demo.md')
+        .then((response) => response.text())
+        .then((text) => {
+          const rawHtml = marked.parse(text);
+          document.querySelector('main').innerHTML = rawHtml;
+          Prism.highlightAll();
+        });
+    </script>
+    <script type="module" src="../index.js"></script>
+    
+    <!-- If additional elements are needed for the demo, add them here. -->
+    <script src="https://cdn.jsdelivr.net/npm/@alaskaairux/auro-accordion@latest/dist/auro-accordion__bundled.js" type="module"></script>
   </body>
 </html>
