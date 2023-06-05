@@ -14,22 +14,39 @@
 // @import './node_modules/@aurodesignsystem/webcorestylesheets/dist/auroElement/auroElement';
 
 // container styles - defines the look of the outer custom component
-// :host {
-//   ...
-// }
 
+:host {
+  .trigger {
+    cursor: pointer;
+    color: var(--auro-color-text-primary-on-light);
+  }
 
-// Selector is for initial setup only
-// delete when building new custom element
-.testClass {
-  display: inline-block;
-  padding: var(--auro-text-body-size-default);
-  border: 1px solid var(--auro-color-border-error-on-light);
-  color:  var(--auro-color-border-error-on-light);
+  .content {
+    width: 100%;
+    transition: all 0.5s ease-in-out;
+    transition-property: opacity, height;
+  }
 }
 
-// Selector for native :focus-visible support
-:focus-visible {
-  background-color: var(--auro-color-border-error-on-light);
-  color: var(--auro-color-base-white);
+:host([alignRight]) {
+  .componentWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+}
+
+:host(:not([fluid])) {
+  .trigger {
+    display: inline-block;
+  }
+}
+
+:host(:not([aria-expanded])),
+:host([aria-expanded=false]) {
+  .content {
+    height: 0 !important;
+    overflow: hidden;
+    opacity: 0;
+  }
 }
