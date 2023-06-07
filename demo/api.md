@@ -1,9 +1,9 @@
 <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../api.md) -->
 <!-- The below content is automatically added from ./../api.md -->
 
-# auro-accordian
+# auro-accordion
 
-The auro-accordian element provides users a way to ... (it would be great if you fill this out).
+The auro-accordion element provides users a way to ... (it would be great if you fill this out).
 
 ## Attributes
 
@@ -13,22 +13,21 @@ The auro-accordian element provides users a way to ... (it would be great if you
 
 ## Properties
 
-| Property   | Attribute  | Type      | Default | Description                                      |
-|------------|------------|-----------|---------|--------------------------------------------------|
-| [expanded](#expanded) | `expanded` | `Boolean` | false   | If set, the accordian is expanded.               |
-| [fluid](#fluid)    | `fluid`    | `Boolean` |         | If set, the trigger and content will be 100% width. |
+| Property | Attribute | Type      | Description                                      |
+|----------|-----------|-----------|--------------------------------------------------|
+| [fluid](#fluid)  | `fluid`   | `Boolean` | If set, the trigger and content will be 100% width. |
 
 ## Methods
 
 | Method   | Type       | Description                                      |
 |----------|------------|--------------------------------------------------|
-| [toggle](#toggle) | `(): void` | Toggles the visibility of the accordian content. |
+| [toggle](#toggle) | `(): void` | Toggles the visibility of the accordion content. |
 
 ## Slots
 
 | Name      | Description                                 |
 |-----------|---------------------------------------------|
-|           | Default slot for the accordian content.     |
+|           | Default slot for the accordion content.     |
 | [trigger](#trigger) | Defines the content of the trigger element. |
 <!-- AURO-GENERATED-CONTENT:END -->
 
@@ -41,7 +40,7 @@ The auro-accordian element provides users a way to ... (it would be great if you
     <div class="exampleWrapper">
       <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/basic.html) -->
       <!-- The below content is automatically added from ./../../apiExamples/basic.html -->
-      <auro-accordian>
+      <auro-accordion>
         <span slot="trigger">Trigger</span>
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -55,7 +54,7 @@ The auro-accordian element provides users a way to ... (it would be great if you
         <p>
           Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
         </p>
-      </auro-accordian>
+      </auro-accordion>
       <!-- AURO-GENERATED-CONTENT:END -->
     </div>
 <auro-accordion lowProfile justifyRight>
@@ -64,7 +63,7 @@ The auro-accordian element provides users a way to ... (it would be great if you
 <!-- The below code snippet is automatically added from ./../../apiExamples/basic.html -->
 
 ```html
-<auro-accordian>
+<auro-accordion>
   <span slot="trigger">Trigger</span>
   <p>
     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -78,7 +77,7 @@ The auro-accordian element provides users a way to ... (it would be great if you
   <p>
     Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
   </p>
-</auro-accordian>
+</auro-accordion>
 ```
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
@@ -92,7 +91,7 @@ Explanation and use description.
 <div class="exampleWrapper">
   <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/alignRight.html) -->
   <!-- The below content is automatically added from ./../../apiExamples/alignRight.html -->
-  <auro-accordian alignRight>
+  <auro-accordion alignRight>
     <span slot="trigger">Trigger</span>
     <p>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -106,7 +105,7 @@ Explanation and use description.
     <p>
       Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
     </p>
-  </auro-accordian>
+  </auro-accordion>
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
 <auro-accordion lowProfile justifyRight>
@@ -115,7 +114,7 @@ Explanation and use description.
 <!-- The below code snippet is automatically added from ./../../apiExamples/alignRight.html -->
 
 ```html
-<auro-accordian alignRight>
+<auro-accordion alignRight>
   <span slot="trigger">Trigger</span>
   <p>
     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -129,21 +128,21 @@ Explanation and use description.
   <p>
     Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
   </p>
-</auro-accordian>
+</auro-accordion>
 ```
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
 
 #### Expanded
 
-The accordian can be programatically expanded or collapsed by setting the `expanded` attribute to `true` or `false`.
+The accordion can be programatically expanded or collapsed by setting the `expanded` attribute to `true` or `false`.
 
 <div class="exampleWrapper">
   <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/expanded.html) -->
   <!-- The below content is automatically added from ./../../apiExamples/expanded.html -->
-  <auro-button id="auroAccordianExpandedExampleBtnTrue">Set expanded = `true`</auro-button>
-  <auro-button id="auroAccordianExpandedExampleBtnFalse">Set expanded = `false`</auro-button>
-  <auro-accordian id="auroAccordianExpandedExample">
+  <auro-button id="auroaccordionExpandedExampleBtnTrue">Set expanded = `true`</auro-button>
+  <auro-button id="auroaccordionExpandedExampleBtnFalse">Set expanded = `false`</auro-button>
+  <auro-accordion id="auroaccordionExpandedExample">
     <span slot="trigger">Trigger</span>
     <p>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -157,7 +156,7 @@ The accordian can be programatically expanded or collapsed by setting the `expan
     <p>
       Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
     </p>
-  </auro-accordian>
+  </auro-accordion>
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
 <auro-accordion lowProfile justifyRight>
@@ -166,9 +165,9 @@ The accordian can be programatically expanded or collapsed by setting the `expan
 <!-- The below code snippet is automatically added from ./../../apiExamples/expanded.html -->
 
 ```html
-<auro-button id="auroAccordianExpandedExampleBtnTrue">Set expanded = `true`</auro-button>
-<auro-button id="auroAccordianExpandedExampleBtnFalse">Set expanded = `false`</auro-button>
-<auro-accordian id="auroAccordianExpandedExample">
+<auro-button id="auroaccordionExpandedExampleBtnTrue">Set expanded = `true`</auro-button>
+<auro-button id="auroaccordionExpandedExampleBtnFalse">Set expanded = `false`</auro-button>
+<auro-accordion id="auroaccordionExpandedExample">
   <span slot="trigger">Trigger</span>
   <p>
     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -182,7 +181,7 @@ The accordian can be programatically expanded or collapsed by setting the `expan
   <p>
     Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
   </p>
-</auro-accordian>
+</auro-accordion>
 ```
 <!-- AURO-GENERATED-CONTENT:END -->
 <!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/expanded.js) -->
@@ -190,13 +189,13 @@ The accordian can be programatically expanded or collapsed by setting the `expan
 
 ```js
 export function expandedExample() {
-  const expandedExampleElem = document.querySelector('#auroAccordianExpandedExample');
+  const expandedExampleElem = document.querySelector('#auroaccordionExpandedExample');
 
-  document.querySelector('#auroAccordianExpandedExampleBtnTrue').addEventListener('click', () => {
+  document.querySelector('#auroaccordionExpandedExampleBtnTrue').addEventListener('click', () => {
     expandedExampleElem.expanded = true;
   })
 
-  document.querySelector('#auroAccordianExpandedExampleBtnFalse').addEventListener('click', () => {
+  document.querySelector('#auroaccordionExpandedExampleBtnFalse').addEventListener('click', () => {
     expandedExampleElem.expanded = false;
   })
 }
@@ -211,7 +210,7 @@ Explanation and use description.
 <div class="exampleWrapper">
   <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/fluid.html) -->
   <!-- The below content is automatically added from ./../../apiExamples/fluid.html -->
-  <auro-accordian fluid>
+  <auro-accordion fluid>
     <span slot="trigger">Trigger</span>
     <p>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -225,7 +224,7 @@ Explanation and use description.
     <p>
       Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
     </p>
-  </auro-accordian>
+  </auro-accordion>
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
 <auro-accordion lowProfile justifyRight>
@@ -234,7 +233,7 @@ Explanation and use description.
 <!-- The below code snippet is automatically added from ./../../apiExamples/fluid.html -->
 
 ```html
-<auro-accordian fluid>
+<auro-accordion fluid>
   <span slot="trigger">Trigger</span>
   <p>
     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -248,7 +247,7 @@ Explanation and use description.
   <p>
     Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
   </p>
-</auro-accordian>
+</auro-accordion>
 ```
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
@@ -257,14 +256,14 @@ Explanation and use description.
 
 #### default
 
-Slot contains all content inside the collapsable portion of the accordian.
+Slot contains all content inside the collapsable portion of the accordion.
 
 <div class="twoColDemoRow">
   <div>
     <div class="exampleWrapper">
       <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/basic.html) -->
       <!-- The below content is automatically added from ./../../apiExamples/basic.html -->
-      <auro-accordian>
+      <auro-accordion>
         <span slot="trigger">Trigger</span>
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -278,7 +277,7 @@ Slot contains all content inside the collapsable portion of the accordian.
         <p>
           Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
         </p>
-      </auro-accordian>
+      </auro-accordion>
       <!-- AURO-GENERATED-CONTENT:END -->
     </div>
 <auro-accordion lowProfile justifyRight>
@@ -287,7 +286,7 @@ Slot contains all content inside the collapsable portion of the accordian.
 <!-- The below code snippet is automatically added from ./../../apiExamples/basic.html -->
 
 ```html
-<auro-accordian>
+<auro-accordion>
   <span slot="trigger">Trigger</span>
   <p>
     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -301,21 +300,21 @@ Slot contains all content inside the collapsable portion of the accordian.
   <p>
     Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
   </p>
-</auro-accordian>
+</auro-accordion>
 ```
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
 
 #### trigger
 
-This slot is used for content that may be clicked on to toggle visibility of the accordian content.
+This slot is used for content that may be clicked on to toggle visibility of the accordion content.
 
 <div class="twoColDemoRow">
   <div>
     <div class="exampleWrapper">
       <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/basic.html) -->
       <!-- The below content is automatically added from ./../../apiExamples/basic.html -->
-      <auro-accordian>
+      <auro-accordion>
         <span slot="trigger">Trigger</span>
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -329,7 +328,7 @@ This slot is used for content that may be clicked on to toggle visibility of the
         <p>
           Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
         </p>
-      </auro-accordian>
+      </auro-accordion>
       <!-- AURO-GENERATED-CONTENT:END -->
     </div>
 <auro-accordion lowProfile justifyRight>
@@ -338,7 +337,7 @@ This slot is used for content that may be clicked on to toggle visibility of the
 <!-- The below code snippet is automatically added from ./../../apiExamples/basic.html -->
 
 ```html
-<auro-accordian>
+<auro-accordion>
   <span slot="trigger">Trigger</span>
   <p>
     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -352,7 +351,7 @@ This slot is used for content that may be clicked on to toggle visibility of the
   <p>
     Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
   </p>
-</auro-accordian>
+</auro-accordion>
 ```
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>

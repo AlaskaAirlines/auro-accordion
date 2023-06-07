@@ -1,11 +1,11 @@
 export function expandedExample() {
-  const expandedExampleElem = document.querySelector('#auroAccordianExpandedExample');
+  const expandedExampleElem = document.querySelector('#auroaccordionExpandedExample');
 
-  document.querySelector('#auroAccordianExpandedExampleBtnTrue').addEventListener('click', () => {
+  document.querySelector('#auroaccordionExpandedExampleBtnTrue').addEventListener('click', () => {
     expandedExampleElem.expanded = true;
   })
 
-  document.querySelector('#auroAccordianExpandedExampleBtnFalse').addEventListener('click', () => {
+  document.querySelector('#auroaccordionExpandedExampleBtnFalse').addEventListener('click', () => {
     expandedExampleElem.expanded = false;
   })
 }
