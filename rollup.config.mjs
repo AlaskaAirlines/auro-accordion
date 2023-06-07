@@ -5,7 +5,7 @@ const production = !process.env.ROLLUP_WATCH,
 
  modernConfig = {
   input: {
-    ['auro-accordian__bundled']: './index.js',
+    ['auro-accordion__bundled']: './index.js',
   },
   output: {
     format: 'esm',

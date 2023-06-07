@@ -1,20 +1,20 @@
 import { fixture, html, expect, elementUpdated } from '@open-wc/testing';
-import '../src/auro-accordian';
+import '../src/auro-accordion';
 
-describe('auro-accordian', () => {
-  it('auro-accordian is accessible', async () => {
+describe('auro-accordion', () => {
+  it('auro-accordion is accessible', async () => {
     const el = await defaultFixture();
 
     await expect(el).to.be.accessible();
   });
 
-  it('auro-accordian custom element is defined', async () => {
-    const el = await !!customElements.get("auro-accordian");
+  it('auro-accordion custom element is defined', async () => {
+    const el = await !!customElements.get("auro-accordion");
 
     await expect(el).to.be.true;
   });
 
-  it('toggles the accordian when clicking on the trigger', async () => {
+  it('toggles the accordion when clicking on the trigger', async () => {
     const el = await defaultFixture();
 
     const trigger = el.shadowRoot.querySelector('.trigger');
@@ -37,7 +37,7 @@ describe('auro-accordian', () => {
 
 async function defaultFixture() {
   return await fixture(html`
-  <auro-accordian>
+  <auro-accordion>
     <span slot="trigger">Trigger</span>
     <p>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -51,6 +51,6 @@ async function defaultFixture() {
     <p>
       Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
     </p>
-  </auro-accordian>
+  </auro-accordion>
   `);
 }

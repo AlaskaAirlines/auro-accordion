@@ -1,6 +1,6 @@
-# auro-accordian
+# auro-accordion
 
-The auro-accordian element provides users a way to ... (it would be great if you fill this out).
+The auro-accordion element provides users a way to ... (it would be great if you fill this out).
 
 ## Attributes
 
@@ -10,20 +10,19 @@ The auro-accordian element provides users a way to ... (it would be great if you
 
 ## Properties
 
-| Property   | Attribute  | Type      | Default | Description                                      |
-|------------|------------|-----------|---------|--------------------------------------------------|
-| `expanded` | `expanded` | `Boolean` | false   | If set, the accordian is expanded.               |
-| `fluid`    | `fluid`    | `Boolean` |         | If set, the trigger and content will be 100% width. |
+| Property | Attribute | Type      | Description                                      |
+|----------|-----------|-----------|--------------------------------------------------|
+| `fluid`  | `fluid`   | `Boolean` | If set, the trigger and content will be 100% width. |
 
 ## Methods
 
 | Method   | Type       | Description                                      |
 |----------|------------|--------------------------------------------------|
-| `toggle` | `(): void` | Toggles the visibility of the accordian content. |
+| `toggle` | `(): void` | Toggles the visibility of the accordion content. |
 
 ## Slots
 
 | Name      | Description                                 |
 |-----------|---------------------------------------------|
-|           | Default slot for the accordian content.     |
+|           | Default slot for the accordion content.     |
 | `trigger` | Defines the content of the trigger element. |

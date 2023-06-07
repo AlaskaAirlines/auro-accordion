@@ -23,7 +23,7 @@
 
 #### alignRight
 
-Explanation and use description.
+Using the `alignRight` attribute will cause the trigger to align to the right edge of the accordion.
 
 <div class="exampleWrapper">
   <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/alignRight.html) -->
@@ -39,7 +39,7 @@ Explanation and use description.
 
 #### Expanded
 
-The accordian can be programatically expanded or collapsed by setting the `expanded` attribute to `true` or `false`.
+The accordion can be programatically expanded or collapsed by setting the `expanded` attribute to `true` or `false`.
 
 <div class="exampleWrapper">
   <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/expanded.html) -->
@@ -57,7 +57,7 @@ The accordian can be programatically expanded or collapsed by setting the `expan
 
 #### fluid
 
-Explanation and use description.
+The accordion trigger can be set to consume 100% of available width by using the `fluid` attribute.
 
 <div class="exampleWrapper">
   <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/fluid.html) -->
@@ -75,7 +75,7 @@ Explanation and use description.
 
 #### default
 
-Slot contains all content inside the collapsable portion of the accordian.
+Slot contains all content inside the collapsable portion of the accordion.
 
 <div class="twoColDemoRow">
   <div>
@@ -93,7 +93,7 @@ Slot contains all content inside the collapsable portion of the accordian.
 
 #### trigger
 
-This slot is used for content that may be clicked on to toggle visibility of the accordian content.
+This slot is used for content that may be clicked on to toggle visibility of the accordion content.
 
 <div class="twoColDemoRow">
   <div>

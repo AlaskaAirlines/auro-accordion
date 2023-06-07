@@ -11,17 +11,17 @@ import styleCss from "./style-css.js";
 
 // See https://git.io/JJ6SJ for "How to document your components using JSDoc"
 /**
- * The auro-accordian element provides users a way to ... (it would be great if you fill this out).
+ * The auro-accordion element provides users a way to ... (it would be great if you fill this out).
  *
- * @attr {Boolean} expanded - If set, the accordian is expanded.
+ * @attr {Boolean} expanded - If set, the accordion is expanded.
  * @attr {Boolean} fluid - If set, the trigger and content will be 100% width.
  * @attr {Boolean} alignRight - If set, the trigger content will align right.
- * @slot - Default slot for the accordian content.
+ * @slot - Default slot for the accordion content.
  * @slot trigger - Defines the content of the trigger element.
  */
 
 // build the component class
-export class AuroAccordian extends LitElement {
+export class AuroAccordion extends LitElement {
   constructor() {
     super();
 
@@ -52,7 +52,7 @@ export class AuroAccordian extends LitElement {
   }
 
   /**
-   * Toggles the visibility of the accordian content.
+   * Toggles the visibility of the accordion content.
    * @returns {void}
    */
   toggle() {
@@ -98,6 +98,6 @@ export class AuroAccordian extends LitElement {
 }
 
 // default internal definition
-if (!customElements.get("auro-accordian")) {
-  customElements.define("auro-accordian", AuroAccordian);
+if (!customElements.get("auro-accordion")) {
+  customElements.define("auro-accordion", AuroAccordion);
 }

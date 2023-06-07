@@ -17,11 +17,11 @@ The following sections are editable by making changes to the following files:
 | Component Example Code | HTML sample code of the components use            | `./apiExamples/basic.html`          |
 -->
 
-# Accordian
+# Accordion
 
 <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../docs/partials/description.md) -->
 <!-- The below content is automatically added from ./../docs/partials/description.md -->
-`<auro-accordian>` is a [HTML custom element](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_custom_elements) for the purpose of toggling the visibility of large content section by clicking on a smaller trigger element.
+`<auro-accordion>` is a [HTML custom element](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_custom_elements) for the purpose of toggling the visibility of large content section by clicking on a smaller trigger element.
 <!-- AURO-GENERATED-CONTENT:END -->
 <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../docs/partials/readmeAddlInfo.md) -->
 <!-- The below content is automatically added from ./../docs/partials/readmeAddlInfo.md -->
@@ -38,13 +38,13 @@ For the most up to date information on [UI development browser support](https://
 ## Install
 
 <!-- AURO-GENERATED-CONTENT:START (REMOTE:url=https://raw.githubusercontent.com/AlaskaAirlines/WC-Generator/master/componentDocs/partials/usage/componentInstall.md) -->
-[![Build Status](https://img.shields.io/github/actions/workflow/status/AlaskaAirlines/auro-accordian/testPublish.yml?style=for-the-badge)](https://github.com/AlaskaAirlines/auro-accordian/actions/workflows/testPublish.yml)
-[![See it on NPM!](https://img.shields.io/npm/v/@aurodesignsystem/auro-accordian?style=for-the-badge&color=orange)](https://www.npmjs.com/package/@aurodesignsystem/auro-accordian)
-[![License](https://img.shields.io/npm/l/@aurodesignsystem/auro-accordian?color=blue&style=for-the-badge)](https://www.apache.org/licenses/LICENSE-2.0)
-[![Snyk Vulnerabilities for npm package](https://img.shields.io/snyk/vulnerabilities/npm/@aurodesignsystem/auro-accordian?style=for-the-badge)](https://snyk.io/test/npm/@aurodesignsystem/auro-accordian?tab=issues)
+[![Build Status](https://img.shields.io/github/actions/workflow/status/AlaskaAirlines/auro-accordion/testPublish.yml?style=for-the-badge)](https://github.com/AlaskaAirlines/auro-accordion/actions/workflows/testPublish.yml)
+[![See it on NPM!](https://img.shields.io/npm/v/@aurodesignsystem/auro-accordion?style=for-the-badge&color=orange)](https://www.npmjs.com/package/@aurodesignsystem/auro-accordion)
+[![License](https://img.shields.io/npm/l/@aurodesignsystem/auro-accordion?color=blue&style=for-the-badge)](https://www.apache.org/licenses/LICENSE-2.0)
+[![Snyk Vulnerabilities for npm package](https://img.shields.io/snyk/vulnerabilities/npm/@aurodesignsystem/auro-accordion?style=for-the-badge)](https://snyk.io/test/npm/@aurodesignsystem/auro-accordion?tab=issues)
 
 ```shell
-$ npm i @aurodesignsystem/auro-accordian
+$ npm i @aurodesignsystem/auro-accordion
 ```
 
 Installing as a direct, dev or peer dependency is up to the user installing the package. If you are unsure as to what type of dependency you should use, consider reading this [stack overflow](https://stackoverflow.com/questions/18875674/whats-the-difference-between-dependencies-devdependencies-and-peerdependencies) answer.
@@ -70,13 +70,13 @@ Any update to the Auro Design Tokens will be immediately reflected with browsers
 ### Define dependency in project component
 
 <!-- AURO-GENERATED-CONTENT:START (REMOTE:url=https://raw.githubusercontent.com/AlaskaAirlines/WC-Generator/master/componentDocs/partials/usage/componentImportDescription.md) -->
-Defining the component dependency within each component that is using the `<auro-accordian>` component.
+Defining the component dependency within each component that is using the `<auro-accordion>` component.
 
 <!-- AURO-GENERATED-CONTENT:END -->
 <!-- AURO-GENERATED-CONTENT:START (REMOTE:url=https://raw.githubusercontent.com/AlaskaAirlines/WC-Generator/master/componentDocs/partials/usage/componentImport.md) -->
 
 ```js
-import "@aurodesignsystem/auro-accordian";
+import "@aurodesignsystem/auro-accordion";
 ```
 
 <!-- AURO-GENERATED-CONTENT:END -->
@@ -85,7 +85,7 @@ import "@aurodesignsystem/auro-accordian";
 <!-- The below code snippet is automatically added from ./../apiExamples/basic.html -->
 
 ```html
-<auro-accordian>
+<auro-accordion>
   <span slot="trigger">Trigger</span>
   <p>
     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -99,14 +99,14 @@ import "@aurodesignsystem/auro-accordian";
   <p>
     Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
   </p>
-</auro-accordian>
+</auro-accordion>
 ```
 <!-- AURO-GENERATED-CONTENT:END -->
 
 ## Install bundled assets from CDN
 
 <!-- AURO-GENERATED-CONTENT:START (REMOTE:url=https://raw.githubusercontent.com/AlaskaAirlines/WC-Generator/master/componentDocs/partials/usage/bundleInstallDescription.md) -->
-In cases where the project is not able to process JS assets, there are pre-processed assets available for use. See -- `auro-accordian__bundled.js` for modern browsers. Legacy browsers such as IE11 are no longer supported.
+In cases where the project is not able to process JS assets, there are pre-processed assets available for use. See -- `auro-accordion__bundled.js` for modern browsers. Legacy browsers such as IE11 are no longer supported.
 
 We recommend you load these bundles using [differential serving](https://philipwalton.com/articles/deploying-es2015-code-in-production-today/) so that the browser only loads the bundle correctly. To accomplish this, the script tag for the modern bundle should have `type="module"` and the script tag.
 
@@ -120,16 +120,16 @@ We recommend you load these bundles using [differential serving](https://philipw
 <!-- **NOTE:** Be sure to replace `@latest` in the URL with the version of the asset you want. @latest is NOT aware of any MAJOR releases, use at your own risk. -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@aurodesignsystem/design-tokens@latest/dist/tokens/CSSCustomProperties.css" />
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@aurodesignsystem/webcorestylesheets@latest/dist/bundled/essentials.css" />
-<script src="https://cdn.jsdelivr.net/@aurodesignsystem/auro-accordian@latest/dist/auro-accordian__bundled.js" type="module"></script>
+<script src="https://cdn.jsdelivr.net/@aurodesignsystem/auro-accordion@latest/dist/auro-accordion__bundled.js" type="module"></script>
 ```
 
 <!-- AURO-GENERATED-CONTENT:END -->
 
-## auro-accordian use cases
+## auro-accordion use cases
 
 <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../docs/partials/useCases.md) -->
 <!-- The below content is automatically added from ./../docs/partials/useCases.md -->
-The `<auro-accordian>` element should be used in situations where users may:
+The `<auro-accordion>` element should be used in situations where users may:
 
 - Hide/show long sub-content based on headline trigger
 - Use is for in-page content only when excessive content length is distracting to the specific experience
@@ -137,13 +137,13 @@ The `<auro-accordian>` element should be used in situations where users may:
 
 ## API Code Examples
 
-### Default auro-accordian
+### Default auro-accordion
 
 <!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/basic.html) -->
 <!-- The below code snippet is automatically added from ./../apiExamples/basic.html -->
 
 ```html
-<auro-accordian>
+<auro-accordion>
   <span slot="trigger">Trigger</span>
   <p>
     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -157,7 +157,7 @@ The `<auro-accordian>` element should be used in situations where users may:
   <p>
     Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
   </p>
-</auro-accordian>
+</auro-accordion>
 ```
 <!-- AURO-GENERATED-CONTENT:END -->
 
@@ -201,7 +201,7 @@ The custom element API file is generated in the build and committed back to the 
 ### Testing
 
 <!-- AURO-GENERATED-CONTENT:START (REMOTE:url=https://raw.githubusercontent.com/AlaskaAirlines/WC-Generator/master/componentDocs/partials/development/testing.md) -->
-Automated tests are required for every Auro component. See `.\test\auro-accordian.test.js` for the tests for this component. Run `npm test` to run the tests and check code coverage. Tests must pass and meet a certain coverage threshold to commit. See [the testing documentation](https://auro.alaskaair.com/support/tests) for more details.
+Automated tests are required for every Auro component. See `.\test\auro-accordion.test.js` for the tests for this component. Run `npm test` to run the tests and check code coverage. Tests must pass and meet a certain coverage threshold to commit. See [the testing documentation](https://auro.alaskaair.com/support/tests) for more details.
 
 <!-- AURO-GENERATED-CONTENT:END -->
 
