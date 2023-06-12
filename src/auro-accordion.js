@@ -11,7 +11,8 @@ import styleCss from "./style-css.js";
 
 // See https://git.io/JJ6SJ for "How to document your components using JSDoc"
 /**
- * The auro-accordion element provides users a way to ... (it would be great if you fill this out).
+ * auro-accordion provides users a way to have collapsible content on a page.
+ * Use auro-accordion-group if you want to have auto closing accordion components when others are selected.
  *
  * @attr {Boolean} expanded - If set, the accordion is expanded.
  * @attr {Boolean} fluid - If set, the trigger and content will be 100% width.

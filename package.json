@@ -128,7 +128,7 @@
     "web components"
   ],
   "scripts": {
-    "build": "npm-run-all build:sass sass:render scssLint dist:js bundler build:demoScripts postinstall build:api types build:docs",
+    "build": "npm-run-all build:sass sass:render scssLint dist:js bundler postinstall build:api types build:docs build:demoScripts",
     "build:ci": "npm-run-all sweep build",
     "build:api": "wca analyze 'src/auro-accordion.js' --outFiles docs/api.md",
     "build:dev:assets": "npm-run-all build:sass:component postCss:component sass:render build:docs",

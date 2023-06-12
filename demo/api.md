@@ -3,7 +3,8 @@
 
 # auro-accordion
 
-The auro-accordion element provides users a way to ... (it would be great if you fill this out).
+auro-accordion provides users a way to have collapsible content on a page.
+Use auro-accordion-group if you want to have auto closing accordion components when others are selected.
 
 ## Attributes
 
@@ -86,7 +87,7 @@ The auro-accordion element provides users a way to ... (it would be great if you
 
 #### alignRight
 
-Explanation and use description.
+Using the `alignRight` attribute will cause the trigger to align to the right edge of the accordion.
 
 <div class="exampleWrapper">
   <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/alignRight.html) -->
@@ -133,7 +134,7 @@ Explanation and use description.
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
 
-#### Expanded
+#### expanded
 
 The accordion can be programatically expanded or collapsed by setting the `expanded` attribute to `true` or `false`.
 
@@ -205,7 +206,7 @@ export function expandedExample() {
 
 #### fluid
 
-Explanation and use description.
+The accordion trigger can be set to consume 100% of available width by using the `fluid` attribute.
 
 <div class="exampleWrapper">
   <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/fluid.html) -->
