@@ -1,6 +1,6 @@
 import { expandedExample } from "../apiExamples/expanded";
 
-export function initaccordionApiExamples(initCount) {
+export function initAccordionApiExamples(initCount) {
   initCount = initCount || 0;
 
   try {
@@ -9,7 +9,7 @@ export function initaccordionApiExamples(initCount) {
     if (initCount <= 20) {
       // setTimeout handles issue where content is sometimes loaded after the functions get called
       setTimeout(() => {
-        initaccordionApiExamples(initCount + 1);
+        initAccordionApiExamples(initCount + 1);
       }, 100);
     }
   }

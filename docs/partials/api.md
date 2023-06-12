@@ -37,7 +37,7 @@ Using the `alignRight` attribute will cause the trigger to align to the right ed
 
 </auro-accordion>
 
-#### Expanded
+#### expanded
 
 The accordion can be programatically expanded or collapsed by setting the `expanded` attribute to `true` or `false`.
 
