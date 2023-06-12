@@ -6,7 +6,7 @@ So you forked this repo. That's awesome. But don't forget you keep your `main` b
 
 With a locally cloned repository, you can do this with git with your CLI as follows.
 
-#### Add upstream
+### Add upstream
 
 First you want to verify your current remote config settings.
 
@@ -40,7 +40,7 @@ upstream        https://github.com/AlaskaAirlines/auro-accordion.git (fetch)
 upstream        https://github.com/AlaskaAirlines/auro-accordion.git (push)
 ```
 
-#### Sync upstream
+### Sync upstream
 
 To sync your `main` branch with the upstream `main` branch, there are two ways you can do this. The preferred method is to fetch and rebase. Please do not merge down.
 
@@ -58,7 +58,7 @@ $ git checkout feature-branch
 $ git rebase main
 ```
 
-#### Brute force
+### Brute force
 
 In the case where your `main` branch's history is not in sync with the upstream, then you have few options. The nuclear option is to trash the fork and re-fork, but there is an easier way. the following step will force reset your `main` branch with that of the upstream `main` branch.
 
