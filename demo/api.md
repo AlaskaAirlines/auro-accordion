@@ -14,9 +14,10 @@ Use auro-accordion-group if you want to have auto closing accordion components w
 
 ## Properties
 
-| Property | Attribute | Type      | Description                                      |
-|----------|-----------|-----------|--------------------------------------------------|
-| [fluid](#fluid)  | `fluid`   | `Boolean` | If set, the trigger and content will be 100% width. |
+| Property  | Attribute | Type      | Description                                      |
+|-----------|-----------|-----------|--------------------------------------------------|
+| [chevron](#chevron) | `chevron` | `boolean` |                                                  |
+| [fluid](#fluid)   | `fluid`   | `Boolean` | If set, the trigger and content will be 100% width. |
 
 ## Methods
 
@@ -252,6 +253,66 @@ The accordion trigger can be set to consume 100% of available width by using the
 ```
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
+
+#### chevron
+
+The `chevron` attribute can be used to add a chevron that toggles between expanded and collapsed states. It can also be styled and positioned using a `chevron` CSS part.
+
+<div class="exampleWrapper">
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/chevron.html) -->
+  <!-- The below content is automatically added from ./../../apiExamples/chevron.html -->
+  <style>
+    #chevronAccordion::part(chevron) {
+      padding-left: 10px;
+      height: 50px;
+    }
+  </style>
+  <auro-accordion id="chevronAccordion" chevron>
+    <span slot="trigger">Trigger</span>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+    </p>
+    <p>
+      Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+    </p>
+    <p>
+      Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+    </p>
+    <p>
+      Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    </p>
+  </auro-accordion>
+  <!-- AURO-GENERATED-CONTENT:END -->
+</div>
+<auro-accordion lowProfile justifyRight>
+  <span slot="trigger">See code</span>
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/chevron.html) -->
+<!-- The below code snippet is automatically added from ./../../apiExamples/chevron.html -->
+
+```html
+<style>
+  #chevronAccordion::part(chevron) {
+    padding-left: 10px;
+    height: 50px;
+  }
+</style>
+<auro-accordion id="chevronAccordion" chevron>
+  <span slot="trigger">Trigger</span>
+  <p>
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+  </p>
+  <p>
+    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+  </p>
+  <p>
+    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+  </p>
+  <p>
+    Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+  </p>
+</auro-accordion>
+```
+<!-- AURO-GENERATED-CONTENT:END -->
 
 ### Slot Examples
 

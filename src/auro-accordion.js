@@ -6,6 +6,10 @@
 // If using litElement base class
 import { LitElement, html } from "lit";
 
+// Import Icons
+import chevronUp from "@alaskaairux/icons/dist/icons/interface/chevron-up_es6.js";
+import chevronDown from "@alaskaairux/icons/dist/icons/interface/chevron-down_es6.js";
+
 // Import touch detection lib
 import styleCss from "./style-css.js";
 
@@ -36,20 +40,37 @@ export class AuroAccordion extends LitElement {
     return {
       // ...super.properties,
 
-      fluid:   {
+      fluid: {
         type: Boolean,
-        reflect: true
+        reflect: true,
+      },
+
+      chevron: {
+        type: Boolean,
+        reflect: true,
       },
 
       /**
        * @private
        */
-      expanded: { type: Object }
+      expanded: { type: Object },
     };
   }
 
   static get styles() {
     return [styleCss];
+  }
+
+  /**
+   * @private Internal function to generate the HTML for the icon to use
+   * @param {string} svgContent - The imported svg icon
+   * @returns {TemplateResult} - The html template for the icon
+   */
+  generateIconHtml(svgContent) {
+    const dom = new DOMParser().parseFromString(svgContent, 'text/html'),
+    svg = dom.body.firstChild;
+
+   return html`${svg}`;
   }
 
   /**
@@ -66,27 +87,34 @@ export class AuroAccordion extends LitElement {
    * @returns {void}
    */
   handleContentSlotChanges() {
-    const content = this.shadowRoot.querySelector('.content');
-    const container = this.shadowRoot.querySelector('.contentWrapper');
+    const content = this.shadowRoot.querySelector(".content");
+    const container = this.shadowRoot.querySelector(".contentWrapper");
     const height = container.offsetHeight;
 
     content.style.height = `${height}px`;
   }
 
   updated(changedProperties) {
-    if (changedProperties.has('expanded')) {
-      this.setAttribute('aria-expanded', this.expanded);
+    if (changedProperties.has("expanded")) {
+      this.setAttribute("aria-expanded", this.expanded);
     }
   }
 
   // function that renders the HTML and CSS into  the scope of the component
   render() {
+
+    const chevronHtml = this.chevron
+      ? html`
+          <div class="iconWrapper" part="chevron">
+            ${this.generateIconHtml(this.expanded ? chevronUp.svg : chevronDown.svg)}
+          </div>`
+      : html``
+
     return html`
       <div class="componentWrapper">
-        <div
-          class="trigger"
-          @click="${this.toggle}">
+        <div class="trigger" @click="${this.toggle}">
           <slot name="trigger"></slot>
+          ${chevronHtml}
         </div>
         <div class="content">
           <div class="contentWrapper">

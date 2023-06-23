@@ -44,7 +44,18 @@
 
 :host(:not([aria-expanded])),
 :host([aria-expanded=false]) {
-  .content {
+  .content  {
     height: 0 !important;
+  }
+}
+
+:host([chevron]) {
+  
+  .trigger {
+    display: flex;
+
+    .iconWrapper {
+      display: inline-block;
+    }
   }
 }
