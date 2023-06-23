@@ -11,9 +11,10 @@ Use auro-accordion-group if you want to have auto closing accordion components w
 
 ## Properties
 
-| Property | Attribute | Type      | Description                                      |
-|----------|-----------|-----------|--------------------------------------------------|
-| `fluid`  | `fluid`   | `Boolean` | If set, the trigger and content will be 100% width. |
+| Property  | Attribute | Type      | Description                                      |
+|-----------|-----------|-----------|--------------------------------------------------|
+| `chevron` | `chevron` | `boolean` |                                                  |
+| `fluid`   | `fluid`   | `Boolean` | If set, the trigger and content will be 100% width. |
 
 ## Methods
 

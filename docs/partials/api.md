@@ -71,6 +71,20 @@ The accordion trigger can be set to consume 100% of available width by using the
 
 </auro-accordion>
 
+#### chevron
+
+The `chevron` attribute can be used to add a chevron that toggles between expanded and collapsed states. It can also be styled and positioned using a `chevron` CSS part.
+
+<div class="exampleWrapper">
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/chevron.html) -->
+  <!-- AURO-GENERATED-CONTENT:END -->
+</div>
+<auro-accordion lowProfile justifyRight>
+  <span slot="trigger">See code</span>
+
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/chevron.html) -->
+<!-- AURO-GENERATED-CONTENT:END -->
+
 ### Slot Examples
 
 #### default
