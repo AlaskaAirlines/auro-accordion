@@ -10,8 +10,20 @@
 @import './../node_modules/@aurodesignsystem/webcorestylesheets/dist/breakpoints';
 @import './../node_modules/@aurodesignsystem/webcorestylesheets/dist/core';
 
+@mixin unbuttonize {
+  background-color: transparent;
+  border: none;
+  margin: 0;
+  padding: 0;
+  text-align: inherit;
+  font: inherit;
+  border-radius: 0;
+  appearance: none; 
+}
+
 :host {
   .trigger {
+    @include unbuttonize;
     cursor: pointer;
     color: var(--auro-color-text-primary-on-light);
   }
@@ -42,8 +54,8 @@
   }
 }
 
-:host(:not([aria-expanded])),
-:host([aria-expanded=false]) {
+:host(:not([expanded])),
+:host([expanded=false]) {
   .content  {
     height: 0 !important;
   }

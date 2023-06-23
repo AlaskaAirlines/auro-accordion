@@ -4,7 +4,7 @@
 // ---------------------------------------------------------------------
 
 // If using litElement base class
-import { LitElement, html } from "lit";
+import { LitElement, html, nothing } from "lit";
 
 // Import Icons
 import chevronUp from "@alaskaairux/icons/dist/icons/interface/chevron-up_es6.js";
@@ -50,10 +50,10 @@ export class AuroAccordion extends LitElement {
         reflect: true,
       },
 
-      /**
-       * @private
-       */
-      expanded: { type: Object },
+      expanded: {
+        type: Boolean,
+        reflect: true,
+      },
     };
   }
 
@@ -94,12 +94,6 @@ export class AuroAccordion extends LitElement {
     content.style.height = `${height}px`;
   }
 
-  updated(changedProperties) {
-    if (changedProperties.has("expanded")) {
-      this.setAttribute("aria-expanded", this.expanded);
-    }
-  }
-
   // function that renders the HTML and CSS into  the scope of the component
   render() {
 
@@ -112,11 +106,11 @@ export class AuroAccordion extends LitElement {
 
     return html`
       <div class="componentWrapper">
-        <div class="trigger" @click="${this.toggle}">
+        <button class="trigger" id="accordionTrigger" aria-controls="accordionContent" aria-expanded="${this.expanded}" @click="${this.toggle}">
           <slot name="trigger"></slot>
           ${chevronHtml}
-        </div>
-        <div class="content">
+        </button  >
+        <div class="content" id="accordionContent" aria-labelledby="accordionTrigger" inert="${!this.expanded || nothing}">
           <div class="contentWrapper">
             <slot @slotchange="${this.handleContentSlotChanges}"></slot>
           </div>
