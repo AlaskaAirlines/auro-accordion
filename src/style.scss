@@ -48,9 +48,9 @@
   }
 }
 
-:host(:not([fluid])) {
+:host([fluid]) {
   .trigger {
-    display: inline-block;
+    width: 100%;
   }
 }
 
