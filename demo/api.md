@@ -59,7 +59,7 @@ Use auro-accordion-group if you want to have auto closing accordion components w
       </auro-accordion>
       <!-- AURO-GENERATED-CONTENT:END -->
     </div>
-<auro-accordion lowProfile justifyRight>
+<auro-accordion alignRight chevron>
   <span slot="trigger">See code</span>
 <!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/basic.html) -->
 <!-- The below code snippet is automatically added from ./../../apiExamples/basic.html -->
@@ -110,7 +110,7 @@ Using the `alignRight` attribute will cause the trigger to align to the right ed
   </auro-accordion>
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
-<auro-accordion lowProfile justifyRight>
+<auro-accordion alignRight chevron>
   <span slot="trigger">See code</span>
 <!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/alignRight.html) -->
 <!-- The below code snippet is automatically added from ./../../apiExamples/alignRight.html -->
@@ -161,7 +161,7 @@ The accordion can be programatically expanded or collapsed by setting the `expan
   </auro-accordion>
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
-<auro-accordion lowProfile justifyRight>
+<auro-accordion alignRight chevron>
   <span slot="trigger">See code</span>
 <!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/expanded.html) -->
 <!-- The below code snippet is automatically added from ./../../apiExamples/expanded.html -->
@@ -229,7 +229,7 @@ The accordion trigger can be set to consume 100% of available width by using the
   </auro-accordion>
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
-<auro-accordion lowProfile justifyRight>
+<auro-accordion alignRight chevron>
   <span slot="trigger">See code</span>
 <!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/fluid.html) -->
 <!-- The below code snippet is automatically added from ./../../apiExamples/fluid.html -->
@@ -284,7 +284,7 @@ The `chevron` attribute can be used to add a chevron that toggles between expand
   </auro-accordion>
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
-<auro-accordion lowProfile justifyRight>
+<auro-accordion alignRight chevron>
   <span slot="trigger">See code</span>
 <!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/chevron.html) -->
 <!-- The below code snippet is automatically added from ./../../apiExamples/chevron.html -->
@@ -342,7 +342,7 @@ Slot contains all content inside the collapsable portion of the accordion.
       </auro-accordion>
       <!-- AURO-GENERATED-CONTENT:END -->
     </div>
-<auro-accordion lowProfile justifyRight>
+<auro-accordion alignRight chevron>
   <span slot="trigger">See code</span>
 <!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/basic.html) -->
 <!-- The below code snippet is automatically added from ./../../apiExamples/basic.html -->
@@ -393,7 +393,7 @@ This slot is used for content that may be clicked on to toggle visibility of the
       </auro-accordion>
       <!-- AURO-GENERATED-CONTENT:END -->
     </div>
-<auro-accordion lowProfile justifyRight>
+<auro-accordion alignRight chevron>
   <span slot="trigger">See code</span>
 <!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/basic.html) -->
 <!-- The below code snippet is automatically added from ./../../apiExamples/basic.html -->
