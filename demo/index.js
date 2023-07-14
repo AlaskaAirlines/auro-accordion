@@ -1,6 +1,6 @@
 // import { expandedExample } from "../apiExamples/expanded";
 
-export function initAcordianIndexExamples(initCount) {
+export function initAccordionIndexExamples(initCount) {
   initCount = initCount || 0;
 
   try {
@@ -9,7 +9,7 @@ export function initAcordianIndexExamples(initCount) {
     if (initCount <= 20) {
       // setTimeout handles issue where content is sometimes loaded after the functions get called
       setTimeout(() => {
-        initAcordianIndexExamples(initCount + 1);
+        initAccordionIndexExamples(initCount + 1);
       }, 100);
     }
   }
