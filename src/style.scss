@@ -3,6 +3,8 @@
 
 // ---------------------------------------------------------------------
 
+/* stylelint-disable order/properties-order */
+
 // Import Auro tokens
 @import './../node_modules/@alaskaairux/design-tokens/dist/tokens/SCSSVariables';
 @import './../node_modules/@alaskaairux/design-tokens/dist/tokens/SassCustomProperties';
@@ -11,19 +13,20 @@
 @import './../node_modules/@aurodesignsystem/webcorestylesheets/dist/core';
 
 @mixin unbuttonize {
-  background-color: transparent;
-  border: none;
-  margin: 0;
   padding: 0;
+  margin: 0;
+  border: none;
+  background-color: transparent;
   text-align: inherit;
   font: inherit;
   border-radius: 0;
-  appearance: none; 
+  appearance: none;
 }
 
 :host {
   .trigger {
     @include unbuttonize;
+
     cursor: pointer;
     color: var(--auro-color-text-primary-on-light);
   }
@@ -55,19 +58,18 @@
 }
 
 :host(:not([expanded])),
-:host([expanded=false]) {
+:host([expanded="false"]) {
   .content  {
-    height: 0 !important;
+    height: 0 !important; // stylelint-disable-line
   }
 }
 
 :host([chevron]) {
-  
   .trigger {
     display: flex;
+  }
 
-    .iconWrapper {
-      display: inline-block;
-    }
+  .iconWrapper {
+    display: inline-block;
   }
 }

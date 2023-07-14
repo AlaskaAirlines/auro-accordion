@@ -18,11 +18,15 @@ import styleCss from "./style-css.js";
  * auro-accordion provides users a way to have collapsible content on a page.
  * Use auro-accordion-group if you want to have auto closing accordion components when others are selected.
  *
+ * @attr {Boolean} alignRight - If set, the trigger content will align right.
+ * @attr {Boolean} chevron - If set, the accordion trigger will have a chevron showing expanded/collapsed state.
  * @attr {Boolean} expanded - If set, the accordion is expanded.
  * @attr {Boolean} fluid - If set, the trigger and content will be 100% width.
- * @attr {Boolean} alignRight - If set, the trigger content will align right.
  * @slot - Default slot for the accordion content.
  * @slot trigger - Defines the content of the trigger element.
+ * @csspart trigger - Apply CSS to trigger element.
+ * @csspart chevron - Apply CSS to chevron icon.
+ * @csspart content - Apply CSS to the accordion content.
  */
 
 // build the component class
@@ -40,20 +44,22 @@ export class AuroAccordion extends LitElement {
     return {
       // ...super.properties,
 
-      fluid: {
+      alignRight: {
         type: Boolean,
         reflect: true,
       },
-
       chevron: {
         type: Boolean,
         reflect: true,
       },
-
       expanded: {
         type: Boolean,
         reflect: true,
       },
+      fluid: {
+        type: Boolean,
+        reflect: true,
+      }
     };
   }
 
@@ -106,11 +112,11 @@ export class AuroAccordion extends LitElement {
 
     return html`
       <div class="componentWrapper">
-        <button class="trigger" id="accordionTrigger" aria-controls="accordionContent" aria-expanded="${this.expanded}" @click="${this.toggle}">
+        <button class="trigger" id="accordionTrigger" aria-controls="accordionContent" aria-expanded="${this.expanded}" @click="${this.toggle}" part="trigger">
           <slot name="trigger"></slot>
           ${chevronHtml}
         </button  >
-        <div class="content" id="accordionContent" aria-labelledby="accordionTrigger" inert="${!this.expanded || nothing}">
+        <div class="content" id="accordionContent" aria-labelledby="accordionTrigger" inert="${!this.expanded || nothing}" part="content">
           <div class="contentWrapper">
             <slot @slotchange="${this.handleContentSlotChanges}"></slot>
           </div>
