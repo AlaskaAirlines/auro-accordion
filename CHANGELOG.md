@@ -1,5 +1,37 @@
 # Semantic Release Automated Changelog
 
+# [2.0.0](https://github.com/AlaskaAirlines/auro-accordion/compare/v1.6.6...v2.0.0) (2023-07-14)
+
+
+### Bug Fixes
+
+* fluid trigger styling ([f10b33c](https://github.com/AlaskaAirlines/auro-accordion/commit/f10b33c284f8c37caac28b4e3bc4d70c8efbc2e5))
+
+
+### Features
+
+* **API:** complete rebuild of component API [#28](https://github.com/AlaskaAirlines/auro-accordion/issues/28)" ([af8d198](https://github.com/AlaskaAirlines/auro-accordion/commit/af8d1984bb9c7860dff55c84d82798f8bf8b958b))
+* **component:** create new base component using latest generator ([2e1fe10](https://github.com/AlaskaAirlines/auro-accordion/commit/2e1fe10448e2bc2e2d6de71ac4966d06290aaf0e))
+* hide content from tabbing when not expanded ([1b276d4](https://github.com/AlaskaAirlines/auro-accordion/commit/1b276d4fdf03edcd93b411441a78c8a972130291))
+* introduce chevron attribute ([46336be](https://github.com/AlaskaAirlines/auro-accordion/commit/46336be504c616acce52d755afa81664d5f3c220))
+
+
+### Performance Improvements
+
+* **animation:** improve animation styles ([9cd1352](https://github.com/AlaskaAirlines/auro-accordion/commit/9cd1352316096f771ffb3117f7d900665fcbffc5))
+* **api:** perform updates based on code review ([0e2e3ad](https://github.com/AlaskaAirlines/auro-accordion/commit/0e2e3ad5aa2c73a0eb883a8714a7600dfb9f6cf9))
+* **git:** update the github folder ([c11e550](https://github.com/AlaskaAirlines/auro-accordion/commit/c11e55074a81de59aeed1a9a620e61812a8910e7))
+* **release:** force semantic release to run ([2d83576](https://github.com/AlaskaAirlines/auro-accordion/commit/2d8357680162e19bf5ad1ab6414314998cf89366))
+* **release:** update all references of master branch to main branch ([979c188](https://github.com/AlaskaAirlines/auro-accordion/commit/979c1885da9b1f1be1e2fc2617f0541ca66cf1ed))
+* **review:** all code changes based on PR review ([3727b32](https://github.com/AlaskaAirlines/auro-accordion/commit/3727b32689a75dda966a3076f5defd70b00dce31))
+
+
+### BREAKING CHANGES
+
+* **release:** complete refactor of component
+* **release:** complete refactor of component
+* **API:** The entire previous API is deprecated.
+
 ## [1.6.6](https://github.com/AlaskaAirlines/auro-accordion/compare/v1.6.5...v1.6.6) (2023-05-21)
 
 
