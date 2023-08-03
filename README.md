@@ -25,7 +25,7 @@ The following sections are editable by making changes to the following files:
 <!-- AURO-GENERATED-CONTENT:END -->
 <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../docs/partials/readmeAddlInfo.md) -->
 <!-- The below content is automatically added from ./../docs/partials/readmeAddlInfo.md -->
-<!-- AURO-GENERATED-CONTENT This file is to be used for any additional content that should be included in the README.md which is specific to this component. -->
+**Important Note:** `<auro-accordion>` v2.0 is a complete rewrite of the component, meaning that it is **not** intended to be backwards compatible. If you would like to use an older version of `<auro-accordion>`, you will need to install `@alaskaairux/auro-accordion`.
 <!-- AURO-GENERATED-CONTENT:END -->
 
 ## UI development browser support

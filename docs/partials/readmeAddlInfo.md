@@ -1,1 +1,2 @@
-<!-- AURO-GENERATED-CONTENT This file is to be used for any additional content that should be included in the README.md which is specific to this component. -->
+**Important Note:** `<auro-accordion>` v2.0 is a complete rewrite of the component, meaning that it is **not** intended to be backwards compatible. If you would like to use an older version of `<auro-accordion>`, you will need to install `@alaskaairux/auro-accordion`.
+
