@@ -1,5 +1,18 @@
 # Semantic Release Automated Changelog
 
+## [2.0.2](https://github.com/AlaskaAirlines/auro-accordion/compare/v2.0.1...v2.0.2) (2023-08-07)
+
+
+### Bug Fixes
+
+* **docs:** update README based on PR feedback [#82](https://github.com/AlaskaAirlines/auro-accordion/issues/82) ([5e2110b](https://github.com/AlaskaAirlines/auro-accordion/commit/5e2110baa263f496d327be8c406e2fdc7b527ffd))
+* **marked:** revert marked import to previous version ([be41b84](https://github.com/AlaskaAirlines/auro-accordion/commit/be41b84efbfb1722b2a310aaf713d4da83e7c79f))
+
+
+### Performance Improvements
+
+* **tags:** remove tag for vulnerabilities [#83](https://github.com/AlaskaAirlines/auro-accordion/issues/83) ([dae95a2](https://github.com/AlaskaAirlines/auro-accordion/commit/dae95a2af4544e6be526ceaaf1146199ac6cb385))
+
 ## [2.0.1](https://github.com/AlaskaAirlines/auro-accordion/compare/v2.0.0...v2.0.1) (2023-07-14)
 
 
