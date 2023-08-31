@@ -3,7 +3,7 @@
 
 // ---------------------------------------------------------------------
 
-/* stylelint-disable order/properties-order */
+/* stylelint-disable order/properties-order, selector-max-combinators, selector-max-compound-selectors */
 
 // Import Auro tokens
 @import './../node_modules/@alaskaairux/design-tokens/dist/tokens/SCSSVariables';
@@ -28,7 +28,27 @@
     @include unbuttonize;
 
     cursor: pointer;
-    color: var(--auro-color-text-primary-on-light);
+    display: flex;
+    color: var(--auro-color-text-primary-default);
+    padding: var(--auro-size-200) 0;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  ::slotted([slot="trigger"]) {
+    padding-left: var(--auro-size-100);
+    padding-right: var(--auro-size-200);
+  }
+
+  .iconWrapper {
+    height: var(--auro-size-300);
+    margin-top: -2px;
+
+    svg {
+      color: var(--auro-color-icon-accent-default);
+    }
   }
 
   .content {
@@ -40,6 +60,26 @@
   .componentWrapper {
     height: 100%;
     overflow: hidden;
+  }
+
+  .contentWrapper {
+    padding-left: var(--auro-size-400);
+    padding-bottom: var(--auro-size-300);
+    padding-right: var(--auro-size-200);
+  }
+}
+
+:host(:focus) {
+  .trigger {
+    border: 1px solid var(--auro-color-border-active-default);
+    border-radius: 6px;
+  }
+}
+
+:host([iconRight]) {
+  ::slotted([slot="trigger"]) {
+    padding-left: 0;
+    padding-right: var(--auro-size-50);
   }
 }
 
@@ -61,15 +101,5 @@
 :host([expanded="false"]) {
   .content  {
     height: 0 !important; // stylelint-disable-line
-  }
-}
-
-:host([chevron]) {
-  .trigger {
-    display: flex;
-  }
-
-  .iconWrapper {
-    display: inline-block;
   }
 }
