@@ -21,7 +21,7 @@ This file is generated based on a template fetched from `./docs/partials/demo.md
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
 
-<auro-accordion alignRight chevron>
+<auro-accordion alignRight>
   <span slot="trigger">See code</span>
 
 <!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/basic.html) -->
@@ -60,7 +60,7 @@ This will create a new custom element that you can use in your HTML that will fu
   </custom-accordion>
 </div>
 
-<auro-accordion alignRight chevron>
+<auro-accordion alignRight>
   <span slot="trigger">See code</span>
 
   ```html

@@ -19,9 +19,9 @@ import styleCss from "./style-css.js";
  * Use auro-accordion-group if you want to have auto closing accordion components when others are selected.
  *
  * @attr {Boolean} alignRight - If set, the trigger content will align right.
- * @attr {Boolean} chevron - If set, the accordion trigger will have a chevron showing expanded/collapsed state.
  * @attr {Boolean} expanded - If set, the accordion is expanded.
  * @attr {Boolean} fluid - If set, the trigger and content will be 100% width.
+ * @attr {Boolean} iconRight - If set, the chevron icon will render to the right of the trigger.
  * @slot - Default slot for the accordion content.
  * @slot trigger - Defines the content of the trigger element.
  * @csspart trigger - Apply CSS to trigger element.
@@ -45,10 +45,6 @@ export class AuroAccordion extends LitElement {
       // ...super.properties,
 
       alignRight: {
-        type: Boolean,
-        reflect: true,
-      },
-      chevron: {
         type: Boolean,
         reflect: true,
       },
@@ -103,19 +99,20 @@ export class AuroAccordion extends LitElement {
   // function that renders the HTML and CSS into  the scope of the component
   render() {
 
-    const chevronHtml = this.chevron
-      ? html`
-          <div class="iconWrapper" part="chevron">
-            ${this.generateIconHtml(this.expanded ? chevronUp.svg : chevronDown.svg)}
-          </div>`
-      : html``
+    const chevronHtml =
+      html`
+        <div class="iconWrapper" part="chevron">
+          ${this.generateIconHtml(this.expanded ? chevronUp.svg : chevronDown.svg)}
+        </div>
+      `;
 
     return html`
       <div class="componentWrapper">
         <button class="trigger" id="accordionTrigger" aria-controls="accordionContent" aria-expanded="${this.expanded}" @click="${this.toggle}" part="trigger">
+          ${this.hasAttribute('iconRight') ? undefined : html`${chevronHtml}`} 
           <slot name="trigger"></slot>
-          ${chevronHtml}
-        </button  >
+          ${this.hasAttribute('iconRight') ? html`${chevronHtml}` : undefined}
+        </button>
         <div class="content" id="accordionContent" aria-labelledby="accordionTrigger" inert="${!this.expanded || nothing}" part="content">
           <div class="contentWrapper">
             <slot @slotchange="${this.handleContentSlotChanges}"></slot>

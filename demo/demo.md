@@ -43,7 +43,7 @@ The `<auro-accordion>` element should be used in situations where users may:
   </auro-accordion>
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
-<auro-accordion alignRight chevron>
+<auro-accordion alignRight>
   <span slot="trigger">See code</span>
 <!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/basic.html) -->
 <!-- The below code snippet is automatically added from ./../../apiExamples/basic.html -->
@@ -98,7 +98,7 @@ This will create a new custom element that you can use in your HTML that will fu
     </p>
   </custom-accordion>
 </div>
-<auro-accordion alignRight chevron>
+<auro-accordion alignRight>
   <span slot="trigger">See code</span>
   ```html
 <custom-accordion>

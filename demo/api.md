@@ -6,12 +6,17 @@
 auro-accordion provides users a way to have collapsible content on a page.
 Use auro-accordion-group if you want to have auto closing accordion components when others are selected.
 
+## Attributes
+
+| Attribute   | Type      | Description                                      |
+|-------------|-----------|--------------------------------------------------|
+| [iconRight](#iconRight) | `Boolean` | If set, the chevron icon will render to the right of the trigger. |
+
 ## Properties
 
 | Property     | Attribute    | Type      | Default | Description                                      |
 |--------------|--------------|-----------|---------|--------------------------------------------------|
 | [alignRight](#alignRight) | `alignRight` | `Boolean` |         | If set, the trigger content will align right.    |
-| [chevron](#chevron)    | `chevron`    | `Boolean` |         | If set, the accordion trigger will have a chevron showing expanded/collapsed state. |
 | [expanded](#expanded)   | `expanded`   | `Boolean` | false   | If set, the accordion is expanded.               |
 | [fluid](#fluid)      | `fluid`      | `Boolean` |         | If set, the trigger and content will be 100% width. |
 
@@ -63,7 +68,7 @@ Use auro-accordion-group if you want to have auto closing accordion components w
       </auro-accordion>
       <!-- AURO-GENERATED-CONTENT:END -->
     </div>
-<auro-accordion alignRight chevron>
+<auro-accordion alignRight>
   <span slot="trigger">See code</span>
 <!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/basic.html) -->
 <!-- The below code snippet is automatically added from ./../../apiExamples/basic.html -->
@@ -114,7 +119,7 @@ Using the `alignRight` attribute will cause the trigger to align to the right ed
   </auro-accordion>
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
-<auro-accordion alignRight chevron>
+<auro-accordion alignRight>
   <span slot="trigger">See code</span>
 <!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/alignRight.html) -->
 <!-- The below code snippet is automatically added from ./../../apiExamples/alignRight.html -->
@@ -165,7 +170,7 @@ The accordion can be programatically expanded or collapsed by setting the `expan
   </auro-accordion>
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
-<auro-accordion alignRight chevron>
+<auro-accordion alignRight>
   <span slot="trigger">See code</span>
 <!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/expanded.html) -->
 <!-- The below code snippet is automatically added from ./../../apiExamples/expanded.html -->
@@ -233,7 +238,7 @@ The accordion trigger can be set to consume 100% of available width by using the
   </auro-accordion>
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
-<auro-accordion alignRight chevron>
+<auro-accordion alignRight>
   <span slot="trigger">See code</span>
 <!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/fluid.html) -->
 <!-- The below code snippet is automatically added from ./../../apiExamples/fluid.html -->
@@ -257,54 +262,6 @@ The accordion trigger can be set to consume 100% of available width by using the
 ```
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
-
-#### chevron
-
-The `chevron` attribute can be used to add a chevron that toggles between expanded and collapsed states. It can also be styled and positioned using a `chevron` CSS part.
-
-<div class="exampleWrapper">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/chevron.html) -->
-  <!-- The below content is automatically added from ./../../apiExamples/chevron.html -->
-  <auro-accordion id="chevronAccordion" chevron>
-    <span slot="trigger">Trigger</span>
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-    </p>
-    <p>
-      Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-    </p>
-    <p>
-      Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-    </p>
-    <p>
-      Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-    </p>
-  </auro-accordion>
-  <!-- AURO-GENERATED-CONTENT:END -->
-</div>
-<auro-accordion alignRight chevron>
-  <span slot="trigger">See code</span>
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/chevron.html) -->
-<!-- The below code snippet is automatically added from ./../../apiExamples/chevron.html -->
-
-```html
-<auro-accordion id="chevronAccordion" chevron>
-  <span slot="trigger">Trigger</span>
-  <p>
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-  </p>
-  <p>
-    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-  </p>
-  <p>
-    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-  </p>
-  <p>
-    Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-  </p>
-</auro-accordion>
-```
-<!-- AURO-GENERATED-CONTENT:END -->
 
 ### Slot Examples
 
@@ -334,7 +291,7 @@ Slot contains all content inside the collapsable portion of the accordion.
       </auro-accordion>
       <!-- AURO-GENERATED-CONTENT:END -->
     </div>
-<auro-accordion alignRight chevron>
+<auro-accordion alignRight>
   <span slot="trigger">See code</span>
 <!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/basic.html) -->
 <!-- The below code snippet is automatically added from ./../../apiExamples/basic.html -->
@@ -385,7 +342,7 @@ This slot is used for content that may be clicked on to toggle visibility of the
       </auro-accordion>
       <!-- AURO-GENERATED-CONTENT:END -->
     </div>
-<auro-accordion alignRight chevron>
+<auro-accordion alignRight>
   <span slot="trigger">See code</span>
 <!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/basic.html) -->
 <!-- The below code snippet is automatically added from ./../../apiExamples/basic.html -->
