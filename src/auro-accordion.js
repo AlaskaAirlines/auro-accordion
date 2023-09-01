@@ -24,6 +24,7 @@ import styleCss from "./style-css.js";
  * @attr {Boolean} iconRight - If set, the chevron icon will render to the right of the trigger.
  * @slot - Default slot for the accordion content.
  * @slot trigger - Defines the content of the trigger element.
+ * @csspart accordion - Apply CSS to Accordion wrapper.
  * @csspart trigger - Apply CSS to trigger element.
  * @csspart chevron - Apply CSS to chevron icon.
  * @csspart content - Apply CSS to the accordion content.
@@ -107,7 +108,7 @@ export class AuroAccordion extends LitElement {
       `;
 
     return html`
-      <div class="componentWrapper">
+      <div class="componentWrapper" part="accordion">
         <button class="trigger" id="accordionTrigger" aria-controls="accordionContent" aria-expanded="${this.expanded}" @click="${this.toggle}" part="trigger">
           ${this.hasAttribute('iconRight') ? undefined : html`${chevronHtml}`} 
           <slot name="trigger"></slot>

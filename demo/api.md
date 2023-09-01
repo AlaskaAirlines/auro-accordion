@@ -35,11 +35,12 @@ Use auro-accordion-group if you want to have auto closing accordion components w
 
 ## CSS Shadow Parts
 
-| Part      | Description                         |
-|-----------|-------------------------------------|
-| [chevron](#chevron) | Apply CSS to chevron icon.          |
-| [content](#content) | Apply CSS to the accordion content. |
-| [trigger](#trigger) | Apply CSS to trigger element.       |
+| Part        | Description                         |
+|-------------|-------------------------------------|
+| [accordion](#accordion) | Apply CSS to Accordion wrapper.     |
+| [chevron](#chevron)   | Apply CSS to chevron icon.          |
+| [content](#content)   | Apply CSS to the accordion content. |
+| [trigger](#trigger)   | Apply CSS to trigger element.       |
 <!-- AURO-GENERATED-CONTENT:END -->
 
 ## API Examples
@@ -126,6 +127,55 @@ Using the `alignRight` attribute will cause the trigger to align to the right ed
 
 ```html
 <auro-accordion alignRight>
+  <span slot="trigger">Trigger</span>
+  <p>
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+  </p>
+  <p>
+    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+  </p>
+  <p>
+    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+  </p>
+  <p>
+    Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+  </p>
+</auro-accordion>
+```
+<!-- AURO-GENERATED-CONTENT:END -->
+</auro-accordion>
+
+#### iconRight
+
+Using the `iconRight` attribute will cause the chevron to appear on the right side of the accordion label.
+
+<div class="exampleWrapper">
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/iconRight.html) -->
+  <!-- The below content is automatically added from ./../../apiExamples/iconRight.html -->
+  <auro-accordion iconRight>
+    <span slot="trigger">Trigger</span>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+    </p>
+    <p>
+      Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+    </p>
+    <p>
+      Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+    </p>
+    <p>
+      Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    </p>
+  </auro-accordion>
+  <!-- AURO-GENERATED-CONTENT:END -->
+</div>
+<auro-accordion alignRight chevron>
+  <span slot="trigger">See code</span>
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/iconRight.html) -->
+<!-- The below code snippet is automatically added from ./../../apiExamples/iconRight.html -->
+
+```html
+<auro-accordion iconRight>
   <span slot="trigger">Trigger</span>
   <p>
     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
