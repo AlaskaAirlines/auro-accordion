@@ -32,8 +32,9 @@ Use auro-accordion-group if you want to have auto closing accordion components w
 
 ## CSS Shadow Parts
 
-| Part      | Description                         |
-|-----------|-------------------------------------|
-| `chevron` | Apply CSS to chevron icon.          |
-| `content` | Apply CSS to the accordion content. |
-| `trigger` | Apply CSS to trigger element.       |
+| Part        | Description                         |
+|-------------|-------------------------------------|
+| `accordion` | Apply CSS to Accordion wrapper.     |
+| `chevron`   | Apply CSS to chevron icon.          |
+| `content`   | Apply CSS to the accordion content. |
+| `trigger`   | Apply CSS to trigger element.       |

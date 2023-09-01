@@ -37,6 +37,22 @@ Using the `alignRight` attribute will cause the trigger to align to the right ed
 
 </auro-accordion>
 
+#### iconRight
+
+Using the `iconRight` attribute will cause the chevron to appear on the right side of the accordion label.
+
+<div class="exampleWrapper">
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/iconRight.html) -->
+  <!-- AURO-GENERATED-CONTENT:END -->
+</div>
+<auro-accordion alignRight chevron>
+  <span slot="trigger">See code</span>
+
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/iconRight.html) -->
+<!-- AURO-GENERATED-CONTENT:END -->
+
+</auro-accordion>
+
 #### expanded
 
 The accordion can be programatically expanded or collapsed by setting the `expanded` attribute to `true` or `false`.
