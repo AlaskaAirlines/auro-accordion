@@ -22,12 +22,16 @@ import styleCss from "./style-css.js";
  * @attr {Boolean} expanded - If set, the accordion is expanded.
  * @attr {Boolean} fluid - If set, the trigger and content will be 100% width.
  * @attr {Boolean} iconRight - If set, the chevron icon will render to the right of the trigger.
+ * @attr {Boolean} emphasis - If set, emphasis styles will be applied to the auro-accordions.
+ * @attr {Boolean} sm - If set, the auro-accordion elements will appear smaller than normal.
+ * @attr {Boolean} lg - If set, the auro-accordion elements will appear larger than normal.
  * @slot - Default slot for the accordion content.
  * @slot trigger - Defines the content of the trigger element.
  * @csspart accordion - Apply CSS to Accordion wrapper.
  * @csspart trigger - Apply CSS to trigger element.
  * @csspart chevron - Apply CSS to chevron icon.
  * @csspart content - Apply CSS to the accordion content.
+ * @fires toggleExpanded - Notifies that the accordion has been expanded or closed.
  */
 
 // build the component class
@@ -56,6 +60,22 @@ export class AuroAccordion extends LitElement {
       fluid: {
         type: Boolean,
         reflect: true,
+      },
+      iconRight: {
+        type: Boolean,
+        reflect: true
+      },
+      emphasis: {
+        type: Boolean,
+        reflect: true
+      },
+      sm: {
+        type: Boolean,
+        reflect: true
+      },
+      lg: {
+        type: Boolean,
+        reflect: true
       }
     };
   }
@@ -73,15 +93,21 @@ export class AuroAccordion extends LitElement {
     const dom = new DOMParser().parseFromString(svgContent, 'text/html'),
     svg = dom.body.firstChild;
 
-   return html`${svg}`;
+    return html`${svg}`;
   }
 
   /**
    * Toggles the visibility of the accordion content.
-   * @returns {void}
+   * @param {object} event - Standard event parameter
    */
-  toggle() {
+  toggle(event) {
     this.expanded = !this.expanded;
+
+    this.dispatchEvent(new CustomEvent('toggleExpanded', {
+      bubbles: true,
+      composed: true,
+      target: event.target
+    }));
   }
 
   /**
@@ -95,6 +121,12 @@ export class AuroAccordion extends LitElement {
     const height = container.offsetHeight;
 
     content.style.height = `${height}px`;
+  }
+
+  updated(changedProperties) {
+    if (changedProperties.has('iconRight')) {
+      this.requestUpdate();
+    }
   }
 
   // function that renders the HTML and CSS into  the scope of the component
@@ -111,11 +143,13 @@ export class AuroAccordion extends LitElement {
       <div class="componentWrapper" part="accordion">
         <button class="trigger" id="accordionTrigger" aria-controls="accordionContent" aria-expanded="${this.expanded}" @click="${this.toggle}" part="trigger">
           ${this.hasAttribute('iconRight') ? undefined : html`${chevronHtml}`} 
-          <slot name="trigger"></slot>
+          <div class="triggerWrapper" part="triggerWrapper">
+            <slot name="trigger" part="triggerSlot"></slot>
+          </div>
           ${this.hasAttribute('iconRight') ? html`${chevronHtml}` : undefined}
         </button>
         <div class="content" id="accordionContent" aria-labelledby="accordionTrigger" inert="${!this.expanded || nothing}" part="content">
-          <div class="contentWrapper">
+          <div class="contentWrapper" part="contentWrapper">
             <slot @slotchange="${this.handleContentSlotChanges}"></slot>
           </div>
         </div>
