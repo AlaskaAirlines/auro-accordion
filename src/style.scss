@@ -3,7 +3,7 @@
 
 // ---------------------------------------------------------------------
 
-/* stylelint-disable order/properties-order, selector-max-combinators, selector-max-compound-selectors */
+/* stylelint-disable order/properties-order, selector-max-combinators, selector-max-compound-selectors, declaration-empty-line-before */
 
 // Import Auro tokens
 @import './../node_modules/@alaskaairux/design-tokens/dist/tokens/SCSSVariables';
@@ -40,6 +40,8 @@
   ::slotted([slot="trigger"]) {
     padding-left: var(--auro-size-100);
     padding-right: var(--auro-size-200);
+
+    font-size: var(--auro-text-heading-300-size);
   }
 
   .iconWrapper {
@@ -55,6 +57,8 @@
     width: 100%;
     transition: all 0.5s ease-in-out;
     transition-property: height;
+
+    font-size: var(--auro-text-body-size-default);
   }
 
   .componentWrapper {
@@ -95,11 +99,74 @@
   .trigger {
     width: 100%;
   }
+
+  svg {
+    color: var(--auro-color-icon-emphasis-default);
+  }
+
+  .componentWrapper {
+    border-bottom: 1px solid var(--auro-color-border-divider-default);
+  }
 }
 
 :host(:not([expanded])),
 :host([expanded="false"]) {
   .content  {
     height: 0 !important; // stylelint-disable-line
+  }
+}
+
+:host([emphasis]) {
+  .trigger {
+    border-left: 2px solid transparent;
+    padding-left: var(--auro-size-200);
+
+    &:focus {
+      border-left: 1px solid var(--auro-color-border-active-default) !important; // stylelint-disable-line
+    }
+  }
+
+  .content {
+    border-left: 2px solid transparent;
+    padding: unset;
+  }
+
+  .contentWrapper {
+    padding-left: var(--auro-size-200);
+  }
+
+  .triggerWrapper {
+    flex: 1;
+  }
+
+  .iconWrapper {
+    padding-right: var(--auro-size-200);
+  }
+}
+
+:host([emphasis]:hover) {
+  .trigger {
+    text-decoration: unset;
+    border-left: 2px solid var(--auro-color-border-active-default) !important; // stylelint-disable-line
+  }
+
+  .content { 
+    border-left: 2px solid var(--auro-color-ui-disabled-default);
+  }
+}
+
+:host([sm]) {
+  ::slotted([slot="trigger"]) { 
+    font-size: var(--auro-text-body-size-default);
+
+    padding: var(--auro-size-150) 0;
+  }
+}
+
+:host([lg]) {
+  ::slotted([slot="trigger"]) { 
+    font-size: var(--auro-text-heading-400-size);
+
+    padding: calc(var(--auro-size-200) + var(--auro-size-50)) 0;
   }
 }

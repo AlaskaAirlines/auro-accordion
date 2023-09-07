@@ -1,7 +1,7 @@
 <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../api.md) -->
 <!-- AURO-GENERATED-CONTENT:END -->
 
-## API Examples
+## Accordion API Examples
 
 ### Basic
 
@@ -19,7 +19,19 @@
 
 </auro-accordion>
 
-### Attribute Examples
+<div class="exampleWrapper">
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/accordionGroup.html) -->
+  <!-- AURO-GENERATED-CONTENT:END -->
+</div>
+<auro-accordion alignRight>
+  <span slot="trigger">See code</span>
+
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/accordionGroup.html) -->
+<!-- AURO-GENERATED-CONTENT:END -->
+
+</auro-accordion>
+
+### Accordion Attribute Examples
 
 #### alignRight
 
@@ -87,6 +99,19 @@ The accordion trigger can be set to consume 100% of available width by using the
 
 </auro-accordion>
 
+#### noToggleExpanded
+
+nfjksdnfjksdnjkfdsnjkfsdnjkfnsdkj
+
+<div class="exampleWrapper">
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/noToggleExpanded.html) -->
+  <!-- AURO-GENERATED-CONTENT:END -->
+</div>
+<auro-accordion alignRight>
+  <span slot="trigger">See code</span>
+
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/noToggleExpanded.html) -->
+
 ### Slot Examples
 
 #### default
@@ -125,3 +150,69 @@ This slot is used for content that may be clicked on to toggle visibility of the
 
 </auro-accordion>
 
+## Accordion Group Attribute Examples
+
+### Small
+
+Using the `sm` attribute will cause the size of the accordion trigger to render smaller.
+
+<div class="exampleWrapper">
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/accordionGroupSm.html) -->
+  <!-- AURO-GENERATED-CONTENT:END -->
+</div>
+<auro-accordion alignRight>
+  <span slot="trigger">See code</span>
+
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/accordionGroupSm.html) -->
+<!-- AURO-GENERATED-CONTENT:END -->
+
+</auro-accordion>
+
+### Large
+
+Using the `lg` attribute will cause the size of the accordion trigger to render larger.
+
+<div class="exampleWrapper">
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/accordionGroupLg.html) -->
+  <!-- AURO-GENERATED-CONTENT:END -->
+</div>
+<auro-accordion alignRight>
+  <span slot="trigger">See code</span>
+
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/accordionGroupLg.html) -->
+<!-- AURO-GENERATED-CONTENT:END -->
+
+</auro-accordion>
+
+### emphasis
+
+Using the `noToggleExpanded` attribute will allow for multiple `auro-accordion`'s in an `auro-accordion-group` to be open at the same time.
+
+<div class="exampleWrapper">
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/emphasis.html) -->
+  <!-- AURO-GENERATED-CONTENT:END -->
+</div>
+<auro-accordion alignRight>
+  <span slot="trigger">See code</span>
+
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/emphasis.html) -->
+<!-- AURO-GENERATED-CONTENT:END -->
+
+</auro-accordion>
+
+
+### noToggleExpanded
+
+Using the `noToggleExpanded` attribute will allow for multiple `auro-accordion`'s in an `auro-accordion-group` to be open at the same time.
+
+<div class="exampleWrapper">
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/noToggleExpanded.html) -->
+  <!-- AURO-GENERATED-CONTENT:END -->
+</div>
+<auro-accordion alignRight>
+  <span slot="trigger">See code</span>
+
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/noToggleExpanded.html) -->
+<!-- AURO-GENERATED-CONTENT:END -->
+
+</auro-accordion>
