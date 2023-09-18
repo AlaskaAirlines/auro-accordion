@@ -14,21 +14,23 @@ Use auro-accordion-group if you want to have auto closing accordion components w
 | [emphasis](#emphasis)   | `emphasis`   | `Boolean` |         | If set, emphasis styles will be applied to the auro-accordions. |
 | [expanded](#expanded)   | `expanded`   | `Boolean` | false   | If set, the accordion is expanded.               |
 | [fluid](#fluid)      | `fluid`      | `Boolean` |         | If set, the trigger and content will be 100% width. |
+| [group](#group)      | `group`      | `Boolean` |         | Attribute will be set on accordion when it appears in an accordion group. |
 | [iconRight](#iconRight)  | `iconRight`  | `Boolean` |         | If set, the chevron icon will render to the right of the trigger. |
 | [lg](#lg)         | `lg`         | `Boolean` |         | If set, the auro-accordion elements will appear larger than normal. |
+| [noChevron](#noChevron)  | `noChevron`  | `Boolean` |         | If set, the chevron icon will not appear inside the trigger of the accordion. |
 | [sm](#sm)         | `sm`         | `Boolean` |         | If set, the auro-accordion elements will appear smaller than normal. |
 
 ## Methods
 
-| Method   | Type                    | Description                                      |
-|----------|-------------------------|--------------------------------------------------|
-| [toggle](#toggle) | `(event: object): void` | Toggles the visibility of the accordion content.<br /><br />**event**: Standard event parameter |
+| Method   | Type       | Description                                      |
+|----------|------------|--------------------------------------------------|
+| [toggle](#toggle) | `(): void` | Toggles the visibility of the accordion content. |
 
 ## Events
 
-| Event            | Type               | Description                                      |
-|------------------|--------------------|--------------------------------------------------|
-| [toggleExpanded](#toggleExpanded) | `CustomEvent<any>` | Notifies that the accordion has been expanded or closed. |
+| Event            | Type                                  | Description                                      |
+|------------------|---------------------------------------|--------------------------------------------------|
+| [toggleExpanded](#toggleExpanded) | `CustomEvent<{ expanded: boolean; }>` | Notifies that the accordion has been expanded or closed. |
 
 ## Slots
 
@@ -425,136 +427,37 @@ The accordion trigger can be set to consume 100% of available width by using the
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
 
-#### noToggleExpanded
+#### noChevron
 
-nfjksdnfjksdnjkfdsnjkfsdnjkfnsdkj
+The chevron icon within the trigger of the `auro-accordion` will not render when the `noChevron` attribute is present.
 
 <div class="exampleWrapper">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/noToggleExpanded.html) -->
-  <!-- The below content is automatically added from ./../../apiExamples/noToggleExpanded.html -->
-  <auro-accordion-group noToggleExpanded>
-    <auro-accordion>
-      <span slot="trigger">Trigger</span>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-      </p>
-      <p>
-        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-      </p>
-      <p>
-        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-      </p>
-      <p>
-        Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-      </p>
-    </auro-accordion>
-    <auro-accordion>
-      <span slot="trigger">Trigger</span>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-      </p>
-      <p>
-        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-      </p>
-      <p>
-        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-      </p>
-      <p>
-        Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-      </p>
-    </auro-accordion>
-    <auro-accordion>
-      <span slot="trigger">Trigger</span>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-      </p>
-      <p>
-        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-      </p>
-      <p>
-        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-      </p>
-      <p>
-        Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-      </p>
-    </auro-accordion>
-  </auro-accordion-group>
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/noChevron.html) -->
+  <!-- The below content is automatically added from ./../../apiExamples/noChevron.html -->
+  <auro-accordion noChevron>
+    <span slot="trigger">Trigger</span>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+    </p>
+    <p>
+      Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+    </p>
+    <p>
+      Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+    </p>
+    <p>
+      Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    </p>
+  </auro-accordion>
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
 <auro-accordion alignRight>
   <span slot="trigger">See code</span>
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/noToggleExpanded.html) -->
-
-### Slot Examples
-
-#### default
-
-Slot contains all content inside the collapsable portion of the accordion.
-
-<div class="twoColDemoRow">
-  <div>
-    <div class="exampleWrapper">
-      <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/basic.html) -->
-      <!-- The below content is automatically added from ./../../apiExamples/basic.html -->
-      <auro-accordion>
-        <span slot="trigger">Trigger</span>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        </p>
-        <p>
-          Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-        </p>
-        <p>
-          Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-        </p>
-        <p>
-          Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-        </p>
-      </auro-accordion>
-      <!-- AURO-GENERATED-CONTENT:END -->
-    </div>
-<auro-accordion alignRight>
-  <span slot="trigger">See code</span>
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/basic.html) -->
-<!-- The below code snippet is automatically added from ./../../apiExamples/basic.html -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/noChevron.html) -->
+<!-- The below code snippet is automatically added from ./../../apiExamples/noChevron.html -->
 
 ```html
-<auro-accordion>
-  <span slot="trigger">Trigger</span>
-  <p>
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-  </p>
-  <p>
-    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-  </p>
-  <p>
-    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-  </p>
-  <p>
-    Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-  </p>
-</auro-accordion>
-```
-<!-- AURO-GENERATED-CONTENT:END -->
-</auro-accordion>
-
-#### trigger
-
-This slot is used for content that may be clicked on to toggle visibility of the accordion content.
-
-<div class="twoColDemoRow">
-  <div>
-    <div class="exampleWrapper">
-      <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/basic.html) -->
-      <!-- AURO-GENERATED-CONTENT:END -->
-    </div>
-<auro-accordion alignRight>
-  <span slot="trigger">See code</span>
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/basic.html) -->
-<!-- The below code snippet is automatically added from ./../../apiExamples/basic.html -->
-
-```html
-<auro-accordion>
+<auro-accordion noChevron>
   <span slot="trigger">Trigger</span>
   <p>
     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -803,7 +706,7 @@ Using the `lg` attribute will cause the size of the accordion trigger to render 
 
 ### emphasis
 
-Using the `noToggleExpanded` attribute will allow for multiple `auro-accordion`'s in an `auro-accordion-group` to be open at the same time.
+Use the `emphasis` attribute to apply certain styles to the `auro-accordions`.
 
 <div class="exampleWrapper">
   <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/emphasis.html) -->

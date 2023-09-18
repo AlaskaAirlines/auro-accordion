@@ -11,21 +11,23 @@ Use auro-accordion-group if you want to have auto closing accordion components w
 | `emphasis`   | `emphasis`   | `Boolean` |         | If set, emphasis styles will be applied to the auro-accordions. |
 | `expanded`   | `expanded`   | `Boolean` | false   | If set, the accordion is expanded.               |
 | `fluid`      | `fluid`      | `Boolean` |         | If set, the trigger and content will be 100% width. |
+| `group`      | `group`      | `Boolean` |         | Attribute will be set on accordion when it appears in an accordion group. |
 | `iconRight`  | `iconRight`  | `Boolean` |         | If set, the chevron icon will render to the right of the trigger. |
 | `lg`         | `lg`         | `Boolean` |         | If set, the auro-accordion elements will appear larger than normal. |
+| `noChevron`  | `noChevron`  | `Boolean` |         | If set, the chevron icon will not appear inside the trigger of the accordion. |
 | `sm`         | `sm`         | `Boolean` |         | If set, the auro-accordion elements will appear smaller than normal. |
 
 ## Methods
 
-| Method   | Type                    | Description                                      |
-|----------|-------------------------|--------------------------------------------------|
-| `toggle` | `(event: object): void` | Toggles the visibility of the accordion content.<br /><br />**event**: Standard event parameter |
+| Method   | Type       | Description                                      |
+|----------|------------|--------------------------------------------------|
+| `toggle` | `(): void` | Toggles the visibility of the accordion content. |
 
 ## Events
 
-| Event            | Type               | Description                                      |
-|------------------|--------------------|--------------------------------------------------|
-| `toggleExpanded` | `CustomEvent<any>` | Notifies that the accordion has been expanded or closed. |
+| Event            | Type                                  | Description                                      |
+|------------------|---------------------------------------|--------------------------------------------------|
+| `toggleExpanded` | `CustomEvent<{ expanded: boolean; }>` | Notifies that the accordion has been expanded or closed. |
 
 ## Slots
 
