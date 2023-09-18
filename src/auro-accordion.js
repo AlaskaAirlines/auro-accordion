@@ -23,6 +23,8 @@ import styleCss from "./style-css.js";
  * @attr {Boolean} fluid - If set, the trigger and content will be 100% width.
  * @attr {Boolean} iconRight - If set, the chevron icon will render to the right of the trigger.
  * @attr {Boolean} emphasis - If set, emphasis styles will be applied to the auro-accordions.
+ * @attr {Boolean} group - Attribute will be set on accordion when it appears in an accordion group.
+ * @attr {Boolean} noChevron - If set, the chevron icon will not appear inside the trigger of the accordion.
  * @attr {Boolean} sm - If set, the auro-accordion elements will appear smaller than normal.
  * @attr {Boolean} lg - If set, the auro-accordion elements will appear larger than normal.
  * @slot - Default slot for the accordion content.
@@ -69,6 +71,14 @@ export class AuroAccordion extends LitElement {
         type: Boolean,
         reflect: true
       },
+      group: {
+        type: Boolean,
+        reflect: true
+      },
+      noChevron: {
+        type: Boolean,
+        reflect: true
+      },
       sm: {
         type: Boolean,
         reflect: true
@@ -98,15 +108,16 @@ export class AuroAccordion extends LitElement {
 
   /**
    * Toggles the visibility of the accordion content.
-   * @param {object} event - Standard event parameter
    */
-  toggle(event) {
+  toggle() {
     this.expanded = !this.expanded;
 
     this.dispatchEvent(new CustomEvent('toggleExpanded', {
       bubbles: true,
       composed: true,
-      target: event.target
+      detail: { 
+        expanded: this.expanded
+      }
     }));
   }
 
@@ -132,8 +143,9 @@ export class AuroAccordion extends LitElement {
   // function that renders the HTML and CSS into  the scope of the component
   render() {
 
-    const chevronHtml =
-      html`
+    const chevronHtml = this.noChevron
+      ? html``
+      : html`
         <div class="iconWrapper" part="chevron">
           ${this.generateIconHtml(this.expanded ? chevronUp.svg : chevronDown.svg)}
         </div>

@@ -62,6 +62,7 @@ export class AuroAccordionGroup extends LitElement {
       }
 
       item.fluid = true;
+      item.group = true;
     })
   }
 
@@ -89,7 +90,7 @@ export class AuroAccordionGroup extends LitElement {
    */
   handleItems() {
     const groupTagName = this.tagName.toLowerCase();
-    const accordionTagName = groupTagName.substring(0, groupTagName.indexOf('-group')); // eslint-disable-line
+    const accordionTagName = groupTagName.substring(0, groupTagName.indexOf('-group')); // eslint-disable-line no-magic-numbers
 
     this.items = Array.from(this.querySelectorAll(accordionTagName));
   }

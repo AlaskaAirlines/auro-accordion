@@ -99,53 +99,18 @@ The accordion trigger can be set to consume 100% of available width by using the
 
 </auro-accordion>
 
-#### noToggleExpanded
+#### noChevron
 
-nfjksdnfjksdnjkfdsnjkfsdnjkfnsdkj
+The chevron icon within the trigger of the `auro-accordion` will not render when the `noChevron` attribute is present.
 
 <div class="exampleWrapper">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/noToggleExpanded.html) -->
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/noChevron.html) -->
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
 <auro-accordion alignRight>
   <span slot="trigger">See code</span>
 
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/noToggleExpanded.html) -->
-
-### Slot Examples
-
-#### default
-
-Slot contains all content inside the collapsable portion of the accordion.
-
-<div class="twoColDemoRow">
-  <div>
-    <div class="exampleWrapper">
-      <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/basic.html) -->
-      <!-- AURO-GENERATED-CONTENT:END -->
-    </div>
-<auro-accordion alignRight>
-  <span slot="trigger">See code</span>
-
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/basic.html) -->
-<!-- AURO-GENERATED-CONTENT:END -->
-
-</auro-accordion>
-
-#### trigger
-
-This slot is used for content that may be clicked on to toggle visibility of the accordion content.
-
-<div class="twoColDemoRow">
-  <div>
-    <div class="exampleWrapper">
-      <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/basic.html) -->
-      <!-- AURO-GENERATED-CONTENT:END -->
-    </div>
-<auro-accordion alignRight>
-  <span slot="trigger">See code</span>
-
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/basic.html) -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/noChevron.html) -->
 <!-- AURO-GENERATED-CONTENT:END -->
 
 </auro-accordion>
@@ -186,7 +151,7 @@ Using the `lg` attribute will cause the size of the accordion trigger to render 
 
 ### emphasis
 
-Using the `noToggleExpanded` attribute will allow for multiple `auro-accordion`'s in an `auro-accordion-group` to be open at the same time.
+Use the `emphasis` attribute to apply certain styles to the `auro-accordions`.
 
 <div class="exampleWrapper">
   <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/emphasis.html) -->
