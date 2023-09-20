@@ -115,7 +115,7 @@ export class AuroAccordion extends LitElement {
     this.dispatchEvent(new CustomEvent('toggleExpanded', {
       bubbles: true,
       composed: true,
-      detail: { 
+      detail: {
         expanded: this.expanded
       }
     }));
