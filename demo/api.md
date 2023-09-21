@@ -706,7 +706,7 @@ Using the `lg` attribute will cause the size of the accordion trigger to render 
 
 ### emphasis
 
-Use the `emphasis` attribute to apply certain styles to the `auro-accordions`.
+Use the `emphasis` attribute to apply border highlights to the `auro-accordion` on hover and move the chevron to the right side of the trigger.
 
 <div class="exampleWrapper">
   <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/emphasis.html) -->
