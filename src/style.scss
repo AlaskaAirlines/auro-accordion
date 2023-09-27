@@ -3,7 +3,7 @@
 
 // ---------------------------------------------------------------------
 
-/* stylelint-disable order/properties-order, selector-max-combinators, selector-max-compound-selectors, declaration-empty-line-before */
+/* stylelint-disable order/properties-order, selector-max-combinators, selector-max-compound-selectors, declaration-empty-line-before, declaration-no-important */
 
 // Import Auro tokens
 @import './../node_modules/@alaskaairux/design-tokens/dist/tokens/SCSSVariables';
@@ -23,6 +23,10 @@
   appearance: none;
 }
 
+:root {
+  --auro-size-250: calc(var(--auro-size-200) + var(--auro-size-50));
+}
+
 :host {
   .trigger {
     @include unbuttonize;
@@ -31,6 +35,8 @@
     display: flex;
     color: var(--auro-color-text-primary-default);
     padding: var(--auro-size-200) 0;
+
+    border: 1px solid transparent;
 
     &:hover {
       text-decoration: underline;
@@ -114,7 +120,7 @@
 :host(:not([expanded])),
 :host([expanded="false"]) {
   .content  {
-    height: 0 !important; // stylelint-disable-line declaration-no-important
+    height: 0 !important;
   }
 }
 
@@ -124,7 +130,7 @@
     padding-left: var(--auro-size-200);
 
     &:focus {
-      border-left: 1px solid var(--auro-color-border-active-default) !important; // stylelint-disable-line declaration-no-important
+      border-left: 1px solid var(--auro-color-border-active-default) !important;
     }
   }
 
@@ -149,7 +155,7 @@
 :host([emphasis]:hover) {
   .trigger {
     text-decoration: unset;
-    border-left: 2px solid var(--auro-color-border-active-default) !important; // stylelint-disable-line declaration-no-important
+    border-left: 2px solid var(--auro-color-border-active-default) !important;
   }
 
   .content { 
@@ -161,7 +167,8 @@
   ::slotted([slot="trigger"]) { 
     font-size: var(--auro-text-body-size-default);
 
-    padding: var(--auro-size-150) 0;
+    padding-top: var(--auro-size-150);
+    padding-bottom: var(--auro-size-150);
   }
 }
 
@@ -169,6 +176,7 @@
   ::slotted([slot="trigger"]) { 
     font-size: var(--auro-text-heading-400-size);
 
-    padding: calc(var(--auro-size-200) + var(--auro-size-50)) 0;
+    padding-top: var(--auro-size-250);
+    padding-bottom: var(--auro-size-250);
   }
 }
