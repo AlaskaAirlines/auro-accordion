@@ -42,8 +42,12 @@
     </script>
     <script type="module" src="../index.js" data-demo-script="true"></script>
     <script type="module">
-      import {registerComponent} from '../index.js';
-      registerComponent('custom-accordion');
+      import { registerComponent } from '../index.js';
+      import { AuroAccordion } from '../src/auro-accordion.js';
+      import { AuroAccordionGroup } from '../src/auro-accordion-group.js';
+      
+      registerComponent('custom-accordion', AuroAccordion);
+      registerComponent('custom-accordion-group', AuroAccordionGroup);
     </script>
     <script src="./index.min.js"></script>
     <script>
