@@ -41,8 +41,7 @@ export class AuroAccordionGroup extends LitElement {
     }
   }
 
-  connectedCallback() {
-    super.connectedCallback();
+  handleSlotContentChange() {
     this.addEventListener('toggleExpanded', this.handleToggleExpanded);
 
     this.handleItems();
@@ -63,7 +62,7 @@ export class AuroAccordionGroup extends LitElement {
 
       item.fluid = true;
       item.group = true;
-    })
+    });
   }
 
   /**
@@ -99,7 +98,7 @@ export class AuroAccordionGroup extends LitElement {
   render() {
     return html`
       <div>
-        <slot></slot>
+        <slot @slotchange="${this.handleSlotContentChange}"></slot>
       </div>
     `;
   }

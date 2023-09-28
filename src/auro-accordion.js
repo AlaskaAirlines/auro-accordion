@@ -125,7 +125,7 @@ export class AuroAccordion extends LitElement {
    * Used to generate inline style heights of content so it animates correctly.
    * @private
    * @returns {void}
-   */
+  //  */
   handleContentSlotChanges() {
     const content = this.shadowRoot.querySelector(".content");
     const container = this.shadowRoot.querySelector(".contentWrapper");
@@ -153,13 +153,15 @@ export class AuroAccordion extends LitElement {
 
     return html`
       <div class="componentWrapper" part="accordion">
-        <button class="trigger" id="accordionTrigger" aria-controls="accordionContent" aria-expanded="${this.expanded}" @click="${this.toggle}" part="trigger">
-          ${this.hasAttribute('iconRight') ? undefined : html`${chevronHtml}`} 
-          <div class="triggerWrapper" part="triggerWrapper">
-            <slot name="trigger" part="triggerSlot"></slot>
+        <auro-accordionbutton class="trigger" id="accordionTrigger" aria-controls="accordionContent" aria-expanded="${this.expanded}" @click="${this.toggle}" part="trigger">
+          <div class="triggerWrapper">
+            ${this.hasAttribute('iconRight') ? undefined : chevronHtml} 
+            <div class="textWrapper">
+              <slot name="trigger" part="triggerSlot"></slot>
+            </div>
+            ${this.hasAttribute('iconRight') ? chevronHtml : undefined}
           </div>
-          ${this.hasAttribute('iconRight') ? html`${chevronHtml}` : undefined}
-        </button>
+        </auro-accordionbutton>
         <div class="content" id="accordionContent" aria-labelledby="accordionTrigger" inert="${!this.expanded || nothing}" part="content">
           <div class="contentWrapper" part="contentWrapper">
             <slot @slotchange="${this.handleContentSlotChanges}"></slot>
