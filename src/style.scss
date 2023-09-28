@@ -6,14 +6,14 @@
 /* stylelint-disable order/properties-order, selector-max-combinators, selector-max-compound-selectors, declaration-empty-line-before, declaration-no-important, no-descending-specificity */
 
 // Import Auro tokens
-@import './../node_modules/@alaskaairux/design-tokens/dist/tokens/SCSSVariables';
-@import './../node_modules/@alaskaairux/design-tokens/dist/tokens/SassCustomProperties';
+@import './../node_modules/@aurodesignsystem/design-tokens/dist/tokens/SCSSVariables';
+@import './../node_modules/@aurodesignsystem/design-tokens/dist/tokens/SassCustomProperties';
 
 @import './../node_modules/@aurodesignsystem/webcorestylesheets/src/breakpoints';
 @import './../node_modules/@aurodesignsystem/webcorestylesheets/src/core';
 
 :root {
-  --auro-size-250: calc(var(--auro-size-200) + var(--auro-size-50));
+  --ds-size-250: calc(var(--ds-size-200) + var(--ds-size-50));
 }
 
 :host {
@@ -22,8 +22,8 @@
     display: flex;
     flex-direction: row;
 
-    color: var(--auro-color-text-primary-default);
-    padding: var(--auro-size-200) 0;
+    color: var(--ds-color-text-primary-default);
+    padding: var(--ds-size-200) 0;
 
     border: 1px solid transparent;
 
@@ -40,18 +40,18 @@
   }
 
   ::slotted([slot="trigger"]) {
-    padding-left: var(--auro-size-100);
-    padding-right: var(--auro-size-200);
+    padding-left: var(--ds-size-100);
+    padding-right: var(--ds-size-200);
 
-    font-size: var(--auro-text-heading-300-size);
+    font-size: var(--ds-text-heading-300-size);
   }
 
   .iconWrapper {
-    height: var(--auro-size-300);
+    height: var(--ds-size-300);
     margin-top: -2px;
 
     svg {
-      color: var(--auro-color-icon-accent-default);
+      color: var(--ds-color-icon-accent-default);
     }
   }
 
@@ -60,7 +60,7 @@
     transition: all 0.5s ease-in-out;
     transition-property: height;
 
-    font-size: var(--auro-text-body-size-default);
+    font-size: var(--ds-text-body-size-default);
   }
 
   .componentWrapper {
@@ -69,23 +69,23 @@
   }
 
   .contentWrapper {
-    padding-left: var(--auro-size-400);
-    padding-bottom: var(--auro-size-300);
-    padding-right: var(--auro-size-200);
+    padding-left: var(--ds-size-400);
+    padding-bottom: var(--ds-size-300);
+    padding-right: var(--ds-size-200);
   }
 }
 
 :host(:focus) {
   .trigger {
-    border: 1px solid var(--auro-color-border-active-default);
-    border-radius: 6px;
+    border: 1px solid var(--ds-color-border-active-default);
+    border-radius: var(--ds-border-radius);
   }
 }
 
 :host([iconRight]) {
   ::slotted([slot="trigger"]) {
     padding-left: 0;
-    padding-right: var(--auro-size-50);
+    padding-right: var(--ds-size-50);
   }
 }
 
@@ -105,11 +105,11 @@
 
 :host([group]) {
   svg {
-    color: var(--auro-color-icon-emphasis-default);
+    color: var(--ds-color-icon-emphasis-default);
   }
 
   .componentWrapper {
-    border-bottom: 1px solid var(--auro-color-border-divider-default);
+    border-bottom: 1px solid var(--ds-color-border-divider-default);
   }
 }
 
@@ -123,10 +123,10 @@
 :host([emphasis]) {
   .trigger {
     border-left: 2px solid transparent;
-    padding-left: var(--auro-size-200);
+    padding-left: var(--ds-size-200);
 
     &:focus {
-      border-left: 1px solid var(--auro-color-border-active-default) !important;
+      border-left: 1px solid var(--ds-color-border-active-default) !important;
     }
   }
 
@@ -136,7 +136,7 @@
   }
 
   .contentWrapper {
-    padding-left: var(--auro-size-200);
+    padding-left: var(--ds-size-200);
   }
 
   .triggerWrapper, .textWrapper {
@@ -144,18 +144,18 @@
   }
 
   .iconWrapper {
-    padding-right: var(--auro-size-200);
+    padding-right: var(--ds-size-200);
   }
 }
 
 :host([emphasis]:hover) {
   .trigger {
     text-decoration: unset;
-    border-left: 2px solid var(--auro-color-border-active-default) !important;
+    border-left: 2px solid var(--ds-color-border-active-default) !important;
   }
 
   .content { 
-    border-left: 2px solid var(--auro-color-ui-disabled-default);
+    border-left: 2px solid var(--ds-color-ui-disabled-default);
   }
 }
 
@@ -175,21 +175,21 @@
 
 :host([sm]) {
   .trigger {
-    padding: var(--auro-size-100) 0;
+    padding: var(--ds-size-100) 0;
   }
 
   ::slotted([slot="trigger"]) { 
-    font-size: var(--auro-text-body-size-default);
+    font-size: var(--ds-text-body-size-default);
   }
 }
 
 :host([lg]) {
   .trigger {
-    padding: calc(var(--auro-size-200) + var(--auro-size-50)) 0;
+    padding: calc(var(--ds-size-200) + var(--ds-size-50)) 0;
   }
 
   ::slotted([slot="trigger"]) { 
-    font-size: var(--auro-text-heading-400-size);
+    font-size: var(--ds-text-heading-400-size);
   }
 }
 
