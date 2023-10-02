@@ -12,10 +12,6 @@
 @import './../node_modules/@aurodesignsystem/webcorestylesheets/src/breakpoints';
 @import './../node_modules/@aurodesignsystem/webcorestylesheets/src/core';
 
-:root {
-  --ds-size-250: calc(var(--ds-size-200) + var(--ds-size-50));
-}
-
 :host {
   .trigger {
     cursor: pointer;
@@ -30,13 +26,6 @@
     &:hover {
       text-decoration: underline;
     }
-  }
-
-  .triggerWrapper {
-    display: flex;
-    flex-direction: row;
-
-    align-items: center;
   }
 
   ::slotted([slot="trigger"]) {
@@ -137,10 +126,6 @@
 
   .contentWrapper {
     padding-left: var(--ds-size-200);
-  }
-
-  .triggerWrapper, .textWrapper {
-    flex: 1;
   }
 
   .iconWrapper {

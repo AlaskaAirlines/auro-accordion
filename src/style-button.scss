@@ -10,12 +10,12 @@
 @import './../node_modules/@aurodesignsystem/webcorestylesheets/src/breakpoints';
 @import './../node_modules/@aurodesignsystem/webcorestylesheets/src/core';
 
-/* stylelint-disable order/properties-order, declaration-empty-line-before */
+/* stylelint-disable order/properties-order, declaration-empty-line-before, selector-class-pattern */
 
 :host {
   border: unset;
 
-  &::part(button) {
+  .auro-button {
     background-color: transparent;
     color: var(--ds-color-text-primary-default);
     
@@ -27,5 +27,28 @@
     padding: unset;
 
     pointer-events: none;
+  }
+
+  .contentWrapper {
+    display: flex;
+    flex-direction: row-reverse;
+  }
+
+  .textSlot {
+    display: flex;
+    flex: 1;
+  }
+}
+
+:host([fluid]) {
+  .contentWrapper {
+    width: 100%;
+  }
+}
+
+:host(.iconRight) {
+  .contentWrapper {
+    display: flex;
+    flex-direction: row;
   }
 }
