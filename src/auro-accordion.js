@@ -5,6 +5,7 @@
 
 // If using litElement base class
 import { LitElement, html, nothing } from "lit";
+import { classMap } from 'lit/directives/class-map.js';
 
 // Import Icons
 import chevronUp from "@alaskaairux/icons/dist/icons/interface/chevron-up_es6.js";
@@ -143,24 +144,32 @@ export class AuroAccordion extends LitElement {
   // function that renders the HTML and CSS into  the scope of the component
   render() {
 
+    const buttonClasses = {
+      "trigger": true,
+      "iconRight": this.iconRight
+    }
+
     const chevronHtml = this.noChevron
       ? html``
       : html`
-        <div class="iconWrapper" part="chevron">
+        <div class="iconWrapper" part="chevron" slot="icon">
           ${this.generateIconHtml(this.expanded ? chevronUp.svg : chevronDown.svg)}
         </div>
       `;
 
     return html`
       <div class="componentWrapper" part="accordion">
-        <auro-accordionbutton class="trigger" id="accordionTrigger" aria-controls="accordionContent" aria-expanded="${this.expanded}" @click="${this.toggle}" part="trigger">
-          <div class="triggerWrapper">
-            ${this.hasAttribute('iconRight') ? undefined : chevronHtml} 
-            <div class="textWrapper">
-              <slot name="trigger" part="triggerSlot"></slot>
-            </div>
-            ${this.hasAttribute('iconRight') ? chevronHtml : undefined}
-          </div>
+        <auro-accordionbutton 
+          ?fluid="${this.fluid || this.emphasis}" 
+          class="${classMap(buttonClasses)}" 
+          id="accordionTrigger" 
+          aria-controls="accordionContent" 
+          aria-expanded="${this.expanded}" 
+          @click="${this.toggle}" 
+          part="trigger">
+          
+          ${chevronHtml}
+          <slot name="trigger" part="triggerSlot"></slot>
         </auro-accordionbutton>
         <div class="content" id="accordionContent" aria-labelledby="accordionTrigger" inert="${!this.expanded || nothing}" part="content">
           <div class="contentWrapper" part="contentWrapper">
