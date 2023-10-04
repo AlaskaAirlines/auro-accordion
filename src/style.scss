@@ -7,7 +7,6 @@
 
 // Import Auro tokens
 @import './../node_modules/@aurodesignsystem/design-tokens/dist/tokens/SCSSVariables';
-@import './../node_modules/@aurodesignsystem/design-tokens/dist/tokens/SassCustomProperties';
 
 @import './../node_modules/@aurodesignsystem/webcorestylesheets/src/breakpoints';
 @import './../node_modules/@aurodesignsystem/webcorestylesheets/src/core';
@@ -92,7 +91,7 @@
   }
 }
 
-:host([group]) {
+:host([grouped]) {
   svg {
     color: var(--ds-color-icon-emphasis-default);
   }

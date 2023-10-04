@@ -11,7 +11,6 @@ import { classMap } from 'lit/directives/class-map.js';
 import chevronUp from "@alaskaairux/icons/dist/icons/interface/chevron-up_es6.js";
 import chevronDown from "@alaskaairux/icons/dist/icons/interface/chevron-down_es6.js";
 
-// Import touch detection lib
 import styleCss from "./style-css.js";
 
 // See https://git.io/JJ6SJ for "How to document your components using JSDoc"
@@ -24,7 +23,7 @@ import styleCss from "./style-css.js";
  * @attr {Boolean} fluid - If set, the trigger and content will be 100% width.
  * @attr {Boolean} iconRight - If set, the chevron icon will render to the right of the trigger.
  * @attr {Boolean} emphasis - If set, emphasis styles will be applied to the auro-accordions.
- * @attr {Boolean} group - Attribute will be set on accordion when it appears in an accordion group.
+ * @attr {Boolean} grouped - Attribute will be set on accordion when it appears in an accordion group.
  * @attr {Boolean} noChevron - If set, the chevron icon will not appear inside the trigger of the accordion.
  * @attr {Boolean} sm - If set, the auro-accordion elements will appear smaller than normal.
  * @attr {Boolean} lg - If set, the auro-accordion elements will appear larger than normal.
@@ -72,7 +71,7 @@ export class AuroAccordion extends LitElement {
         type: Boolean,
         reflect: true
       },
-      group: {
+      grouped: {
         type: Boolean,
         reflect: true
       },
