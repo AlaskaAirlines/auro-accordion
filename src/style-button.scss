@@ -16,16 +16,11 @@
   border: unset;
 
   .auro-button {
+    all: unset;
+
     background-color: transparent;
     color: var(--ds-color-text-primary-default);
     
-    border: unset;
-    box-shadow: unset;
-    outline: unset;
-    min-height: unset;
-    min-width: unset;
-    padding: unset;
-
     pointer-events: none;
   }
 
