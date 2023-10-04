@@ -61,7 +61,7 @@ export class AuroAccordionGroup extends LitElement {
       }
 
       item.fluid = true;
-      item.group = true;
+      item.grouped = true;
     });
   }
 

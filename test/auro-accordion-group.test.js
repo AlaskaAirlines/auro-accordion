@@ -21,7 +21,7 @@ describe('auro-accordion-group', () => {
 
     await expect(accordion.emphasis).to.be.true;
     await expect(accordion.iconRight).to.be.true;
-    await expect(accordion.group).to.be.true;
+    await expect(accordion.grouped).to.be.true;
   });
 
   it('sm attribute is passed down to the accordion', async () => {
