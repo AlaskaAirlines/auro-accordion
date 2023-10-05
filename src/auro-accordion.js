@@ -21,12 +21,10 @@ import styleCss from "./style-css.js";
  * @attr {Boolean} alignRight - If set, the trigger content will align right.
  * @attr {Boolean} expanded - If set, the accordion is expanded.
  * @attr {Boolean} fluid - If set, the trigger and content will be 100% width.
- * @attr {Boolean} iconRight - If set, the chevron icon will render to the right of the trigger.
  * @attr {Boolean} emphasis - If set, emphasis styles will be applied to the auro-accordions.
  * @attr {Boolean} grouped - Attribute will be set on accordion when it appears in an accordion group.
- * @attr {Boolean} noChevron - If set, the chevron icon will not appear inside the trigger of the accordion.
- * @attr {Boolean} sm - If set, the auro-accordion elements will appear smaller than normal.
- * @attr {Boolean} lg - If set, the auro-accordion elements will appear larger than normal.
+ * @attr {String} chevron - Sets chevron variant option. Possible values are: `none`, `right`.
+ * @attr {String} variant - Sets accordion variant option. Possible values are: `sm`, `lg`.
  * @slot - Default slot for the accordion content.
  * @slot trigger - Defines the content of the trigger element.
  * @csspart accordion - Apply CSS to Accordion wrapper.
@@ -63,10 +61,6 @@ export class AuroAccordion extends LitElement {
         type: Boolean,
         reflect: true,
       },
-      iconRight: {
-        type: Boolean,
-        reflect: true
-      },
       emphasis: {
         type: Boolean,
         reflect: true
@@ -75,16 +69,12 @@ export class AuroAccordion extends LitElement {
         type: Boolean,
         reflect: true
       },
-      noChevron: {
-        type: Boolean,
+      chevron: {
+        type: String,
         reflect: true
       },
-      sm: {
-        type: Boolean,
-        reflect: true
-      },
-      lg: {
-        type: Boolean,
+      variant: {
+        type: String,
         reflect: true
       }
     };
@@ -134,21 +124,15 @@ export class AuroAccordion extends LitElement {
     content.style.height = `${height}px`;
   }
 
-  updated(changedProperties) {
-    if (changedProperties.has('iconRight')) {
-      this.requestUpdate();
-    }
-  }
-
   // function that renders the HTML and CSS into  the scope of the component
   render() {
 
     const buttonClasses = {
       "trigger": true,
-      "iconRight": this.iconRight
+      "iconRight": this.getAttribute('chevron') === 'right'
     }
 
-    const chevronHtml = this.noChevron
+    const chevronHtml = this.getAttribute('chevron') === 'none'
       ? html``
       : html`
         <div class="iconWrapper" part="chevron" slot="icon">

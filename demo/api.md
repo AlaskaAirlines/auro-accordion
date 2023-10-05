@@ -11,14 +11,12 @@ Use auro-accordion-group if you want to have auto closing accordion components w
 | Property     | Attribute    | Type      | Default | Description                                      |
 |--------------|--------------|-----------|---------|--------------------------------------------------|
 | [alignRight](#alignRight) | `alignRight` | `Boolean` |         | If set, the trigger content will align right.    |
+| [chevron](#chevron)    | `chevron`    | `String`  |         | Sets chevron variant option. Possible values are: `none`, `right`. |
 | [emphasis](#emphasis)   | `emphasis`   | `Boolean` |         | If set, emphasis styles will be applied to the auro-accordions. |
 | [expanded](#expanded)   | `expanded`   | `Boolean` | false   | If set, the accordion is expanded.               |
 | [fluid](#fluid)      | `fluid`      | `Boolean` |         | If set, the trigger and content will be 100% width. |
 | [grouped](#grouped)    | `grouped`    | `Boolean` |         | Attribute will be set on accordion when it appears in an accordion group. |
-| [iconRight](#iconRight)  | `iconRight`  | `Boolean` |         | If set, the chevron icon will render to the right of the trigger. |
-| [lg](#lg)         | `lg`         | `Boolean` |         | If set, the auro-accordion elements will appear larger than normal. |
-| [noChevron](#noChevron)  | `noChevron`  | `Boolean` |         | If set, the chevron icon will not appear inside the trigger of the accordion. |
-| [sm](#sm)         | `sm`         | `Boolean` |         | If set, the auro-accordion elements will appear smaller than normal. |
+| [variant](#variant)    | `variant`    | `String`  |         | Sets accordion variant option. Possible values are: `sm`, `lg`. |
 
 ## Methods
 
@@ -210,6 +208,104 @@ Use auro-accordion-group if you want to have auto closing accordion components w
 
 ### Accordion Attribute Examples
 
+#### No Chevron
+
+The chevron icon within the trigger of the `auro-accordion` will not render when `chevron="none"` is present on the element.
+
+<div class="exampleWrapper">
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/chevronNone.html) -->
+  <!-- The below content is automatically added from ./../../apiExamples/chevronNone.html -->
+  <auro-accordion chevron="none">
+    <span slot="trigger">Trigger</span>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+    </p>
+    <p>
+      Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+    </p>
+    <p>
+      Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+    </p>
+    <p>
+      Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    </p>
+  </auro-accordion>
+  <!-- AURO-GENERATED-CONTENT:END -->
+</div>
+<auro-accordion alignRight>
+  <span slot="trigger">See code</span>
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/chevronNone.html) -->
+<!-- The below code snippet is automatically added from ./../../apiExamples/chevronNone.html -->
+
+```html
+<auro-accordion chevron="none">
+  <span slot="trigger">Trigger</span>
+  <p>
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+  </p>
+  <p>
+    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+  </p>
+  <p>
+    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+  </p>
+  <p>
+    Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+  </p>
+</auro-accordion>
+```
+<!-- AURO-GENERATED-CONTENT:END -->
+</auro-accordion>
+
+#### Chevron Right
+
+Using the `chevron="right"` will cause the chevron to appear on the right side of the accordion label.
+
+<div class="exampleWrapper">
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/chevronRight.html) -->
+  <!-- The below content is automatically added from ./../../apiExamples/chevronRight.html -->
+  <auro-accordion chevron="right">
+    <span slot="trigger">Trigger</span>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+    </p>
+    <p>
+      Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+    </p>
+    <p>
+      Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+    </p>
+    <p>
+      Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    </p>
+  </auro-accordion>
+  <!-- AURO-GENERATED-CONTENT:END -->
+</div>
+<auro-accordion alignRight chevron>
+  <span slot="trigger">See code</span>
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/chevronRight.html) -->
+<!-- The below code snippet is automatically added from ./../../apiExamples/chevronRight.html -->
+
+```html
+<auro-accordion chevron="right">
+  <span slot="trigger">Trigger</span>
+  <p>
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+  </p>
+  <p>
+    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+  </p>
+  <p>
+    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+  </p>
+  <p>
+    Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+  </p>
+</auro-accordion>
+```
+<!-- AURO-GENERATED-CONTENT:END -->
+</auro-accordion>
+
 #### alignRight
 
 Using the `alignRight` attribute will cause the trigger to align to the right edge of the accordion.
@@ -259,14 +355,14 @@ Using the `alignRight` attribute will cause the trigger to align to the right ed
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
 
-#### iconRight
+#### align chevron right
 
-Using the `iconRight` attribute will cause the chevron to appear on the right side of the accordion label.
+Using the `alignRight` attribute in conjuction with the `chevron="right"` attribute will cause the trigger to align to the right edge of the accordion, with the chevron appearing on the right side of the trigger.
 
 <div class="exampleWrapper">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/iconRight.html) -->
-  <!-- The below content is automatically added from ./../../apiExamples/iconRight.html -->
-  <auro-accordion iconRight>
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/alignChevronRight.html) -->
+  <!-- The below content is automatically added from ./../../apiExamples/alignChevronRight.html -->
+  <auro-accordion chevron="right" alignRight>
     <span slot="trigger">Trigger</span>
     <p>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -283,13 +379,13 @@ Using the `iconRight` attribute will cause the chevron to appear on the right si
   </auro-accordion>
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
-<auro-accordion alignRight chevron>
+<auro-accordion alignRight>
   <span slot="trigger">See code</span>
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/iconRight.html) -->
-<!-- The below code snippet is automatically added from ./../../apiExamples/iconRight.html -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/alignChevronRight.html) -->
+<!-- The below code snippet is automatically added from ./../../apiExamples/alignChevronRight.html -->
 
 ```html
-<auro-accordion iconRight>
+<auro-accordion chevron="right" alignRight>
   <span slot="trigger">Trigger</span>
   <p>
     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -427,65 +523,16 @@ The accordion trigger can be set to consume 100% of available width by using the
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
 
-#### noChevron
-
-The chevron icon within the trigger of the `auro-accordion` will not render when the `noChevron` attribute is present.
-
-<div class="exampleWrapper">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/noChevron.html) -->
-  <!-- The below content is automatically added from ./../../apiExamples/noChevron.html -->
-  <auro-accordion noChevron>
-    <span slot="trigger">Trigger</span>
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-    </p>
-    <p>
-      Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-    </p>
-    <p>
-      Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-    </p>
-    <p>
-      Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-    </p>
-  </auro-accordion>
-  <!-- AURO-GENERATED-CONTENT:END -->
-</div>
-<auro-accordion alignRight>
-  <span slot="trigger">See code</span>
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/noChevron.html) -->
-<!-- The below code snippet is automatically added from ./../../apiExamples/noChevron.html -->
-
-```html
-<auro-accordion noChevron>
-  <span slot="trigger">Trigger</span>
-  <p>
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-  </p>
-  <p>
-    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-  </p>
-  <p>
-    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-  </p>
-  <p>
-    Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-  </p>
-</auro-accordion>
-```
-<!-- AURO-GENERATED-CONTENT:END -->
-</auro-accordion>
-
 ## Accordion Group Attribute Examples
 
 ### Small
 
-Using the `sm` attribute will cause the size of the accordion trigger to render smaller.
+Using the `variant="sm"` attribute will cause the size of the accordion trigger to render smaller.
 
 <div class="exampleWrapper">
   <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/accordionGroupSm.html) -->
   <!-- The below content is automatically added from ./../../apiExamples/accordionGroupSm.html -->
-  <auro-accordion-group sm>
+  <auro-accordion-group variant="sm">
     <auro-accordion>
       <span slot="trigger">Trigger</span>
       <p>
@@ -540,7 +587,7 @@ Using the `sm` attribute will cause the size of the accordion trigger to render 
 <!-- The below code snippet is automatically added from ./../../apiExamples/accordionGroupSm.html -->
 
 ```html
-<auro-accordion-group sm>
+<auro-accordion-group variant="sm">
   <auro-accordion>
     <span slot="trigger">Trigger</span>
     <p>
@@ -593,12 +640,12 @@ Using the `sm` attribute will cause the size of the accordion trigger to render 
 
 ### Large
 
-Using the `lg` attribute will cause the size of the accordion trigger to render larger.
+Using the `variant="lg"` attribute will cause the size of the accordion trigger to render larger.
 
 <div class="exampleWrapper">
   <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/accordionGroupLg.html) -->
   <!-- The below content is automatically added from ./../../apiExamples/accordionGroupLg.html -->
-  <auro-accordion-group lg>
+  <auro-accordion-group variant="lg">
     <auro-accordion>
       <span slot="trigger">Trigger</span>
       <p>
@@ -653,7 +700,7 @@ Using the `lg` attribute will cause the size of the accordion trigger to render 
 <!-- The below code snippet is automatically added from ./../../apiExamples/accordionGroupLg.html -->
 
 ```html
-<auro-accordion-group lg>
+<auro-accordion-group variant="lg">
   <auro-accordion>
     <span slot="trigger">Trigger</span>
     <p>
