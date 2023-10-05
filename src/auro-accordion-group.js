@@ -12,8 +12,7 @@ import { LitElement, html } from "lit";
  * Use auro-accordion-group if you want to have auto closing accordion components when others are selected.
  *
  * @attr {Boolean} emphasis - If set, emphasis styles will be applied to the auro-accordions.
- * @attr {Boolean} sm - If set, the auro-accordion elements will appear smaller than normal.
- * @attr {Boolean} lg - If set, the auro-accordion elements will appear larger than normal.
+ * @attr {String} variant - Sets accordion variant option. Possible values are: `sm`, `lg`.
  * @attr {Boolean} noToggleExpanded - If set, multiple accordions can be open at the same time.
  */
 
@@ -30,12 +29,8 @@ export class AuroAccordionGroup extends LitElement {
         type: Boolean,
         reflect: true
       },
-      sm: {
-        type: Boolean,
-        reflect: true
-      },
-      lg: {
-        type: Boolean,
+      variant: {
+        type: String,
         reflect: true
       }
     }
@@ -48,16 +43,16 @@ export class AuroAccordionGroup extends LitElement {
 
     this.items.forEach((item) => {
       if (this.hasAttribute('emphasis')) {
-        item.iconRight = true;
+        item.setAttribute('chevron', 'right');
         item.emphasis = true;
       }
 
-      if (this.hasAttribute('sm')) {
-        item.sm = true;
+      if (this.hasAttribute('variant') && this.getAttribute('variant') === 'sm') {
+        item.setAttribute('variant', 'sm');
       }
 
-      if (this.hasAttribute('lg')) {
-        item.lg = true;
+      if (this.hasAttribute('variant') && this.getAttribute('variant') === 'lg') {
+        item.setAttribute('variant', 'lg');
       }
 
       item.fluid = true;

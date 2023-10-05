@@ -20,7 +20,7 @@ describe('auro-accordion-group', () => {
     const accordion = el.querySelector('auro-accordion');
 
     await expect(accordion.emphasis).to.be.true;
-    await expect(accordion.iconRight).to.be.true;
+    await expect(accordion.getAttribute('chevron') === 'right').to.be.true;
     await expect(accordion.grouped).to.be.true;
   });
 
@@ -28,14 +28,14 @@ describe('auro-accordion-group', () => {
     const el = await smFixture();
     const accordion = el.querySelector('auro-accordion');
 
-    await expect(accordion.sm).to.be.true;
+    await expect(accordion.getAttribute('variant') === 'sm').to.be.true;
   });
 
   it('lg attribute is passed down to the accordion', async () => {
     const el = await lgFixture();
     const accordion = el.querySelector('auro-accordion');
 
-    await expect(accordion.lg).to.be.true;
+    await expect(accordion.getAttribute('variant') === 'lg').to.be.true;
   });
 
   it('one accordion closes when another accordion opens', async () => {
@@ -127,7 +127,7 @@ async function emphasisFixture() {
 
 async function smFixture() {
   return await fixture(html`
-    <auro-accordion-group sm>
+    <auro-accordion-group variant="sm">
       <auro-accordion>
         <span slot="trigger">Trigger</span>
         <p>
@@ -150,7 +150,7 @@ async function smFixture() {
 
 async function lgFixture() {
   return await fixture(html`
-    <auro-accordion-group lg>
+    <auro-accordion-group variant="lg">
       <auro-accordion>
         <span slot="trigger">Trigger</span>
         <p>

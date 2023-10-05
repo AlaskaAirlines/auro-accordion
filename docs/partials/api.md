@@ -33,6 +33,38 @@
 
 ### Accordion Attribute Examples
 
+#### No Chevron
+
+The chevron icon within the trigger of the `auro-accordion` will not render when `chevron="none"` is present on the element.
+
+<div class="exampleWrapper">
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/chevronNone.html) -->
+  <!-- AURO-GENERATED-CONTENT:END -->
+</div>
+<auro-accordion alignRight>
+  <span slot="trigger">See code</span>
+
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/chevronNone.html) -->
+<!-- AURO-GENERATED-CONTENT:END -->
+
+</auro-accordion>
+
+#### Chevron Right
+
+Using the `chevron="right"` will cause the chevron to appear on the right side of the accordion label.
+
+<div class="exampleWrapper">
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/chevronRight.html) -->
+  <!-- AURO-GENERATED-CONTENT:END -->
+</div>
+<auro-accordion alignRight chevron>
+  <span slot="trigger">See code</span>
+
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/chevronRight.html) -->
+<!-- AURO-GENERATED-CONTENT:END -->
+
+</auro-accordion>
+
 #### alignRight
 
 Using the `alignRight` attribute will cause the trigger to align to the right edge of the accordion.
@@ -49,18 +81,18 @@ Using the `alignRight` attribute will cause the trigger to align to the right ed
 
 </auro-accordion>
 
-#### iconRight
+#### align chevron right
 
-Using the `iconRight` attribute will cause the chevron to appear on the right side of the accordion label.
+Using the `alignRight` attribute in conjuction with the `chevron="right"` attribute will cause the trigger to align to the right edge of the accordion, with the chevron appearing on the right side of the trigger.
 
 <div class="exampleWrapper">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/iconRight.html) -->
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/alignChevronRight.html) -->
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
-<auro-accordion alignRight chevron>
+<auro-accordion alignRight>
   <span slot="trigger">See code</span>
 
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/iconRight.html) -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/alignChevronRight.html) -->
 <!-- AURO-GENERATED-CONTENT:END -->
 
 </auro-accordion>
@@ -99,27 +131,11 @@ The accordion trigger can be set to consume 100% of available width by using the
 
 </auro-accordion>
 
-#### noChevron
-
-The chevron icon within the trigger of the `auro-accordion` will not render when the `noChevron` attribute is present.
-
-<div class="exampleWrapper">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/noChevron.html) -->
-  <!-- AURO-GENERATED-CONTENT:END -->
-</div>
-<auro-accordion alignRight>
-  <span slot="trigger">See code</span>
-
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/noChevron.html) -->
-<!-- AURO-GENERATED-CONTENT:END -->
-
-</auro-accordion>
-
 ## Accordion Group Attribute Examples
 
 ### Small
 
-Using the `sm` attribute will cause the size of the accordion trigger to render smaller.
+Using the `variant="sm"` attribute will cause the size of the accordion trigger to render smaller.
 
 <div class="exampleWrapper">
   <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/accordionGroupSm.html) -->
@@ -135,7 +151,7 @@ Using the `sm` attribute will cause the size of the accordion trigger to render 
 
 ### Large
 
-Using the `lg` attribute will cause the size of the accordion trigger to render larger.
+Using the `variant="lg"` attribute will cause the size of the accordion trigger to render larger.
 
 <div class="exampleWrapper">
   <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/accordionGroupLg.html) -->

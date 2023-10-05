@@ -70,7 +70,7 @@
   }
 }
 
-:host([iconRight]) {
+:host([chevron="right"]) {
   ::slotted([slot="trigger"]) {
     padding-left: 0;
     padding-right: var(--ds-size-50);
@@ -157,7 +157,7 @@
   }
 }
 
-:host([sm]) {
+:host([variant="sm"]) {
   .trigger {
     padding: var(--ds-size-100) 0;
   }
@@ -167,7 +167,7 @@
   }
 }
 
-:host([lg]) {
+:host([variant="lg"]) {
   .trigger {
     padding: calc(var(--ds-size-200) + var(--ds-size-50)) 0;
   }
@@ -177,7 +177,7 @@
   }
 }
 
-:host([noChevron]) {
+:host([chevron="none"]) {
   ::slotted([slot="trigger"]), .contentWrapper {
     padding-left: unset;
   }
