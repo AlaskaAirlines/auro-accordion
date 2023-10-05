@@ -115,22 +115,6 @@ The accordion can be programatically expanded or collapsed by setting the `expan
 
 </auro-accordion>
 
-#### fluid
-
-The accordion trigger can be set to consume 100% of available width by using the `fluid` attribute.
-
-<div class="exampleWrapper">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/fluid.html) -->
-  <!-- AURO-GENERATED-CONTENT:END -->
-</div>
-<auro-accordion alignRight>
-  <span slot="trigger">See code</span>
-
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/fluid.html) -->
-<!-- AURO-GENERATED-CONTENT:END -->
-
-</auro-accordion>
-
 ## Accordion Group Attribute Examples
 
 ### Small
