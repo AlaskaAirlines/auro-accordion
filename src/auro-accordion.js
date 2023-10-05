@@ -20,7 +20,6 @@ import styleCss from "./style-css.js";
  *
  * @attr {Boolean} alignRight - If set, the trigger content will align right.
  * @attr {Boolean} expanded - If set, the accordion is expanded.
- * @attr {Boolean} fluid - If set, the trigger and content will be 100% width.
  * @attr {Boolean} emphasis - If set, emphasis styles will be applied to the auro-accordions.
  * @attr {Boolean} grouped - Attribute will be set on accordion when it appears in an accordion group.
  * @attr {String} chevron - Sets chevron variant option. Possible values are: `none`, `right`.
@@ -54,10 +53,6 @@ export class AuroAccordion extends LitElement {
         reflect: true,
       },
       expanded: {
-        type: Boolean,
-        reflect: true,
-      },
-      fluid: {
         type: Boolean,
         reflect: true,
       },
@@ -143,7 +138,7 @@ export class AuroAccordion extends LitElement {
     return html`
       <div class="componentWrapper" part="accordion">
         <auro-accordionbutton 
-          ?fluid="${this.fluid || this.emphasis}" 
+          ?fluid="${this.emphasis}" 
           class="${classMap(buttonClasses)}" 
           id="accordionTrigger" 
           aria-controls="accordionContent" 

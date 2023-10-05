@@ -14,7 +14,6 @@ Use auro-accordion-group if you want to have auto closing accordion components w
 | [chevron](#chevron)    | `chevron`    | `String`  |         | Sets chevron variant option. Possible values are: `none`, `right`. |
 | [emphasis](#emphasis)   | `emphasis`   | `Boolean` |         | If set, emphasis styles will be applied to the auro-accordions. |
 | [expanded](#expanded)   | `expanded`   | `Boolean` | false   | If set, the accordion is expanded.               |
-| [fluid](#fluid)      | `fluid`      | `Boolean` |         | If set, the trigger and content will be 100% width. |
 | [grouped](#grouped)    | `grouped`    | `Boolean` |         | Attribute will be set on accordion when it appears in an accordion group. |
 | [variant](#variant)    | `variant`    | `String`  |         | Sets accordion variant option. Possible values are: `sm`, `lg`. |
 
@@ -470,55 +469,6 @@ export function expandedExample() {
     expandedExampleElem.expanded = false;
   })
 }
-```
-<!-- AURO-GENERATED-CONTENT:END -->
-</auro-accordion>
-
-#### fluid
-
-The accordion trigger can be set to consume 100% of available width by using the `fluid` attribute.
-
-<div class="exampleWrapper">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/fluid.html) -->
-  <!-- The below content is automatically added from ./../../apiExamples/fluid.html -->
-  <auro-accordion fluid>
-    <span slot="trigger">Trigger</span>
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-    </p>
-    <p>
-      Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-    </p>
-    <p>
-      Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-    </p>
-    <p>
-      Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-    </p>
-  </auro-accordion>
-  <!-- AURO-GENERATED-CONTENT:END -->
-</div>
-<auro-accordion alignRight>
-  <span slot="trigger">See code</span>
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/fluid.html) -->
-<!-- The below code snippet is automatically added from ./../../apiExamples/fluid.html -->
-
-```html
-<auro-accordion fluid>
-  <span slot="trigger">Trigger</span>
-  <p>
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-  </p>
-  <p>
-    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-  </p>
-  <p>
-    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-  </p>
-  <p>
-    Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-  </p>
-</auro-accordion>
 ```
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>

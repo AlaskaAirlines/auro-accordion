@@ -11,7 +11,6 @@ Use auro-accordion-group if you want to have auto closing accordion components w
 | `chevron`    | `chevron`    | `String`  |         | Sets chevron variant option. Possible values are: `none`, `right`. |
 | `emphasis`   | `emphasis`   | `Boolean` |         | If set, emphasis styles will be applied to the auro-accordions. |
 | `expanded`   | `expanded`   | `Boolean` | false   | If set, the accordion is expanded.               |
-| `fluid`      | `fluid`      | `Boolean` |         | If set, the trigger and content will be 100% width. |
 | `grouped`    | `grouped`    | `Boolean` |         | Attribute will be set on accordion when it appears in an accordion group. |
 | `variant`    | `variant`    | `String`  |         | Sets accordion variant option. Possible values are: `sm`, `lg`. |
 
