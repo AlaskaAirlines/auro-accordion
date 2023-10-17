@@ -1,5 +1,34 @@
 # Semantic Release Automated Changelog
 
+# [3.0.0](https://github.com/AlaskaAirlines/auro-accordion/compare/v2.0.2...v3.0.0) (2023-10-17)
+
+
+### Bug Fixes
+
+* **attribute:** make attribute name more clear for grouped accordions ([82d0464](https://github.com/AlaskaAirlines/auro-accordion/commit/82d04646c988b14e917e46d84bf52f4deb3cfe3e))
+* **border:** fix emphasis focus state border ([5317b4f](https://github.com/AlaskaAirlines/auro-accordion/commit/5317b4fbfb893138c61d20cdfe8dd46227d9eb63))
+* **types:** add types back into build script ([e15ec75](https://github.com/AlaskaAirlines/auro-accordion/commit/e15ec75da593f804bfca99e833d82d8a55a2f8b0))
+
+
+### Features
+
+* **attr:** add new attributes to affect solo accordion styles ([a1020e2](https://github.com/AlaskaAirlines/auro-accordion/commit/a1020e2883fcf0e490acb277d3c6eaea065fb781))
+* **chevron:** update chevron logic [#85](https://github.com/AlaskaAirlines/auro-accordion/issues/85) ([f722435](https://github.com/AlaskaAirlines/auro-accordion/commit/f72243528a1ede1884937e233561f29506d8f38f))
+* **group:** add functionality and styles for accordion group [#86](https://github.com/AlaskaAirlines/auro-accordion/issues/86) ([ecb6259](https://github.com/AlaskaAirlines/auro-accordion/commit/ecb6259dad90c19c35f4d5d3d9032a22731dbc0a))
+
+
+### Performance Improvements
+
+* **design:** implement default accordion design [#85](https://github.com/AlaskaAirlines/auro-accordion/issues/85) ([e6dd762](https://github.com/AlaskaAirlines/auro-accordion/commit/e6dd762dac7bec3e6726a06baa39db84e23b3017))
+* **npm:** update .npmignore ([61f87b9](https://github.com/AlaskaAirlines/auro-accordion/commit/61f87b907fabfb65b2674a184e4cd3ae984da759))
+* **template:** update template to use auro-button ([b9d6650](https://github.com/AlaskaAirlines/auro-accordion/commit/b9d6650d442dde65c5f34357957513d55dc9ada4))
+* **tokens:** update tokens to use ds prefix ([e141067](https://github.com/AlaskaAirlines/auro-accordion/commit/e141067f89925a9003e49be84320f3fed42358fb))
+
+
+### BREAKING CHANGES
+
+* **chevron:** Remove chevron attribute and add iconRight attribute.
+
 ## [2.0.2](https://github.com/AlaskaAirlines/auro-accordion/compare/v2.0.1...v2.0.2) (2023-08-07)
 
 
