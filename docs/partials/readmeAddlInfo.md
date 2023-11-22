@@ -1,21 +1,18 @@
-**Important Note:** `@aurodesignsystem/auro-accordion` includes breaking changes and is not backwards compatible with earlier releases.
+## Transitioning from v1.x to v3.x
 
-Earlier versions may be installed by running the following command.
+The new `@aurodesignsystem/auro-accordion` element includes breaking changes that are not backwards compatible with earlier releases. Earlier versions may be installed by running the following command.
 
 ```
-$ npm i @alaskaairux/auro-accordion
+$ npm i @alaskaairux/auro-accordion@1.6.6
 ```
 
 Or, by CDN.
 
-```
-<link rel="stylesheet" href="https://unpkg.com/@alaskaairux/design-tokens@latest/dist/tokens/CSSCustomProperties.css" />
-<link rel="stylesheet" href="https://unpkg.com/@alaskaairux/webcorestylesheets@latest/dist/bundled/essentials.css" />
+```html
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@alaskaairux/design-tokens@latest/dist/tokens/CSSCustomProperties.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@alaskaairux/webcorestylesheets@latest/dist/bundled/essentials.css" />
 
-<script src="https://unpkg.com/@alaskaairux/auro-accordion@latest/dist/auro-accordion__bundled.es5.js" nomodule></script>
-<script src="https://unpkg.com/@alaskaairux/auro-accordion@latest/dist/auro-accordion-group__bundled.es5.js" nomodule></script>
-
-<script src="https://unpkg.com/@alaskaairux/auro-accordion@latest/dist/auro-accordion__bundled.js" type="module"></script>
-<script src="https://unpkg.com/@alaskaairux/auro-accordion@latest/dist/auro-accordion-group__bundled.js" type="module"></script>
+<script src="https://cdn.jsdelivr.net/npm/@alaskaairux/auro-accordion@1.6.6/dist/auro-accordion__bundled.js" type="module"></script>
+<script src="https://cdn.jsdelivr.net/npm/@alaskaairux/auro-accordion@1.6.6/dist/auro-accordion-group__bundled.js" type="module"></script>
 ```
 
