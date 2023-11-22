@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [3.0.1](https://github.com/AlaskaAirlines/auro-accordion/compare/v3.0.0...v3.0.1) (2023-11-22)
+
+
+### Performance Improvements
+
+* update to support Node 20.x ([8b40a3f](https://github.com/AlaskaAirlines/auro-accordion/commit/8b40a3fdbc50f21cf41b07eedea44e2c9bba0e9a))
+
 # [3.0.0](https://github.com/AlaskaAirlines/auro-accordion/compare/v2.0.2...v3.0.0) (2023-10-17)
 
 
