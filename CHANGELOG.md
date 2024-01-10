@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [3.1.2](https://github.com/AlaskaAirlines/auro-accordion/compare/v3.1.1...v3.1.2) (2024-01-10)
+
+
+### Bug Fixes
+
+* update node directory reference ([517b98a](https://github.com/AlaskaAirlines/auro-accordion/commit/517b98a42067f089bb45fe06ad772112475a9a69))
+
 ## [3.1.1](https://github.com/AlaskaAirlines/auro-accordion/compare/v3.1.0...v3.1.1) (2024-01-10)
 
 
