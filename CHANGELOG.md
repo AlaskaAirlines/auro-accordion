@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [3.1.1](https://github.com/AlaskaAirlines/auro-accordion/compare/v3.1.0...v3.1.1) (2024-01-10)
+
+
+### Bug Fixes
+
+* move lib dependency ([9e23e9f](https://github.com/AlaskaAirlines/auro-accordion/commit/9e23e9fbacadbf403bf4b7ea6d6a4d1b32a5b80b))
+
 # [3.1.0](https://github.com/AlaskaAirlines/auro-accordion/compare/v3.0.2...v3.1.0) (2024-01-10)
 
 
