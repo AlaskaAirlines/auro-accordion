@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [3.1.3](https://github.com/AlaskaAirlines/auro-accordion/compare/v3.1.2...v3.1.3) (2024-01-11)
+
+
+### Bug Fixes
+
+* update SSR feature ([5d9d0cc](https://github.com/AlaskaAirlines/auro-accordion/commit/5d9d0cc303343c2ba179cb1521496b25dd09b447))
+
 ## [3.1.2](https://github.com/AlaskaAirlines/auro-accordion/compare/v3.1.1...v3.1.2) (2024-01-10)
 
 
