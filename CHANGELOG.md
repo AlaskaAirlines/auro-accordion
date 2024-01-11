@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [3.1.4](https://github.com/AlaskaAirlines/auro-accordion/compare/v3.1.3...v3.1.4) (2024-01-11)
+
+
+### Bug Fixes
+
+* update location of post install script ([300de8b](https://github.com/AlaskaAirlines/auro-accordion/commit/300de8baf932e7f0c927dba404e417605101d029))
+
 ## [3.1.3](https://github.com/AlaskaAirlines/auro-accordion/compare/v3.1.2...v3.1.3) (2024-01-11)
 
 
