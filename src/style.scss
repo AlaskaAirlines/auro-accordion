@@ -7,23 +7,22 @@
 
 // Import Auro tokens
 @import './../node_modules/@aurodesignsystem/design-tokens/dist/tokens/SCSSVariables';
-
 @import './../node_modules/@aurodesignsystem/webcorestylesheets/src/breakpoints';
 @import './../node_modules/@aurodesignsystem/webcorestylesheets/src/core';
 
 :host {
   .trigger {
     position: relative;
-    
+
     cursor: pointer;
     display: flex;
     flex-direction: row;
 
-    color: var(--ds-color-text-primary-default);
-    padding: var(--ds-size-200) 0;
+    color: var(--ds-color-text-primary-default, $ds-color-text-primary-default);
+    padding: var(--ds-size-200, $ds-size-200) 0;
 
     border: 1px solid transparent;
-    border-radius: var(--ds-border-radius);
+    border-radius: var(--ds-border-radius, $ds-border-radius);
 
     &:hover {
       text-decoration: underline;
@@ -31,18 +30,18 @@
   }
 
   ::slotted([slot="trigger"]) {
-    padding-left: var(--ds-size-100);
-    padding-right: var(--ds-size-200);
+    padding-left: var(--ds-size-100, $ds-size-100);
+    padding-right: var(--ds-size-200, $ds-size-200);
 
-    font-size: var(--ds-text-heading-300-size);
+    font-size: var(--ds-text-heading-300-size, $ds-text-heading-300-size);
   }
 
   .iconWrapper {
-    height: var(--ds-size-300);
+    height: var(--ds-size-300, $ds-size-300);
     margin-top: -2px;
 
     svg {
-      color: var(--ds-color-icon-accent-default);
+      color: var(--ds-color-icon-accent-default, $ds-color-icon-accent-default);
     }
   }
 
@@ -52,7 +51,7 @@
     transition: all 0.5s ease-in-out;
     transition-property: height;
 
-    font-size: var(--ds-text-body-size-default);
+    font-size: var(--ds-text-body-size-default, $ds-text-body-size-default);
   }
 
   .componentWrapper {
@@ -61,22 +60,22 @@
   }
 
   .contentWrapper {
-    padding-left: var(--ds-size-400);
-    padding-bottom: var(--ds-size-300);
-    padding-right: var(--ds-size-200);
+    padding-left: var(--ds-size-400, $ds-size-400);
+    padding-bottom: var(--ds-size-300, $ds-size-300);
+    padding-right: var(--ds-size-200, $ds-size-200);
   }
 }
 
 :host(:focus) {
   .trigger {
-    border: 1px solid var(--ds-color-border-active-default);
+    border: 1px solid var(--ds-color-border-active-default, $ds-color-border-active-default);
   }
 }
 
 :host([chevron="right"]) {
   ::slotted([slot="trigger"]) {
     padding-left: 0;
-    padding-right: var(--ds-size-50);
+    padding-right: var(--ds-size-50, $ds-size-50);
   }
 }
 
@@ -96,11 +95,11 @@
 
 :host([grouped]) {
   svg {
-    color: var(--ds-color-icon-emphasis-default);
+    color: var(--ds-color-icon-emphasis-default, $ds-color-icon-emphasis-default);
   }
 
   .componentWrapper {
-    border-bottom: 1px solid var(--ds-color-border-divider-default);
+    border-bottom: 1px solid var(--ds-color-border-divider-default, $ds-color-border-divider-default);
   }
 }
 
@@ -114,7 +113,7 @@
 :host([emphasis]) {
   .trigger {
     border-left: 2px solid transparent;
-    padding-left: var(--ds-size-200);
+    padding-left: var(--ds-size-200, $ds-size-200);
 
     &:focus,
     &:hover {
@@ -129,14 +128,14 @@
         width: 2px;
         height: calc(100% + 2px);
 
-        background-color: var(--ds-color-border-active-default);
+        background-color: var(--ds-color-border-active-default, $ds-color-border-active-default);
 
         content: '';
       }
     }
 
     &:focus {
-      border: 1px solid var(--ds-color-border-active-default) !important;
+      border: 1px solid var(--ds-color-border-active-default, $ds-color-border-active-default) !important;
       margin-left: 1px;
     }
   }
@@ -147,11 +146,11 @@
   }
 
   .contentWrapper {
-    padding-left: var(--ds-size-200);
+    padding-left: var(--ds-size-200, $ds-size-200);
   }
 
   .iconWrapper {
-    padding-right: var(--ds-size-200);
+    padding-right: var(--ds-size-200, $ds-size-200);
   }
 }
 
@@ -161,7 +160,7 @@
   }
 
   .content {
-    border-left: 2px solid var(--ds-color-ui-disabled-default);
+    border-left: 2px solid var(--ds-color-ui-disabled-default, $ds-color-ui-disabled-default);
   }
 }
 
@@ -173,11 +172,11 @@
 
       top: -1px;
       left: -2px;
- 
+
       width: 2px;
       height: calc(100% + 2px);
 
-      background-color: var(--ds-color-border-active-default);
+      background-color: var(--ds-color-border-active-default, $ds-color-border-active-default);
 
       content: '';
     }
@@ -188,27 +187,27 @@
   }
 
   .content {
-    border-left: 2px solid var(--ds-color-ui-disabled-default);
+    border-left: 2px solid var(--ds-color-ui-disabled-default, $ds-color-ui-disabled-default);
   }
 }
 
 :host([variant="sm"]) {
   .trigger {
-    padding: var(--ds-size-100) 0;
+    padding: var(--ds-size-100, $ds-size-100) 0;
   }
 
   ::slotted([slot="trigger"]) {
-    font-size: var(--ds-text-body-size-default);
+    font-size: var(--ds-text-body-size-default, $ds-text-body-size-default);
   }
 }
 
 :host([variant="lg"]) {
   .trigger {
-    padding: calc(var(--ds-size-200) + var(--ds-size-50)) 0;
+    padding: calc(var(--ds-size-200, $ds-size-200) + var(--ds-size-50, $ds-size-50)) 0;
   }
 
   ::slotted([slot="trigger"]) {
-    font-size: var(--ds-text-heading-400-size);
+    font-size: var(--ds-text-heading-400-size, $ds-text-heading-400-size);
   }
 }
 
