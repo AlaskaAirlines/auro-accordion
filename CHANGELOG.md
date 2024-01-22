@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [3.1.6](https://github.com/AlaskaAirlines/auro-accordion/compare/v3.1.5...v3.1.6) (2024-01-22)
+
+
+### Performance Improvements
+
+* add CSS var fallback values [#93](https://github.com/AlaskaAirlines/auro-accordion/issues/93) ([5a862b8](https://github.com/AlaskaAirlines/auro-accordion/commit/5a862b887b7973c001078950a324e2541d13efcf))
+
 ## [3.1.5](https://github.com/AlaskaAirlines/auro-accordion/compare/v3.1.4...v3.1.5) (2024-01-11)
 
 
