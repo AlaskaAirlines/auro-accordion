@@ -7,3 +7,5 @@ on:
 jobs:
   call-auro-assign-workflow:
     uses: AlaskaAirlines/auro-library/.github/workflows/addToProject.yml@main
+    with:
+      github-token: ${{ secrets.ACCESS_TOKEN }}
