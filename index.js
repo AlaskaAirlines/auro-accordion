@@ -1,6 +1,6 @@
-import { AuroAccordion } from './src/auro-accordion';
-import { AuroAccordionGroup } from './src/auro-accordion-group';
-import { AuroAccordionButton } from './src/auro-accordionbutton';
+import { AuroAccordion } from './src/auro-accordion.js';
+import { AuroAccordionGroup } from './src/auro-accordion-group.js';
+import { AuroAccordionButton } from './src/auro-accordionbutton.js';
 
 /**
  * Register Custom Element.
