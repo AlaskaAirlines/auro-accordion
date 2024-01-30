@@ -31,16 +31,16 @@ The following sections are editable by making changes to the following files:
 The new `@aurodesignsystem/auro-accordion` element includes breaking changes that are not backwards compatible with earlier releases. Earlier versions may be installed by running the following command.
 
 ```
-$ npm i @alaskaairux/auro-accordion@1.6.6
+$ npm i @aurodesignsystem/auro-accordion@1.6.6
 ```
 
 Or, by CDN.
 
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@alaskaairux/design-tokens@latest/dist/tokens/CSSCustomProperties.css" />
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@alaskaairux/webcorestylesheets@latest/dist/bundled/essentials.css" />
-<script src="https://cdn.jsdelivr.net/npm/@alaskaairux/auro-accordion@1.6.6/dist/auro-accordion__bundled.js" type="module"></script>
-<script src="https://cdn.jsdelivr.net/npm/@alaskaairux/auro-accordion@1.6.6/dist/auro-accordion-group__bundled.js" type="module"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@aurodesignsystem/design-tokens@latest/dist/tokens/CSSCustomProperties.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@aurodesignsystem/webcorestylesheets@latest/dist/bundled/essentials.css" />
+<script src="https://cdn.jsdelivr.net/npm/@aurodesignsystem/auro-accordion@1.6.6/dist/auro-accordion__bundled.js" type="module"></script>
+<script src="https://cdn.jsdelivr.net/npm/@aurodesignsystem/auro-accordion@1.6.6/dist/auro-accordion-group__bundled.js" type="module"></script>
 ```
 <!-- AURO-GENERATED-CONTENT:END -->
 
@@ -133,7 +133,7 @@ We recommend you load these bundles using [differential serving](https://philipw
 
 ```html
 <!-- **NOTE:** Be sure to replace `@latest` in the URL with the version of the asset you want. @latest is NOT aware of any MAJOR releases, use at your own risk. -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@alaskaairux/design-tokens@latest/dist/tokens/CSSCustomProperties.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@aurodesignsystem/design-tokens@latest/dist/tokens/CSSCustomProperties.css" />
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@aurodesignsystem/webcorestylesheets@latest/dist/bundled/essentials.css" />
 <script src="https://cdn.jsdelivr.net/npm/@aurodesignsystem/auro-accordion@latest/dist/auro-accordion__bundled.js" type="module"></script>
 ```
