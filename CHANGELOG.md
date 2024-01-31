@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [3.1.8](https://github.com/AlaskaAirlines/auro-accordion/compare/v3.1.7...v3.1.8) (2024-01-31)
+
+
+### Performance Improvements
+
+* alaskaairux ref updates ([b90183f](https://github.com/AlaskaAirlines/auro-accordion/commit/b90183fff79e425cc450f8cbbeca8c93b5f7c74c))
+
 ## [3.1.7](https://github.com/AlaskaAirlines/auro-accordion/compare/v3.1.6...v3.1.7) (2024-01-27)
 
 
