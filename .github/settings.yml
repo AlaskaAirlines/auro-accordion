@@ -40,7 +40,7 @@ repository:
 
 teams:
   - name: Auro-Team
-    permission: push
+    permission: admin
   - name: NonAuroTeamWriteAccess
     permission: push
 
