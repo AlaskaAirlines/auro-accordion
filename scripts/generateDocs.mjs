@@ -14,28 +14,30 @@ const readmeFilePath = dirDocTemplates + '/README.md';
  */
 
 function nameExtraction() {
- const packageJson = fs.readFileSync('package.json', 'utf8', function(err, data) {
-   if (err) {
-     console.log('ERROR: Unable to read package.json file', err);
-   }
- })
+  const packageJson = fs.readFileSync('package.json', 'utf8', function(err, data) {
+    if (err) {
+      console.log('ERROR: Unable to read package.json file', err);
+    }
+  })
 
- let pName = JSON.parse(packageJson).name;
+  let pName = JSON.parse(packageJson).name;
+  let pVersion = JSON.parse(packageJson).version;
 
- let npmStart = pName.indexOf('@');
- let namespaceStart = pName.indexOf('/');
- let nameStart = pName.indexOf('-');
+  let npmStart = pName.indexOf('@');
+  let namespaceStart = pName.indexOf('/');
+  let nameStart = pName.indexOf('-');
 
- let result = {
-   'npm': pName.substring(npmStart, namespaceStart),
-   'namespace': pName.substring(namespaceStart + 1, nameStart),
-   'namespaceCap': pName.substring(namespaceStart + 1)[0].toUpperCase() + pName.substring(namespaceStart + 2, nameStart),
-   'name': pName.substring(nameStart + 1),
-   'nameCap': pName.substring(nameStart + 1)[0].toUpperCase() + pName.substring(nameStart + 2)
- };
+  let result = {
+    'npm': pName.substring(npmStart, namespaceStart),
+    'namespace': pName.substring(namespaceStart + 1, nameStart),
+    'namespaceCap': pName.substring(namespaceStart + 1)[0].toUpperCase() + pName.substring(namespaceStart + 2, nameStart),
+    'name': pName.substring(nameStart + 1),
+    'nameCap': pName.substring(nameStart + 1)[0].toUpperCase() + pName.substring(nameStart + 2),
+    'version': pVersion
+  };
 
- return result;
-}
+  return result;
+ }
 
 /**
  * Replace all instances of [npm], [name], [Name], [namespace] and [Namespace] accordingly
@@ -49,10 +51,11 @@ function formatTemplateFileContents(content, destination) {
    * Replace placeholder strings
    */
   result = result.replace(/\[npm]/g, nameExtractionData.npm);
-  result = result.replace(/\[name]/g, nameExtractionData.name);
-  result = result.replace(/\[Name]/g, nameExtractionData.nameCap);
+  result = result.replace(/\[name](?!\()/g, nameExtractionData.name);
+  result = result.replace(/\[Name](?!\()/g, nameExtractionData.nameCap);
   result = result.replace(/\[namespace]/g, nameExtractionData.namespace);
   result = result.replace(/\[Namespace]/g, nameExtractionData.namespaceCap);
+  result = result.replace(/\[Version]/g, nameExtractionData.version);
 
   /**
    * Cleanup line breaks
@@ -61,7 +64,7 @@ function formatTemplateFileContents(content, destination) {
   result = result.replace(/>(\r\n|\r|\n){2,}/g, '>\r\n'); // Remove empty lines directly after a closing html tag.
   result = result.replace(/>(\r\n|\r|\n)```/g, '>\r\n\r\n```'); // Ensure an empty line before code samples.
   result = result.replace(/>(\r\n|\r|\n){2,}```(\r\n|\r|\n)/g, '>\r\n```\r\n'); // Ensure no empty lines before close of code sample.
-  result = result.replace(/([^(\r\n|\r|\n)])(\r\n|\r|\n)+#/g, "$1\r\n\r\n#"); // Ensure empty line before header sections.
+  result = result.replace(/([^(\r\n|\r|\n)])(\r?\n|\r(?!\n))+#/g, "$1\r\n\r\n#"); // Ensure empty line before header sections.
 
   /**
    * Write the result to the destination file
@@ -76,14 +79,14 @@ function formatApiTableContents(content, destination) {
   let result = content;
 
   result = result
-    .replace(/\r\n|\r|\n####\s`([a-zA-Z]*)`/g, `\r\n#### <a name="$1"></a>\`$1\`<a href="#${wcName}" style="float: right; font-size: 1rem; font-weight: 100;">back to top</a>`)
+    .replace(/\r\n|\r|\n####\s`([a-zA-Z]*)`/g, `\r\n#### <a name="$1"></a>\`$1\`<a href="#" style="float: right; font-size: 1rem; font-weight: 100;">back to top</a>`)
     .replace(/\r\n|\r|\n\|\s`([a-zA-Z]*)`/g, '\r\n| [$1](#$1)')
     .replace(/\| \[\]\(#\)/g, "");
 
   fs.writeFileSync(destination, result, { encoding: 'utf8'});
 
-  fs.readFile('./demo/api.md', 'utf8', function(err, data) {
-    formatTemplateFileContents(data, './demo/api.md');
+  fs.readFile('./demo/apiExamples.md', 'utf8', function(err, data) {
+    formatTemplateFileContents(data, './demo/apiExamples.md');
   });
 }
 
@@ -144,12 +147,12 @@ function processDemo() {
 
 function processApiExamples() {
   const callback = function(updatedContent, outputConfig) {
-    if (fs.existsSync('./demo/api.md')) {
-      fs.readFile('./demo/api.md', 'utf8', function(err, data) {
-        formatApiTableContents(data, './demo/api.md');
+    if (fs.existsSync('./demo/apiExamples.md')) {
+      fs.readFile('./demo/apiExamples.md', 'utf8', function(err, data) {
+        formatApiTableContents(data, './demo/apiExamples.md');
       });
     } else {
-      console.log('ERROR: ./demo/api.md file is missing');
+      console.log('ERROR: ./demo/apiExamples.md file is missing');
     }
   };
 
@@ -158,7 +161,7 @@ function processApiExamples() {
     outputDir: './demo'
   };
 
-  const markdownPath = path.join(__dirname, '../docs/partials/api.md');
+  const markdownPath = path.join(__dirname, '../docs/partials/apiExamples.md');
 
   markdownMagic(markdownPath, config, callback);
 }
