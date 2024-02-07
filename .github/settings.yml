@@ -38,6 +38,12 @@ repository:
   # rebase-merging.
   allow_rebase_merge: true
 
+teams:
+  - name: Auro-Team
+    permission: push
+  - name: NonAuroTeamWriteAccess
+    permission: push
+
 branches:
   - name: main
     # https://developer.github.com/v3/repos/branches/#update-branch-protection
