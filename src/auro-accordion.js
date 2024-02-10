@@ -8,8 +8,8 @@ import { LitElement, html, nothing } from "lit";
 import { classMap } from 'lit/directives/class-map.js';
 
 // Import Icons
-import chevronUp from "@alaskaairux/icons/dist/icons/interface/chevron-up_es6.js";
-import chevronDown from "@alaskaairux/icons/dist/icons/interface/chevron-down_es6.js";
+import chevronUp from "@alaskaairux/icons/dist/icons/interface/chevron-up.mjs";
+import chevronDown from "@alaskaairux/icons/dist/icons/interface/chevron-down.mjs";
 
 import styleCss from "./style-css.js";
 
@@ -137,15 +137,15 @@ export class AuroAccordion extends LitElement {
 
     return html`
       <div class="componentWrapper" part="accordion">
-        <auro-accordionbutton 
-          ?fluid="${this.emphasis}" 
-          class="${classMap(buttonClasses)}" 
-          id="accordionTrigger" 
-          aria-controls="accordionContent" 
-          aria-expanded="${this.expanded}" 
-          @click="${this.toggle}" 
+        <auro-accordionbutton
+          ?fluid="${this.emphasis}"
+          class="${classMap(buttonClasses)}"
+          id="accordionTrigger"
+          aria-controls="accordionContent"
+          aria-expanded="${this.expanded}"
+          @click="${this.toggle}"
           part="trigger">
-          
+
           ${chevronHtml}
           <slot name="trigger" part="triggerSlot"></slot>
         </auro-accordionbutton>
