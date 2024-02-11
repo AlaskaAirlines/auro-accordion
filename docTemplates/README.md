@@ -32,7 +32,7 @@ The following sections are editable by making changes to the following files:
 
 ## Install
 
-<!-- AURO-GENERATED-CONTENT:START (REMOTE:url=https://raw.githubusercontent.com/AlaskaAirlines/WC-Generator/master/componentDocs/partials/usage/componentInstall.md) -->
+<!-- AURO-GENERATED-CONTENT:START (REMOTE:url=https://raw.githubusercontent.com/AlaskaAirlines/WC-Generator/master/componentDocs/partials/usage/componentInstall_esm.md) -->
 <!-- AURO-GENERATED-CONTENT:END -->
 
 ### Design Token CSS Custom Property dependency
