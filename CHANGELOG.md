@@ -1,5 +1,13 @@
 # Semantic Release Automated Changelog
 
+## [3.1.12](https://github.com/AlaskaAirlines/auro-accordion/compare/v3.1.11...v3.1.12) (2024-02-23)
+
+
+### Performance Improvements
+
+* **custom:** add custom accordion example ([34aef78](https://github.com/AlaskaAirlines/auro-accordion/commit/34aef78655a1f02fd4f39570bc968629e95ba3d9))
+* **demo:** edit demo file names ([2415d88](https://github.com/AlaskaAirlines/auro-accordion/commit/2415d8831b0baa67b786ca74c948dd104b5f5e1a))
+
 ## [3.1.11](https://github.com/AlaskaAirlines/auro-accordion/compare/v3.1.10...v3.1.11) (2024-02-23)
 
 
