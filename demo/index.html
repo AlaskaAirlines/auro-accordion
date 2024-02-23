@@ -41,18 +41,14 @@
           Prism.highlightAll();
         });
     </script>
-    <script type="module" src="../index.js" data-demo-script="true"></script>
-    <script type="module">
+    <script type="module" data-demo-script="true">
       import { registerComponent } from '../index.js';
-      import { AuroAccordion } from '../src/auro-accordion.js';
-      import { AuroAccordionGroup } from '../src/auro-accordion-group.js';
+      import { initExamples } from './index.min.js';
       
       registerComponent('custom-accordion', AuroAccordion);
       registerComponent('custom-accordion-group', AuroAccordionGroup);
-    </script>
-    <script src="./index.min.js"></script>
-    <script>
-      initAccordionIndexExamples();
+
+      initExamples();
     </script>
     <!-- If additional elements are needed for the demo, add them here. -->
   </body>
