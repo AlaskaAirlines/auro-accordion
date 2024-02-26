@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [3.1.13](https://github.com/AlaskaAirlines/auro-accordion/compare/v3.1.12...v3.1.13) (2024-02-26)
+
+
+### Bug Fixes
+
+* **custom:** remove custom registration example ([664fb70](https://github.com/AlaskaAirlines/auro-accordion/commit/664fb70bc6895375b4355e11e0502cadc3bc6d81))
+
 ## [3.1.12](https://github.com/AlaskaAirlines/auro-accordion/compare/v3.1.11...v3.1.12) (2024-02-23)
 
 
