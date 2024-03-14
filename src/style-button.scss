@@ -10,13 +10,19 @@
 
 /* stylelint-disable order/properties-order, declaration-empty-line-before, selector-class-pattern */
 
+$ds-color-ui-transparent-default: transparent;
+
+:root {
+  --ds-color-ui-transparent-default: transparent;
+}
+
 :host {
   border: unset;
 
   .auro-button {
     all: unset;
 
-    background-color: transparent;
+    background-color: var(--ds-color-ui-transparent-default, $ds-color-ui-transparent-default);
     color: var(--ds-color-text-primary-default, $ds-color-text-primary-default);
 
     pointer-events: none;

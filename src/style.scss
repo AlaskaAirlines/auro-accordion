@@ -10,6 +10,12 @@
 @import './../node_modules/@aurodesignsystem/webcorestylesheets/src/breakpoints';
 @import './../node_modules/@aurodesignsystem/webcorestylesheets/src/core';
 
+$ds-color-ui-transparent-default: transparent;
+
+:root {
+  --ds-color-ui-transparent-default: transparent;
+}
+
 :host {
   .trigger {
     position: relative;
@@ -21,7 +27,7 @@
     color: var(--ds-color-text-primary-default, $ds-color-text-primary-default);
     padding: var(--ds-size-200, $ds-size-200) 0;
 
-    border: 1px solid transparent;
+    border: 1px solid var(--ds-color-ui-transparent-default, $ds-color-ui-transparent-default);
     border-radius: var(--ds-border-radius, $ds-border-radius);
 
     &:hover {
@@ -112,7 +118,7 @@
 
 :host([emphasis]) {
   .trigger {
-    border-left: 2px solid transparent;
+    border-left: 2px solid var(--ds-color-ui-transparent-default, $ds-color-ui-transparent-default);
     padding-left: var(--ds-size-200, $ds-size-200);
 
     &:focus,
@@ -128,7 +134,7 @@
         width: 2px;
         height: calc(100% + 2px);
 
-        background-color: var(--ds-color-border-active-default, $ds-color-border-active-default);
+        background-color: var(--ds-color-ui-default-default, $ds-color-ui-default-default);
 
         content: '';
       }
@@ -141,7 +147,7 @@
   }
 
   .content {
-    border-left: 2px solid transparent;
+    border-left: 2px solid var(--ds-color-ui-transparent-default, $ds-color-ui-transparent-default);;
     padding: unset;
   }
 
@@ -176,7 +182,7 @@
       width: 2px;
       height: calc(100% + 2px);
 
-      background-color: var(--ds-color-border-active-default, $ds-color-border-active-default);
+      background-color: var(--ds-color-ui-default-default, $ds-color-ui-default-default);
 
       content: '';
     }
@@ -187,7 +193,7 @@
   }
 
   .content {
-    border-left: 2px solid var(--ds-color-ui-disabled-default, $ds-color-ui-disabled-default);
+    border-left: 2px solid var(--ds-color-ui-disabled-default, $ds-color-ui-disabled-default); // Do we need new tier 2 token?
   }
 }
 
