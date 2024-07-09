@@ -1,0 +1,9 @@
+@import "./../node_modules/@aurodesignsystem/design-tokens/dist/tokens/SCSSVariables";
+
+:host {
+  --ds-auro-accordion-content-border-color: transparent;
+  --ds-auro-accordion-group-border-color: var(--ds-color-border-divider-default, #{$ds-color-border-divider-default});
+  --ds-auro-accordion-trigger-border-color: transparent;
+  --ds-auro-accordion-trigger-color: var(--ds-color-text-primary-default, #{$ds-color-text-primary-default});
+  --ds-auro-accordion-trigger-icon-color: var(--ds-color-icon-ui-secondary-default-default, #{$ds-color-icon-ui-secondary-default-default});
+}
