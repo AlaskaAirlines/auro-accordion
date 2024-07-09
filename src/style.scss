@@ -44,6 +44,11 @@
     &[hidden] { // stylelint-disable-line selector-max-attribute
       display: none;
     }
+
+    // svg {
+    //   min-width: var(--auro-size-lg, var(--ds-size-300, 1.5rem));
+    //   height: var(--auro-size-lg, var(--ds-size-300, 1.5rem));
+    // }
   }
 
   .content {
