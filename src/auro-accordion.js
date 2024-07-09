@@ -3,15 +3,24 @@
 
 // ---------------------------------------------------------------------
 
+/* eslint-disable lit/binding-positions, lit/no-invalid-html */
+
 // If using litElement base class
-import { LitElement, html, nothing } from "lit";
+import { LitElement, nothing } from "lit";
+import { html } from 'lit/static-html.js';
 import { classMap } from 'lit/directives/class-map.js';
 
-// Import Icons
+import { AuroDependencyVersioning } from '@aurodesignsystem/auro-library/scripts/runtime/dependencyTagVersioning.mjs';
+
+import { AuroIcon } from '@aurodesignsystem/auro-icon/src/auro-icon.js';
+import iconVersion from './iconVersion';
+
 import chevronUp from "@alaskaairux/icons/dist/icons/interface/chevron-up.mjs";
 import chevronDown from "@alaskaairux/icons/dist/icons/interface/chevron-down.mjs";
 
 import styleCss from "./style-css.js";
+import colorCss from "./color-css.js";
+import tokensCss from "./tokens-css.js";
 
 // See https://git.io/JJ6SJ for "How to document your components using JSDoc"
 /**
@@ -37,6 +46,13 @@ import styleCss from "./style-css.js";
 export class AuroAccordion extends LitElement {
   constructor() {
     super();
+
+    const versioning = new AuroDependencyVersioning();
+
+    /**
+     * @private
+     */
+    this.iconTag = versioning.generateTag('auro-icon', iconVersion, AuroIcon);
 
     this.expanded = false;
   }
@@ -76,7 +92,11 @@ export class AuroAccordion extends LitElement {
   }
 
   static get styles() {
-    return [styleCss];
+    return [
+      colorCss,
+      styleCss,
+      tokensCss
+    ];
   }
 
   /**
@@ -87,6 +107,8 @@ export class AuroAccordion extends LitElement {
   generateIconHtml(svgContent) {
     const dom = new DOMParser().parseFromString(svgContent, 'text/html'),
     svg = dom.body.firstChild;
+
+    svg.setAttribute('slot', 'svg');
 
     return html`${svg}`;
   }
@@ -124,20 +146,14 @@ export class AuroAccordion extends LitElement {
 
     const buttonClasses = {
       "trigger": true,
-      "iconRight": this.getAttribute('chevron') === 'right'
+      "iconRight": this.getAttribute('chevron') === 'right',
+      "sm": this.getAttribute('variant') === 'sm',
+      "lg": this.getAttribute('variant') === 'lg',
     }
-
-    const chevronHtml = this.getAttribute('chevron') === 'none'
-      ? html``
-      : html`
-        <div class="iconWrapper" part="chevron" slot="icon">
-          ${this.generateIconHtml(this.expanded ? chevronUp.svg : chevronDown.svg)}
-        </div>
-      `;
 
     return html`
       <div class="componentWrapper" part="accordion">
-        <auro-accordionbutton
+        <auro-accordion-button
           ?fluid="${this.emphasis}"
           class="${classMap(buttonClasses)}"
           id="accordionTrigger"
@@ -145,10 +161,14 @@ export class AuroAccordion extends LitElement {
           aria-expanded="${this.expanded}"
           @click="${this.toggle}"
           part="trigger">
-
-          ${chevronHtml}
+          <${this.iconTag} slot="icon" customSvg customSize customColor ?hidden="${!this.expanded}">
+            ${this.generateIconHtml(chevronUp.svg)}
+          </${this.iconTag}>
+          <${this.iconTag} slot="icon" customSvg customSize customColor ?hidden="${this.expanded}">
+            ${this.generateIconHtml(chevronDown.svg)}
+          </${this.iconTag}>
           <slot name="trigger" part="triggerSlot"></slot>
-        </auro-accordionbutton>
+        </auro-accordion-button>
         <div class="content" id="accordionContent" aria-labelledby="accordionTrigger" inert="${!this.expanded || nothing}" part="content">
           <div class="contentWrapper" part="contentWrapper">
             <slot @slotchange="${this.handleContentSlotChanges}"></slot>
