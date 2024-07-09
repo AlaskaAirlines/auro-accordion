@@ -15,11 +15,16 @@
 
   .auro-button {
     all: unset;
+    width: 100%;
+    padding: var(--ds-size-200, $ds-size-200) 0;
 
-    background-color: transparent;
-    color: var(--ds-color-text-primary-default, $ds-color-text-primary-default);
+    cursor: pointer;
 
     pointer-events: none;
+
+    &:after {
+      border-color: transparent; // not supported by tokens - this should never have a color regardless of the theme
+    }
   }
 
   .contentWrapper {
@@ -30,6 +35,18 @@
   .textSlot {
     display: flex;
     flex: 1;
+  }
+}
+
+:host(.sm) {
+  .auro-button {
+    padding: var(--ds-size-100, $ds-size-100) 0;
+  }
+}
+
+:host(.lg) {
+  .auro-button {
+    padding: calc(var(--ds-size-200, $ds-size-200) + var(--ds-size-50, $ds-size-50)) 0;
   }
 }
 
