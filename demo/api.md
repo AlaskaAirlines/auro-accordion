@@ -924,23 +924,3 @@ Using the `noToggleExpanded` attribute will allow for multiple `auro-accordion`'
 ```
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
-
-### Theme Support
-
-The component may be restyled using the following code sample and changing the values of the following token(s).
-
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../src/tokens.scss) -->
-<!-- The below code snippet is automatically added from ./../../src/tokens.scss -->
-
-```scss
-@import "./../node_modules/@aurodesignsystem/design-tokens/dist/tokens/SCSSVariables";
-
-:host {
-  --ds-auro-accordion-content-border-color: transparent;
-  --ds-auro-accordion-group-border-color: var(--ds-color-border-divider-default, #{$ds-color-border-divider-default});
-  --ds-auro-accordion-trigger-border-color: transparent;
-  --ds-auro-accordion-trigger-color: var(--ds-color-text-primary-default, #{$ds-color-text-primary-default});
-  --ds-auro-accordion-trigger-icon-color: var(--ds-color-icon-ui-secondary-default-default, #{$ds-color-icon-ui-secondary-default-default});
-}
-```
-<!-- AURO-GENERATED-CONTENT:END -->
