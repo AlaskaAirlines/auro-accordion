@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [3.2.1](https://github.com/AlaskaAirlines/auro-accordion/compare/v3.2.0...v3.2.1) (2024-07-19)
+
+
+### Reverts
+
+* Revert "feat(themes): rebuild component to support themes #115" ([136828b](https://github.com/AlaskaAirlines/auro-accordion/commit/136828b7089578dea0386a03f98acffb36f11946)), closes [#115](https://github.com/AlaskaAirlines/auro-accordion/issues/115)
+
 # [3.2.0](https://github.com/AlaskaAirlines/auro-accordion/compare/v3.1.13...v3.2.0) (2024-07-19)
 
 
