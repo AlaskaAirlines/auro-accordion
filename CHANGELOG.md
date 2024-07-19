@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+# [3.2.0](https://github.com/AlaskaAirlines/auro-accordion/compare/v3.1.13...v3.2.0) (2024-07-19)
+
+
+### Features
+
+* **themes:** rebuild component to support themes [#115](https://github.com/AlaskaAirlines/auro-accordion/issues/115) ([c1aa233](https://github.com/AlaskaAirlines/auro-accordion/commit/c1aa233d6eb030549823129a64fd9edfa5dbf0dd))
+
 ## [3.1.13](https://github.com/AlaskaAirlines/auro-accordion/compare/v3.1.12...v3.1.13) (2024-02-26)
 
 

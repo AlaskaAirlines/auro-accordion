@@ -126,7 +126,7 @@ In cases where the project is not able to process JS assets, there are pre-proce
 ```html
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@aurodesignsystem/design-tokens@4.3.1/dist/tokens/CSSCustomProperties.css" />
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@aurodesignsystem/webcorestylesheets@5.0.7/dist/bundled/essentials.css" />
-<script src="https://cdn.jsdelivr.net/npm/@aurodesignsystem/auro-accordion@3.1.13/dist/auro-accordion__bundled.js" type="module"></script>
+<script src="https://cdn.jsdelivr.net/npm/@aurodesignsystem/auro-accordion@3.2.0/dist/auro-accordion__bundled.js" type="module"></script>
 ```
 
 <!-- AURO-GENERATED-CONTENT:END -->
