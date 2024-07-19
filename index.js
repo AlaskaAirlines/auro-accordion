@@ -1,8 +1,6 @@
 import { AuroAccordion } from './src/auro-accordion.js';
 import { AuroAccordionGroup } from './src/auro-accordion-group.js';
-import { AuroAccordionButton } from './src/auro-accordion-button.js';
-
-/* eslint-disable func-style */
+import { AuroAccordionButton } from './src/auro-accordionbutton.js';
 
 /**
  * Register Custom Element.
@@ -19,4 +17,4 @@ export function registerComponent(name, className) {
 
 registerComponent('auro-accordion', AuroAccordion);
 registerComponent('auro-accordion-group', AuroAccordionGroup);
-registerComponent('auro-accordion-button', AuroAccordionButton);
+registerComponent('auro-accordionbutton', AuroAccordionButton);
