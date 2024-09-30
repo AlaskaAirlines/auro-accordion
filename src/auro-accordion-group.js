@@ -6,6 +6,8 @@
 // If using litElement base class
 import { LitElement, html } from "lit";
 
+import AuroLibraryRuntimeUtils from '@aurodesignsystem/auro-library/scripts/utils/runtimeUtils.mjs';
+
 // See https://git.io/JJ6SJ for "How to document your components using JSDoc"
 /**
  * Auro-accordion provides users a way to have collapsible content on a page.
@@ -18,6 +20,15 @@ import { LitElement, html } from "lit";
 
 // build the component class
 export class AuroAccordionGroup extends LitElement {
+  constructor() {
+    super();
+
+    /**
+     * @private
+     */
+    this.runtimeUtils = new AuroLibraryRuntimeUtils();
+  }
+
   // This function is to define props used within the scope of this component
   // Be sure to review  https://lit.dev/docs/components/properties/
   // to understand how to use reflected attributes with your property settings.
@@ -34,6 +45,11 @@ export class AuroAccordionGroup extends LitElement {
         reflect: true
       }
     };
+  }
+
+  firstUpdated() {
+    // Add the tag name as an attribute if it is different than the component name
+    this.runtimeUtils.handleComponentTagRename(this, 'auro-accordion-group');
   }
 
   handleSlotContentChange() {
