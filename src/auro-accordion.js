@@ -24,7 +24,7 @@ import tokensCss from "./tokens-css.js";
 
 // See https://git.io/JJ6SJ for "How to document your components using JSDoc"
 /**
- * auro-accordion provides users a way to have collapsible content on a page.
+ * Auro-accordion provides users a way to have collapsible content on a page.
  * Use auro-accordion-group if you want to have auto closing accordion components when others are selected.
  *
  * @attr {Boolean} alignRight - If set, the trigger content will align right.
@@ -100,13 +100,14 @@ export class AuroAccordion extends LitElement {
   }
 
   /**
-   * @private Internal function to generate the HTML for the icon to use
-   * @param {string} svgContent - The imported svg icon
-   * @returns {TemplateResult} - The html template for the icon
+   * Internal function to generate the HTML for the icon to use.
+   * @private
+   * @param {string} svgContent - The imported svg icon.
+   * @returns {TemplateResult} - The html template for the icon.
    */
   generateIconHtml(svgContent) {
-    const dom = new DOMParser().parseFromString(svgContent, 'text/html'),
-    svg = dom.body.firstChild;
+    const dom = new DOMParser().parseFromString(svgContent, 'text/html');
+    const svg = dom.body.firstChild;
 
     svg.setAttribute('slot', 'svg');
 
@@ -132,7 +133,7 @@ export class AuroAccordion extends LitElement {
    * Used to generate inline style heights of content so it animates correctly.
    * @private
    * @returns {void}
-  //  */
+   */
   handleContentSlotChanges() {
     const content = this.shadowRoot.querySelector(".content");
     const container = this.shadowRoot.querySelector(".contentWrapper");
@@ -149,7 +150,7 @@ export class AuroAccordion extends LitElement {
       "iconRight": this.getAttribute('chevron') === 'right',
       "sm": this.getAttribute('variant') === 'sm',
       "lg": this.getAttribute('variant') === 'lg',
-    }
+    };
 
     return html`
       <div class="componentWrapper" part="accordion">
