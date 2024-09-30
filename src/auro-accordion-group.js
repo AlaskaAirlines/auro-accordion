@@ -8,7 +8,7 @@ import { LitElement, html } from "lit";
 
 // See https://git.io/JJ6SJ for "How to document your components using JSDoc"
 /**
- * auro-accordion provides users a way to have collapsible content on a page.
+ * Auro-accordion provides users a way to have collapsible content on a page.
  * Use auro-accordion-group if you want to have auto closing accordion components when others are selected.
  *
  * @attr {Boolean} emphasis - If set, emphasis styles will be applied to the auro-accordions.
@@ -33,7 +33,7 @@ export class AuroAccordionGroup extends LitElement {
         type: String,
         reflect: true
       }
-    }
+    };
   }
 
   handleSlotContentChange() {
@@ -60,8 +60,9 @@ export class AuroAccordionGroup extends LitElement {
   }
 
   /**
-   * @private Internal function to toggle any expanded panels if it is not the one selected
-   * @param {object} event - Standard event parameter
+   * Internal function to toggle any expanded panels if it is not the one selected.
+   * @private
+   * @param {object} event - Standard event parameter.
    */
   handleToggleExpanded(event) {
     if (!this.hasAttribute('noToggleExpanded')) {
@@ -79,11 +80,12 @@ export class AuroAccordionGroup extends LitElement {
   }
 
   /**
-   * @private Internal function to add all accordions into an array
+   * Internal function to add all accordions into an array.
+   * @private
    */
   handleItems() {
     const groupTagName = this.tagName.toLowerCase();
-    const accordionTagName = groupTagName.substring(0, groupTagName.indexOf('-group')); // eslint-disable-line no-magic-numbers
+    const accordionTagName = groupTagName.substring(0, groupTagName.indexOf('-group'));
 
     this.items = Array.from(this.querySelectorAll(accordionTagName));
   }
