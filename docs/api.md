@@ -1,6 +1,6 @@
 # auro-accordion
 
-auro-accordion provides users a way to have collapsible content on a page.
+Auro-accordion provides users a way to have collapsible content on a page.
 Use auro-accordion-group if you want to have auto closing accordion components when others are selected.
 
 ## Properties
