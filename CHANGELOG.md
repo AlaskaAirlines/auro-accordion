@@ -1,5 +1,35 @@
 # Semantic Release Automated Changelog
 
+# [4.0.0-beta.1](https://github.com/AlaskaAirlines/auro-accordion/compare/v3.2.0-beta.1...v4.0.0-beta.1) (2024-09-30)
+
+
+### Bug Fixes
+
+* revert package to beta version ([efc4427](https://github.com/AlaskaAirlines/auro-accordion/commit/efc4427095fb763fe5393923eec8b21b760812ee))
+
+
+### Features
+
+* add tag name as attribute when custom reigstered ([36c4030](https://github.com/AlaskaAirlines/auro-accordion/commit/36c4030833cf2b45042118e6b3d4b00a39996eec))
+* **themes:** rebuild component to support themes [#115](https://github.com/AlaskaAirlines/auro-accordion/issues/115) ([b8f7c47](https://github.com/AlaskaAirlines/auro-accordion/commit/b8f7c473185ec7165653a40ba807913768a1bd87))
+* **themes:** rebuild component to support themes [#115](https://github.com/AlaskaAirlines/auro-accordion/issues/115) ([b8d73a2](https://github.com/AlaskaAirlines/auro-accordion/commit/b8d73a2aec4d81ca6fffb62ccfdd71f98f25cf7d))
+
+
+### Performance Improvements
+
+* refactor custom component registration config ([acd27b9](https://github.com/AlaskaAirlines/auro-accordion/commit/acd27b9c8543e84133a0c6efc09a29d743b58d5b))
+* update dependencies and lint configuration ([47262e0](https://github.com/AlaskaAirlines/auro-accordion/commit/47262e08d4a7186620b903366c4f4545a6ed60d9))
+
+
+### Reverts
+
+* Revert "feat(themes): rebuild component to support themes [#115](https://github.com/AlaskaAirlines/auro-accordion/issues/115)" ([63f9d34](https://github.com/AlaskaAirlines/auro-accordion/commit/63f9d34352c9d8bd35e58445bef01eb4d1ec4e33))
+
+
+### BREAKING CHANGES
+
+* trigger major release for color theme support #115
+
 ## [3.2.1](https://github.com/AlaskaAirlines/auro-accordion/compare/v3.2.0...v3.2.1) (2024-07-19)
 
 
