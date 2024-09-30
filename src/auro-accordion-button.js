@@ -17,3 +17,8 @@ export class AuroAccordionButton extends AuroButton {
     ];
   }
 }
+
+// default internal definition
+if (!customElements.get("auro-accordion-button")) {
+  customElements.define("auro-accordion-button", AuroAccordionButton);
+}
