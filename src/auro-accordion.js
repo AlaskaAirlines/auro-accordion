@@ -10,6 +10,8 @@ import { LitElement, nothing } from "lit";
 import { html } from 'lit/static-html.js';
 import { classMap } from 'lit/directives/class-map.js';
 
+import AuroLibraryRuntimeUtils from '@aurodesignsystem/auro-library/scripts/utils/runtimeUtils.mjs';
+
 import { AuroDependencyVersioning } from '@aurodesignsystem/auro-library/scripts/runtime/dependencyTagVersioning.mjs';
 
 import { AuroIcon } from '@aurodesignsystem/auro-icon/src/auro-icon.js';
@@ -54,6 +56,11 @@ export class AuroAccordion extends LitElement {
      */
     this.iconTag = versioning.generateTag('auro-icon', iconVersion, AuroIcon);
 
+    /**
+     * @private
+     */
+    this.runtimeUtils = new AuroLibraryRuntimeUtils();
+
     this.expanded = false;
   }
 
@@ -97,6 +104,11 @@ export class AuroAccordion extends LitElement {
       styleCss,
       tokensCss
     ];
+  }
+
+  firstUpdated() {
+    // Add the tag name as an attribute if it is different than the component name
+    this.runtimeUtils.handleComponentTagRename(this, 'auro-accordion');
   }
 
   /**
@@ -144,7 +156,6 @@ export class AuroAccordion extends LitElement {
 
   // function that renders the HTML and CSS into  the scope of the component
   render() {
-
     const buttonClasses = {
       "trigger": true,
       "iconRight": this.getAttribute('chevron') === 'right',
