@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [4.0.1](https://github.com/AlaskaAirlines/auro-accordion/compare/v4.0.0...v4.0.1) (2024-10-08)
+
+
+### Bug Fixes
+
+* moves auro library to dependencies in package.json [#128](https://github.com/AlaskaAirlines/auro-accordion/issues/128) ([a29dced](https://github.com/AlaskaAirlines/auro-accordion/commit/a29dced5cf1f529d62a3f674f1580c961af320fb))
+
 # [4.0.0](https://github.com/AlaskaAirlines/auro-accordion/compare/v3.1.13...v4.0.0) (2024-10-01)
 
 
