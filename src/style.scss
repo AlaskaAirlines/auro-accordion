@@ -9,6 +9,8 @@
 @import './../node_modules/@aurodesignsystem/design-tokens/dist/tokens/SCSSVariables';
 
 :host {
+  interpolate-size: allow-keywords; // stylelint-disable-line
+
   .trigger {
     position: relative;
 
@@ -106,6 +108,12 @@
 :host([expanded="false"]) {
   .content  {
     height: 0 !important;
+  }
+}
+
+:host([expanded]) {
+  .content {
+    height: auto;
   }
 }
 

@@ -41,7 +41,7 @@ import tokensCss from "./tokens-css.js";
  * @csspart trigger - Apply CSS to trigger element.
  * @csspart chevron - Apply CSS to chevron icon.
  * @csspart content - Apply CSS to the accordion content.
- * @fires toggleExpanded - Notifies that the accordion has been expanded or closed.
+ * @event toggleExpanded - Notifies that the accordion has been expanded or closed.
  */
 
 // build the component class
@@ -141,19 +141,6 @@ export class AuroAccordion extends LitElement {
     }));
   }
 
-  /**
-   * Used to generate inline style heights of content so it animates correctly.
-   * @private
-   * @returns {void}
-   */
-  handleContentSlotChanges() {
-    const content = this.shadowRoot.querySelector(".content");
-    const container = this.shadowRoot.querySelector(".contentWrapper");
-    const height = container.offsetHeight;
-
-    content.style.height = `${height}px`;
-  }
-
   // function that renders the HTML and CSS into  the scope of the component
   render() {
     const buttonClasses = {
@@ -183,7 +170,7 @@ export class AuroAccordion extends LitElement {
         </auro-accordion-button>
         <div class="content" id="accordionContent" aria-labelledby="accordionTrigger" inert="${!this.expanded || nothing}" part="content">
           <div class="contentWrapper" part="contentWrapper">
-            <slot @slotchange="${this.handleContentSlotChanges}"></slot>
+            <slot></slot>
           </div>
         </div>
       </div>
