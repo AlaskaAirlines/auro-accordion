@@ -106,6 +106,18 @@ export class AuroAccordion extends LitElement {
     ];
   }
 
+  /**
+   * This will register this element with the browser.
+   * @param {string} [name="auro-accordion"] - The name of element that you want to register to.
+   *
+   * @example
+   * AuroAccordion.register("custom-accordion") // this will register this element to <custom-accordion/>
+   *
+   */
+  static register(name = "auro-accordion") {
+    AuroLibraryRuntimeUtils.prototype.registerComponent(name, AuroAccordion);
+  }
+
   firstUpdated() {
     // Add the tag name as an attribute if it is different than the component name
     this.runtimeUtils.handleComponentTagRename(this, 'auro-accordion');
@@ -176,9 +188,4 @@ export class AuroAccordion extends LitElement {
       </div>
     `;
   }
-}
-
-// default internal definition
-if (!customElements.get("auro-accordion")) {
-  customElements.define("auro-accordion", AuroAccordion);
 }

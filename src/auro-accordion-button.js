@@ -8,6 +8,8 @@ import styleCssAuroButton from "@aurodesignsystem/auro-button/src/style-css.js";
 
 import { AuroButton } from "@aurodesignsystem/auro-button/src/auro-button.js";
 
+import * as RuntimeUtils from '@aurodesignsystem/auro-library/scripts/utils/runtimeUtils.mjs';
+
 // build the component class
 export class AuroAccordionButton extends AuroButton {
   static get styles() {
@@ -16,9 +18,16 @@ export class AuroAccordionButton extends AuroButton {
       styleButtonCss
     ];
   }
-}
 
-// default internal definition
-if (!customElements.get("auro-accordion-button")) {
-  customElements.define("auro-accordion-button", AuroAccordionButton);
+  /**
+   * This will register this element with the browser.
+   * @param {string} [name="auro-accordion-button"] - The name of element that you want to register to.
+   *
+   * @example
+   * AuroAccordionButton.register("custom-accordion-button") // this will register this element to <custom-accordion-button/>
+   *
+   */
+  static register(name = "auro-accordion-button") {
+    RuntimeUtils.default.prototype.registerComponent(name, AuroAccordionButton);
+  }
 }

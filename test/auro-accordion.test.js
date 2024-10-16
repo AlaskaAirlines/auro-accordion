@@ -1,5 +1,7 @@
 import { fixture, html, expect, elementUpdated } from '@open-wc/testing';
-import '../src/auro-accordion';
+import { AuroAccordion } from '../src/auro-accordion';
+
+AuroAccordion.register();
 
 describe('auro-accordion', () => {
   it('auro-accordion is accessible', async () => {
