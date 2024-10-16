@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [4.0.2](https://github.com/AlaskaAirlines/auro-accordion/compare/v4.0.1...v4.0.2) (2024-10-16)
+
+
+### Bug Fixes
+
+* resize content container when content is dynamically altered [#130](https://github.com/AlaskaAirlines/auro-accordion/issues/130) ([b93842e](https://github.com/AlaskaAirlines/auro-accordion/commit/b93842e0ab634ec1353cb7d7eb4105f452f07e05))
+
 ## [4.0.1](https://github.com/AlaskaAirlines/auro-accordion/compare/v4.0.0...v4.0.1) (2024-10-08)
 
 
