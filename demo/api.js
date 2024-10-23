@@ -1,4 +1,5 @@
 import { expandedExample } from "../apiExamples/expanded";
+import '../index.js';
 
 export function initExamples(initCount) {
   initCount = initCount || 0;
