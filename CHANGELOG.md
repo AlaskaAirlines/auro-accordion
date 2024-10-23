@@ -1,5 +1,23 @@
 # Semantic Release Automated Changelog
 
+# [4.1.0](https://github.com/AlaskaAirlines/auro-accordion/compare/v4.0.2...v4.1.0) (2024-10-23)
+
+
+### Bug Fixes
+
+* add file extension for proper ESM support [#135](https://github.com/AlaskaAirlines/auro-accordion/issues/135) ([622cb23](https://github.com/AlaskaAirlines/auro-accordion/commit/622cb23586f96d3d9675478245a7890c8957513f))
+* register to the default element ([4b34516](https://github.com/AlaskaAirlines/auro-accordion/commit/4b34516a10ce1a442636d14e4cf9593ca25874bf))
+
+
+### Features
+
+* **api:** add register static method [#133](https://github.com/AlaskaAirlines/auro-accordion/issues/133) ([263ccb2](https://github.com/AlaskaAirlines/auro-accordion/commit/263ccb2c7a658d6f01a80745095d7a4b5008a381))
+
+
+### Performance Improvements
+
+* update dependency versions ([a717229](https://github.com/AlaskaAirlines/auro-accordion/commit/a71722965b93d6d72d859899adadb929c76684b7))
+
 ## [4.0.2](https://github.com/AlaskaAirlines/auro-accordion/compare/v4.0.1...v4.0.2) (2024-10-16)
 
 
