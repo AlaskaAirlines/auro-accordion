@@ -1,5 +1,18 @@
 # Semantic Release Automated Changelog
 
+# [4.2.0](https://github.com/AlaskaAirlines/auro-accordion/compare/v4.1.0...v4.2.0) (2024-11-01)
+
+
+### Features
+
+* apply latest token ds-auro-icon-size [#137](https://github.com/AlaskaAirlines/auro-accordion/issues/137) ([2a2db8c](https://github.com/AlaskaAirlines/auro-accordion/commit/2a2db8cacb2d41e3f73e4a5baae31372f0ec6b8d))
+* update auro-icon package [#137](https://github.com/AlaskaAirlines/auro-accordion/issues/137) ([290612d](https://github.com/AlaskaAirlines/auro-accordion/commit/290612db48525fe62180789011d4fef19cde72dc))
+
+
+### Performance Improvements
+
+* update dependencies ([9cd201b](https://github.com/AlaskaAirlines/auro-accordion/commit/9cd201b646878aa6ee2d1bf6c678baeb40c652e7))
+
 # [4.1.0](https://github.com/AlaskaAirlines/auro-accordion/compare/v4.0.2...v4.1.0) (2024-10-23)
 
 
