@@ -31,7 +31,7 @@
 
 :host([grouped]) {
   .componentWrapper {
-    border-color: var(--ds-auro-accordion-group-border-color);
+    border-bottom-color: var(--ds-auro-accordion-group-border-color);
   }
 }
 
