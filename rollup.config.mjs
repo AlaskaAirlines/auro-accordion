@@ -3,7 +3,7 @@ import serve from 'rollup-plugin-serve';
 
 const production = !process.env.ROLLUP_WATCH,
 
- modernConfig = {
+modernConfig = {
   input: {
     ['auro-accordion__bundled']: './index.js',
   },
@@ -28,7 +28,8 @@ const indexExamplesConfig = {
   output: {
     format: 'esm',
     dir: 'demo/'
-  }
+  },
+  plugins: [nodeResolve()]
 };
 
 const apiExamplesConfig = {
@@ -38,7 +39,8 @@ const apiExamplesConfig = {
   output: {
     format: 'esm',
     dir: 'demo/'
-  }
+  },
+  plugins: [nodeResolve()]
 };
 
 export default [modernConfig, indexExamplesConfig, apiExamplesConfig];
