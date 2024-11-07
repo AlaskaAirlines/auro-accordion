@@ -36,6 +36,7 @@ import tokensCss from "./tokens-css.js";
  * @attr {Boolean} expanded - If set, the accordion is expanded.
  * @attr {Boolean} emphasis - If set, emphasis styles will be applied to the auro-accordions.
  * @attr {Boolean} grouped - Attribute will be set on accordion when it appears in an accordion group.
+ * @attr {Boolean} disabled - If set, the accordion is disabled and have reduced opacity.
  * @attr {String} chevron - Sets chevron variant option. Possible values are: `none`, `right`.
  * @attr {String} variant - Sets accordion variant option. Possible values are: `sm`, `lg`.
  * @slot - Default slot for the accordion content.
@@ -107,6 +108,10 @@ export class AuroAccordion extends LitElement {
       variant: {
         type: String,
         reflect: true
+      },
+      disabled: {
+        type: Boolean,
+        reflect: true
       }
     };
   }
@@ -172,8 +177,13 @@ export class AuroAccordion extends LitElement {
 
   /**
    * Toggles the visibility of the accordion content.
+   * @param {Event} event - The event object.
    */
-  toggle() {
+  toggle(event) {
+    if (this.disabled) {
+      event.preventDefault();
+      return;
+    }
     this.expanded = !this.expanded;
 
     this.dispatchEvent(new CustomEvent('toggleExpanded', {
@@ -202,13 +212,14 @@ export class AuroAccordion extends LitElement {
           id="accordionTrigger"
           aria-controls="accordionContent"
           ?ariaexpanded="${this.expanded}"
+          ?aria-disabled="${this.disabled}"
           @click="${this.toggle}"
           part="trigger">
           ${this.chevron === 'none' ? undefined : html`
-            <${this.iconTag} slot="icon" customSvg customColor ?hidden="${!this.expanded}">
+            <${this.iconTag} slot="icon" customSvg customColor ?hidden="${!this.expanded}" ?disabled="${this.disabled}">
               ${this.generateIconHtml(chevronUp.svg)}
             </${this.iconTag}>
-            <${this.iconTag} slot="icon" customSvg customColor ?hidden="${this.expanded}">
+            <${this.iconTag} slot="icon" customSvg customColor ?hidden="${this.expanded}" ?disabled="${this.disabled}">
               ${this.generateIconHtml(chevronDown.svg)}
             </${this.iconTag}>
           `}
@@ -223,3 +234,5 @@ export class AuroAccordion extends LitElement {
     `;
   }
 }
+
+customElements.define('auro-accordion', AuroAccordion);
