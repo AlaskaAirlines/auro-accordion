@@ -163,6 +163,22 @@ Use the `emphasis` attribute to apply border highlights to the `auro-accordion` 
 
 </auro-accordion>
 
+### disabled
+
+Use the `disabled` attribute to disable the expand/collapse function and reduce the opacity of the element.
+
+<div class="exampleWrapper">
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/disabled.html) -->
+  <!-- AURO-GENERATED-CONTENT:END -->
+</div>
+<auro-accordion alignRight>
+  <span slot="trigger">See code</span>
+
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/disabled.html) -->
+<!-- AURO-GENERATED-CONTENT:END -->
+
+</auro-accordion>
+
 
 ### noToggleExpanded
 

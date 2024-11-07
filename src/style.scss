@@ -183,3 +183,10 @@
     padding-left: unset;
   }
 }
+
+:host([disabled]) {
+  .trigger {
+    pointer-events: none;
+    opacity: 0.5;
+  }
+}
