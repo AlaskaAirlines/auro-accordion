@@ -95,6 +95,22 @@ Using the `alignRight` attribute in conjuction with the `chevron="right"` attrib
 
 </auro-accordion>
 
+#### disabled
+
+Use the `disabled` attribute to disable the expand/collapse function and reduce the opacity of the element.
+
+<div class="exampleWrapper">
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/disabled.html) -->
+  <!-- AURO-GENERATED-CONTENT:END -->
+</div>
+<auro-accordion alignRight>
+  <span slot="trigger">See code</span>
+
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/disabled.html) -->
+<!-- AURO-GENERATED-CONTENT:END -->
+
+</auro-accordion>
+
 #### expanded
 
 The accordion can be programatically expanded or collapsed by setting the `expanded` attribute to `true` or `false`.
@@ -147,6 +163,22 @@ Using the `variant="lg"` attribute will cause the size of the accordion trigger 
 
 </auro-accordion>
 
+#### disabled
+
+Use the `disabled` attribute to disable the expand/collapse function and reduce the opacity for the whole accordion inside of the group.
+
+<div class="exampleWrapper">
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/disabledGroup.html) -->
+  <!-- AURO-GENERATED-CONTENT:END -->
+</div>
+<auro-accordion alignRight>
+  <span slot="trigger">See code</span>
+
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/disabledGroup.html) -->
+<!-- AURO-GENERATED-CONTENT:END -->
+
+</auro-accordion>
+
 ### emphasis
 
 Use the `emphasis` attribute to apply border highlights to the `auro-accordion` on hover and move the chevron to the right side of the trigger.
@@ -162,7 +194,6 @@ Use the `emphasis` attribute to apply border highlights to the `auro-accordion` 
 <!-- AURO-GENERATED-CONTENT:END -->
 
 </auro-accordion>
-
 
 ### noToggleExpanded
 

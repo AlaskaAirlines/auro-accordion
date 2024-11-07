@@ -213,3 +213,10 @@
     padding-left: unset;
   }
 }
+
+:host([disabled]) {
+  .trigger {
+    pointer-events: none;
+    color: var(--ds-color-text-ui-disabled-default, $ds-color-text-ui-disabled-default);
+  }
+}

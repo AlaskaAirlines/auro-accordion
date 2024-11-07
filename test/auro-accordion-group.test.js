@@ -80,6 +80,23 @@ describe('auro-accordion-group', () => {
     await expect(firstAccordion.hasAttribute('expanded')).to.be.true;
     await expect(secondAccordion.hasAttribute('expanded')).to.be.true;
   });
+
+  it('render with disabled attribute', async () => {
+    const el = await fixture(html`
+      <auro-accordion-group disabled>
+        <auro-accordion>
+          <span slot="trigger">Trigger</span>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          </p>
+        </auro-accordion>
+      </auro-accordion-group>
+    `);
+
+    const accordion = el.querySelector('auro-accordion');
+
+    await expect(accordion.disabled).to.be.true;
+  });
 });
 
 async function defaultFixture() {
