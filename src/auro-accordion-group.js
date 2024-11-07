@@ -15,6 +15,7 @@ import AuroLibraryRuntimeUtils from '@aurodesignsystem/auro-library/scripts/util
  *
  * @attr {Boolean} emphasis - If set, emphasis styles will be applied to the auro-accordions.
  * @attr {String} variant - Sets accordion variant option. Possible values are: `sm`, `lg`.
+ * @attr {Boolean} disabled - If set, the whole accordion inside the group are disabled and have reduced opacity.
  * @attr {Boolean} noToggleExpanded - If set, multiple accordions can be open at the same time.
  */
 
@@ -43,6 +44,10 @@ export class AuroAccordionGroup extends LitElement {
       variant: {
         type: String,
         reflect: true
+      },
+      disabled: {
+        type: Boolean,
+        reflect: true
       }
     };
   }
@@ -62,6 +67,23 @@ export class AuroAccordionGroup extends LitElement {
   firstUpdated() {
     // Add the tag name as an attribute if it is different than the component name
     this.runtimeUtils.handleComponentTagRename(this, 'auro-accordion-group');
+  }
+
+  updated(changedProperties) {
+    if (changedProperties.has('disabled')) {
+      this.updateDisabledState();
+    }
+  }
+
+  /**
+   * Updates the disabled state of all child <auro-accordion> elements
+   * to match the disabled state of the <auro-accordion-group> element.
+   */
+  updateDisabledState() {
+    const accordions = this.querySelectorAll('auro-accordion');
+    accordions.forEach((accordion) => {
+      accordion.disabled = this.disabled;
+    });
   }
 
   handleSlotContentChange() {
