@@ -1,5 +1,5 @@
-<!-- AURO-GENERATED-CONTENT:START (FILE:src=./../api.md) -->
-<!-- The below content is automatically added from ./../api.md -->
+<!-- AURO-GENERATED-CONTENT:START (FILE:src=./../docs/api.md) -->
+<!-- The below content is automatically added from ./../docs/api.md -->
 
 # auro-accordion
 
@@ -51,8 +51,8 @@ Use auro-accordion-group if you want to have auto closing accordion components w
 ### Basic
 
 <div class="exampleWrapper">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/basic.html) -->
-  <!-- The below content is automatically added from ./../../apiExamples/basic.html -->
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/basic.html) -->
+  <!-- The below content is automatically added from ./../apiExamples/basic.html -->
   <auro-accordion>
     <span slot="trigger">Trigger</span>
     <p>
@@ -72,8 +72,8 @@ Use auro-accordion-group if you want to have auto closing accordion components w
 </div>
 <auro-accordion alignRight>
   <span slot="trigger">See code</span>
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/basic.html) -->
-<!-- The below code snippet is automatically added from ./../../apiExamples/basic.html -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/basic.html) -->
+<!-- The below code snippet is automatically added from ./../apiExamples/basic.html -->
 
 ```html
 <auro-accordion>
@@ -95,8 +95,8 @@ Use auro-accordion-group if you want to have auto closing accordion components w
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
 <div class="exampleWrapper">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/accordionGroup.html) -->
-  <!-- The below content is automatically added from ./../../apiExamples/accordionGroup.html -->
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/accordionGroup.html) -->
+  <!-- The below content is automatically added from ./../apiExamples/accordionGroup.html -->
   <auro-accordion-group>
     <auro-accordion>
       <span slot="trigger">Trigger</span>
@@ -148,8 +148,8 @@ Use auro-accordion-group if you want to have auto closing accordion components w
 </div>
 <auro-accordion alignRight>
   <span slot="trigger">See code</span>
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/accordionGroup.html) -->
-<!-- The below code snippet is automatically added from ./../../apiExamples/accordionGroup.html -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/accordionGroup.html) -->
+<!-- The below code snippet is automatically added from ./../apiExamples/accordionGroup.html -->
 
 ```html
 <auro-accordion-group>
@@ -210,8 +210,8 @@ Use auro-accordion-group if you want to have auto closing accordion components w
 The chevron icon within the trigger of the `auro-accordion` will not render when `chevron="none"` is present on the element.
 
 <div class="exampleWrapper">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/chevronNone.html) -->
-  <!-- The below content is automatically added from ./../../apiExamples/chevronNone.html -->
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/chevronNone.html) -->
+  <!-- The below content is automatically added from ./../apiExamples/chevronNone.html -->
   <auro-accordion chevron="none">
     <span slot="trigger">Trigger</span>
     <p>
@@ -231,8 +231,8 @@ The chevron icon within the trigger of the `auro-accordion` will not render when
 </div>
 <auro-accordion alignRight>
   <span slot="trigger">See code</span>
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/chevronNone.html) -->
-<!-- The below code snippet is automatically added from ./../../apiExamples/chevronNone.html -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/chevronNone.html) -->
+<!-- The below code snippet is automatically added from ./../apiExamples/chevronNone.html -->
 
 ```html
 <auro-accordion chevron="none">
@@ -259,8 +259,8 @@ The chevron icon within the trigger of the `auro-accordion` will not render when
 Using the `chevron="right"` will cause the chevron to appear on the right side of the accordion label.
 
 <div class="exampleWrapper">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/chevronRight.html) -->
-  <!-- The below content is automatically added from ./../../apiExamples/chevronRight.html -->
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/chevronRight.html) -->
+  <!-- The below content is automatically added from ./../apiExamples/chevronRight.html -->
   <auro-accordion chevron="right">
     <span slot="trigger">Trigger</span>
     <p>
@@ -280,8 +280,8 @@ Using the `chevron="right"` will cause the chevron to appear on the right side o
 </div>
 <auro-accordion alignRight chevron>
   <span slot="trigger">See code</span>
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/chevronRight.html) -->
-<!-- The below code snippet is automatically added from ./../../apiExamples/chevronRight.html -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/chevronRight.html) -->
+<!-- The below code snippet is automatically added from ./../apiExamples/chevronRight.html -->
 
 ```html
 <auro-accordion chevron="right">
@@ -308,8 +308,8 @@ Using the `chevron="right"` will cause the chevron to appear on the right side o
 Using the `alignRight` attribute will cause the trigger to align to the right edge of the accordion.
 
 <div class="exampleWrapper">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/alignRight.html) -->
-  <!-- The below content is automatically added from ./../../apiExamples/alignRight.html -->
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/alignRight.html) -->
+  <!-- The below content is automatically added from ./../apiExamples/alignRight.html -->
   <auro-accordion alignRight>
     <span slot="trigger">Trigger</span>
     <p>
@@ -329,8 +329,8 @@ Using the `alignRight` attribute will cause the trigger to align to the right ed
 </div>
 <auro-accordion alignRight>
   <span slot="trigger">See code</span>
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/alignRight.html) -->
-<!-- The below code snippet is automatically added from ./../../apiExamples/alignRight.html -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/alignRight.html) -->
+<!-- The below code snippet is automatically added from ./../apiExamples/alignRight.html -->
 
 ```html
 <auro-accordion alignRight>
@@ -357,8 +357,8 @@ Using the `alignRight` attribute will cause the trigger to align to the right ed
 Using the `alignRight` attribute in conjuction with the `chevron="right"` attribute will cause the trigger to align to the right edge of the accordion, with the chevron appearing on the right side of the trigger.
 
 <div class="exampleWrapper">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/alignChevronRight.html) -->
-  <!-- The below content is automatically added from ./../../apiExamples/alignChevronRight.html -->
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/alignChevronRight.html) -->
+  <!-- The below content is automatically added from ./../apiExamples/alignChevronRight.html -->
   <auro-accordion chevron="right" alignRight>
     <span slot="trigger">Trigger</span>
     <p>
@@ -378,8 +378,8 @@ Using the `alignRight` attribute in conjuction with the `chevron="right"` attrib
 </div>
 <auro-accordion alignRight>
   <span slot="trigger">See code</span>
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/alignChevronRight.html) -->
-<!-- The below code snippet is automatically added from ./../../apiExamples/alignChevronRight.html -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/alignChevronRight.html) -->
+<!-- The below code snippet is automatically added from ./../apiExamples/alignChevronRight.html -->
 
 ```html
 <auro-accordion chevron="right" alignRight>
@@ -406,8 +406,8 @@ Using the `alignRight` attribute in conjuction with the `chevron="right"` attrib
 The accordion can be programatically expanded or collapsed by setting the `expanded` attribute to `true` or `false`.
 
 <div class="exampleWrapper">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/expanded.html) -->
-  <!-- The below content is automatically added from ./../../apiExamples/expanded.html -->
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/expanded.html) -->
+  <!-- The below content is automatically added from ./../apiExamples/expanded.html -->
   <auro-button id="auroaccordionExpandedExampleBtnTrue">Set expanded = `true`</auro-button>
   <auro-button id="auroaccordionExpandedExampleBtnFalse">Set expanded = `false`</auro-button>
   <auro-accordion id="auroaccordionExpandedExample">
@@ -429,8 +429,8 @@ The accordion can be programatically expanded or collapsed by setting the `expan
 </div>
 <auro-accordion alignRight>
   <span slot="trigger">See code</span>
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/expanded.html) -->
-<!-- The below code snippet is automatically added from ./../../apiExamples/expanded.html -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/expanded.html) -->
+<!-- The below code snippet is automatically added from ./../apiExamples/expanded.html -->
 
 ```html
 <auro-button id="auroaccordionExpandedExampleBtnTrue">Set expanded = `true`</auro-button>
@@ -452,8 +452,8 @@ The accordion can be programatically expanded or collapsed by setting the `expan
 </auro-accordion>
 ```
 <!-- AURO-GENERATED-CONTENT:END -->
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/expanded.js) -->
-<!-- The below code snippet is automatically added from ./../../apiExamples/expanded.js -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/expanded.js) -->
+<!-- The below code snippet is automatically added from ./../apiExamples/expanded.js -->
 
 ```js
 export function expandedExample() {
@@ -478,8 +478,8 @@ export function expandedExample() {
 Using the `variant="sm"` attribute will cause the size of the accordion trigger to render smaller.
 
 <div class="exampleWrapper">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/accordionGroupSm.html) -->
-  <!-- The below content is automatically added from ./../../apiExamples/accordionGroupSm.html -->
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/accordionGroupSm.html) -->
+  <!-- The below content is automatically added from ./../apiExamples/accordionGroupSm.html -->
   <auro-accordion-group variant="sm">
     <auro-accordion>
       <span slot="trigger">Trigger</span>
@@ -531,8 +531,8 @@ Using the `variant="sm"` attribute will cause the size of the accordion trigger 
 </div>
 <auro-accordion alignRight>
   <span slot="trigger">See code</span>
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/accordionGroupSm.html) -->
-<!-- The below code snippet is automatically added from ./../../apiExamples/accordionGroupSm.html -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/accordionGroupSm.html) -->
+<!-- The below code snippet is automatically added from ./../apiExamples/accordionGroupSm.html -->
 
 ```html
 <auro-accordion-group variant="sm">
@@ -591,8 +591,8 @@ Using the `variant="sm"` attribute will cause the size of the accordion trigger 
 Using the `variant="lg"` attribute will cause the size of the accordion trigger to render larger.
 
 <div class="exampleWrapper">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/accordionGroupLg.html) -->
-  <!-- The below content is automatically added from ./../../apiExamples/accordionGroupLg.html -->
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/accordionGroupLg.html) -->
+  <!-- The below content is automatically added from ./../apiExamples/accordionGroupLg.html -->
   <auro-accordion-group variant="lg">
     <auro-accordion>
       <span slot="trigger">Trigger</span>
@@ -644,8 +644,8 @@ Using the `variant="lg"` attribute will cause the size of the accordion trigger 
 </div>
 <auro-accordion alignRight>
   <span slot="trigger">See code</span>
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/accordionGroupLg.html) -->
-<!-- The below code snippet is automatically added from ./../../apiExamples/accordionGroupLg.html -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/accordionGroupLg.html) -->
+<!-- The below code snippet is automatically added from ./../apiExamples/accordionGroupLg.html -->
 
 ```html
 <auro-accordion-group variant="lg">
@@ -704,8 +704,8 @@ Using the `variant="lg"` attribute will cause the size of the accordion trigger 
 Use the `emphasis` attribute to apply border highlights to the `auro-accordion` on hover and move the chevron to the right side of the trigger.
 
 <div class="exampleWrapper">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/emphasis.html) -->
-  <!-- The below content is automatically added from ./../../apiExamples/emphasis.html -->
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/emphasis.html) -->
+  <!-- The below content is automatically added from ./../apiExamples/emphasis.html -->
   <auro-accordion-group emphasis>
     <auro-accordion>
       <span slot="trigger">Trigger</span>
@@ -757,8 +757,8 @@ Use the `emphasis` attribute to apply border highlights to the `auro-accordion` 
 </div>
 <auro-accordion alignRight>
   <span slot="trigger">See code</span>
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/emphasis.html) -->
-<!-- The below code snippet is automatically added from ./../../apiExamples/emphasis.html -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/emphasis.html) -->
+<!-- The below code snippet is automatically added from ./../apiExamples/emphasis.html -->
 
 ```html
 <auro-accordion-group emphasis>
@@ -817,8 +817,8 @@ Use the `emphasis` attribute to apply border highlights to the `auro-accordion` 
 Using the `noToggleExpanded` attribute will allow for multiple `auro-accordion`'s in an `auro-accordion-group` to be open at the same time.
 
 <div class="exampleWrapper">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/noToggleExpanded.html) -->
-  <!-- The below content is automatically added from ./../../apiExamples/noToggleExpanded.html -->
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/noToggleExpanded.html) -->
+  <!-- The below content is automatically added from ./../apiExamples/noToggleExpanded.html -->
   <auro-accordion-group noToggleExpanded>
     <auro-accordion>
       <span slot="trigger">Trigger</span>
@@ -870,8 +870,8 @@ Using the `noToggleExpanded` attribute will allow for multiple `auro-accordion`'
 </div>
 <auro-accordion alignRight>
   <span slot="trigger">See code</span>
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/noToggleExpanded.html) -->
-<!-- The below code snippet is automatically added from ./../../apiExamples/noToggleExpanded.html -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/noToggleExpanded.html) -->
+<!-- The below code snippet is automatically added from ./../apiExamples/noToggleExpanded.html -->
 
 ```html
 <auro-accordion-group noToggleExpanded>
@@ -929,8 +929,8 @@ Using the `noToggleExpanded` attribute will allow for multiple `auro-accordion`'
 
 The component may be restyled using the following code sample and changing the values of the following token(s).
 
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../src/tokens.scss) -->
-<!-- The below code snippet is automatically added from ./../../src/tokens.scss -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../src/tokens.scss) -->
+<!-- The below code snippet is automatically added from ./../src/tokens.scss -->
 
 ```scss
 @import "./../node_modules/@aurodesignsystem/design-tokens/dist/tokens/SCSSVariables";
