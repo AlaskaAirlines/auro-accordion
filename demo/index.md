@@ -6,15 +6,15 @@ This file is generated based on a template fetched from `./docs/partials/index.m
 
 # accordion
 
-<!-- AURO-GENERATED-CONTENT:START (FILE:src=./description.md) -->
-<!-- The below content is automatically added from ./description.md -->
+<!-- AURO-GENERATED-CONTENT:START (FILE:src=./../docs/partials/description.md) -->
+<!-- The below content is automatically added from ./../docs/partials/description.md -->
 `<auro-accordion>` is a [HTML custom element](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_custom_elements) for the purpose of toggling the visibility of large content section by clicking on a smaller trigger element.
 <!-- AURO-GENERATED-CONTENT:END -->
 
 ## auro-accordion use cases
 
-<!-- AURO-GENERATED-CONTENT:START (FILE:src=./useCases.md) -->
-<!-- The below content is automatically added from ./useCases.md -->
+<!-- AURO-GENERATED-CONTENT:START (FILE:src=./../docs/partials/useCases.md) -->
+<!-- The below content is automatically added from ./../docs/partials/useCases.md -->
 The `<auro-accordion>` element should be used in situations where users may:
 
 - Hide/show long sub-content based on headline trigger
@@ -24,8 +24,8 @@ The `<auro-accordion>` element should be used in situations where users may:
 ## Example(s)
 
 <div class="exampleWrapper">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/basic.html) -->
-  <!-- The below content is automatically added from ./../../apiExamples/basic.html -->
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/basic.html) -->
+  <!-- The below content is automatically added from ./../apiExamples/basic.html -->
   <auro-accordion>
     <span slot="trigger">Trigger</span>
     <p>
@@ -45,8 +45,8 @@ The `<auro-accordion>` element should be used in situations where users may:
 </div>
 <auro-accordion alignRight>
   <span slot="trigger">See code</span>
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/basic.html) -->
-<!-- The below code snippet is automatically added from ./../../apiExamples/basic.html -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/basic.html) -->
+<!-- The below code snippet is automatically added from ./../apiExamples/basic.html -->
 
 ```html
 <auro-accordion>
@@ -68,8 +68,8 @@ The `<auro-accordion>` element should be used in situations where users may:
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
 <div class="exampleWrapper">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/accordionGroup.html) -->
-  <!-- The below content is automatically added from ./../../apiExamples/accordionGroup.html -->
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/accordionGroup.html) -->
+  <!-- The below content is automatically added from ./../apiExamples/accordionGroup.html -->
   <auro-accordion-group>
     <auro-accordion>
       <span slot="trigger">Trigger</span>
@@ -121,8 +121,8 @@ The `<auro-accordion>` element should be used in situations where users may:
 </div>
 <auro-accordion alignRight>
   <span slot="trigger">See code</span>
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/accordionGroup.html) -->
-<!-- The below code snippet is automatically added from ./../../apiExamples/accordionGroup.html -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/accordionGroup.html) -->
+<!-- The below code snippet is automatically added from ./../apiExamples/accordionGroup.html -->
 
 ```html
 <auro-accordion-group>
