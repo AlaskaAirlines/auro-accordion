@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [4.2.2](https://github.com/AlaskaAirlines/auro-accordion/compare/v4.2.1...v4.2.2) (2024-11-14)
+
+
+### Bug Fixes
+
+* restore chevron none and right layout [#144](https://github.com/AlaskaAirlines/auro-accordion/issues/144) ([7e286d6](https://github.com/AlaskaAirlines/auro-accordion/commit/7e286d646b5e40a2c9d6fc0ea5f42373859790ba))
+
 ## [4.2.1](https://github.com/AlaskaAirlines/auro-accordion/compare/v4.2.0...v4.2.1) (2024-11-05)
 
 
