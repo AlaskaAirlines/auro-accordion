@@ -172,12 +172,14 @@ export class AuroAccordion extends LitElement {
           aria-expanded="${this.expanded}"
           @click="${this.toggle}"
           part="trigger">
-          <${this.iconTag} slot="icon" customSvg customColor ?hidden="${!this.expanded}">
-            ${this.generateIconHtml(chevronUp.svg)}
-          </${this.iconTag}>
-          <${this.iconTag} slot="icon" customSvg customColor ?hidden="${this.expanded}">
-            ${this.generateIconHtml(chevronDown.svg)}
-          </${this.iconTag}>
+          ${this.chevron === 'none' ? undefined : html`
+            <${this.iconTag} slot="icon" customSvg customColor ?hidden="${!this.expanded}">
+              ${this.generateIconHtml(chevronUp.svg)}
+            </${this.iconTag}>
+            <${this.iconTag} slot="icon" customSvg customColor ?hidden="${this.expanded}">
+              ${this.generateIconHtml(chevronDown.svg)}
+            </${this.iconTag}>
+          `}
           <slot name="trigger" part="triggerSlot"></slot>
         </auro-accordion-button>
         <div class="content" id="accordionContent" aria-labelledby="accordionTrigger" inert="${!this.expanded || nothing}" part="content">
