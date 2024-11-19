@@ -1,5 +1,17 @@
 # Semantic Release Automated Changelog
 
+# [4.3.0](https://github.com/AlaskaAirlines/auro-accordion/compare/v4.2.2...v4.3.0) (2024-11-19)
+
+
+### Features
+
+* update auro-library to 3.0.1 ([cf0c26d](https://github.com/AlaskaAirlines/auro-accordion/commit/cf0c26d65388bb7e5e46b47197c6b64f8633809e))
+
+
+### Performance Improvements
+
+* update library to 3.0.2 ([54824fd](https://github.com/AlaskaAirlines/auro-accordion/commit/54824fdf8ec420a6ac0960b08817868508c9a79b))
+
 ## [4.2.2](https://github.com/AlaskaAirlines/auro-accordion/compare/v4.2.1...v4.2.2) (2024-11-14)
 
 
