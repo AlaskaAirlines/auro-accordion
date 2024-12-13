@@ -35,6 +35,21 @@ describe('auro-accordion', () => {
 
     await expect(trigger.getAttribute('aria-expanded')).to.equal('false');
   });
+
+  it('render the disabled attribute', async () => {
+    const el = await fixture(html`
+      <auro-accordion disabled>
+        <span slot="trigger">Trigger</span>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        </p>
+      </auro-accordion>
+    `);
+
+    const trigger = el.shadowRoot.querySelector('.trigger');
+
+    await expect(trigger.getAttribute('aria-disabled')).to.equal('true');
+  });
 });
 
 async function defaultFixture() {

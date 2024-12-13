@@ -182,3 +182,14 @@
     padding-left: unset;
   }
 }
+
+:host([disabled]) {
+  .trigger {
+    pointer-events: none;
+    color: var(--ds-color-text-ui-disabled-default, $ds-color-text-ui-disabled-default);
+  }
+
+  [auro-icon] {
+    color: var(--ds-color-icon-ui-primary-disabled-default, $ds-color-icon-ui-primary-disabled-default);
+  }
+}
