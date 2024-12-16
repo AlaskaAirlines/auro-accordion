@@ -4,7 +4,7 @@ title: '[issue summary] Please verify version before submitting new issue'
 labels:
   - 'Type: Bug'
   - not-reviewed
-  - auro-accordion
+  - 'auro-accordion'
 body:
   - type: markdown
     attributes:
@@ -32,7 +32,7 @@ body:
   - type: dropdown
     id: repro
     attributes:
-      label: Reproducing the error on the docsite
+      label: Reproducing the error
       description: Are you able to reproduce this issue on the [Auro docsite](https://auro.alaskaair.com/)?
       options:
         - This issue is reproducible on the Auro docsite
