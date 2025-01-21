@@ -1,10 +1,12 @@
 import { expandedExample } from "../apiExamples/expanded";
+import { nestedButtonExample } from "../apiExamples/nestedButton.js";
 import '../index.js';
 
 export function initExamples(initCount) {
   initCount = initCount || 0;
 
   try {
+    nestedButtonExample();
     expandedExample();
   } catch {
     if (initCount <= 20) {

@@ -48,6 +48,77 @@ Use auro-accordion-group if you want to have auto closing accordion components w
 
 ## Accordion API Examples
 
+### Nested Button in Trigger
+
+<div class="exampleWrapper">
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/nestedButton.html) -->
+  <!-- The below content is automatically added from ./../apiExamples/nestedButton.html -->
+  <auro-accordion id="nestedButtonExample">
+    <span slot="trigger">
+      Click the button for a test
+      <auro-button id="nestedButton">
+        <auro-icon
+          customColor
+          category="interface"
+          name="x-lg"
+          >
+        </auro-icon>
+      </auro-button>
+    </span>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+    </p>
+  </auro-accordion>
+  <!-- AURO-GENERATED-CONTENT:END -->
+</div>
+<auro-accordion alignRight>
+  <span slot="trigger">See code</span>
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/nestedButton.html) -->
+<!-- The below code snippet is automatically added from ./../apiExamples/nestedButton.html -->
+
+```html
+<auro-accordion id="nestedButtonExample">
+  <span slot="trigger">
+    Click the button for a test
+    <auro-button id="nestedButton">
+      <auro-icon
+        customColor
+        category="interface"
+        name="x-lg"
+        >
+      </auro-icon>
+    </auro-button>
+  </span>
+  <p>
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+  </p>
+</auro-accordion>
+```
+<!-- AURO-GENERATED-CONTENT:END -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/nestedButton.js) -->
+<!-- The below code snippet is automatically added from ./../apiExamples/nestedButton.js -->
+
+```js
+export function nestedButtonExample() {
+  // console.warn('nestedButtonExample');
+  const button = document.getElementById('nestedButton');
+  // console.warn('button', button);
+
+  // button.addEventListener('mouseover', (event) => {
+  //   console.warn('mouseover', event);
+  // });
+
+  button.addEventListener('click', (event) => {
+    // console.warn('test', event);
+    // event.stopImmediatePropagation();
+    event.stopPropagation();
+    console.log('Button clicked');
+  });
+}
+```
+<!-- AURO-GENERATED-CONTENT:END -->
+</auro-accordion>
+
 ### Basic
 
 <div class="exampleWrapper">

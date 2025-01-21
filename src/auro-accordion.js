@@ -164,7 +164,7 @@ export class AuroAccordion extends LitElement {
 
     return html`
       <div class="componentWrapper" part="accordion">
-        <auro-accordion-button
+        <button
           ?fluid="${this.emphasis}"
           class="${classMap(buttonClasses)}"
           id="accordionTrigger"
@@ -181,7 +181,7 @@ export class AuroAccordion extends LitElement {
             </${this.iconTag}>
           `}
           <slot name="trigger" part="triggerSlot"></slot>
-        </auro-accordion-button>
+        </button>
         <div class="content" id="accordionContent" aria-labelledby="accordionTrigger" inert="${!this.expanded || nothing}" part="content">
           <div class="contentWrapper" part="contentWrapper">
             <slot></slot>
