@@ -121,6 +121,12 @@ export class AuroAccordion extends LitElement {
   firstUpdated() {
     // Add the tag name as an attribute if it is different than the component name
     this.runtimeUtils.handleComponentTagRename(this, 'auro-accordion');
+
+    this.accordionButton = this.shadowRoot.querySelector('auro-accordion-button');
+
+    this.accordionButton.addEventListener('click', () => {
+      this.toggle();
+    });
   }
 
   /**
@@ -142,6 +148,7 @@ export class AuroAccordion extends LitElement {
    * Toggles the visibility of the accordion content.
    */
   toggle() {
+    console.log('button clicked, toggling.......')
     this.expanded = !this.expanded;
 
     this.dispatchEvent(new CustomEvent('toggleExpanded', {
@@ -170,7 +177,6 @@ export class AuroAccordion extends LitElement {
           id="accordionTrigger"
           aria-controls="accordionContent"
           aria-expanded="${this.expanded}"
-          @click="${this.toggle}"
           part="trigger">
           ${this.chevron === 'none' ? undefined : html`
             <${this.iconTag} slot="icon" customSvg customColor ?hidden="${!this.expanded}">
