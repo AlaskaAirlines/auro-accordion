@@ -56,7 +56,7 @@ Use auro-accordion-group if you want to have auto closing accordion components w
   <auro-accordion id="nestedButtonExample">
     <span slot="trigger">
       Click the button for a test
-      <auro-button id="nestedButton" variant="flat">
+      <auro-button id="nestedButton">
         <auro-icon
           customColor
           category="interface"
@@ -80,7 +80,7 @@ Use auro-accordion-group if you want to have auto closing accordion components w
 <auro-accordion id="nestedButtonExample">
   <span slot="trigger">
     Click the button for a test
-    <auro-button id="nestedButton" variant="flat">
+    <auro-button id="nestedButton">
       <auro-icon
         customColor
         category="interface"
@@ -100,10 +100,17 @@ Use auro-accordion-group if you want to have auto closing accordion components w
 
 ```js
 export function nestedButtonExample() {
+  // console.warn('nestedButtonExample');
   const button = document.getElementById('nestedButton');
+  // console.warn('button', button);
+
+  // button.addEventListener('mouseover', (event) => {
+  //   console.warn('mouseover', event);
+  // });
 
   button.addEventListener('click', (event) => {
-    event.stopImmediatePropagation();
+    // console.warn('test', event);
+    // event.stopImmediatePropagation();
     event.stopPropagation();
     console.log('Button clicked');
   });

@@ -1,14 +1,11 @@
 import { AuroAccordion } from '../src/auro-accordion.js';
 import { AuroAccordionGroup } from '../src/auro-accordion-group.js';
-import { AuroAccordionButton } from '../src/auro-accordion-button.js';
 
 AuroAccordion.register();
 AuroAccordionGroup.register();
-AuroAccordionButton.register();
 
 AuroAccordion.register('custom-accordion');
 AuroAccordionGroup.register('custom-accordion-group');
-AuroAccordionButton.register('custom-accordion-button');
 
 export function initExamples(initCount) {
   initCount = initCount || 0;
