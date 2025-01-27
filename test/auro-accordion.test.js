@@ -3,6 +3,8 @@ import { AuroAccordion } from '../src/auro-accordion';
 
 AuroAccordion.register();
 
+// import './../index.js';
+
 describe('auro-accordion', () => {
   it('auro-accordion is accessible', async () => {
     const el = await defaultFixture();

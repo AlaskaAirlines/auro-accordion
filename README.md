@@ -40,7 +40,6 @@ Or, by CDN.
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@alaskaairux/design-tokens@3.11.0/dist/tokens/CSSCustomProperties.css" />
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@alaskaairux/webcorestylesheets@3.7.3/dist/bundled/essentials.css" />
 <script src="https://cdn.jsdelivr.net/npm/@aurodesignsystem/auro-accordion@1.6.6/dist/auro-accordion__bundled.js" type="module"></script>
-<script src="https://cdn.jsdelivr.net/npm/@aurodesignsystem/auro-accordion@1.6.6/dist/auro-accordion-group__bundled.js" type="module"></script>
 ```
 <!-- AURO-GENERATED-CONTENT:END -->
 
