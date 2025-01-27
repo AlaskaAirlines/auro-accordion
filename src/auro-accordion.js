@@ -10,9 +10,12 @@ import { LitElement, nothing } from "lit";
 import { html } from 'lit/static-html.js';
 import { classMap } from 'lit/directives/class-map.js';
 
-import AuroLibraryRuntimeUtils from '@aurodesignsystem/auro-library/scripts/utils/runtimeUtils.mjs';
+import { AuroAccordionGroup } from './auro-accordion-group.js';
+import { AuroAccordionButton } from './auro-accordion-button.js';
 
 import { AuroDependencyVersioning } from '@aurodesignsystem/auro-library/scripts/runtime/dependencyTagVersioning.mjs';
+
+import AuroLibraryRuntimeUtils from '@aurodesignsystem/auro-library/scripts/utils/runtimeUtils.mjs';
 
 import { AuroIcon } from '@aurodesignsystem/auro-icon/src/auro-icon.js';
 import iconVersion from './iconVersion.js';
@@ -55,6 +58,16 @@ export class AuroAccordion extends LitElement {
      * @private
      */
     this.iconTag = versioning.generateTag('auro-icon', iconVersion, AuroIcon);
+
+    /**
+     * @private
+     */
+    this.buttonNameHash = this.generateRandomLetters(4); //eslint-disable-line
+
+    /**
+     * @private
+     */
+    this.buttonTag = versioning.generateTag('auro-accordion-button', this.buttonNameHash, AuroAccordionButton);
 
     /**
      * @private
@@ -115,7 +128,9 @@ export class AuroAccordion extends LitElement {
    *
    */
   static register(name = "auro-accordion") {
+    const nameGroup = `${name}-group`;
     AuroLibraryRuntimeUtils.prototype.registerComponent(name, AuroAccordion);
+    AuroAccordionGroup.register(nameGroup);
   }
 
   firstUpdated() {
@@ -136,6 +151,23 @@ export class AuroAccordion extends LitElement {
     svg.setAttribute('slot', 'svg');
 
     return html`${svg}`;
+  }
+
+  /**
+   * Generates a random string of letters.
+   * @private
+   * @param {number} length - The number of characters to generate in the string.
+   * @returns {string} - The generated string.
+   */
+  generateRandomLetters(length) {
+    let result = '';
+    const characters = 'abcdefghijklmnopqrstuvwxyz';
+    const charactersLength = characters.length;
+    for (let index = 0; index < length; index += 1) {
+      result += characters.charAt(Math.floor(Math.random() * charactersLength));
+    }
+
+    return result;
   }
 
   /**
@@ -164,7 +196,7 @@ export class AuroAccordion extends LitElement {
 
     return html`
       <div class="componentWrapper" part="accordion">
-        <auro-accordion-button
+        <${this.buttonTag}
           ?fluid="${this.emphasis}"
           class="${classMap(buttonClasses)}"
           id="accordionTrigger"
@@ -181,7 +213,7 @@ export class AuroAccordion extends LitElement {
             </${this.iconTag}>
           `}
           <slot name="trigger" part="triggerSlot"></slot>
-        </auro-accordion-button>
+        </${this.buttonTag}>
         <div class="content" id="accordionContent" aria-labelledby="accordionTrigger" inert="${!this.expanded || nothing}" part="content">
           <div class="contentWrapper" part="contentWrapper">
             <slot></slot>
