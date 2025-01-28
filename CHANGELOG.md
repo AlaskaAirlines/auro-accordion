@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+# [4.4.0](https://github.com/AlaskaAirlines/auro-accordion/compare/v4.3.1...v4.4.0) (2025-01-28)
+
+
+### Features
+
+* simplify registration logic [#156](https://github.com/AlaskaAirlines/auro-accordion/issues/156) ([83c4425](https://github.com/AlaskaAirlines/auro-accordion/commit/83c4425e93817afcce823cb74ad5c4f430deccb9))
+
 ## [4.3.1](https://github.com/AlaskaAirlines/auro-accordion/compare/v4.3.0...v4.3.1) (2024-12-21)
 
 
