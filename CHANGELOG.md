@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [4.4.1](https://github.com/AlaskaAirlines/auro-accordion/compare/v4.4.0...v4.4.1) (2025-02-08)
+
+
+### Performance Improvements
+
+* update dependencies ([e702963](https://github.com/AlaskaAirlines/auro-accordion/commit/e70296334f96871100f7064c37b4e61add954fa6))
+
 # [4.4.0](https://github.com/AlaskaAirlines/auro-accordion/compare/v4.3.1...v4.4.0) (2025-01-28)
 
 
