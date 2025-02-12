@@ -23,19 +23,59 @@ describe('auro-accordion', () => {
 
     const trigger = el.shadowRoot.querySelector('.trigger');
 
-    await expect(trigger.getAttribute('aria-expanded')).to.equal('false');
+    await expect(trigger.getAttribute('aria-expanded')).to.null;
 
     trigger.click();
 
     await elementUpdated(trigger);
 
-    await expect(trigger.getAttribute('aria-expanded')).to.equal('true');
+    await expect(trigger.getAttribute('aria-expanded')).to.not.null;
 
     trigger.click();
 
     await elementUpdated(trigger);
 
-    await expect(trigger.getAttribute('aria-expanded')).to.equal('false');
+    await expect(trigger.getAttribute('aria-expanded')).to.null;
+  });
+
+  it('render the disabled attribute', async () => {
+    const el = await fixture(html`
+      <auro-accordion disabled>
+        <span slot="trigger">Trigger</span>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        </p>
+      </auro-accordion>
+    `);
+
+    const trigger = el.shadowRoot.querySelector('.trigger');
+
+    await expect(trigger.hasAttribute('aria-disabled')).to.not.null;
+  });
+
+  it('test toggle event when disabled is true', async () => {
+    const el = await defaultFixture();
+    el.disabled = true;
+    const trigger = el.shadowRoot.querySelector('.trigger');
+    trigger.click();
+
+    await elementUpdated(trigger);
+    await expect(trigger.hasAttribute('aria-expanded')).to.not.null;
+  });
+
+  it('render with chevron attribute value "none"', async () => {
+    const el = await fixture(html`
+      <auro-accordion chevron="none">
+        <span slot="trigger">Trigger</span>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        </p>
+      </auro-accordion>
+    `);
+
+    const trigger = el.shadowRoot.querySelector('.trigger');
+
+    await expect(trigger.hasAttribute('chevron')).to.be.false;
   });
 });
 

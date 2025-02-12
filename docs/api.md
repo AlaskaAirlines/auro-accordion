@@ -9,6 +9,7 @@ Use auro-accordion-group if you want to have auto closing accordion components w
 |--------------|--------------|-----------|---------|--------------------------------------------------|
 | `alignRight` | `alignRight` | `Boolean` |         | If set, the trigger content will align right.    |
 | `chevron`    | `chevron`    | `String`  |         | Sets chevron variant option. Possible values are: `none`, `right`. |
+| `disabled`   | `disabled`   | `Boolean` |         | If set, the accordion is disabled and have reduced opacity. |
 | `emphasis`   | `emphasis`   | `Boolean` |         | If set, emphasis styles will be applied to the auro-accordions. |
 | `expanded`   | `expanded`   | `Boolean` | false   | If set, the accordion is expanded.               |
 | `grouped`    | `grouped`    | `Boolean` |         | Attribute will be set on accordion when it appears in an accordion group. |
@@ -16,9 +17,9 @@ Use auro-accordion-group if you want to have auto closing accordion components w
 
 ## Methods
 
-| Method   | Type       | Description                                      |
-|----------|------------|--------------------------------------------------|
-| `toggle` | `(): void` | Toggles the visibility of the accordion content. |
+| Method   | Type                   | Description                                      |
+|----------|------------------------|--------------------------------------------------|
+| `toggle` | `(event: Event): void` | Toggles the visibility of the accordion content.<br /><br />**event**: The event object. |
 
 ## Events
 
