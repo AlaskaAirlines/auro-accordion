@@ -1,5 +1,20 @@
 # Semantic Release Automated Changelog
 
+# [5.0.0](https://github.com/AlaskaAirlines/auro-accordion/compare/v4.4.1...v5.0.0) (2025-02-28)
+
+
+* feat!: move peer dependencies to "real" dependencies ([20b6416](https://github.com/AlaskaAirlines/auro-accordion/commit/20b64165437e3c9044f1d5622cfc856ac709fc0d))
+
+
+### BREAKING CHANGES
+
+* last change was breaking _on a patch version_ because of peer dependencies
+
+Summary:
+  Our current build process relies on peer dependencies being present, but
+  the peer dependency pipeline is causing far more issues than it's worth.
+  Why not just make them regular dependencies? This is what this PR does :)
+
 ## [4.4.1](https://github.com/AlaskaAirlines/auro-accordion/compare/v4.4.0...v4.4.1) (2025-02-08)
 
 
