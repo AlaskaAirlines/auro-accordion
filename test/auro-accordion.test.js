@@ -23,19 +23,19 @@ describe('auro-accordion', () => {
 
     const trigger = el.shadowRoot.querySelector('.trigger');
 
-    await expect(trigger.getAttribute('aria-expanded')).to.equal('false');
+    await expect(trigger.hasAttribute('expanded')).to.be.false;
 
     trigger.click();
 
     await elementUpdated(trigger);
 
-    await expect(trigger.getAttribute('aria-expanded')).to.equal('true');
+    await expect(trigger.hasAttribute('expanded')).to.be.true;;
 
     trigger.click();
 
     await elementUpdated(trigger);
 
-    await expect(trigger.getAttribute('aria-expanded')).to.equal('false');
+    await expect(trigger.hasAttribute('expanded')).to.be.false;
   });
 });
 
