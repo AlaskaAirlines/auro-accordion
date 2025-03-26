@@ -12,11 +12,50 @@ import * as RuntimeUtils from '@aurodesignsystem/auro-library/scripts/utils/runt
 
 // build the component class
 export class AuroAccordionButton extends AuroButton {
+  constructor() {
+    super();
+
+    this.expanded = false;
+  }
+
   static get styles() {
     return [
       styleCssAuroButton,
       styleButtonCss
     ];
+  }
+
+  // This function is to define props used within the scope of this component
+  // Be sure to review  https://lit.dev/docs/components/properties/
+  // to understand how to use reflected attributes with your property settings.
+  static get properties() {
+    return {
+      ...super.properties,
+
+      expanded: {
+        type: Boolean,
+        reflect: true
+      },
+    };
+  }
+
+  firstUpdated() {
+    this.shadowButton = this.shadowRoot.querySelector('button');
+    this.setAriaExpanded();
+  }
+
+  updated(changedProperties) {
+    if (changedProperties.has('expanded')) {
+      this.setAriaExpanded();
+    }
+  }
+
+  /**
+   * Sets the aria-expanded value on the button element in the shadow DOM
+   * for screen reader accessibility.
+   */
+  setAriaExpanded() {
+    this.shadowButton.setAttribute('aria-expanded', this.expanded);
   }
 
   /**
