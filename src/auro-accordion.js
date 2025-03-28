@@ -201,7 +201,7 @@ export class AuroAccordion extends LitElement {
           class="${classMap(buttonClasses)}"
           id="accordionTrigger"
           aria-controls="accordionContent"
-          ?expanded="${this.expanded}"
+          ?ariaexpanded="${this.expanded}"
           @click="${this.toggle}"
           part="trigger">
           ${this.chevron === 'none' ? undefined : html`
