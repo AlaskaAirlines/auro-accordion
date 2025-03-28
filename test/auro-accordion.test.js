@@ -22,20 +22,24 @@ describe('auro-accordion', () => {
     const el = await defaultFixture();
 
     const trigger = el.shadowRoot.querySelector('.trigger');
+    const shadowButton = trigger.shadowRoot.querySelector('button');
 
-    await expect(trigger.hasAttribute('expanded')).to.be.false;
-
-    trigger.click();
-
-    await elementUpdated(trigger);
-
-    await expect(trigger.hasAttribute('expanded')).to.be.true;;
+    await expect(trigger.hasAttribute('ariaexpanded')).to.be.false;
+    await expect(shadowButton.getAttribute('aria-expanded')).to.equal('false');
 
     trigger.click();
 
     await elementUpdated(trigger);
 
-    await expect(trigger.hasAttribute('expanded')).to.be.false;
+    await expect(trigger.hasAttribute('ariaexpanded')).to.be.true;
+    await expect(shadowButton.getAttribute('aria-expanded')).to.equal('true');
+
+    trigger.click();
+
+    await elementUpdated(trigger);
+
+    await expect(trigger.hasAttribute('ariaexpanded')).to.be.false;
+    await expect(shadowButton.getAttribute('aria-expanded')).to.equal('false');
   });
 });
 
