@@ -1,5 +1,13 @@
 # Semantic Release Automated Changelog
 
+## [5.0.1](https://github.com/AlaskaAirlines/auro-accordion/compare/v5.0.0...v5.0.1) (2025-03-28)
+
+
+### Bug Fixes
+
+* change expanded attribute ([1d45036](https://github.com/AlaskaAirlines/auro-accordion/commit/1d4503692a4ac1b548d27c16a512f7a0d70c772c))
+* put aria-expanded on shadowDOM button ([b2c2835](https://github.com/AlaskaAirlines/auro-accordion/commit/b2c283515bbf0e16d8b7475d441b2496e4a8e9f5))
+
 # [5.0.0](https://github.com/AlaskaAirlines/auro-accordion/compare/v4.4.1...v5.0.0) (2025-02-28)
 
 
