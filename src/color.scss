@@ -6,7 +6,7 @@
 /* stylelint-disable max-nesting-depth, order/properties-order, selector-max-combinators, selector-max-compound-selectors, declaration-empty-line-before, declaration-no-important, no-descending-specificity */
 
 // Import Auro tokens
-@import './../node_modules/@aurodesignsystem/design-tokens/dist/tokens/SCSSVariables';
+@import './../node_modules/@aurodesignsystem/design-tokens/dist/auro-classic/SCSSVariables';
 
 :host {
   .trigger {
