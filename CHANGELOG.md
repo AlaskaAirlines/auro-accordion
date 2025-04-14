@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [5.0.2](https://github.com/AlaskaAirlines/auro-accordion/compare/v5.0.1...v5.0.2) (2025-04-14)
+
+
+### Performance Improvements
+
+* add wca script for docs api ([1067a2b](https://github.com/AlaskaAirlines/auro-accordion/commit/1067a2bca57d1d3f8684274ee698305d47be8e3d))
+
 ## [5.0.1](https://github.com/AlaskaAirlines/auro-accordion/compare/v5.0.0...v5.0.1) (2025-03-28)
 
 
