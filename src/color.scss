@@ -6,7 +6,7 @@
 /* stylelint-disable max-nesting-depth, order/properties-order, selector-max-combinators, selector-max-compound-selectors, declaration-empty-line-before, declaration-no-important, no-descending-specificity */
 
 // Import Auro tokens
-@import './../node_modules/@aurodesignsystem/design-tokens/dist/auro-classic/SCSSVariables';
+@import './../node_modules/@aurodesignsystem/design-tokens/dist/alaska/SCSSVariables--alaska';
 
 :host {
   .trigger {
@@ -21,12 +21,7 @@
 }
 
 :host(:focus) {
-  --ds-auro-accordion-trigger-border-color: var(--ds-color-border-active-default, #{$ds-color-border-active-default});
-  --ds-auro-accordion-trigger-icon-color: var(--ds-color-icon-ui-secondary-focus-default, #{$ds-color-icon-ui-secondary-focus-default});
-}
-
-:host(:hover) {
-  --ds-auro-accordion-trigger-icon-color: var(--ds-color-icon-ui-secondary-hover-default, #{$ds-color-icon-ui-secondary-hover-default});
+  --ds-auro-accordion-trigger-border-color: var(--ds-advanced-color-state-focused, #{$ds-advanced-color-state-focused});
 }
 
 :host([grouped]) {
@@ -44,12 +39,12 @@
     &:focus,
     &:hover {
       &:before {
-        --ds-auro-accordion-trigger-border-color: var(--ds-color-border-active-default, #{$ds-color-border-active-default});
+        --ds-auro-accordion-trigger-border-color: var(--ds-advanced-color-state-selected, #{$ds-advanced-color-state-selected});
       }
     }
 
     &:focus {
-      --ds-auro-accordion-trigger-border-color: var(--ds-color-border-active-default, #{$ds-color-border-active-default});
+      --ds-auro-accordion-trigger-border-color: var(--ds-advanced-color-state-focused, #{$ds-advanced-color-state-focused});
     }
   }
 
@@ -61,11 +56,11 @@
 :host([emphasis][expanded]) {
   .trigger {
     &:before {
-      --ds-auro-accordion-trigger-border-color: var(--ds-color-border-active-default, #{$ds-color-border-active-default});
+      --ds-auro-accordion-trigger-border-color: var(--ds-advanced-color-state-selected, #{$ds-advanced-color-state-selected});
     }
   }
 
   .content {
-    --ds-auro-accordion-content-border-color: var(--ds-color-border-subtle-default, #{$ds-color-border-subtle-default});
+    --ds-auro-accordion-content-border-color: var(--ds-basic-color-border-subtle, #{$ds-basic-color-border-subtle});
   }
 }
