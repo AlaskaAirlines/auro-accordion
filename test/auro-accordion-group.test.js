@@ -54,7 +54,7 @@ describe('auro-accordion-group', () => {
 
     secondAccordionTrigger.click();
 
-    await elementUpdated();
+    await elementUpdated(el);
 
     await expect(firstAccordion.hasAttribute('expanded')).to.be.false;
     await expect(secondAccordion.hasAttribute('expanded')).to.be.true;

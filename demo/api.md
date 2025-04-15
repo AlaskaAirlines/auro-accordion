@@ -933,14 +933,14 @@ The component may be restyled using the following code sample and changing the v
 <!-- The below code snippet is automatically added from ./../src/tokens.scss -->
 
 ```scss
-@import "./../node_modules/@aurodesignsystem/design-tokens/dist/auro-classic/SCSSVariables";
+@import "./../node_modules/@aurodesignsystem/design-tokens/dist/alaska/SCSSVariables--alaska";
 
 :host {
   --ds-auro-accordion-content-border-color: transparent;
-  --ds-auro-accordion-group-border-color: var(--ds-color-border-divider-default, #{$ds-color-border-divider-default});
+  --ds-auro-accordion-group-border-color: var(--ds-basic-color-border-divider, #{$ds-basic-color-border-divider});
   --ds-auro-accordion-trigger-border-color: transparent;
-  --ds-auro-accordion-trigger-color: var(--ds-color-text-primary-default, #{$ds-color-text-primary-default});
-  --ds-auro-accordion-trigger-icon-color: var(--ds-color-icon-ui-secondary-default-default, #{$ds-color-icon-ui-secondary-default-default});
+  --ds-auro-accordion-trigger-color: var(--ds-basic-color-texticon-default, #{$ds-basic-color-texticon-default});
+  --ds-auro-accordion-trigger-icon-color: var(--ds-basic-color-texticon-default, #{$ds-basic-color-texticon-default});
 }
 ```
 <!-- AURO-GENERATED-CONTENT:END -->
