@@ -11,6 +11,8 @@
 :host {
   interpolate-size: allow-keywords; // stylelint-disable-line
 
+  --webkit-fill: -webkit-fill-available;
+
   .trigger {
     position: relative;
 
@@ -99,6 +101,12 @@
   .componentWrapper {
     border-bottom-width: 1px;
     border-bottom-style: solid;
+  }
+}
+
+:host([grouped][chevron="right"]:not([alignright])) {
+  .trigger {
+    width: var(--webkit-fill, 100%);
   }
 }
 
