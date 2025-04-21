@@ -65,7 +65,6 @@
   .contentWrapper {
     padding-left: var(--ds-size-400, $ds-size-400);
     padding-bottom: var(--ds-size-300, $ds-size-300);
-    padding-right: var(--ds-size-200, $ds-size-200);
   }
 }
 
@@ -79,7 +78,11 @@
 :host([chevron="right"]) {
   ::slotted([slot="trigger"]) {
     padding-left: 0;
-    padding-right: var(--ds-size-50, $ds-size-50);
+    padding-right: var(--ds-size-100, $ds-size-100);
+  }
+
+  .contentWrapper {
+    padding-left: var(--ds-size-400, $ds-size-400);
   }
 }
 
@@ -107,6 +110,8 @@
 :host([grouped][chevron="right"]:not([alignright])) {
   .trigger {
     width: var(--webkit-fill, 100%);
+
+    --trigger-padding-right: var(--ds-size-200, $ds-size-200); // will be passed to the child component
   }
 }
 
@@ -128,7 +133,8 @@
     border-style: solid;
     border-width: 1px;
     border-left-width: 2px;
-    padding-left: var(--ds-size-200, $ds-size-200);
+
+    --trigger-padding-left: var(--ds-size-200, $ds-size-200); // will be passed to the child component
 
     &:before {
       display: block;
@@ -163,6 +169,13 @@
 
   .iconWrapper {
     padding-right: var(--ds-size-200, $ds-size-200);
+  }
+}
+
+:host([emphasis][variant="lg"]) {
+  .trigger,
+  .contentWrapper {
+    padding-left: calc(var(--ds-size-200, $ds-size-200) + var(--ds-size-50, $ds-size-50));
   }
 }
 
