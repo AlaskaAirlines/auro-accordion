@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+# [5.1.0](https://github.com/AlaskaAirlines/auro-accordion/compare/v5.0.2...v5.1.0) (2025-04-23)
+
+
+### Features
+
+* support new component themes [#171](https://github.com/AlaskaAirlines/auro-accordion/issues/171) ([e28dba7](https://github.com/AlaskaAirlines/auro-accordion/commit/e28dba784d568075c2f6679949fc0487ca535588))
+
 ## [5.0.2](https://github.com/AlaskaAirlines/auro-accordion/compare/v5.0.1...v5.0.2) (2025-04-14)
 
 
