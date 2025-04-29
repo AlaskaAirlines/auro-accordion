@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [5.1.1](https://github.com/AlaskaAirlines/auro-accordion/compare/v5.1.0...v5.1.1) (2025-04-29)
+
+
+### Bug Fixes
+
+* adjust chevron-right positioning for grouped ([467fc0c](https://github.com/AlaskaAirlines/auro-accordion/commit/467fc0c8f85546ae14200016d42a5287c1f98728)), closes [#173](https://github.com/AlaskaAirlines/auro-accordion/issues/173)
+
 # [5.1.0](https://github.com/AlaskaAirlines/auro-accordion/compare/v5.0.2...v5.1.0) (2025-04-23)
 
 
