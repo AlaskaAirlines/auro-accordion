@@ -41,7 +41,7 @@
   }
 
   [auro-icon] {
-    --ds-auro-icon-size: var(--ds-size-300,$ds-size-300);
+    --ds-auro-icon-size: var(--ds-size-300, #{$ds-size-300});
 
     &[hidden] { // stylelint-disable-line selector-max-attribute
       display: none;
@@ -111,7 +111,7 @@
   .trigger {
     width: var(--webkit-fill, 100%);
 
-    --trigger-padding-right: var(--ds-size-200, $ds-size-200); // will be passed to the child component
+    --trigger-padding-right: var(--ds-size-200, #{$ds-size-200}); // will be passed to the child component
   }
 }
 
@@ -134,7 +134,7 @@
     border-width: 1px;
     border-left-width: 2px;
 
-    --trigger-padding-left: var(--ds-size-200, $ds-size-200); // will be passed to the child component
+    --trigger-padding-left: var(--ds-size-200, #{$ds-size-200}); // will be passed to the child component
 
     &:before {
       display: block;
