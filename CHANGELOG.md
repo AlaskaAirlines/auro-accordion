@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [5.1.2](https://github.com/AlaskaAirlines/auro-accordion/compare/v5.1.1...v5.1.2) (2025-05-01)
+
+
+### Bug Fixes
+
+* update SCSS token formatting ([452d9df](https://github.com/AlaskaAirlines/auro-accordion/commit/452d9df1dc486f4adb4b523ea774459b6cc4a6b9))
+
 ## [5.1.1](https://github.com/AlaskaAirlines/auro-accordion/compare/v5.1.0...v5.1.1) (2025-04-29)
 
 
