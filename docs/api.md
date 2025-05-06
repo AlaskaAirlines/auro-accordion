@@ -17,9 +17,9 @@ Use auro-accordion-group if you want to have auto closing accordion components w
 
 ## Methods
 
-| Method   | Type                   | Description                                      |
-|----------|------------------------|--------------------------------------------------|
-| `toggle` | `(event: Event): void` | Toggles the visibility of the accordion content.<br /><br />**event**: The event object. |
+| Method   | Type       | Description                                      |
+|----------|------------|--------------------------------------------------|
+| `toggle` | `(): void` | Toggles the visibility of the accordion content. |
 
 ## Events
 
