@@ -225,10 +225,10 @@ export class AuroAccordion extends LitElement {
           @click="${this.handleButtonClick}"
           part="trigger">
           ${this.chevron === 'none' ? undefined : html`
-            <${this.iconTag} slot="icon" customSvg customColor ?hidden="${!this.expanded}" ?disabled="${this.disabled}">
+            <${this.iconTag} slot="icon" customSvg customColor ?hidden="${!this.expanded}">
               ${this.generateIconHtml(chevronUp.svg)}
             </${this.iconTag}>
-            <${this.iconTag} slot="icon" customSvg customColor ?hidden="${this.expanded}" ?disabled="${this.disabled}">
+            <${this.iconTag} slot="icon" customSvg customColor ?hidden="${this.expanded}">
               ${this.generateIconHtml(chevronDown.svg)}
             </${this.iconTag}>
           `}
