@@ -177,13 +177,8 @@ export class AuroAccordion extends LitElement {
 
   /**
    * Toggles the visibility of the accordion content.
-   * @param {Event} event - The event object.
    */
-  toggle(event) {
-    if (this.disabled) {
-      event.preventDefault();
-      return;
-    }
+  toggle() {
     this.expanded = !this.expanded;
 
     this.dispatchEvent(new CustomEvent('toggleExpanded', {
@@ -193,6 +188,19 @@ export class AuroAccordion extends LitElement {
         expanded: this.expanded
       }
     }));
+  }
+
+  /**
+   * Toggles the visibility of the accordion content when button gets clicked.
+   * @private
+   * @param {Event} event - The event object.
+   */
+  handleButtonClick(event) {
+    if (this.disabled) {
+      event.preventDefault();
+      return;
+    }
+    this.toggle();
   }
 
   // function that renders the HTML and CSS into  the scope of the component
@@ -213,7 +221,8 @@ export class AuroAccordion extends LitElement {
           aria-controls="accordionContent"
           ?ariaexpanded="${this.expanded}"
           ?aria-disabled="${this.disabled}"
-          @click="${this.toggle}"
+          ?disabled="${this.disabled}"
+          @click="${this.handleButtonClick}"
           part="trigger">
           ${this.chevron === 'none' ? undefined : html`
             <${this.iconTag} slot="icon" customSvg customColor ?hidden="${!this.expanded}" ?disabled="${this.disabled}">
