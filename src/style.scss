@@ -16,7 +16,6 @@
   .trigger {
     position: relative;
 
-    cursor: pointer;
     display: inline-block;
 
     border-width: 1px;
@@ -211,12 +210,5 @@
   ::slotted([slot="trigger"]),
   .contentWrapper {
     padding-left: unset;
-  }
-}
-
-:host([disabled]) {
-  .trigger {
-    pointer-events: none;
-    color: var(--ds-color-text-ui-disabled-default, $ds-color-text-ui-disabled-default);
   }
 }

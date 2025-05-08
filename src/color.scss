@@ -20,6 +20,11 @@
   }
 }
 
+
+:host([disabled]) {
+  --ds-auro-accordion-trigger-color: var(--ds-basic-color-texticon-disabled, $ds-basic-color-texticon-disabled);
+}
+
 :host(:focus) {
   --ds-auro-accordion-trigger-border-color: var(--ds-advanced-color-state-focused, #{$ds-advanced-color-state-focused});
 }
