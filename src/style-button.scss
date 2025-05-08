@@ -12,17 +12,14 @@
 
 :host {
   border: unset;
+  cursor: pointer;
 
-  .auroButton {
+  .auro-button {
     all: unset;
     width: 100%;
     padding: var(--ds-size-200, $ds-size-200) var(--trigger-padding-right, 0)
       var(--ds-size-200, $ds-size-200) var(--trigger-padding-left, 0);
     box-sizing: border-box;
-
-    cursor: pointer;
-
-    pointer-events: none;
 
     &:focus,
     &:focus-visible,
@@ -43,6 +40,14 @@
   .textSlot {
     display: flex;
     flex: 1;
+  }
+}
+
+:host([disabled]) {
+  cursor: not-allowed;
+
+  .auro-button {
+    pointer-events: none;
   }
 }
 
