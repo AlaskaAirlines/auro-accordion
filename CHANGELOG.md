@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [5.1.3](https://github.com/AlaskaAirlines/auro-accordion/compare/v5.1.2...v5.1.3) (2025-05-08)
+
+
+### Bug Fixes
+
+* update chevron-right non-emphasis styling ([2c8dd1a](https://github.com/AlaskaAirlines/auro-accordion/commit/2c8dd1ac40311ed8e7e8bd860dc93fd00b8b0691))
+
 ## [5.1.2](https://github.com/AlaskaAirlines/auro-accordion/compare/v5.1.1...v5.1.2) (2025-05-01)
 
 
