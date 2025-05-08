@@ -36,6 +36,7 @@ import tokensCss from "./tokens-css.js";
  * @attr {Boolean} expanded - If set, the accordion is expanded.
  * @attr {Boolean} emphasis - If set, emphasis styles will be applied to the auro-accordions.
  * @attr {Boolean} grouped - Attribute will be set on accordion when it appears in an accordion group.
+ * @attr {Boolean} disabled - If set, the accordion is disabled and have reduced opacity.
  * @attr {String} chevron - Sets chevron variant option. Possible values are: `none`, `right`.
  * @attr {String} variant - Sets accordion variant option. Possible values are: `sm`, `lg`.
  * @slot - Default slot for the accordion content.
@@ -106,6 +107,10 @@ export class AuroAccordion extends LitElement {
       },
       variant: {
         type: String,
+        reflect: true
+      },
+      disabled: {
+        type: Boolean,
         reflect: true
       }
     };
@@ -185,6 +190,19 @@ export class AuroAccordion extends LitElement {
     }));
   }
 
+  /**
+   * Toggles the visibility of the accordion content when button gets clicked.
+   * @private
+   * @param {Event} event - The event object.
+   */
+  handleButtonClick(event) {
+    if (this.disabled) {
+      event.preventDefault();
+      return;
+    }
+    this.toggle();
+  }
+
   // function that renders the HTML and CSS into  the scope of the component
   render() {
     const buttonClasses = {
@@ -202,7 +220,9 @@ export class AuroAccordion extends LitElement {
           id="accordionTrigger"
           aria-controls="accordionContent"
           ?ariaexpanded="${this.expanded}"
-          @click="${this.toggle}"
+          ?aria-disabled="${this.disabled}"
+          ?disabled="${this.disabled}"
+          @click="${this.handleButtonClick}"
           part="trigger">
           ${this.chevron === 'none' ? undefined : html`
             <${this.iconTag} slot="icon" customSvg customColor ?hidden="${!this.expanded}">
@@ -223,3 +243,5 @@ export class AuroAccordion extends LitElement {
     `;
   }
 }
+
+customElements.define('auro-accordion', AuroAccordion);
