@@ -1,5 +1,23 @@
 # Semantic Release Automated Changelog
 
+# [5.2.0](https://github.com/AlaskaAirlines/auro-accordion/compare/v5.1.3...v5.2.0) (2025-05-13)
+
+
+### Bug Fixes
+
+* rename click handler and disable button on disabled state ([0c91a55](https://github.com/AlaskaAirlines/auro-accordion/commit/0c91a55499f53876e45fce986a0c4acb45cbeb4a))
+
+
+### Features
+
+* **accordion:** add disabled state [#123](https://github.com/AlaskaAirlines/auro-accordion/issues/123) ([4c027d9](https://github.com/AlaskaAirlines/auro-accordion/commit/4c027d9bef2b4208526d7ed5acd722dc4a9cf783))
+
+
+### Performance Improvements
+
+* remove `disabled` attr on icon ([00443bc](https://github.com/AlaskaAirlines/auro-accordion/commit/00443bc812f0bb60815a935ca1e12d3dbb1ca901))
+* update disabled color's token ([c0254e9](https://github.com/AlaskaAirlines/auro-accordion/commit/c0254e965ae70b5f9fad3c49f051dea772db2ad4))
+
 ## [5.1.3](https://github.com/AlaskaAirlines/auro-accordion/compare/v5.1.2...v5.1.3) (2025-05-08)
 
 
