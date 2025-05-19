@@ -243,5 +243,3 @@ export class AuroAccordion extends LitElement {
     `;
   }
 }
-
-customElements.define('auro-accordion', AuroAccordion);
