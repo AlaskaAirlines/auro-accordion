@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [5.2.1](https://github.com/AlaskaAirlines/auro-accordion/compare/v5.2.0...v5.2.1) (2025-05-20)
+
+
+### Bug Fixes
+
+* remove self registration out of `register()` function ([360a9a5](https://github.com/AlaskaAirlines/auro-accordion/commit/360a9a5903a81e8ebcd047fd94d87c7f016a69b5))
+
 # [5.2.0](https://github.com/AlaskaAirlines/auro-accordion/compare/v5.1.3...v5.2.0) (2025-05-13)
 
 
