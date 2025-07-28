@@ -6,7 +6,7 @@
 /* stylelint-disable max-nesting-depth, order/properties-order, selector-max-combinators, selector-max-compound-selectors, declaration-empty-line-before, declaration-no-important, no-descending-specificity */
 
 // Import Auro tokens
-@import './../node_modules/@aurodesignsystem/design-tokens/dist/alaska/SCSSVariables--alaska';
+@use "@aurodesignsystem/design-tokens/dist/themes/alaska/SCSSVariables--alaska" as v;
 
 :host {
   .trigger {
@@ -22,11 +22,15 @@
 
 
 :host([disabled]) {
-  --ds-auro-accordion-trigger-color: var(--ds-basic-color-texticon-disabled, $ds-basic-color-texticon-disabled);
+  --ds-auro-accordion-trigger-color: var(--ds-basic-color-texticon-disabled, v.$ds-basic-color-texticon-disabled);
+
+  [auro-icon] {
+    color: var(--ds-basic-color-texticon-disabled, v.$ds-basic-color-texticon-disabled);
+  }
 }
 
 :host(:focus) {
-  --ds-auro-accordion-trigger-border-color: var(--ds-advanced-color-state-focused, #{$ds-advanced-color-state-focused});
+  --ds-auro-accordion-trigger-border-color: var(--ds-advanced-color-state-focused, #{v.$ds-advanced-color-state-focused});
 }
 
 :host([grouped]) {
@@ -44,12 +48,12 @@
     &:focus,
     &:hover {
       &:before {
-        --ds-auro-accordion-trigger-border-color: var(--ds-advanced-color-state-selected, #{$ds-advanced-color-state-selected});
+        --ds-auro-accordion-trigger-border-color: var(--ds-advanced-color-state-selected, #{v.$ds-advanced-color-state-selected});
       }
     }
 
     &:focus {
-      --ds-auro-accordion-trigger-border-color: var(--ds-advanced-color-state-focused, #{$ds-advanced-color-state-focused});
+      --ds-auro-accordion-trigger-border-color: var(--ds-advanced-color-state-focused, #{v.$ds-advanced-color-state-focused});
     }
   }
 
@@ -61,11 +65,11 @@
 :host([emphasis][expanded]) {
   .trigger {
     &:before {
-      --ds-auro-accordion-trigger-border-color: var(--ds-advanced-color-state-selected, #{$ds-advanced-color-state-selected});
+      --ds-auro-accordion-trigger-border-color: var(--ds-advanced-color-state-selected, #{v.$ds-advanced-color-state-selected});
     }
   }
 
   .content {
-    --ds-auro-accordion-content-border-color: var(--ds-basic-color-border-subtle, #{$ds-basic-color-border-subtle});
+    --ds-auro-accordion-content-border-color: var(--ds-basic-color-border-subtle, #{v.$ds-basic-color-border-subtle});
   }
 }

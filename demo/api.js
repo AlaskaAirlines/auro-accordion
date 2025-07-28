@@ -1,5 +1,6 @@
 import { expandedExample } from "../apiExamples/expanded";
 import '../index.js';
+import '@aurodesignsystem/auro-button';
 
 export function initExamples(initCount) {
   initCount = initCount || 0;

@@ -6,7 +6,9 @@
 /* stylelint-disable order/properties-order, selector-max-combinators, selector-max-compound-selectors, declaration-empty-line-before, declaration-no-important, no-descending-specificity */
 
 // Import Auro tokens
-@import './../node_modules/@aurodesignsystem/design-tokens/dist/auro-classic/SCSSVariables';
+@use "@aurodesignsystem/design-tokens/dist/legacy/auro-classic/SCSSVariables" as vac;
+
+@use "@aurodesignsystem/webcorestylesheets/dist/bundled/type/classes.alaska.min.css";
 
 :host {
   interpolate-size: allow-keywords; // stylelint-disable-line
@@ -20,7 +22,7 @@
 
     border-width: 1px;
     border-style: solid;
-    border-radius: var(--ds-border-radius, $ds-border-radius);
+    border-radius: var(--ds-border-radius, vac.$ds-border-radius);
 
     &:hover {
       text-decoration: underline;
@@ -28,19 +30,17 @@
   }
 
   ::slotted([slot="trigger"]) {
-    padding-left: var(--ds-size-100, $ds-size-100);
-    padding-right: var(--ds-size-200, $ds-size-200);
-
-    font-size: var(--ds-text-heading-300-size, $ds-text-heading-300-size);
+    padding-left: var(--ds-size-100, vac.$ds-size-100);
+    padding-right: var(--ds-size-200, vac.$ds-size-200);
   }
 
   .iconWrapper {
-    height: var(--ds-size-300, $ds-size-300);
+    height: var(--ds-size-300, vac.$ds-size-300);
     margin-top: -2px;
   }
 
   [auro-icon] {
-    --ds-auro-icon-size: var(--ds-size-300, #{$ds-size-300});
+    --ds-auro-icon-size: var(--ds-size-300, #{vac.$ds-size-300});
 
     &[hidden] { // stylelint-disable-line selector-max-attribute
       display: none;
@@ -52,8 +52,6 @@
 
     transition: all 0.5s ease-in-out;
     transition-property: height;
-
-    font-size: var(--ds-text-body-size-default, $ds-text-body-size-default);
   }
 
   .componentWrapper {
@@ -62,8 +60,8 @@
   }
 
   .contentWrapper {
-    padding-left: var(--ds-size-400, $ds-size-400);
-    padding-bottom: var(--ds-size-300, $ds-size-300);
+    padding-left: var(--ds-size-400, vac.$ds-size-400);
+    padding-bottom: var(--ds-size-300, vac.$ds-size-300);
   }
 }
 
@@ -77,21 +75,21 @@
 :host([chevron="right"]) {
   ::slotted([slot="trigger"]) {
     padding-left: 0;
-    padding-right: var(--ds-size-100, $ds-size-100);
+    padding-right: var(--ds-size-100, vac.$ds-size-100);
   }
 
   .contentWrapper {
-    padding-left: var(--ds-size-400, $ds-size-400);
+    padding-left: var(--ds-size-400, vac.$ds-size-400);
   }
 }
 
 :host([chevron="right"]:not([emphasis])) {
   ::slotted([slot="trigger"]) {
-    padding-left: var(--ds-size-250, $ds-size-250);
+    padding-left: var(--ds-size-250, vac.$ds-size-250);
   }
 
   .contentWrapper {
-    padding-left: var(--ds-size-250, $ds-size-250);
+    padding-left: var(--ds-size-250, vac.$ds-size-250);
   }
 }
 
@@ -120,7 +118,7 @@
   .trigger {
     width: var(--webkit-fill, 100%);
 
-    --trigger-padding-right: var(--ds-size-200, #{$ds-size-200}); // will be passed to the child component
+    --trigger-padding-right: var(--ds-size-200, #{vac.$ds-size-200}); // will be passed to the child component
   }
 }
 
@@ -143,7 +141,7 @@
     border-width: 1px;
     border-left-width: 2px;
 
-    --trigger-padding-left: var(--ds-size-200, #{$ds-size-200}); // will be passed to the child component
+    --trigger-padding-left: var(--ds-size-200, #{vac.$ds-size-200}); // will be passed to the child component
 
     &:before {
       display: block;
@@ -173,36 +171,24 @@
   }
 
   .contentWrapper {
-    padding-left: var(--ds-size-200, $ds-size-200);
+    padding-left: var(--ds-size-200, vac.$ds-size-200);
   }
 
   .iconWrapper {
-    padding-right: var(--ds-size-200, $ds-size-200);
+    padding-right: var(--ds-size-200, vac.$ds-size-200);
   }
 }
 
 :host([emphasis][variant="lg"]) {
   .trigger,
   .contentWrapper {
-    padding-left: calc(var(--ds-size-200, $ds-size-200) + var(--ds-size-50, $ds-size-50));
+    padding-left: calc(var(--ds-size-200, vac.$ds-size-200) + var(--ds-size-50, vac.$ds-size-50));
   }
 }
 
 :host([emphasis]:not([expanded]):hover) {
   .trigger {
     text-decoration: unset;
-  }
-}
-
-:host([variant="sm"]) {
-  ::slotted([slot="trigger"]) {
-    font-size: var(--ds-text-body-size-default, $ds-text-body-size-default);
-  }
-}
-
-:host([variant="lg"]) {
-  ::slotted([slot="trigger"]) {
-    font-size: var(--ds-text-heading-400-size, $ds-text-heading-400-size);
   }
 }
 

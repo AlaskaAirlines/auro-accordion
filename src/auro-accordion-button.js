@@ -3,8 +3,8 @@
 
 // ---------------------------------------------------------------------
 
-import styleButtonCss from "./style-button-css.js";
-import styleCssAuroButton from "@aurodesignsystem/auro-button/src/style-css.js";
+import styleButtonCss from "./styles/style-button-css.js";
+import styleCssAuroButton from "@aurodesignsystem/auro-button/src/styles/style-css.js";
 
 import { AuroButton } from "@aurodesignsystem/auro-button/src/auro-button.js";
 
