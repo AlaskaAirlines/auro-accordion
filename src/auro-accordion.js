@@ -23,9 +23,9 @@ import iconVersion from './iconVersion.js';
 import chevronUp from "@alaskaairux/icons/dist/icons/interface/chevron-up.mjs";
 import chevronDown from "@alaskaairux/icons/dist/icons/interface/chevron-down.mjs";
 
-import styleCss from "./style-css.js";
-import colorCss from "./color-css.js";
-import tokensCss from "./tokens-css.js";
+import styleCss from "./styles/style-css.js";
+import colorCss from "./styles/color-css.js";
+import tokensCss from "./styles/tokens-css.js";
 
 // See https://git.io/JJ6SJ for "How to document your components using JSDoc"
 /**
@@ -159,6 +159,23 @@ export class AuroAccordion extends LitElement {
   }
 
   /**
+   * Renders the chevron icons.
+   * @private
+   * @returns {TemplateResult} - The html template for the chevron icons.
+   */
+  renderChevronIcons() {
+    if (this.chevron === 'none') {
+      return nothing;
+    }
+    
+    return html`
+      <${this.iconTag} customSvg customColor ?disabled="${this.disabled}">
+        ${this.generateIconHtml(this.expanded ? chevronUp.svg : chevronDown.svg)}
+      </${this.iconTag}>
+    `;
+  }
+
+  /**
    * Generates a random string of letters.
    * @private
    * @param {number} length - The number of characters to generate in the string.
@@ -208,38 +225,36 @@ export class AuroAccordion extends LitElement {
     const buttonClasses = {
       "trigger": true,
       "iconRight": this.getAttribute('chevron') === 'right',
+      "iconNone": this.getAttribute('chevron') === 'none',
       "sm": this.getAttribute('variant') === 'sm',
       "lg": this.getAttribute('variant') === 'lg',
     };
 
-    return html`
-      <div class="componentWrapper" part="accordion">
-        <${this.buttonTag}
-          ?fluid="${this.emphasis}"
-          class="${classMap(buttonClasses)}"
-          id="accordionTrigger"
-          aria-controls="accordionContent"
-          ?ariaexpanded="${this.expanded}"
-          ?aria-disabled="${this.disabled}"
-          ?disabled="${this.disabled}"
-          @click="${this.handleButtonClick}"
-          part="trigger">
-          ${this.chevron === 'none' ? undefined : html`
-            <${this.iconTag} slot="icon" customSvg customColor ?hidden="${!this.expanded}">
-              ${this.generateIconHtml(chevronUp.svg)}
-            </${this.iconTag}>
-            <${this.iconTag} slot="icon" customSvg customColor ?hidden="${this.expanded}">
-              ${this.generateIconHtml(chevronDown.svg)}
-            </${this.iconTag}>
-          `}
-          <slot name="trigger" part="triggerSlot"></slot>
-        </${this.buttonTag}>
-        <div class="content" id="accordionContent" aria-labelledby="accordionTrigger" inert="${!this.expanded || nothing}" part="content">
-          <div class="contentWrapper" part="contentWrapper">
-            <slot></slot>
-          </div>
-        </div>
+    const triggerSlotClass = this.variant === 'sm' ? 'body-default' : this.variant === 'lg' ? 'heading-xs' : 'heading-2xs';
+
+return html`
+  <div class="componentWrapper" part="accordion">
+    <${this.buttonTag}
+      ?fluid="${this.emphasis}"
+      class="${classMap(buttonClasses)}"
+      id="accordionTrigger"
+      aria-controls="accordionContent"
+      ?ariaexpanded="${this.expanded}"
+      ?aria-disabled="${this.disabled}"
+      ?disabled="${this.disabled}"
+      @click="${this.handleButtonClick}"
+      part="trigger">
+      ${this.chevron === 'right' ? nothing : this.renderChevronIcons()}
+      <slot name="trigger" part="triggerSlot" class="${triggerSlotClass}"></slot>
+      ${this.chevron === 'right' ? this.renderChevronIcons() : nothing}
+    </${this.buttonTag}>
+    
+    <div class="content body-default" id="accordionContent" aria-labelledby="accordionTrigger" inert="${!this.expanded || nothing}" part="content">
+      <div class="contentWrapper" part="contentWrapper">
+        <slot></slot>
       </div>
-    `;
+    </div>
+  </div>
+`;
   }
 }
