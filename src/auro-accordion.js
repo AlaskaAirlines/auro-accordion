@@ -155,21 +155,6 @@ export class AuroAccordion extends LitElement {
   }
 
   /**
-   * Internal function to generate the HTML for the icon to use.
-   * @private
-   * @param {string} svgContent - The imported svg icon.
-   * @returns {TemplateResult} - The html template for the icon.
-   */
-  generateIconHtml(svgContent) {
-    const dom = new DOMParser().parseFromString(svgContent, 'text/html');
-    const svg = dom.body.firstChild;
-
-    svg.setAttribute('slot', 'svg');
-
-    return html`${svg}`;
-  }
-
-  /**
    * Renders the chevron icons.
    * @private
    * @returns {TemplateResult} - The html template for the chevron icons.
