@@ -9,6 +9,7 @@
 import { LitElement, nothing } from "lit";
 import { html } from 'lit/static-html.js';
 import { classMap } from 'lit/directives/class-map.js';
+import { unsafeHTML } from 'lit/directives/unsafe-html.js';
 
 import { AuroAccordionGroup } from './auro-accordion-group.js';
 import { AuroAccordionButton } from './auro-accordion-button.js';
@@ -178,9 +179,15 @@ export class AuroAccordion extends LitElement {
       return nothing;
     }
     
+    const iconSvg = this.expanded ? chevronUp.svg : chevronDown.svg;
+    
     return html`
-      <${this.iconTag} customSvg customColor ?disabled="${this.disabled}">
-        ${this.generateIconHtml(this.expanded ? chevronUp.svg : chevronDown.svg)}
+      <${this.iconTag} 
+        customSvg 
+        customColor 
+        ?disabled="${this.disabled}"
+        part="chevron">
+        <div slot="svg">${unsafeHTML(iconSvg)}</div>
       </${this.iconTag}>
     `;
   }
