@@ -22,11 +22,34 @@ export class AuroAccordionButton extends AuroButton {
     this.ariaexpanded = false;
   }
 
+  static get properties() {
+    return {
+      ...super.properties,
+      ariaexpanded: {
+        type: Boolean,
+        reflect: true
+      }
+    };
+  }
+
   static get styles() {
     return [
       styleCssAuroButton,
       styleButtonCss
     ];
+  }
+
+
+  // Sync aria-expanded changes
+  updated(changedProperties) {
+    super.updated(changedProperties);
+    
+    if (changedProperties.has('ariaexpanded')) {
+      const button = this.shadowRoot.querySelector('button');
+      if (button) {
+        button.setAttribute('aria-expanded', this.ariaexpanded ? 'true' : 'false');
+      }
+    }
   }
 
   /**

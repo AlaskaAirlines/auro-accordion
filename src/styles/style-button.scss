@@ -35,6 +35,7 @@
   .contentWrapper {
     display: flex;
     flex-direction: row-reverse;
+    /* stylelint-disable declaration-no-important */
     margin-left: 0 !important; // overwrite auro-button default
     margin-right: 0 !important; // overwrite auro-button default
   }

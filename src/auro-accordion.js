@@ -143,6 +143,16 @@ export class AuroAccordion extends LitElement {
     this.runtimeUtils.handleComponentTagRename(this, 'auro-accordion');
   }
 
+  updated(changedProperties) {
+    // Update button when ariaexpanded changes
+    if (changedProperties.has('expanded')) {
+      const button = this.shadowRoot.querySelector('#accordionTrigger');
+      if (button) {
+        button.ariaexpanded = this.expanded;
+      }
+    }
+  }
+
   /**
    * Internal function to generate the HTML for the icon to use.
    * @private
@@ -232,13 +242,16 @@ export class AuroAccordion extends LitElement {
 
     const triggerSlotClass = this.variant === 'sm' ? 'body-default' : this.variant === 'lg' ? 'heading-xs' : 'heading-2xs';
 
+    // Generate unique ID & apply aria-controls
+    const accordionContentId = `accordionContent-${this.buttonNameHash}`;
+
 return html`
   <div class="componentWrapper" part="accordion">
     <${this.buttonTag}
       ?fluid="${this.emphasis}"
       class="${classMap(buttonClasses)}"
       id="accordionTrigger"
-      aria-controls="accordionContent"
+      aria-controls="${accordionContentId}"
       ?ariaexpanded="${this.expanded}"
       ?aria-disabled="${this.disabled}"
       ?disabled="${this.disabled}"
@@ -249,7 +262,7 @@ return html`
       ${this.chevron === 'right' ? this.renderChevronIcons() : nothing}
     </${this.buttonTag}>
     
-    <div class="content body-default" id="accordionContent" aria-labelledby="accordionTrigger" inert="${!this.expanded || nothing}" part="content">
+    <div class="content body-default" id="${accordionContentId}" aria-labelledby="accordionTrigger" inert="${!this.expanded || nothing}" part="content">
       <div class="contentWrapper" part="contentWrapper">
         <slot></slot>
       </div>
