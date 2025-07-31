@@ -1,5 +1,19 @@
 # Semantic Release Automated Changelog
 
+## [5.2.2](https://github.com/AlaskaAirlines/auro-accordion/compare/v5.2.1...v5.2.2) (2025-07-31)
+
+
+### Bug Fixes
+
+* accessibility & aria button state management ([fc9918f](https://github.com/AlaskaAirlines/auro-accordion/commit/fc9918fc72e8904f7456901fbfdc594536efdd08))
+* adding themeable type classes ([8d150db](https://github.com/AlaskaAirlines/auro-accordion/commit/8d150dbf6f6bc36e572b847ba04c655bae0c8814))
+* reduce ternary complexity ([71c7f55](https://github.com/AlaskaAirlines/auro-accordion/commit/71c7f5525f1b695ca30e59aea02fe73ab3b62b9e))
+* remove deprecated icon function ([f6283a2](https://github.com/AlaskaAirlines/auro-accordion/commit/f6283a2f60708d6ffc491dca1b81a51c3c3ae43f))
+* remove disabled text hover decoration ([67d50ac](https://github.com/AlaskaAirlines/auro-accordion/commit/67d50ac8608c884a34381c891472733e03be3d6e))
+* replace generateIconHtml with lit tool ([8d0b7d5](https://github.com/AlaskaAirlines/auro-accordion/commit/8d0b7d58240b9e6d63139b2d8f6df4988a8ff7f5))
+* update docs head content ([ac56191](https://github.com/AlaskaAirlines/auro-accordion/commit/ac5619145c75e9f3efea48de36323de5d33e2fa2))
+* use cdn for button demo ([1b2d537](https://github.com/AlaskaAirlines/auro-accordion/commit/1b2d53737bdd6014f4ceb408fd08c9784d7cef12))
+
 ## [5.2.1](https://github.com/AlaskaAirlines/auro-accordion/compare/v5.2.0...v5.2.1) (2025-05-20)
 
 
