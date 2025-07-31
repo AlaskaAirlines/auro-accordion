@@ -232,34 +232,39 @@ export class AuroAccordion extends LitElement {
       "lg": this.getAttribute('variant') === 'lg',
     };
 
-    const triggerSlotClass = this.variant === 'sm' ? 'body-default' : this.variant === 'lg' ? 'heading-xs' : 'heading-2xs';
+    const variantClassMap = {
+      'sm': 'body-default',
+      'lg': 'heading-xs'
+    };
+
+    const triggerSlotClass = variantClassMap[this.variant] || 'heading-2xs';
 
     // Generate unique ID & apply aria-controls
     const accordionContentId = `accordionContent-${this.buttonNameHash}`;
 
-return html`
-  <div class="componentWrapper" part="accordion">
-    <${this.buttonTag}
-      ?fluid="${this.emphasis}"
-      class="${classMap(buttonClasses)}"
-      id="accordionTrigger"
-      aria-controls="${accordionContentId}"
-      ?ariaexpanded="${this.expanded}"
-      ?aria-disabled="${this.disabled}"
-      ?disabled="${this.disabled}"
-      @click="${this.handleButtonClick}"
-      part="trigger">
-      ${this.chevron === 'right' ? nothing : this.renderChevronIcons()}
-      <slot name="trigger" part="triggerSlot" class="${triggerSlotClass}"></slot>
-      ${this.chevron === 'right' ? this.renderChevronIcons() : nothing}
-    </${this.buttonTag}>
-    
-    <div class="content body-default" id="${accordionContentId}" aria-labelledby="accordionTrigger" inert="${!this.expanded || nothing}" part="content">
-      <div class="contentWrapper" part="contentWrapper">
-        <slot></slot>
+    return html`
+      <div class="componentWrapper" part="accordion">
+        <${this.buttonTag}
+          ?fluid="${this.emphasis}"
+          class="${classMap(buttonClasses)}"
+          id="accordionTrigger"
+          aria-controls="${accordionContentId}"
+          ?ariaexpanded="${this.expanded}"
+          ?aria-disabled="${this.disabled}"
+          ?disabled="${this.disabled}"
+          @click="${this.handleButtonClick}"
+          part="trigger">
+          ${this.chevron === 'right' ? nothing : this.renderChevronIcons()}
+          <slot name="trigger" part="triggerSlot" class="${triggerSlotClass}"></slot>
+          ${this.chevron === 'right' ? this.renderChevronIcons() : nothing}
+        </${this.buttonTag}>
+        
+        <div class="content body-default" id="${accordionContentId}" aria-labelledby="accordionTrigger" inert="${!this.expanded || nothing}" part="content">
+          <div class="contentWrapper" part="contentWrapper">
+            <slot></slot>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
-`;
+    `;
   }
 }
