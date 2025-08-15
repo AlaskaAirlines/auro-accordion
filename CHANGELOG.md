@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [5.2.3](https://github.com/AlaskaAirlines/auro-accordion/compare/v5.2.2...v5.2.3) (2025-08-15)
+
+
+### Bug Fixes
+
+* update auro-library to latest version ([4bc9a43](https://github.com/AlaskaAirlines/auro-accordion/commit/4bc9a43c3347d438c533e451cf8c5fa8bc72a8f9))
+
 ## [5.2.2](https://github.com/AlaskaAirlines/auro-accordion/compare/v5.2.1...v5.2.2) (2025-07-31)
 
 
