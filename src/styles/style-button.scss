@@ -43,6 +43,7 @@
   .textSlot {
     display: flex;
     flex: 1;
+    gap: 0; // override button default
   }
 }
 
