@@ -1,5 +1,17 @@
 # Semantic Release Automated Changelog
 
+## [5.2.4](https://github.com/AlaskaAirlines/auro-accordion/compare/v5.2.3...v5.2.4) (2025-08-25)
+
+
+### Bug Fixes
+
+* address gap between text and icon [#187](https://github.com/AlaskaAirlines/auro-accordion/issues/187) ([a6c9133](https://github.com/AlaskaAirlines/auro-accordion/commit/a6c9133531c2b295f5ea79ed63e00bc498d10b8d))
+
+
+### Performance Improvements
+
+* update button for icon fix and all other auro dependencies [#187](https://github.com/AlaskaAirlines/auro-accordion/issues/187) ([2707840](https://github.com/AlaskaAirlines/auro-accordion/commit/27078409ab3fd8a2be6453c61fda1b1cc51d1315))
+
 ## [5.2.3](https://github.com/AlaskaAirlines/auro-accordion/compare/v5.2.2...v5.2.3) (2025-08-15)
 
 
