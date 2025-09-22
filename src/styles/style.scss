@@ -27,11 +27,19 @@
     &:hover {
       text-decoration: underline;
     }
+
+    &[fluid] {
+      max-width: calc(100% - 3px); // 3px to account for borders
+    }
   }
 
   ::slotted([slot="trigger"]) {
     padding-left: var(--ds-size-100, vac.$ds-size-100);
     padding-right: var(--ds-size-200, vac.$ds-size-200);
+
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
   }
 
   .iconWrapper {
