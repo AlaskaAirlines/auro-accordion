@@ -1,5 +1,13 @@
 # Semantic Release Automated Changelog
 
+## [5.2.5](https://github.com/AlaskaAirlines/auro-accordion/compare/v5.2.4...v5.2.5) (2025-09-23)
+
+
+### Bug Fixes
+
+* ensure icon alignment in button's text slot [#189](https://github.com/AlaskaAirlines/auro-accordion/issues/189) ([500d406](https://github.com/AlaskaAirlines/auro-accordion/commit/500d406fed0d8e52f18a5d6f529647dafaea5720))
+* truncate trigger text on emphasis accordion [#192](https://github.com/AlaskaAirlines/auro-accordion/issues/192) ([99d17b9](https://github.com/AlaskaAirlines/auro-accordion/commit/99d17b9d8045d155c8e445aa0c00d9e79140a15a))
+
 ## [5.2.4](https://github.com/AlaskaAirlines/auro-accordion/compare/v5.2.3...v5.2.4) (2025-08-25)
 
 
