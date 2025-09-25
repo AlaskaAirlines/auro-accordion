@@ -187,13 +187,6 @@
   }
 }
 
-:host([emphasis][variant="lg"]) {
-  .trigger,
-  .contentWrapper {
-    padding-left: calc(var(--ds-size-200, vac.$ds-size-200) + var(--ds-size-50, vac.$ds-size-50));
-  }
-}
-
 :host([emphasis]:not([expanded]):hover) {
   .trigger {
     text-decoration: unset;
