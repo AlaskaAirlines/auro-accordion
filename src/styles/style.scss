@@ -87,17 +87,7 @@
   }
 
   .contentWrapper {
-    padding-left: var(--ds-size-400, vac.$ds-size-400);
-  }
-}
-
-:host([chevron="right"]:not([emphasis])) {
-  ::slotted([slot="trigger"]) {
-    padding-left: var(--ds-size-250, vac.$ds-size-250);
-  }
-
-  .contentWrapper {
-    padding-left: var(--ds-size-250, vac.$ds-size-250);
+    padding-left: 0;
   }
 }
 
