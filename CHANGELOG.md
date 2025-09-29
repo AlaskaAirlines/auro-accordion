@@ -1,5 +1,13 @@
 # Semantic Release Automated Changelog
 
+## [5.2.6](https://github.com/AlaskaAirlines/auro-accordion/compare/v5.2.5...v5.2.6) (2025-09-29)
+
+
+### Bug Fixes
+
+* remove left-padding on large emphasis accordion [#199](https://github.com/AlaskaAirlines/auro-accordion/issues/199) ([6ad5c45](https://github.com/AlaskaAirlines/auro-accordion/commit/6ad5c4522cb149d6fe5de9fe74a7470394c6bde9))
+* remove left-padding on right chevron non-emphasis accordion [#185](https://github.com/AlaskaAirlines/auro-accordion/issues/185) ([6e16e79](https://github.com/AlaskaAirlines/auro-accordion/commit/6e16e79060da1f0d0a5a8dd91dbdd38382e0b660))
+
 ## [5.2.5](https://github.com/AlaskaAirlines/auro-accordion/compare/v5.2.4...v5.2.5) (2025-09-23)
 
 
