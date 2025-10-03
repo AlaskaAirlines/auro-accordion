@@ -3,10 +3,12 @@
 
 // ---------------------------------------------------------------------
 
-import { AuroButton } from "@aurodesignsystem/auro-button/src/auro-button.js";
-import styleCssAuroButton from "@aurodesignsystem/auro-button/src/styles/style-css.js";
+import { AuroButton } from "@aurodesignsystem/auro-button/class";
 import * as RuntimeUtils from "@aurodesignsystem/auro-library/scripts/utils/runtimeUtils.mjs";
-import styleButtonCss from "./styles/style-button-css.js";
+
+// TODO: Figure out of we can just NOT use this?
+// import styleCssAuroButton from "@aurodesignsystem/auro-button/src/styles/style-css.js";
+import styleButtonCss from "./styles/style-button.scss";
 
 /**
  * Auro-accordion-button is the trigger element for Auro-accordion.
@@ -31,7 +33,7 @@ export class AuroAccordionButton extends AuroButton {
   }
 
   static get styles() {
-    return [styleCssAuroButton, styleButtonCss];
+    return [...AuroButton.styles, styleButtonCss];
   }
 
   // Sync aria-expanded changes

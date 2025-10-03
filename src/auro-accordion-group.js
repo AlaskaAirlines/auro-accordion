@@ -3,9 +3,9 @@
 
 // ---------------------------------------------------------------------
 
-import AuroLibraryRuntimeUtils from "@aurodesignsystem/auro-library/scripts/utils/runtimeUtils.mjs";
-// If using litElement base class
 import { html, LitElement } from "lit";
+
+import AuroLibraryRuntimeUtils from "@aurodesignsystem/auro-library/scripts/utils/runtimeUtils.mjs";
 
 // See https://git.io/JJ6SJ for "How to document your components using JSDoc"
 /**
