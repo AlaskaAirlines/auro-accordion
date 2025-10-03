@@ -1,9 +1,0 @@
-@use "@aurodesignsystem/design-tokens/dist/themes/alaska/SCSSVariables--alaska" as v;
-
-:host {
-  --ds-auro-accordion-content-border-color: transparent;
-  --ds-auro-accordion-group-border-color: var(--ds-basic-color-border-divider, #{v.$ds-basic-color-border-divider});
-  --ds-auro-accordion-trigger-border-color: transparent;
-  --ds-auro-accordion-trigger-color: var(--ds-basic-color-texticon-default, #{v.$ds-basic-color-texticon-default});
-  --ds-auro-accordion-trigger-icon-color: var(--ds-basic-color-texticon-default, #{v.$ds-basic-color-texticon-default});
-}
