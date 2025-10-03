@@ -7,17 +7,18 @@
     "================================================================================"
   ],
   "name": "@aurodesignsystem/auro-accordion",
-  "version": "5.2.6",
+  "version": "0.0.0",
   "description": "auro-accordion HTML custom element",
   "repository": {
     "type": "git",
     "url": "https://github.com/AlaskaAirlines/auro-accordion"
   },
   "type": "module",
-  "main": "index.js",
+  "main": "dist/registered.js",
+  "types": "dist/index.d.ts",
   "license": "Apache-2.0",
   "engines": {
-    "node": "^20.x || ^22.x "
+    "node": "^20.x || ^22.x"
   },
   "dependencies": {
     "lit": "^3.3.1"
@@ -32,9 +33,6 @@
     "@aurodesignsystem/design-tokens": "^8.5.0",
     "@aurodesignsystem/webcorestylesheets": "^10.1.1",
     "husky": "^9.1.7"
-  },
-  "optionalDependencies": {
-    "@rollup/rollup-linux-x64-gnu": "*"
   },
   "browserslist": [
     "last 2 Chrome versions",
@@ -61,6 +59,7 @@
     "lint:fix": "biome check --fix --no-errors-on-unmatched && stylelint \"./src/**/*.scss\" --fix",
     "test": "auro test",
     "test:watch": "auro test --watch",
+    "test:coverage": "auro test --coverage-report --open",
     "prepare": "husky"
   },
   "exports": {

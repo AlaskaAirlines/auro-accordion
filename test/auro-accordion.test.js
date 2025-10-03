@@ -1,8 +1,6 @@
 import { elementUpdated, expect, fixture, html } from "@open-wc/testing";
 import "../src/registered";
 
-// import './../index.js';
-
 describe("auro-accordion", () => {
   it("auro-accordion is accessible", async () => {
     const el = await defaultFixture();
