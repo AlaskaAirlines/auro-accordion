@@ -5,27 +5,21 @@
 
 /* eslint-disable lit/binding-positions, lit/no-invalid-html */
 
+import chevronDown from "@alaskaairux/icons/dist/icons/interface/chevron-down.mjs";
+import chevronUp from "@alaskaairux/icons/dist/icons/interface/chevron-up.mjs";
+import { AuroIcon } from "@aurodesignsystem/auro-icon/src/auro-icon.js";
+import { AuroDependencyVersioning } from "@aurodesignsystem/auro-library/scripts/runtime/dependencyTagVersioning.mjs";
+import AuroLibraryRuntimeUtils from "@aurodesignsystem/auro-library/scripts/utils/runtimeUtils.mjs";
 // If using litElement base class
 import { LitElement, nothing } from "lit";
-import { html } from 'lit/static-html.js';
-import { classMap } from 'lit/directives/class-map.js';
-import { unsafeHTML } from 'lit/directives/unsafe-html.js';
-
-import { AuroAccordionGroup } from './auro-accordion-group.js';
-import { AuroAccordionButton } from './auro-accordion-button.js';
-
-import { AuroDependencyVersioning } from '@aurodesignsystem/auro-library/scripts/runtime/dependencyTagVersioning.mjs';
-
-import AuroLibraryRuntimeUtils from '@aurodesignsystem/auro-library/scripts/utils/runtimeUtils.mjs';
-
-import { AuroIcon } from '@aurodesignsystem/auro-icon/src/auro-icon.js';
-import iconVersion from './iconVersion.js';
-
-import chevronUp from "@alaskaairux/icons/dist/icons/interface/chevron-up.mjs";
-import chevronDown from "@alaskaairux/icons/dist/icons/interface/chevron-down.mjs";
-
-import styleCss from "./styles/style-css.js";
+import { classMap } from "lit/directives/class-map.js";
+import { unsafeHTML } from "lit/directives/unsafe-html.js";
+import { html } from "lit/static-html.js";
+import { AuroAccordionButton } from "./auro-accordion-button.js";
+import { AuroAccordionGroup } from "./auro-accordion-group.js";
+import iconVersion from "./iconVersion.js";
 import colorCss from "./styles/color-css.js";
+import styleCss from "./styles/style-css.js";
 import tokensCss from "./styles/tokens-css.js";
 
 // See https://git.io/JJ6SJ for "How to document your components using JSDoc"
@@ -59,7 +53,7 @@ export class AuroAccordion extends LitElement {
     /**
      * @private
      */
-    this.iconTag = versioning.generateTag('auro-icon', iconVersion, AuroIcon);
+    this.iconTag = versioning.generateTag("auro-icon", iconVersion, AuroIcon);
 
     /**
      * @private
@@ -69,7 +63,11 @@ export class AuroAccordion extends LitElement {
     /**
      * @private
      */
-    this.buttonTag = versioning.generateTag('auro-accordion-button', this.buttonNameHash, AuroAccordionButton);
+    this.buttonTag = versioning.generateTag(
+      "auro-accordion-button",
+      this.buttonNameHash,
+      AuroAccordionButton,
+    );
 
     /**
      * @private
@@ -96,33 +94,29 @@ export class AuroAccordion extends LitElement {
       },
       emphasis: {
         type: Boolean,
-        reflect: true
+        reflect: true,
       },
       grouped: {
         type: Boolean,
-        reflect: true
+        reflect: true,
       },
       chevron: {
         type: String,
-        reflect: true
+        reflect: true,
       },
       variant: {
         type: String,
-        reflect: true
+        reflect: true,
       },
       disabled: {
         type: Boolean,
-        reflect: true
-      }
+        reflect: true,
+      },
     };
   }
 
   static get styles() {
-    return [
-      colorCss,
-      styleCss,
-      tokensCss
-    ];
+    return [colorCss, styleCss, tokensCss];
   }
 
   /**
@@ -141,13 +135,13 @@ export class AuroAccordion extends LitElement {
 
   firstUpdated() {
     // Add the tag name as an attribute if it is different than the component name
-    this.runtimeUtils.handleComponentTagRename(this, 'auro-accordion');
+    this.runtimeUtils.handleComponentTagRename(this, "auro-accordion");
   }
 
   updated(changedProperties) {
     // Update button when ariaexpanded changes
-    if (changedProperties.has('expanded')) {
-      const button = this.shadowRoot.querySelector('#accordionTrigger');
+    if (changedProperties.has("expanded")) {
+      const button = this.shadowRoot.querySelector("#accordionTrigger");
       if (button) {
         button.ariaexpanded = this.expanded;
       }
@@ -160,12 +154,12 @@ export class AuroAccordion extends LitElement {
    * @returns {TemplateResult} - The html template for the chevron icons.
    */
   renderChevronIcons() {
-    if (this.chevron === 'none') {
+    if (this.chevron === "none") {
       return nothing;
     }
-    
+
     const iconSvg = this.expanded ? chevronUp.svg : chevronDown.svg;
-    
+
     return html`
       <${this.iconTag} 
         customSvg 
@@ -184,8 +178,8 @@ export class AuroAccordion extends LitElement {
    * @returns {string} - The generated string.
    */
   generateRandomLetters(length) {
-    let result = '';
-    const characters = 'abcdefghijklmnopqrstuvwxyz';
+    let result = "";
+    const characters = "abcdefghijklmnopqrstuvwxyz";
     const charactersLength = characters.length;
     for (let index = 0; index < length; index += 1) {
       result += characters.charAt(Math.floor(Math.random() * charactersLength));
@@ -200,13 +194,15 @@ export class AuroAccordion extends LitElement {
   toggle() {
     this.expanded = !this.expanded;
 
-    this.dispatchEvent(new CustomEvent('toggleExpanded', {
-      bubbles: true,
-      composed: true,
-      detail: {
-        expanded: this.expanded
-      }
-    }));
+    this.dispatchEvent(
+      new CustomEvent("toggleExpanded", {
+        bubbles: true,
+        composed: true,
+        detail: {
+          expanded: this.expanded,
+        },
+      }),
+    );
   }
 
   /**
@@ -225,19 +221,19 @@ export class AuroAccordion extends LitElement {
   // function that renders the HTML and CSS into  the scope of the component
   render() {
     const buttonClasses = {
-      "trigger": true,
-      "iconRight": this.getAttribute('chevron') === 'right',
-      "iconNone": this.getAttribute('chevron') === 'none',
-      "sm": this.getAttribute('variant') === 'sm',
-      "lg": this.getAttribute('variant') === 'lg',
+      trigger: true,
+      iconRight: this.getAttribute("chevron") === "right",
+      iconNone: this.getAttribute("chevron") === "none",
+      sm: this.getAttribute("variant") === "sm",
+      lg: this.getAttribute("variant") === "lg",
     };
 
     const variantClassMap = {
-      'sm': 'body-default',
-      'lg': 'heading-xs'
+      sm: "body-default",
+      lg: "heading-xs",
     };
 
-    const triggerSlotClass = variantClassMap[this.variant] || 'heading-2xs';
+    const triggerSlotClass = variantClassMap[this.variant] || "heading-2xs";
 
     // Generate unique ID & apply aria-controls
     const accordionContentId = `accordionContent-${this.buttonNameHash}`;
@@ -254,9 +250,9 @@ export class AuroAccordion extends LitElement {
           ?disabled="${this.disabled}"
           @click="${this.handleButtonClick}"
           part="trigger">
-          ${this.chevron === 'right' ? nothing : this.renderChevronIcons()}
+          ${this.chevron === "right" ? nothing : this.renderChevronIcons()}
           <slot name="trigger" part="triggerSlot" class="${triggerSlotClass}"></slot>
-          ${this.chevron === 'right' ? this.renderChevronIcons() : nothing}
+          ${this.chevron === "right" ? this.renderChevronIcons() : nothing}
         </${this.buttonTag}>
         
         <div class="content body-default" id="${accordionContentId}" aria-labelledby="accordionTrigger" inert="${!this.expanded || nothing}" part="content">

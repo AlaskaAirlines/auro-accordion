@@ -1,87 +1,87 @@
-import { fixture, html, expect, elementUpdated } from '@open-wc/testing';
-import { AuroAccordionGroup } from '../src/auro-accordion-group';
-import { AuroAccordion } from '../src/auro-accordion';
+import { elementUpdated, expect, fixture, html } from "@open-wc/testing";
+import { AuroAccordion } from "../src/auro-accordion";
+import { AuroAccordionGroup } from "../src/auro-accordion-group";
 
 AuroAccordion.register();
 AuroAccordionGroup.register();
 
-describe('auro-accordion-group', () => {
-  it('auro-accordion-group is accessible', async () => {
+describe("auro-accordion-group", () => {
+  it("auro-accordion-group is accessible", async () => {
     const el = await defaultFixture();
 
     await expect(el).to.be.accessible();
   });
 
-  it('auro-accordion-group custom element is defined', async () => {
+  it("auro-accordion-group custom element is defined", async () => {
     const el = await !!customElements.get("auro-accordion-group");
 
     await expect(el).to.be.true;
   });
 
-  it('accordion has correct attributes when in an accordion group with emphasis attribute', async () => {
+  it("accordion has correct attributes when in an accordion group with emphasis attribute", async () => {
     const el = await emphasisFixture();
-    const accordion = el.querySelector('auro-accordion');
+    const accordion = el.querySelector("auro-accordion");
 
     await expect(accordion.emphasis).to.be.true;
-    await expect(accordion.getAttribute('chevron') === 'right').to.be.true;
+    await expect(accordion.getAttribute("chevron") === "right").to.be.true;
     await expect(accordion.grouped).to.be.true;
   });
 
-  it('sm attribute is passed down to the accordion', async () => {
+  it("sm attribute is passed down to the accordion", async () => {
     const el = await smFixture();
-    const accordion = el.querySelector('auro-accordion');
+    const accordion = el.querySelector("auro-accordion");
 
-    await expect(accordion.getAttribute('variant') === 'sm').to.be.true;
+    await expect(accordion.getAttribute("variant") === "sm").to.be.true;
   });
 
-  it('lg attribute is passed down to the accordion', async () => {
+  it("lg attribute is passed down to the accordion", async () => {
     const el = await lgFixture();
-    const accordion = el.querySelector('auro-accordion');
+    const accordion = el.querySelector("auro-accordion");
 
-    await expect(accordion.getAttribute('variant') === 'lg').to.be.true;
+    await expect(accordion.getAttribute("variant") === "lg").to.be.true;
   });
 
-  it('one accordion closes when another accordion opens', async () => {
+  it("one accordion closes when another accordion opens", async () => {
     const el = await expandedFixture();
 
-    const firstAccordion = [...el.querySelectorAll('auro-accordion')][0];
-    const secondAccordion = [...el.querySelectorAll('auro-accordion')][1];
+    const firstAccordion = [...el.querySelectorAll("auro-accordion")][0];
+    const secondAccordion = [...el.querySelectorAll("auro-accordion")][1];
 
-    const secondAccordionTrigger = secondAccordion.querySelector('span');
+    const secondAccordionTrigger = secondAccordion.querySelector("span");
 
-    await expect(firstAccordion.hasAttribute('expanded')).to.be.true;
-    await expect(secondAccordion.hasAttribute('expanded')).to.be.false;
+    await expect(firstAccordion.hasAttribute("expanded")).to.be.true;
+    await expect(secondAccordion.hasAttribute("expanded")).to.be.false;
 
     secondAccordionTrigger.click();
 
     await elementUpdated(el);
 
-    await expect(firstAccordion.hasAttribute('expanded')).to.be.false;
-    await expect(secondAccordion.hasAttribute('expanded')).to.be.true;
+    await expect(firstAccordion.hasAttribute("expanded")).to.be.false;
+    await expect(secondAccordion.hasAttribute("expanded")).to.be.true;
   });
 
-  it('noToggleExpanded attribute allows for multiple accordions to be open at once', async () => {
+  it("noToggleExpanded attribute allows for multiple accordions to be open at once", async () => {
     const el = await expandedFixture();
 
-    el.setAttribute('noToggleExpanded', true);
+    el.setAttribute("noToggleExpanded", true);
 
-    const firstAccordion = [...el.querySelectorAll('auro-accordion')][0];
-    const secondAccordion = [...el.querySelectorAll('auro-accordion')][1];
+    const firstAccordion = [...el.querySelectorAll("auro-accordion")][0];
+    const secondAccordion = [...el.querySelectorAll("auro-accordion")][1];
 
-    const secondAccordionTrigger = secondAccordion.querySelector('span');
+    const secondAccordionTrigger = secondAccordion.querySelector("span");
 
-    await expect(firstAccordion.hasAttribute('expanded')).to.be.true;
-    await expect(secondAccordion.hasAttribute('expanded')).to.be.false;
+    await expect(firstAccordion.hasAttribute("expanded")).to.be.true;
+    await expect(secondAccordion.hasAttribute("expanded")).to.be.false;
 
     secondAccordionTrigger.click();
 
     await elementUpdated(el);
 
-    await expect(firstAccordion.hasAttribute('expanded')).to.be.true;
-    await expect(secondAccordion.hasAttribute('expanded')).to.be.true;
+    await expect(firstAccordion.hasAttribute("expanded")).to.be.true;
+    await expect(secondAccordion.hasAttribute("expanded")).to.be.true;
   });
 
-  it('render with disabled attribute', async () => {
+  it("render with disabled attribute", async () => {
     const el = await fixture(html`
       <auro-accordion-group disabled>
         <auro-accordion>
@@ -93,7 +93,7 @@ describe('auro-accordion-group', () => {
       </auro-accordion-group>
     `);
 
-    const accordion = el.querySelector('auro-accordion');
+    const accordion = el.querySelector("auro-accordion");
 
     await expect(accordion.disabled).to.be.true;
   });
