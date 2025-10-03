@@ -3,10 +3,9 @@
 
 // ---------------------------------------------------------------------
 
-// If using litElement base class
-import { LitElement, html } from "lit";
+import { html, LitElement } from "lit";
 
-import AuroLibraryRuntimeUtils from '@aurodesignsystem/auro-library/scripts/utils/runtimeUtils.mjs';
+import AuroLibraryRuntimeUtils from "@aurodesignsystem/auro-library/scripts/utils/runtimeUtils.mjs";
 
 // See https://git.io/JJ6SJ for "How to document your components using JSDoc"
 /**
@@ -39,16 +38,16 @@ export class AuroAccordionGroup extends LitElement {
 
       emphasis: {
         type: Boolean,
-        reflect: true
+        reflect: true,
       },
       variant: {
         type: String,
-        reflect: true
+        reflect: true,
       },
       disabled: {
         type: Boolean,
-        reflect: true
-      }
+        reflect: true,
+      },
     };
   }
 
@@ -61,16 +60,19 @@ export class AuroAccordionGroup extends LitElement {
    *
    */
   static register(name = "auro-accordion-group") {
-    AuroLibraryRuntimeUtils.prototype.registerComponent(name, AuroAccordionGroup);
+    AuroLibraryRuntimeUtils.prototype.registerComponent(
+      name,
+      AuroAccordionGroup,
+    );
   }
 
   firstUpdated() {
     // Add the tag name as an attribute if it is different than the component name
-    this.runtimeUtils.handleComponentTagRename(this, 'auro-accordion-group');
+    this.runtimeUtils.handleComponentTagRename(this, "auro-accordion-group");
   }
 
   updated(changedProperties) {
-    if (changedProperties.has('disabled')) {
+    if (changedProperties.has("disabled")) {
       this.updateDisabledState();
     }
   }
@@ -80,29 +82,35 @@ export class AuroAccordionGroup extends LitElement {
    * to match the disabled state of the <auro-accordion-group> element.
    */
   updateDisabledState() {
-    const accordions = this.querySelectorAll('auro-accordion');
+    const accordions = this.querySelectorAll("auro-accordion");
     accordions.forEach((accordion) => {
       accordion.disabled = this.disabled;
     });
   }
 
   handleSlotContentChange() {
-    this.addEventListener('toggleExpanded', this.handleToggleExpanded);
+    this.addEventListener("toggleExpanded", this.handleToggleExpanded);
 
     this.handleItems();
 
     this.items.forEach((item) => {
-      if (this.hasAttribute('emphasis')) {
-        item.setAttribute('chevron', 'right');
+      if (this.hasAttribute("emphasis")) {
+        item.setAttribute("chevron", "right");
         item.emphasis = true;
       }
 
-      if (this.hasAttribute('variant') && this.getAttribute('variant') === 'sm') {
-        item.setAttribute('variant', 'sm');
+      if (
+        this.hasAttribute("variant") &&
+        this.getAttribute("variant") === "sm"
+      ) {
+        item.setAttribute("variant", "sm");
       }
 
-      if (this.hasAttribute('variant') && this.getAttribute('variant') === 'lg') {
-        item.setAttribute('variant', 'lg');
+      if (
+        this.hasAttribute("variant") &&
+        this.getAttribute("variant") === "lg"
+      ) {
+        item.setAttribute("variant", "lg");
       }
 
       item.grouped = true;
@@ -115,7 +123,7 @@ export class AuroAccordionGroup extends LitElement {
    * @param {object} event - Standard event parameter.
    */
   handleToggleExpanded(event) {
-    if (!this.hasAttribute('noToggleExpanded')) {
+    if (!this.hasAttribute("noToggleExpanded")) {
       this.items.forEach((item) => {
         if (item !== event.target && item.expanded) {
           item.expanded = false;
@@ -135,7 +143,10 @@ export class AuroAccordionGroup extends LitElement {
    */
   handleItems() {
     const groupTagName = this.tagName.toLowerCase();
-    const accordionTagName = groupTagName.substring(0, groupTagName.indexOf('-group'));
+    const accordionTagName = groupTagName.substring(
+      0,
+      groupTagName.indexOf("-group"),
+    );
 
     this.items = Array.from(this.querySelectorAll(accordionTagName));
   }

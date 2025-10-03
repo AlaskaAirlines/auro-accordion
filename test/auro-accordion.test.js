@@ -1,48 +1,44 @@
-import { fixture, html, expect, elementUpdated } from '@open-wc/testing';
-import { AuroAccordion } from '../src/auro-accordion';
+import { elementUpdated, expect, fixture, html } from "@open-wc/testing";
+import "../src/registered";
 
-AuroAccordion.register();
-
-// import './../index.js';
-
-describe('auro-accordion', () => {
-  it('auro-accordion is accessible', async () => {
+describe("auro-accordion", () => {
+  it("auro-accordion is accessible", async () => {
     const el = await defaultFixture();
 
     await expect(el).to.be.accessible();
   });
 
-  it('auro-accordion custom element is defined', async () => {
+  it("auro-accordion custom element is defined", async () => {
     const el = await !!customElements.get("auro-accordion");
 
     await expect(el).to.be.true;
   });
 
-  it('toggles the accordion when clicking on the trigger', async () => {
+  it("toggles the accordion when clicking on the trigger", async () => {
     const el = await defaultFixture();
 
-    const trigger = el.shadowRoot.querySelector('.trigger');
-    const shadowButton = trigger.shadowRoot.querySelector('button');
+    const trigger = el.shadowRoot.querySelector(".trigger");
+    const shadowButton = trigger.shadowRoot.querySelector("button");
 
-    await expect(trigger.hasAttribute('ariaexpanded')).to.be.false;
-    await expect(shadowButton.getAttribute('aria-expanded')).to.equal('false');
-
-    trigger.click();
-
-    await elementUpdated(trigger);
-
-    await expect(trigger.hasAttribute('ariaexpanded')).to.be.true;
-    await expect(shadowButton.getAttribute('aria-expanded')).to.equal('true');
+    await expect(trigger.hasAttribute("ariaexpanded")).to.be.false;
+    await expect(shadowButton.getAttribute("aria-expanded")).to.equal("false");
 
     trigger.click();
 
     await elementUpdated(trigger);
 
-    await expect(trigger.hasAttribute('ariaexpanded')).to.be.false;
-    await expect(shadowButton.getAttribute('aria-expanded')).to.equal('false');
+    await expect(trigger.hasAttribute("ariaexpanded")).to.be.true;
+    await expect(shadowButton.getAttribute("aria-expanded")).to.equal("true");
+
+    trigger.click();
+
+    await elementUpdated(trigger);
+
+    await expect(trigger.hasAttribute("ariaexpanded")).to.be.false;
+    await expect(shadowButton.getAttribute("aria-expanded")).to.equal("false");
   });
 
-  it('render the disabled attribute', async () => {
+  it("render the disabled attribute", async () => {
     const el = await fixture(html`
       <auro-accordion disabled>
         <span slot="trigger">Trigger</span>
@@ -52,19 +48,19 @@ describe('auro-accordion', () => {
       </auro-accordion>
     `);
 
-    const trigger = el.shadowRoot.querySelector('.trigger');
+    const trigger = el.shadowRoot.querySelector(".trigger");
 
-    await expect(trigger.hasAttribute('aria-disabled')).to.not.null;
+    await expect(trigger.hasAttribute("aria-disabled")).to.not.null;
   });
 
-  it('test toggle event when disabled is true', async () => {
+  it("test toggle event when disabled is true", async () => {
     const el = await defaultFixture();
     el.disabled = true;
-    const trigger = el.shadowRoot.querySelector('.trigger');
+    const trigger = el.shadowRoot.querySelector(".trigger");
     trigger.click();
 
     await elementUpdated(trigger);
-    await expect(trigger.hasAttribute('aria-expanded')).to.not.null;
+    await expect(trigger.hasAttribute("aria-expanded")).to.not.null;
   });
 
   it('render with chevron attribute value "none"', async () => {
@@ -77,9 +73,9 @@ describe('auro-accordion', () => {
       </auro-accordion>
     `);
 
-    const trigger = el.shadowRoot.querySelector('.trigger');
+    const trigger = el.shadowRoot.querySelector(".trigger");
 
-    await expect(trigger.hasAttribute('chevron')).to.be.false;
+    await expect(trigger.hasAttribute("chevron")).to.be.false;
   });
 });
 

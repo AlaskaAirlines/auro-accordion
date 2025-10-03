@@ -3,12 +3,10 @@
 
 // ---------------------------------------------------------------------
 
-import styleButtonCss from "./styles/style-button-css.js";
-import styleCssAuroButton from "@aurodesignsystem/auro-button/src/styles/style-css.js";
+import { AuroButton } from "@aurodesignsystem/auro-button/class";
+import * as RuntimeUtils from "@aurodesignsystem/auro-library/scripts/utils/runtimeUtils.mjs";
 
-import { AuroButton } from "@aurodesignsystem/auro-button/src/auro-button.js";
-
-import * as RuntimeUtils from '@aurodesignsystem/auro-library/scripts/utils/runtimeUtils.mjs';
+import styleButtonCss from "./styles/style-button.scss";
 
 /**
  * Auro-accordion-button is the trigger element for Auro-accordion.
@@ -24,30 +22,29 @@ export class AuroAccordionButton extends AuroButton {
 
   static get properties() {
     return {
-      ...super.properties,
+      ...AuroButton.properties,
       ariaexpanded: {
         type: Boolean,
-        reflect: true
-      }
+        reflect: true,
+      },
     };
   }
 
   static get styles() {
-    return [
-      styleCssAuroButton,
-      styleButtonCss
-    ];
+    return [styleButtonCss];
   }
-
 
   // Sync aria-expanded changes
   updated(changedProperties) {
     super.updated(changedProperties);
-    
-    if (changedProperties.has('ariaexpanded')) {
-      const button = this.shadowRoot.querySelector('button');
+
+    if (changedProperties.has("ariaexpanded")) {
+      const button = this.shadowRoot.querySelector("button");
       if (button) {
-        button.setAttribute('aria-expanded', this.ariaexpanded ? 'true' : 'false');
+        button.setAttribute(
+          "aria-expanded",
+          this.ariaexpanded ? "true" : "false",
+        );
       }
     }
   }
