@@ -6,8 +6,6 @@
 import { AuroButton } from "@aurodesignsystem/auro-button/class";
 import * as RuntimeUtils from "@aurodesignsystem/auro-library/scripts/utils/runtimeUtils.mjs";
 
-// TODO: Figure out of we can just NOT use this?
-// import styleCssAuroButton from "@aurodesignsystem/auro-button/src/styles/style-css.js";
 import styleButtonCss from "./styles/style-button.scss";
 
 /**
@@ -33,7 +31,7 @@ export class AuroAccordionButton extends AuroButton {
   }
 
   static get styles() {
-    return [...AuroButton.styles, styleButtonCss];
+    return [styleButtonCss];
   }
 
   // Sync aria-expanded changes
