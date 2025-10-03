@@ -94,7 +94,7 @@
     "web components"
   ],
   "scripts": {
-        "lint": "biome check --no-errors-on-unmatched && stylelint \"./src/**/*.scss\"",
+    "lint": "biome check --no-errors-on-unmatched && stylelint \"./src/**/*.scss\"",
     "lint:fix": "biome check --fix --no-errors-on-unmatched && stylelint \"./src/**/*.scss\" --fix",
     "build": "npm-run-all build:version build:sass sass:render build:api build:docs bundler types",
     "build:test": "npm-run-all test linters",

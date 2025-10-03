@@ -1,5 +1,4 @@
-
-import { AuroAccordion } from '../../src/auro-accordion.js';
+import { AuroAccordion } from "../../src/auro-accordion.js";
 
 /**
  * Auro-accordion provides users a way to have collapsible content on a page.

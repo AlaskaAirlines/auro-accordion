@@ -1,3 +1,3 @@
-import { AuroAccordion } from './src/auro-accordion.js';
+import { AuroAccordion } from "./src/auro-accordion.js";
 
 AuroAccordion.register();
