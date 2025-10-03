@@ -1,7 +1,5 @@
 import { elementUpdated, expect, fixture, html } from "@open-wc/testing";
-import { AuroAccordion } from "../src/auro-accordion";
-
-AuroAccordion.register();
+import "../src/registered";
 
 // import './../index.js';
 

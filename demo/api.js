@@ -1,5 +1,5 @@
 import { expandedExample } from "../apiExamples/expanded";
-import "../index.js";
+import "../src/registered.js";
 
 export function initExamples(initCount) {
   // biome-ignore lint/style/noParameterAssign: recursion, just for demos
