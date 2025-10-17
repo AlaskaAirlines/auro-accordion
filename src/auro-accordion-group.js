@@ -12,10 +12,6 @@ import AuroLibraryRuntimeUtils from "@aurodesignsystem/auro-library/scripts/util
  * Auro-accordion provides users a way to have collapsible content on a page.
  * Use auro-accordion-group if you want to have auto closing accordion components when others are selected.
  *
- * @attr {Boolean} emphasis - If set, emphasis styles will be applied to the auro-accordions.
- * @attr {String} variant - Sets accordion variant option. Possible values are: `sm`, `lg`.
- * @attr {Boolean} disabled - If set, the whole accordion inside the group are disabled and have reduced opacity.
- * @attr {Boolean} noToggleExpanded - If set, multiple accordions can be open at the same time.
  */
 
 // build the component class
@@ -36,14 +32,25 @@ export class AuroAccordionGroup extends LitElement {
     return {
       // ...super.properties,
 
+      /**
+       * If set, emphasis styles will be applied to the auro-accordions.
+       */
       emphasis: {
         type: Boolean,
         reflect: true,
       },
+
+      /** 
+       * Sets accordion variant option. Possible values are: `sm`, `lg`.
+       */
       variant: {
         type: String,
         reflect: true,
       },
+
+      /** 
+       * If set, the whole accordion inside the group are disabled and have reduced opacity.
+       */
       disabled: {
         type: Boolean,
         reflect: true,
