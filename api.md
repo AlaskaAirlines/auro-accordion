@@ -6,45 +6,46 @@
 Auro-accordion provides users a way to have collapsible content on a page.
 Use auro-accordion-group if you want to have auto closing accordion components when others are selected.
 
-## Properties
+### Properties & Attributes
 
-| Property     | Attribute    | Type      | Default | Description                                      |
-|--------------|--------------|-----------|---------|--------------------------------------------------|
-| [alignRight](#alignRight) | `alignRight` | `Boolean` |         | If set, the trigger content will align right.    |
-| [chevron](#chevron)    | `chevron`    | `String`  |         | Sets chevron variant option. Possible values are: `none`, `right`. |
-| [disabled](#disabled)   | `disabled`   | `Boolean` |         | If set, the accordion is disabled and have reduced opacity. |
-| [emphasis](#emphasis)   | `emphasis`   | `Boolean` |         | If set, emphasis styles will be applied to the auro-accordions. |
-| [expanded](#expanded)   | `expanded`   | `Boolean` | false   | If set, the accordion is expanded.               |
-| [grouped](#grouped)    | `grouped`    | `Boolean` |         | Attribute will be set on accordion when it appears in an accordion group. |
-| [variant](#variant)    | `variant`    | `String`  |         | Sets accordion variant option. Possible values are: `sm`, `lg`. |
+| Properties | Attributes | Type | Default | Description  |
+| --- | --- | --- | --- | --- |
+expanded | expanded | boolean | false | If set, the accordion is expanded.
+alignRight | alignRight | boolean |  | If set, the trigger content will align right.
+emphasis | emphasis | boolean |  | If set, emphasis styles will be applied to the auro-accordions.
+grouped | grouped | boolean |  | Attribute will be set on accordion when it appears in an accordion group.
+chevron | chevron | string |  | Sets chevron variant option. Possible values are: `none`, `right`.
+variant | variant | string |  | Sets accordion variant option. Possible values are: `sm`, `lg`.
+disabled | disabled | boolean |  | If set, the accordion is disabled and have reduced opacity.
 
-## Methods
+### Methods
 
-| Method   | Type       | Description                                      |
-|----------|------------|--------------------------------------------------|
-| [toggle](#toggle) | `(): void` | Toggles the visibility of the accordion content. |
+| Name | Parameters | Return | Description |
+| --- | --- | --- | --- |
+register | `name` (string) - The name of element that you want to register to. |  | This will register this element with the browser.
+toggle | None |  | Toggles the visibility of the accordion content.
 
-## Events
+### Events
 
-| Event            | Type                                  | Description                                      |
-|------------------|---------------------------------------|--------------------------------------------------|
-| [toggleExpanded](#toggleExpanded) | `CustomEvent<{ expanded: boolean; }>` | Notifies that the accordion has been expanded or closed. |
+| Name | Description |
+| --- | --- |
+toggleExpanded | Notifies that the accordion has been expanded or closed.
 
-## Slots
+### Slots
 
-| Name      | Description                                 |
-|-----------|---------------------------------------------|
-|           | Default slot for the accordion content.     |
-| [trigger](#trigger) | Defines the content of the trigger element. |
+| Name | Description |
+| --- | --- |
+(default) | Default slot for the accordion content.
+trigger | Defines the content of the trigger element.
 
-## CSS Shadow Parts
+### CSS Shadow Parts
 
-| Part        | Description                         |
-|-------------|-------------------------------------|
-| [accordion](#accordion) | Apply CSS to Accordion wrapper.     |
-| [chevron](#chevron)   | Apply CSS to chevron icon.          |
-| [content](#content)   | Apply CSS to the accordion content. |
-| [trigger](#trigger)   | Apply CSS to trigger element.       |
+| Name | Description |
+| --- | --- |
+accordion | Apply CSS to Accordion wrapper.
+trigger | Apply CSS to trigger element.
+chevron | Apply CSS to chevron icon.
+content | Apply CSS to the accordion content.
 <!-- AURO-GENERATED-CONTENT:END -->
 
 ## Accordion API Examples
