@@ -30,13 +30,6 @@ import tokensCss from "./styles/tokens.scss";
  * Auro-accordion provides users a way to have collapsible content on a page.
  * Use auro-accordion-group if you want to have auto closing accordion components when others are selected.
  *
- * @attr {Boolean} alignRight - If set, the trigger content will align right.
- * @attr {Boolean} expanded - If set, the accordion is expanded.
- * @attr {Boolean} emphasis - If set, emphasis styles will be applied to the auro-accordions.
- * @attr {Boolean} grouped - Attribute will be set on accordion when it appears in an accordion group.
- * @attr {Boolean} disabled - If set, the accordion is disabled and have reduced opacity.
- * @attr {String} chevron - Sets chevron variant option. Possible values are: `none`, `right`.
- * @attr {String} variant - Sets accordion variant option. Possible values are: `sm`, `lg`.
  * @slot - Default slot for the accordion content.
  * @slot trigger - Defines the content of the trigger element.
  * @csspart accordion - Apply CSS to Accordion wrapper.
@@ -87,30 +80,57 @@ export class AuroAccordion extends LitElement {
     return {
       // ...super.properties,
 
+      /**
+       * If set, the trigger content will align right.
+       */
       alignRight: {
         type: Boolean,
         reflect: true,
       },
+
+      /** 
+       * If set, the accordion is expanded.
+       */
       expanded: {
         type: Boolean,
         reflect: true,
       },
+
+      /** 
+       * If set, emphasis styles will be applied to the auro-accordions.
+       */
       emphasis: {
         type: Boolean,
         reflect: true,
       },
+
+      /** 
+       * Attribute will be set on accordion when it appears in an accordion group.
+       */
       grouped: {
         type: Boolean,
         reflect: true,
       },
+
+      /** 
+       * Sets chevron variant option. Possible values are: `none`, `right`.
+       */
       chevron: {
         type: String,
         reflect: true,
       },
+
+      /** 
+       * Sets accordion variant option. Possible values are: `sm`, `lg`.
+       */
       variant: {
         type: String,
         reflect: true,
       },
+      
+      /** 
+       * If set, the accordion is disabled and have reduced opacity.
+       */
       disabled: {
         type: Boolean,
         reflect: true,
