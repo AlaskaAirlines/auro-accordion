@@ -9,12 +9,9 @@ import AuroLibraryRuntimeUtils from "@aurodesignsystem/auro-library/scripts/util
 
 // See https://git.io/JJ6SJ for "How to document your components using JSDoc"
 /**
- * Auro-accordion provides users a way to have collapsible content on a page.
- * Use auro-accordion-group if you want to have auto closing accordion components when others are selected.
- *
+ * The `auro-accordion-group` element allows users to group accordions together and give them an auto closing functionality when others are selected.
+ * @customElement auro-accordion-group
  */
-
-// build the component class
 export class AuroAccordionGroup extends LitElement {
   constructor() {
     super();
@@ -32,6 +29,14 @@ export class AuroAccordionGroup extends LitElement {
     return {
       // ...super.properties,
 
+      /** 
+       * If set, the whole accordion inside the group are disabled and have reduced opacity.
+       */
+      disabled: {
+        type: Boolean,
+        reflect: true,
+      },
+
       /**
        * If set, emphasis styles will be applied to the auro-accordions.
        */
@@ -41,18 +46,11 @@ export class AuroAccordionGroup extends LitElement {
       },
 
       /** 
-       * Sets accordion variant option. Possible values are: `sm`, `lg`.
+       * Sets accordion variant option.
+       * @type {'sm' | 'lg'}
        */
       variant: {
         type: String,
-        reflect: true,
-      },
-
-      /** 
-       * If set, the whole accordion inside the group are disabled and have reduced opacity.
-       */
-      disabled: {
-        type: Boolean,
         reflect: true,
       },
     };
@@ -60,7 +58,7 @@ export class AuroAccordionGroup extends LitElement {
 
   /**
    * This will register this element with the browser.
-   * @param {string} [name="auro-accordion-group"] - The name of element that you want to register to.
+   * @param {string} [name="auro-accordion-group"] - The name of the element that you want to register.
    *
    * @example
    * AuroAccordionGroup.register("custom-accordion-button") // this will register this element to <custom-accordion-group/>
@@ -85,8 +83,9 @@ export class AuroAccordionGroup extends LitElement {
   }
 
   /**
-   * Updates the disabled state of all child <auro-accordion> elements
-   * to match the disabled state of the <auro-accordion-group> element.
+   * Updates the disabled state of all child `<auro-accordion>` elements
+   * to match the disabled state of the `<auro-accordion-group>` element.
+   * @private
    */
   updateDisabledState() {
     const accordions = this.querySelectorAll("auro-accordion");
