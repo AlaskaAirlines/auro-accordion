@@ -1,43 +1,47 @@
 <!--
-The index.md file is a compiled document. No edits should be made directly to this file.
-README.md is created by running `npm run build:docs`.
-This file is generated based on a template fetched from `./docs/partials/index.md`
+ THIS PAGE'S CONTENT SHOULD BE KEPT MINIMAL.
+ ONLY ADD EXAMPLES THAT ARE TRULY NECESSARY FOR THE INDEX PAGE — THE BASIC EXAMPLE IS USUALLY ENOUGH.
+ ALL OTHER EXAMPLES SHOULD GO IN THE API DOCUMENTATION.
 -->
 
-# accordion
-
+# Accordion
+ 
 <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../docs/partials/description.md) -->
 <!-- AURO-GENERATED-CONTENT:END -->
-
-## auro-accordion use cases
-
+ 
+## Use Cases
+ 
 <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../docs/partials/useCases.md) -->
 <!-- AURO-GENERATED-CONTENT:END -->
-
+ 
 ## Example(s)
 
+### Basic
+ 
 <div class="exampleWrapper">
   <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/basic.html) -->
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
-
+ 
 <auro-accordion alignRight>
   <span slot="trigger">See code</span>
-
+ 
 <!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/basic.html) -->
 <!-- AURO-GENERATED-CONTENT:END -->
-
+ 
 </auro-accordion>
 
+### Accordion Group
+
 <div class="exampleWrapper">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/accordionGroup.html) -->
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/accordion-group.html) -->
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
-
+ 
 <auro-accordion alignRight>
   <span slot="trigger">See code</span>
 
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/accordionGroup.html) -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/accordion-group.html) -->
 <!-- AURO-GENERATED-CONTENT:END -->
 
 </auro-accordion>
