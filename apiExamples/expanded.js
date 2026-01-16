@@ -1,16 +1,16 @@
 export function expandedExample() {
   const expandedExampleElem = document.querySelector(
-    "#auroaccordionExpandedExample",
+    "#accordionExpandedExample",
   );
 
   document
-    .querySelector("#auroaccordionExpandedExampleBtnTrue")
+    .querySelector("#accordionExpandedExampleBtnTrue")
     .addEventListener("click", () => {
       expandedExampleElem.expanded = true;
     });
 
   document
-    .querySelector("#auroaccordionExpandedExampleBtnFalse")
+    .querySelector("#accordionExpandedExampleBtnFalse")
     .addEventListener("click", () => {
       expandedExampleElem.expanded = false;
     });

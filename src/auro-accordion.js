@@ -27,8 +27,8 @@ import tokensCss from "./styles/tokens.scss";
 
 // See https://git.io/JJ6SJ for "How to document your components using JSDoc"
 /**
- * Auro-accordion provides users a way to have collapsible content on a page.
- * Use auro-accordion-group if you want to have auto closing accordion components when others are selected.
+ * The `auro-accordion` element provides users a way to have collapsible content on a page.
+ * @customElement auro-accordion
  *
  * @slot - Default slot for the accordion content.
  * @slot trigger - Defines the content of the trigger element.
@@ -89,17 +89,34 @@ export class AuroAccordion extends LitElement {
       },
 
       /** 
-       * If set, the accordion is expanded.
+       * Sets chevron variant option.
+       * @type {'none' | 'right'}
        */
-      expanded: {
+      chevron: {
+        type: String,
+        reflect: true,
+      },
+
+      /** 
+       * If set, the accordion is disabled and have reduced opacity.
+       */
+      disabled: {
         type: Boolean,
         reflect: true,
       },
 
       /** 
-       * If set, emphasis styles will be applied to the auro-accordions.
+       * If set, emphasis styles will be applied to the auro-accordion. This feature is best used on the auro-accordion-group component.
        */
       emphasis: {
+        type: Boolean,
+        reflect: true,
+      },
+
+      /** 
+       * If set, the accordion is expanded.
+       */
+      expanded: {
         type: Boolean,
         reflect: true,
       },
@@ -113,26 +130,11 @@ export class AuroAccordion extends LitElement {
       },
 
       /** 
-       * Sets chevron variant option. Possible values are: `none`, `right`.
-       */
-      chevron: {
-        type: String,
-        reflect: true,
-      },
-
-      /** 
-       * Sets accordion variant option. Possible values are: `sm`, `lg`.
+       * Sets accordion variant option.
+       * @type {'sm' | 'lg'}
        */
       variant: {
         type: String,
-        reflect: true,
-      },
-      
-      /** 
-       * If set, the accordion is disabled and have reduced opacity.
-       */
-      disabled: {
-        type: Boolean,
         reflect: true,
       },
     };
@@ -144,7 +146,7 @@ export class AuroAccordion extends LitElement {
 
   /**
    * This will register this element with the browser.
-   * @param {string} [name="auro-accordion"] - The name of element that you want to register to.
+   * @param {string} [name="auro-accordion"] - The name of the element that you want to register.
    *
    * @example
    * AuroAccordion.register("custom-accordion") // this will register this element to <custom-accordion/>
