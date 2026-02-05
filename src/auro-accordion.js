@@ -41,17 +41,16 @@ import tokensCss from "./styles/tokens.scss";
 
 // build the component class
 export class AuroAccordion extends LitElement {
+  /**
+   * @private
+   */
+  static shadowRootOptions = {
+    ...LitElement.shadowRootOptions,
+    delegatesFocus: true,
+  };
+
   constructor() {
     super();
-
-    /**
-     * @private
-     * @property {boolean} delegatesFocus - Whether the shadow root delegates focus.
-     */
-    this.constructor.shadowRootOptions = {
-      ...LitElement.shadowRootOptions,
-      delegatesFocus: true,
-    };
 
     const versioning = new AuroDependencyVersioning();
 
@@ -177,7 +176,7 @@ export class AuroAccordion extends LitElement {
     if (changedProperties.has("expanded")) {
       const button = this.shadowRoot.querySelector("#accordionTrigger");
       if (button) {
-        button.ariaexpanded = this.expanded;
+        button.ariaExpanded = this.expanded;
       }
     }
   }
@@ -279,7 +278,7 @@ export class AuroAccordion extends LitElement {
           class="${classMap(buttonClasses)}"
           id="accordionTrigger"
           aria-controls="${accordionContentId}"
-          ?aria-expanded="${this.expanded}"
+          aria-expanded="${this.expanded}"
           ?aria-disabled="${this.disabled}"
           ?disabled="${this.disabled}"
           @click="${this.handleButtonClick}"
@@ -289,7 +288,7 @@ export class AuroAccordion extends LitElement {
           ${this.chevron === "right" ? this.renderChevronIcons() : nothing}
         </${this.buttonTag}>
         
-        <div class="content body-default" id="${accordionContentId}" aria-labelledby="accordionTrigger" inert="${!this.expanded || nothing}" part="content">
+        <div class="content body-default" id="${accordionContentId}" inert="${!this.expanded || nothing}" part="content">
           <div class="contentWrapper" part="contentWrapper">
             <slot></slot>
           </div>
