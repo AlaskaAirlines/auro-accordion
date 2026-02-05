@@ -44,6 +44,15 @@ export class AuroAccordion extends LitElement {
   constructor() {
     super();
 
+    /**
+     * @private
+     * @property {boolean} delegatesFocus - Whether the shadow root delegates focus.
+     */
+    this.constructor.shadowRootOptions = {
+      ...LitElement.shadowRootOptions,
+      delegatesFocus: true,
+    };
+
     const versioning = new AuroDependencyVersioning();
 
     /**
@@ -270,7 +279,7 @@ export class AuroAccordion extends LitElement {
           class="${classMap(buttonClasses)}"
           id="accordionTrigger"
           aria-controls="${accordionContentId}"
-          ?ariaexpanded="${this.expanded}"
+          ?aria-expanded="${this.expanded}"
           ?aria-disabled="${this.disabled}"
           ?disabled="${this.disabled}"
           @click="${this.handleButtonClick}"
