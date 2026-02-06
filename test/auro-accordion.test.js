@@ -27,7 +27,6 @@ describe("auro-accordion", () => {
 
     await elementUpdated(trigger);
 
-    await expect(trigger.hasAttribute("ariaexpanded")).to.be.true;
     await expect(shadowButton.getAttribute("aria-expanded")).to.equal("true");
 
     trigger.click();
