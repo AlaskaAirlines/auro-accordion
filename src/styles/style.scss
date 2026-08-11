@@ -188,3 +188,10 @@
     padding-left: unset;
   }
 }
+
+:host([variant="min"]) {
+  ::slotted([slot="trigger"]) {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}

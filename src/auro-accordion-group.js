@@ -45,9 +45,9 @@ export class AuroAccordionGroup extends LitElement {
         reflect: true,
       },
 
-      /** 
-       * Sets accordion variant option.
-       * @type {'sm' | 'lg'}
+      /**
+       * Sets the variant for every accordion in the group. `sm` and `lg` adjust the trigger size; `min` removes all trigger padding so slotted trigger content controls the trigger size.
+       * @type {'sm' | 'lg' | 'min'}
        */
       variant: {
         type: String,
@@ -105,18 +105,8 @@ export class AuroAccordionGroup extends LitElement {
         item.emphasis = true;
       }
 
-      if (
-        this.hasAttribute("variant") &&
-        this.getAttribute("variant") === "sm"
-      ) {
-        item.setAttribute("variant", "sm");
-      }
-
-      if (
-        this.hasAttribute("variant") &&
-        this.getAttribute("variant") === "lg"
-      ) {
-        item.setAttribute("variant", "lg");
+      if (this.hasAttribute("variant")) {
+        item.setAttribute("variant", this.getAttribute("variant"));
       }
 
       item.grouped = true;

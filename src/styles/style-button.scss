@@ -71,6 +71,19 @@
   }
 }
 
+:host(.min) {
+  .auro-button {
+    padding: 0;
+
+    --trigger-padding-left: 0;
+    --trigger-padding-right: 0;
+  }
+
+  .textSlot {
+    align-items: stretch;
+  }
+}
+
 :host([fluid]) {
   .textSlot {
     width: 100%;
