@@ -4,15 +4,15 @@ The `auro-accordion` element provides users a way to have collapsible content on
 
 ### Properties & Attributes
 
-| Properties | Attributes | Modifiers | Type              | Default | Description                                                                                                                     |
-| ---------- | ---------- | --------- | ----------------- | ------- | ------------------------------------------------------------------------------------------------------------------------------- |
-| alignRight | alignRight |           | boolean           |         | If set, the trigger content will align right.                                                                                   |
-| chevron    | chevron    |           | `none` \| `right` |         | Sets chevron variant option.                                                                                                    |
-| disabled   | disabled   |           | boolean           |         | If set, the accordion is disabled and have reduced opacity.                                                                     |
-| emphasis   | emphasis   |           | boolean           |         | If set, emphasis styles will be applied to the auro-accordion. This feature is best used on the auro-accordion-group component. |
-| expanded   | expanded   |           | boolean           | `false` | If set, the accordion is expanded.                                                                                              |
-| grouped    | grouped    |           | boolean           |         | Attribute will be set on accordion when it appears in an accordion group.                                                       |
-| variant    | variant    |           | `sm` \| `lg`      |         | Sets accordion variant option.                                                                                                  |
+| Properties | Attributes | Modifiers | Type                  | Default | Description                                                                                                                                                                                                                 |
+| ---------- | ---------- | --------- | --------------------- | ------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| alignRight | alignRight |           | boolean               |         | If set, the trigger content will align right.                                                                                                                                                                               |
+| chevron    | chevron    |           | `none` \| `right`     |         | Sets chevron variant option.                                                                                                                                                                                                |
+| disabled   | disabled   |           | boolean               |         | If set, the accordion is disabled and have reduced opacity.                                                                                                                                                                 |
+| emphasis   | emphasis   |           | boolean               |         | If set, emphasis styles will be applied to the auro-accordion. This feature is best used on the auro-accordion-group component.                                                                                             |
+| expanded   | expanded   |           | boolean               | `false` | If set, the accordion is expanded.                                                                                                                                                                                          |
+| grouped    | grouped    |           | boolean               |         | Attribute will be set on accordion when it appears in an accordion group.                                                                                                                                                   |
+| variant    | variant    |           | `sm` \| `lg` \| `min` |         | Sets accordion variant option. `sm` and `lg` adjust the trigger size; `min` removes all trigger padding so slotted trigger content controls the trigger size (best paired with `chevron="none"` for a fully flush trigger). |
 
 ### Methods
 
@@ -49,11 +49,11 @@ The `auro-accordion-group` element allows users to group accordions together and
 
 ### Properties & Attributes
 
-| Properties | Attributes | Modifiers | Type         | Default | Description                                                                         |
-| ---------- | ---------- | --------- | ------------ | ------- | ----------------------------------------------------------------------------------- |
-| disabled   | disabled   |           | boolean      |         | If set, the whole accordion inside the group are disabled and have reduced opacity. |
-| emphasis   | emphasis   |           | boolean      |         | If set, emphasis styles will be applied to the auro-accordions.                     |
-| variant    | variant    |           | `sm` \| `lg` |         | Sets accordion variant option.                                                      |
+| Properties | Attributes | Modifiers | Type                  | Default | Description                                                                                                                                                                       |
+| ---------- | ---------- | --------- | --------------------- | ------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| disabled   | disabled   |           | boolean               |         | If set, the whole accordion inside the group are disabled and have reduced opacity.                                                                                               |
+| emphasis   | emphasis   |           | boolean               |         | If set, emphasis styles will be applied to the auro-accordions.                                                                                                                   |
+| variant    | variant    |           | `sm` \| `lg` \| `min` |         | Sets the variant for every accordion in the group. `sm` and `lg` adjust the trigger size; `min` removes all trigger padding so slotted trigger content controls the trigger size. |
 
 ### Methods
 

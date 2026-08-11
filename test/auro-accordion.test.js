@@ -76,7 +76,60 @@ describe("auro-accordion", () => {
 
     await expect(trigger.hasAttribute("chevron")).to.be.false;
   });
+
+  it('keeps the default trigger padding without variant="min"', async () => {
+    const el = await defaultFixture();
+
+    const button = el.shadowRoot
+      .querySelector(".trigger")
+      .shadowRoot.querySelector("button");
+    const slotted = el.querySelector('[slot="trigger"]');
+
+    await expect(getComputedStyle(button).paddingTop).to.not.equal("0px");
+    await expect(getComputedStyle(slotted).paddingLeft).to.not.equal("0px");
+  });
+
+  it('removes all trigger padding with variant="min"', async () => {
+    const el = await minFixture();
+
+    const button = el.shadowRoot
+      .querySelector(".trigger")
+      .shadowRoot.querySelector("button");
+    const buttonStyles = getComputedStyle(button);
+
+    await expect(buttonStyles.paddingTop).to.equal("0px");
+    await expect(buttonStyles.paddingRight).to.equal("0px");
+    await expect(buttonStyles.paddingBottom).to.equal("0px");
+    await expect(buttonStyles.paddingLeft).to.equal("0px");
+
+    const slottedStyles = getComputedStyle(
+      el.querySelector('[slot="trigger"]'),
+    );
+
+    await expect(slottedStyles.paddingLeft).to.equal("0px");
+    await expect(slottedStyles.paddingRight).to.equal("0px");
+  });
+
+  it("reflects the variant property to the variant attribute", async () => {
+    const el = await defaultFixture();
+
+    el.variant = "min";
+    await elementUpdated(el);
+
+    await expect(el.getAttribute("variant")).to.equal("min");
+  });
 });
+
+async function minFixture() {
+  return await fixture(html`
+  <auro-accordion variant="min">
+    <span slot="trigger">Trigger</span>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+    </p>
+  </auro-accordion>
+  `);
+}
 
 async function defaultFixture() {
   return await fixture(html`

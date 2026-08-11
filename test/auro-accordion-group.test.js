@@ -41,6 +41,26 @@ describe("auro-accordion-group", () => {
     await expect(accordion.getAttribute("variant") === "lg").to.be.true;
   });
 
+  it('variant="min" is passed down to the accordion', async () => {
+    const el = await minFixture();
+    const accordion = el.querySelector("auro-accordion");
+
+    await expect(accordion.getAttribute("variant") === "min").to.be.true;
+  });
+
+  it('variant="min" removes the child accordion\'s trigger padding', async () => {
+    const el = await minFixture();
+    const accordion = el.querySelector("auro-accordion");
+    await elementUpdated(accordion);
+
+    const button = accordion.shadowRoot
+      .querySelector(".trigger")
+      .shadowRoot.querySelector("button");
+
+    await expect(getComputedStyle(button).paddingTop).to.equal("0px");
+    await expect(getComputedStyle(button).paddingLeft).to.equal("0px");
+  });
+
   it("one accordion closes when another accordion opens", async () => {
     const el = await expandedFixture();
 
@@ -281,6 +301,19 @@ async function emphasisFixture() {
       </auro-accordion>
     </auro-accordion-group>
 
+  `);
+}
+
+async function minFixture() {
+  return await fixture(html`
+    <auro-accordion-group variant="min">
+      <auro-accordion>
+        <span slot="trigger">Trigger</span>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        </p>
+      </auro-accordion>
+    </auro-accordion-group>
   `);
 }
 

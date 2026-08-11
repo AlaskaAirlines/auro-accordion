@@ -137,9 +137,9 @@ export class AuroAccordion extends LitElement {
         reflect: true,
       },
 
-      /** 
-       * Sets accordion variant option.
-       * @type {'sm' | 'lg'}
+      /**
+       * Sets accordion variant option. `sm` and `lg` adjust the trigger size; `min` removes all trigger padding so slotted trigger content controls the trigger size (best paired with `chevron="none"` for a fully flush trigger).
+       * @type {'sm' | 'lg' | 'min'}
        */
       variant: {
         type: String,
@@ -259,6 +259,7 @@ export class AuroAccordion extends LitElement {
       iconNone: this.getAttribute("chevron") === "none",
       sm: this.getAttribute("variant") === "sm",
       lg: this.getAttribute("variant") === "lg",
+      min: this.getAttribute("variant") === "min",
     };
 
     const variantClassMap = {
