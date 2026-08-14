@@ -45,7 +45,9 @@ The `<auro-accordion>` element should be used in situations where users may:
 [![License](https://img.shields.io/npm/l/@aurodesignsystem/auro-accordion?color=blue&style=for-the-badge)](https://www.apache.org/licenses/LICENSE-2.0)
 ![ESM supported](https://img.shields.io/badge/ESM-compatible-FFE900?style=for-the-badge)
 
-<pre class="language-shell"><code class="language-shell">$ npm i @aurodesignsystem/auro-accordion</code></pre>
+```shell
+$ npm i @aurodesignsystem/auro-accordion
+```
 
 <!-- AURO-GENERATED-CONTENT:END -->
 
@@ -57,7 +59,9 @@ Defining the dependency within each project that is using the `<auro-accordion>`
 <!-- AURO-GENERATED-CONTENT:END -->
 <!-- AURO-GENERATED-CONTENT:START (REMOTE:url=https://raw.githubusercontent.com/AlaskaAirlines/auro-templates/main/templates/default/partials/usage/componentImport.md) -->
 
-<pre class="language-js"><code class="language-js">import "@aurodesignsystem/auro-accordion";</code></pre>
+```js
+import "@aurodesignsystem/auro-accordion";
+```
 
 <!-- AURO-GENERATED-CONTENT:END -->
 
@@ -66,7 +70,9 @@ Defining the dependency within each project that is using the `<auro-accordion>`
 <!-- AURO-GENERATED-CONTENT:START (REMOTE:url=https://raw.githubusercontent.com/AlaskaAirlines/auro-templates/main/templates/default/partials/usage/bundleInstallDescription.md) -->
 In cases where the project is not able to process JS assets, there are pre-processed assets available for use. Legacy browsers such as IE11 are no longer supported.
 
-<pre class="language-html"><code class="language-html">&lt;script type="module" src="https://cdn.jsdelivr.net/npm/@aurodesignsystem/auro-accordion@latest/+esm"&gt;&lt;/script&gt;</code></pre>
+```html
+<script type="module" src="https://cdn.jsdelivr.net/npm/@aurodesignsystem/auro-accordion@latest/+esm"></script>
+```
 
 <!-- AURO-GENERATED-CONTENT:END -->
 
@@ -75,21 +81,23 @@ In cases where the project is not able to process JS assets, there are pre-proce
 <!-- AURO-GENERATED-CONTENT:START (CODE:src=./apiExamples/basic.html) -->
 <!-- The below code snippet is automatically added from ./apiExamples/basic.html -->
 
-<pre class="language-html"><code class="language-html">&lt;auro-accordion&gt;
-  &lt;span slot="trigger"&gt;Trigger&lt;/span&gt;
-  &lt;p&gt;
+```html
+<auro-accordion>
+  <span slot="trigger">Trigger</span>
+  <p>
     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-  &lt;/p&gt;
-  &lt;p&gt;
+  </p>
+  <p>
     Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-  &lt;/p&gt;
-  &lt;p&gt;
+  </p>
+  <p>
     Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-  &lt;/p&gt;
-  &lt;p&gt;
+  </p>
+  <p>
     Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-  &lt;/p&gt;
-&lt;/auro-accordion&gt;</code></pre>
+  </p>
+</auro-accordion>
+```
 <!-- AURO-GENERATED-CONTENT:END -->
 
 ## Custom Component Registration for Version Management
@@ -106,118 +114,122 @@ You can do this by importing only the component class and using the `register(na
 <!-- AURO-GENERATED-CONTENT:START (FILE:src=./docs/partials/customRegistration.md) -->
 <!-- The below content is automatically added from ./docs/partials/customRegistration.md -->
 
-<pre class="language-js"><code class="language-js">// Import the class only
+```js
+// Import the class only
 import { AuroAccordion, AuroAccordionGroup } from '@aurodesignsystem/auro-accordion/class';
-​
+
 // Register with a custom name if desired
 AuroAccordion.register('custom-accordion');
-AuroAccordionGroup.register('custom-accordion-group');</code></pre>
+AuroAccordionGroup.register('custom-accordion-group');
+```
 
 This will create a new custom element `<custom-accordion>` and `<custom-accordion-group>` that behaves exactly like `<auro-accordion>` and `<auro-accordion-group>`, allowing both sets of components to coexist on the same page without interfering with each other.
 <!-- AURO-GENERATED-CONTENT:END -->
 <div class="exampleWrapper exampleWrapper--flex">
-<!-- AURO-GENERATED-CONTENT:START (FILE:src=./apiExamples/custom.html) -->
-<!-- The below content is automatically added from ./apiExamples/custom.html -->
-<custom-accordion-group>
-<custom-accordion>
-<span slot="trigger">Trigger</span>
-<p>
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./apiExamples/custom.html) -->
+  <!-- The below content is automatically added from ./apiExamples/custom.html -->
+  <custom-accordion-group>
+    <custom-accordion>
+      <span slot="trigger">Trigger</span>
+      <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-</p>
-<p>
+      </p>
+      <p>
         Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-</p>
-<p>
+      </p>
+      <p>
         Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-</p>
-<p>
+      </p>
+      <p>
         Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-</p>
-</custom-accordion>
-<custom-accordion>
-<span slot="trigger">Trigger</span>
-<p>
+      </p>
+    </custom-accordion>
+    <custom-accordion>
+      <span slot="trigger">Trigger</span>
+      <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-</p>
-<p>
+      </p>
+      <p>
         Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-</p>
-<p>
+      </p>
+      <p>
         Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-</p>
-<p>
+      </p>
+      <p>
         Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-</p>
-</custom-accordion>
-<custom-accordion>
-<span slot="trigger">Trigger</span>
-<p>
+      </p>
+    </custom-accordion>
+    <custom-accordion>
+      <span slot="trigger">Trigger</span>
+      <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-</p>
-<p>
+      </p>
+      <p>
         Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-</p>
-<p>
+      </p>
+      <p>
         Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-</p>
-<p>
+      </p>
+      <p>
         Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-</p>
-</custom-accordion>
-</custom-accordion-group>
-<!-- AURO-GENERATED-CONTENT:END -->
+      </p>
+    </custom-accordion>
+  </custom-accordion-group>
+  <!-- AURO-GENERATED-CONTENT:END -->
 </div>
 <auro-accordion alignRight>
-<span slot="trigger">See code</span>
+  <span slot="trigger">See code</span>
 <!-- AURO-GENERATED-CONTENT:START (CODE:src=./apiExamples/custom.html) -->
 <!-- The below code snippet is automatically added from ./apiExamples/custom.html -->
 
-<pre class="language-html"><code class="language-html">&lt;custom-accordion-group&gt;
-  &lt;custom-accordion&gt;
-    &lt;span slot="trigger"&gt;Trigger&lt;/span&gt;
-    &lt;p&gt;
+```html
+<custom-accordion-group>
+  <custom-accordion>
+    <span slot="trigger">Trigger</span>
+    <p>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-    &lt;/p&gt;
-    &lt;p&gt;
+    </p>
+    <p>
       Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-    &lt;/p&gt;
-    &lt;p&gt;
+    </p>
+    <p>
       Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-    &lt;/p&gt;
-    &lt;p&gt;
+    </p>
+    <p>
       Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-    &lt;/p&gt;
-  &lt;/custom-accordion&gt;
-  &lt;custom-accordion&gt;
-    &lt;span slot="trigger"&gt;Trigger&lt;/span&gt;
-    &lt;p&gt;
+    </p>
+  </custom-accordion>
+  <custom-accordion>
+    <span slot="trigger">Trigger</span>
+    <p>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-    &lt;/p&gt;
-    &lt;p&gt;
+    </p>
+    <p>
       Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-    &lt;/p&gt;
-    &lt;p&gt;
+    </p>
+    <p>
       Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-    &lt;/p&gt;
-    &lt;p&gt;
+    </p>
+    <p>
       Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-    &lt;/p&gt;
-  &lt;/custom-accordion&gt;
-  &lt;custom-accordion&gt;
-    &lt;span slot="trigger"&gt;Trigger&lt;/span&gt;
-    &lt;p&gt;
+    </p>
+  </custom-accordion>
+  <custom-accordion>
+    <span slot="trigger">Trigger</span>
+    <p>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-    &lt;/p&gt;
-    &lt;p&gt;
+    </p>
+    <p>
       Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-    &lt;/p&gt;
-    &lt;p&gt;
+    </p>
+    <p>
       Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-    &lt;/p&gt;
-    &lt;p&gt;
+    </p>
+    <p>
       Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-    &lt;/p&gt;
-  &lt;/custom-accordion&gt;
-&lt;/custom-accordion-group&gt;</code></pre>
+    </p>
+  </custom-accordion>
+</custom-accordion-group>
+```
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>

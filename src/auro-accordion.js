@@ -239,6 +239,13 @@ export class AuroAccordion extends LitElement {
   }
 
   /**
+   * Moves keyboard focus to the accordion's trigger (the header that expands/collapses the accordion).
+   */
+  focus() {
+    this.shadowRoot?.querySelector("#accordionTrigger")?.focus();
+  }
+
+  /**
    * Toggles the visibility of the accordion content when button gets clicked.
    * @private
    * @param {Event} event - The event object.
