@@ -16,10 +16,11 @@ The `auro-accordion` element provides users a way to have collapsible content on
 
 ### Methods
 
-| Name     | Parameters                                                           | Return | Description                                       |
-| -------- | -------------------------------------------------------------------- | ------ | ------------------------------------------------- |
-| register | `name` (string) - The name of the element that you want to register. |        | This will register this element with the browser. |
-| toggle   | None                                                                 |        | Toggles the visibility of the accordion content.  |
+| Name     | Parameters                                                           | Return | Description                                                                                        |
+| -------- | -------------------------------------------------------------------- | ------ | -------------------------------------------------------------------------------------------------- |
+| focus    | None                                                                 |        | Moves keyboard focus to the accordion's trigger (the header that expands/collapses the accordion). |
+| register | `name` (string) - The name of the element that you want to register. |        | This will register this element with the browser.                                                  |
+| toggle   | None                                                                 |        | Toggles the visibility of the accordion content.                                                   |
 
 ### Events
 

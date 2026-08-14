@@ -118,6 +118,48 @@ describe("auro-accordion", () => {
 
     await expect(el.getAttribute("variant")).to.equal("min");
   });
+
+  it("focus() moves focus to the trigger button", async () => {
+    const el = await defaultFixture();
+
+    const trigger = el.shadowRoot.querySelector(".trigger");
+    const button = trigger.shadowRoot.querySelector("button");
+
+    // Before focusing, nothing inside the accordion's shadow root is focused.
+    await expect(el.shadowRoot.activeElement).to.be.null;
+
+    el.focus();
+
+    // Focus delegates host -> auro-accordion-button -> native <button>.
+    await expect(el.shadowRoot.activeElement).to.equal(trigger);
+    await expect(trigger.shadowRoot.activeElement).to.equal(button);
+  });
+
+  it("focus() does not move focus when disabled", async () => {
+    const el = await fixture(html`
+      <auro-accordion disabled>
+        <span slot="trigger">Trigger</span>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        </p>
+      </auro-accordion>
+    `);
+
+    el.focus();
+
+    // A disabled trigger's native <button> is not focusable, so focus stays put.
+    await expect(el.shadowRoot.activeElement).to.be.null;
+  });
+
+  it("focus() does not throw before the shadow root exists", async () => {
+    // A framework ref can call focus() between connection and first render,
+    // when shadowRoot is still null. Native focus() never throws, so ours
+    // must not either.
+    const el = document.createElement("auro-accordion");
+
+    await expect(el.shadowRoot).to.be.null;
+    await expect(() => el.focus()).to.not.throw();
+  });
 });
 
 async function minFixture() {
