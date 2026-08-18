@@ -70,6 +70,18 @@
     padding-left: var(--ds-size-400, vac.$ds-size-400);
     padding-bottom: var(--ds-size-300, vac.$ds-size-300);
   }
+
+  // Visually hidden but available to screen readers (aria-live announcer).
+  // Mirrors webcorestylesheets util_displayHiddenVisually.
+  .srAnnouncer {
+    position: absolute;
+    overflow: hidden;
+    clip: rect(1px, 1px, 1px, 1px);
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    border: 0;
+  }
 }
 
 :host(:focus) {

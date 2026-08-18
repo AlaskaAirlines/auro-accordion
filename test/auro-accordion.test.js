@@ -160,6 +160,52 @@ describe("auro-accordion", () => {
     await expect(el.shadowRoot).to.be.null;
     await expect(() => el.focus()).to.not.throw();
   });
+
+  it('announces "Expanded" when expanded programmatically', async () => {
+    const el = await defaultFixture();
+
+    const announcer = el.shadowRoot.querySelector(".srAnnouncer");
+
+    // Nothing is announced on initial render.
+    await expect(announcer.getAttribute("aria-live")).to.equal("polite");
+    await expect(announcer.textContent).to.equal("");
+
+    el.expanded = true;
+    await elementUpdated(el);
+
+    await expect(announcer.textContent).to.equal("Expanded");
+  });
+
+  it('announces "Collapsed" when collapsed programmatically', async () => {
+    const el = await defaultFixture();
+
+    const announcer = el.shadowRoot.querySelector(".srAnnouncer");
+
+    el.expanded = true;
+    await elementUpdated(el);
+    el.expanded = false;
+    await elementUpdated(el);
+
+    await expect(announcer.textContent).to.equal("Collapsed");
+  });
+
+  it("does not announce when the user activates the trigger", async () => {
+    const el = await defaultFixture();
+
+    const announcer = el.shadowRoot.querySelector(".srAnnouncer");
+    const trigger = el.shadowRoot.querySelector("#accordionTrigger");
+
+    // Focus the trigger, then activate it as a user would. The focused button
+    // already announces its aria-expanded change, so the live region stays
+    // silent to avoid a double announcement.
+    el.focus();
+    await elementUpdated(el);
+    trigger.click();
+    await elementUpdated(el);
+
+    await expect(el.expanded).to.be.true;
+    await expect(announcer.textContent).to.equal("");
+  });
 });
 
 async function minFixture() {

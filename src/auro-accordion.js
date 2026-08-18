@@ -178,6 +178,20 @@ export class AuroAccordion extends LitElement {
       if (button) {
         button.ariaExpanded = this.expanded;
       }
+
+      // Announce state changes that assistive tech wouldn't otherwise voice. A
+      // manual activation focuses the trigger, whose aria-expanded change is
+      // already announced — so only announce when the trigger is NOT the
+      // focused element (programmatic set, programmatic toggle(), or group
+      // auto-close) to avoid a double announcement.
+      const isInitialRender = changedProperties.get("expanded") === undefined;
+      const triggerFocused = button && this.shadowRoot.activeElement === button;
+      if (!isInitialRender && !triggerFocused) {
+        const announcer = this.shadowRoot.querySelector(".srAnnouncer");
+        if (announcer) {
+          announcer.textContent = this.expanded ? "Expanded" : "Collapsed";
+        }
+      }
     }
   }
 
@@ -301,6 +315,8 @@ export class AuroAccordion extends LitElement {
             <slot></slot>
           </div>
         </div>
+
+        <div class="srAnnouncer" aria-live="polite" aria-atomic="true"></div>
       </div>
     `;
   }
