@@ -263,9 +263,37 @@ Use the `no-spacing` attribute to remove all padding from the trigger so that sl
 
 The slotted trigger content must be **presentational only** (for example a `<span>` styled as a block/flex container). Do not place interactive or focusable elements (links, buttons, inputs, or anything with `tabindex`) inside the trigger — the trigger is a native `<button>`, so nested interactive content is invalid and breaks keyboard and screen-reader behavior. Ensure the trigger still has a discernible accessible name.
 
+With `no-spacing`, all trigger padding is removed so the accordion sits flush against adjacent content.
+
 <div class="exampleWrapper">
 <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/no-spacing.html) -->
 <!-- The below content is automatically added from ./../apiExamples/no-spacing.html -->
+<auro-accordion no-spacing chevron="none">
+<span slot="trigger">Trigger</span>
+<p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+</p>
+</auro-accordion>
+<!-- AURO-GENERATED-CONTENT:END -->
+</div>
+<auro-accordion alignRight>
+<span slot="trigger">See code</span>
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/no-spacing.html) -->
+<!-- The below code snippet is automatically added from ./../apiExamples/no-spacing.html -->
+
+<pre class="language-html"><code class="language-html">&lt;auro-accordion no-spacing chevron="none"&gt;
+  &lt;span slot="trigger"&gt;Trigger&lt;/span&gt;
+  &lt;p&gt;
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+  &lt;/p&gt;
+&lt;/auro-accordion&gt;</code></pre>
+<!-- AURO-GENERATED-CONTENT:END -->
+</auro-accordion>
+Because the trigger's size is no longer driven by component padding, you can size the clickable trigger yourself with CSS on the slotted content.
+
+<div class="exampleWrapper">
+<!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/no-spacing-custom.html) -->
+<!-- The below content is automatically added from ./../apiExamples/no-spacing-custom.html -->
 <auro-accordion no-spacing chevron="none">
 <span slot="trigger" style="display: flex; align-items: center; justify-content: center; width: 100%; height: 96px; background: #0074c8; color: #fff; font-weight: 700; font-size: 1.25rem; border-radius: 8px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);">
       Custom-sized trigger
@@ -281,8 +309,8 @@ The slotted trigger content must be **presentational only** (for example a `<spa
 </div>
 <auro-accordion alignRight>
 <span slot="trigger">See code</span>
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/no-spacing.html) -->
-<!-- The below code snippet is automatically added from ./../apiExamples/no-spacing.html -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/no-spacing-custom.html) -->
+<!-- The below code snippet is automatically added from ./../apiExamples/no-spacing-custom.html -->
 
 <pre class="language-html"><code class="language-html">&lt;auro-accordion no-spacing chevron="none"&gt;
   &lt;span slot="trigger" style="display: flex; align-items: center; justify-content: center; width: 100%; height: 96px; background: #0074c8; color: #fff; font-weight: 700; font-size: 1.25rem; border-radius: 8px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);"&gt;
