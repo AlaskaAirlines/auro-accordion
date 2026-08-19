@@ -508,6 +508,42 @@ Keep the slotted trigger content **presentational only** (e.g. a styled `<span>`
 &lt;/auro-accordion&gt;</code></pre>
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
+Because `variant="min"` hands sizing to the slotted trigger content, you can style that content to give the trigger a custom size and appearance — here a full-width, fixed-height block.
+
+<div class="exampleWrapper">
+<!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/no-spacing-custom.html) -->
+<!-- The below content is automatically added from ./../apiExamples/no-spacing-custom.html -->
+<auro-accordion no-spacing chevron="none">
+<span slot="trigger" style="display: flex; align-items: center; justify-content: center; width: 100%; height: 96px; background: #0074c8; color: #fff; font-weight: 700; font-size: 1.25rem; border-radius: 8px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);">
+      Custom-sized trigger
+</span>
+<p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+</p>
+<p>
+      Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+</p>
+</auro-accordion>
+<!-- AURO-GENERATED-CONTENT:END -->
+</div>
+<auro-accordion alignRight>
+<span slot="trigger">See code</span>
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/no-spacing-custom.html) -->
+<!-- The below code snippet is automatically added from ./../apiExamples/no-spacing-custom.html -->
+
+<pre class="language-html"><code class="language-html">&lt;auro-accordion no-spacing chevron="none"&gt;
+  &lt;span slot="trigger" style="display: flex; align-items: center; justify-content: center; width: 100%; height: 96px; background: #0074c8; color: #fff; font-weight: 700; font-size: 1.25rem; border-radius: 8px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);"&gt;
+    Custom-sized trigger
+  &lt;/span&gt;
+  &lt;p&gt;
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+  &lt;/p&gt;
+  &lt;p&gt;
+    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+  &lt;/p&gt;
+&lt;/auro-accordion&gt;</code></pre>
+<!-- AURO-GENERATED-CONTENT:END -->
+</auro-accordion>
 
 ## Method Examples
 
