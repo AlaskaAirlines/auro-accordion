@@ -7,16 +7,15 @@ The `auro-accordion` element provides users a way to have collapsible content on
 
 ### Properties & Attributes
 
-| Properties | Attributes | Modifiers | Type              | Default | Description                                                                                                                                            |
-| ---------- | ---------- | --------- | ----------------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| alignRight | alignRight |           | boolean           |         | If set, the trigger content will align right.                                                                                                          |
-| chevron    | chevron    |           | `none` \| `right` |         | Sets chevron variant option.                                                                                                                           |
-| disabled   | disabled   |           | boolean           |         | If set, the accordion is disabled and have reduced opacity.                                                                                            |
-| emphasis   | emphasis   |           | boolean           |         | If set, emphasis styles will be applied to the auro-accordion. This feature is best used on the auro-accordion-group component.                        |
-| expanded   | expanded   |           | boolean           | `false` | If set, the accordion is expanded.                                                                                                                     |
-| grouped    | grouped    |           | boolean           |         | Attribute will be set on accordion when it appears in an accordion group.                                                                              |
-| noSpacing  | no-spacing |           | boolean           |         | If set, removes all trigger padding so slotted trigger content controls the trigger size. Best paired with `chevron="none"` for a fully flush trigger. |
-| variant    | variant    |           | `sm` \| `lg`      |         | Sets accordion variant option.                                                                                                                         |
+| Properties | Attributes | Modifiers | Type                  | Default | Description                                                                                                                                                                                                                 |
+| ---------- | ---------- | --------- | --------------------- | ------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| alignRight | alignRight |           | boolean               |         | If set, the trigger content will align right.                                                                                                                                                                               |
+| chevron    | chevron    |           | `none` \| `right`     |         | Sets chevron variant option.                                                                                                                                                                                                |
+| disabled   | disabled   |           | boolean               |         | If set, the accordion is disabled and have reduced opacity.                                                                                                                                                                 |
+| emphasis   | emphasis   |           | boolean               |         | If set, emphasis styles will be applied to the auro-accordion. This feature is best used on the auro-accordion-group component.                                                                                             |
+| expanded   | expanded   |           | boolean               | `false` | If set, the accordion is expanded.                                                                                                                                                                                          |
+| grouped    | grouped    |           | boolean               |         | Attribute will be set on accordion when it appears in an accordion group.                                                                                                                                                   |
+| variant    | variant    |           | `sm` \| `lg` \| `min` |         | Sets accordion variant option. `sm` and `lg` adjust the trigger size; `min` removes all trigger padding so slotted trigger content controls the trigger size (best paired with `chevron="none"` for a fully flush trigger). |
 
 ### Methods
 
@@ -54,12 +53,11 @@ The `auro-accordion-group` element allows users to group accordions together and
 
 ### Properties & Attributes
 
-| Properties | Attributes | Modifiers | Type         | Default | Description                                                                                                                |
-| ---------- | ---------- | --------- | ------------ | ------- | -------------------------------------------------------------------------------------------------------------------------- |
-| disabled   | disabled   |           | boolean      |         | If set, the whole accordion inside the group are disabled and have reduced opacity.                                        |
-| emphasis   | emphasis   |           | boolean      |         | If set, emphasis styles will be applied to the auro-accordions.                                                            |
-| noSpacing  | no-spacing |           | boolean      |         | If set, removes all trigger padding for every accordion in the group so slotted trigger content controls the trigger size. |
-| variant    | variant    |           | `sm` \| `lg` |         | Sets accordion variant option.                                                                                             |
+| Properties | Attributes | Modifiers | Type                  | Default | Description                                                                                                                                                                       |
+| ---------- | ---------- | --------- | --------------------- | ------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| disabled   | disabled   |           | boolean               |         | If set, the whole accordion inside the group are disabled and have reduced opacity.                                                                                               |
+| emphasis   | emphasis   |           | boolean               |         | If set, emphasis styles will be applied to the auro-accordions.                                                                                                                   |
+| variant    | variant    |           | `sm` \| `lg` \| `min` |         | Sets the variant for every accordion in the group. `sm` and `lg` adjust the trigger size; `min` removes all trigger padding so slotted trigger content controls the trigger size. |
 
 ### Methods
 
@@ -257,75 +255,6 @@ The chevron icon within the trigger of the `auro-accordion` will not render when
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
 
-### No Spacing
-
-Use the `no-spacing` attribute to remove all padding from the trigger so that slotted trigger content controls the trigger's size. This lets the accordion sit flush against adjacent content and produce even spacing when several are stacked together. Best paired with `chevron="none"` for a fully flush trigger.
-
-The slotted trigger content must be **presentational only** (for example a `<span>` styled as a block/flex container). Do not place interactive or focusable elements (links, buttons, inputs, or anything with `tabindex`) inside the trigger — the trigger is a native `<button>`, so nested interactive content is invalid and breaks keyboard and screen-reader behavior. Ensure the trigger still has a discernible accessible name.
-
-With `no-spacing`, all trigger padding is removed so the accordion sits flush against adjacent content.
-
-<div class="exampleWrapper">
-<!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/no-spacing.html) -->
-<!-- The below content is automatically added from ./../apiExamples/no-spacing.html -->
-<auro-accordion no-spacing chevron="none">
-<span slot="trigger">Trigger</span>
-<p>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-</p>
-</auro-accordion>
-<!-- AURO-GENERATED-CONTENT:END -->
-</div>
-<auro-accordion alignRight>
-<span slot="trigger">See code</span>
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/no-spacing.html) -->
-<!-- The below code snippet is automatically added from ./../apiExamples/no-spacing.html -->
-
-<pre class="language-html"><code class="language-html">&lt;auro-accordion no-spacing chevron="none"&gt;
-  &lt;span slot="trigger"&gt;Trigger&lt;/span&gt;
-  &lt;p&gt;
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-  &lt;/p&gt;
-&lt;/auro-accordion&gt;</code></pre>
-<!-- AURO-GENERATED-CONTENT:END -->
-</auro-accordion>
-Because the trigger's size is no longer driven by component padding, you can size the clickable trigger yourself with CSS on the slotted content.
-
-<div class="exampleWrapper">
-<!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/no-spacing-custom.html) -->
-<!-- The below content is automatically added from ./../apiExamples/no-spacing-custom.html -->
-<auro-accordion no-spacing chevron="none">
-<span slot="trigger" style="display: flex; align-items: center; justify-content: center; width: 100%; height: 96px; background: #0074c8; color: #fff; font-weight: 700; font-size: 1.25rem; border-radius: 8px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);">
-      Custom-sized trigger
-</span>
-<p>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-</p>
-<p>
-      Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-</p>
-</auro-accordion>
-<!-- AURO-GENERATED-CONTENT:END -->
-</div>
-<auro-accordion alignRight>
-<span slot="trigger">See code</span>
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/no-spacing-custom.html) -->
-<!-- The below code snippet is automatically added from ./../apiExamples/no-spacing-custom.html -->
-
-<pre class="language-html"><code class="language-html">&lt;auro-accordion no-spacing chevron="none"&gt;
-  &lt;span slot="trigger" style="display: flex; align-items: center; justify-content: center; width: 100%; height: 96px; background: #0074c8; color: #fff; font-weight: 700; font-size: 1.25rem; border-radius: 8px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);"&gt;
-    Custom-sized trigger
-  &lt;/span&gt;
-  &lt;p&gt;
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-  &lt;/p&gt;
-  &lt;p&gt;
-    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-  &lt;/p&gt;
-&lt;/auro-accordion&gt;</code></pre>
-<!-- AURO-GENERATED-CONTENT:END -->
-</auro-accordion>
-
 ### Disabled
 
 Use the `disabled` attribute to disable the expand/collapse function and reduce the opacity of the element.
@@ -445,9 +374,60 @@ The accordion can be programatically expanded or collapsed by setting the `expan
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
 
-### Large Variant
+### Variants
 
-Using the `variant="lg"` attribute will cause the size of the accordion trigger to render larger.
+The `variant` attribute sets the size and spacing of the accordion trigger. Omit it for the default (medium) trigger, or use one of the options below.
+
+#### Small
+
+`variant="sm"` renders a smaller trigger with reduced padding.
+
+<div class="exampleWrapper">
+<!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/variant-sm.html) -->
+<!-- The below content is automatically added from ./../apiExamples/variant-sm.html -->
+<auro-accordion variant="sm">
+<span slot="trigger">Trigger</span>
+<p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+</p>
+<p>
+      Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+</p>
+<p>
+      Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+</p>
+<p>
+      Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+</p>
+</auro-accordion>
+<!-- AURO-GENERATED-CONTENT:END -->
+</div>
+<auro-accordion alignRight>
+<span slot="trigger">See code</span>
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/variant-sm.html) -->
+<!-- The below code snippet is automatically added from ./../apiExamples/variant-sm.html -->
+
+<pre class="language-html"><code class="language-html">&lt;auro-accordion variant="sm"&gt;
+  &lt;span slot="trigger"&gt;Trigger&lt;/span&gt;
+  &lt;p&gt;
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+  &lt;/p&gt;
+  &lt;p&gt;
+    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+  &lt;/p&gt;
+  &lt;p&gt;
+    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+  &lt;/p&gt;
+  &lt;p&gt;
+    Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+  &lt;/p&gt;
+&lt;/auro-accordion&gt;</code></pre>
+<!-- AURO-GENERATED-CONTENT:END -->
+</auro-accordion>
+
+#### Large
+
+`variant="lg"` renders a larger trigger with increased padding.
 
 <div class="exampleWrapper">
 <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/variant-lg.html) -->
@@ -492,14 +472,16 @@ Using the `variant="lg"` attribute will cause the size of the accordion trigger 
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
 
-### Small Variant
+#### Minimal
 
-Using the `variant="sm"` attribute will cause the size of the accordion trigger to render smaller.
+`variant="min"` strips all padding from the trigger so the slotted trigger content controls its size — letting the accordion sit flush against adjacent content. Best paired with `chevron="none"`.
+
+Keep the slotted trigger content **presentational only** (e.g. a styled `<span>`). The trigger is a native `<button>`, so do not nest interactive or focusable elements (links, buttons, inputs, `tabindex`) inside it, and ensure the trigger still has a discernible accessible name.
 
 <div class="exampleWrapper">
-<!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/variant-sm.html) -->
-<!-- The below content is automatically added from ./../apiExamples/variant-sm.html -->
-<auro-accordion variant="sm">
+<!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/variant-min.html) -->
+<!-- The below content is automatically added from ./../apiExamples/variant-min.html -->
+<auro-accordion variant="min" chevron="none">
 <span slot="trigger">Trigger</span>
 <p>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -507,33 +489,21 @@ Using the `variant="sm"` attribute will cause the size of the accordion trigger 
 <p>
       Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
 </p>
-<p>
-      Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-</p>
-<p>
-      Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-</p>
 </auro-accordion>
 <!-- AURO-GENERATED-CONTENT:END -->
 </div>
 <auro-accordion alignRight>
 <span slot="trigger">See code</span>
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/variant-sm.html) -->
-<!-- The below code snippet is automatically added from ./../apiExamples/variant-sm.html -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/variant-min.html) -->
+<!-- The below code snippet is automatically added from ./../apiExamples/variant-min.html -->
 
-<pre class="language-html"><code class="language-html">&lt;auro-accordion variant="sm"&gt;
+<pre class="language-html"><code class="language-html">&lt;auro-accordion variant="min" chevron="none"&gt;
   &lt;span slot="trigger"&gt;Trigger&lt;/span&gt;
   &lt;p&gt;
     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
   &lt;/p&gt;
   &lt;p&gt;
     Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-  &lt;/p&gt;
-  &lt;p&gt;
-    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-  &lt;/p&gt;
-  &lt;p&gt;
-    Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
   &lt;/p&gt;
 &lt;/auro-accordion&gt;</code></pre>
 <!-- AURO-GENERATED-CONTENT:END -->
@@ -991,9 +961,124 @@ Using the `noToggleExpanded` attribute will allow for multiple accordions in an 
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
 
-### Large Variant
+## Variant Examples
 
-Using the `variant="lg"` attribute will cause the size of all accordion triggers within the group to render larger.
+Setting `variant` on the group applies the same trigger size and spacing to every accordion it contains. Omit it for the default (medium) trigger, or use one of the options below.
+
+### Small
+
+`variant="sm"` renders smaller triggers with reduced padding across the group.
+
+<div class="exampleWrapper">
+<!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/variant-sm-group.html) -->
+<!-- The below content is automatically added from ./../apiExamples/variant-sm-group.html -->
+<auro-accordion-group variant="sm">
+<auro-accordion>
+<span slot="trigger">Trigger</span>
+<p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+</p>
+<p>
+        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+</p>
+<p>
+        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+</p>
+<p>
+        Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+</p>
+</auro-accordion>
+<auro-accordion>
+<span slot="trigger">Trigger</span>
+<p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+</p>
+<p>
+        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+</p>
+<p>
+        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+</p>
+<p>
+        Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+</p>
+</auro-accordion>
+<auro-accordion>
+<span slot="trigger">Trigger</span>
+<p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+</p>
+<p>
+        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+</p>
+<p>
+        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+</p>
+<p>
+        Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+</p>
+</auro-accordion>
+</auro-accordion-group>
+<!-- AURO-GENERATED-CONTENT:END -->
+</div>
+<auro-accordion alignRight>
+<span slot="trigger">See code</span>
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/variant-sm-group.html) -->
+<!-- The below code snippet is automatically added from ./../apiExamples/variant-sm-group.html -->
+
+<pre class="language-html"><code class="language-html">&lt;auro-accordion-group variant="sm"&gt;
+  &lt;auro-accordion&gt;
+    &lt;span slot="trigger"&gt;Trigger&lt;/span&gt;
+    &lt;p&gt;
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+    &lt;/p&gt;
+    &lt;p&gt;
+      Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+    &lt;/p&gt;
+    &lt;p&gt;
+      Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+    &lt;/p&gt;
+    &lt;p&gt;
+      Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    &lt;/p&gt;
+  &lt;/auro-accordion&gt;
+  &lt;auro-accordion&gt;
+    &lt;span slot="trigger"&gt;Trigger&lt;/span&gt;
+    &lt;p&gt;
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+    &lt;/p&gt;
+    &lt;p&gt;
+      Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+    &lt;/p&gt;
+    &lt;p&gt;
+      Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+    &lt;/p&gt;
+    &lt;p&gt;
+      Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    &lt;/p&gt;
+  &lt;/auro-accordion&gt;
+  &lt;auro-accordion&gt;
+    &lt;span slot="trigger"&gt;Trigger&lt;/span&gt;
+    &lt;p&gt;
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+    &lt;/p&gt;
+    &lt;p&gt;
+      Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+    &lt;/p&gt;
+    &lt;p&gt;
+      Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+    &lt;/p&gt;
+    &lt;p&gt;
+      Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    &lt;/p&gt;
+  &lt;/auro-accordion&gt;
+&lt;/auro-accordion-group&gt;</code></pre>
+<!-- AURO-GENERATED-CONTENT:END -->
+</auro-accordion>
+
+### Large
+
+`variant="lg"` renders larger triggers with increased padding across the group.
 
 <div class="exampleWrapper">
 <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/variant-lg-group.html) -->
@@ -1102,57 +1187,39 @@ Using the `variant="lg"` attribute will cause the size of all accordion triggers
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
 
-### Small Variant
+### Minimal
 
-Using the `variant="sm"` attribute will cause the size of all accordion triggers in the group to render smaller.
+`variant="min"` strips all trigger padding across the group so slotted trigger content controls each trigger's size. Best paired with `chevron="none"` on each accordion.
 
 <div class="exampleWrapper">
-<!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/variant-sm-group.html) -->
-<!-- The below content is automatically added from ./../apiExamples/variant-sm-group.html -->
-<auro-accordion-group variant="sm">
-<auro-accordion>
+<!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/variant-min-group.html) -->
+<!-- The below content is automatically added from ./../apiExamples/variant-min-group.html -->
+<auro-accordion-group variant="min">
+<auro-accordion chevron="none">
 <span slot="trigger">Trigger</span>
 <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 </p>
 <p>
         Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-</p>
-<p>
-        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-</p>
-<p>
-        Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 </p>
 </auro-accordion>
-<auro-accordion>
+<auro-accordion chevron="none">
 <span slot="trigger">Trigger</span>
 <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 </p>
 <p>
         Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-</p>
-<p>
-        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-</p>
-<p>
-        Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 </p>
 </auro-accordion>
-<auro-accordion>
+<auro-accordion chevron="none">
 <span slot="trigger">Trigger</span>
 <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 </p>
 <p>
         Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-</p>
-<p>
-        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-</p>
-<p>
-        Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 </p>
 </auro-accordion>
 </auro-accordion-group>
@@ -1160,53 +1227,35 @@ Using the `variant="sm"` attribute will cause the size of all accordion triggers
 </div>
 <auro-accordion alignRight>
 <span slot="trigger">See code</span>
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/variant-sm-group.html) -->
-<!-- The below code snippet is automatically added from ./../apiExamples/variant-sm-group.html -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/variant-min-group.html) -->
+<!-- The below code snippet is automatically added from ./../apiExamples/variant-min-group.html -->
 
-<pre class="language-html"><code class="language-html">&lt;auro-accordion-group variant="sm"&gt;
-  &lt;auro-accordion&gt;
+<pre class="language-html"><code class="language-html">&lt;auro-accordion-group variant="min"&gt;
+  &lt;auro-accordion chevron="none"&gt;
     &lt;span slot="trigger"&gt;Trigger&lt;/span&gt;
     &lt;p&gt;
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
     &lt;/p&gt;
     &lt;p&gt;
       Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-    &lt;/p&gt;
-    &lt;p&gt;
-      Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-    &lt;/p&gt;
-    &lt;p&gt;
-      Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
     &lt;/p&gt;
   &lt;/auro-accordion&gt;
-  &lt;auro-accordion&gt;
+  &lt;auro-accordion chevron="none"&gt;
     &lt;span slot="trigger"&gt;Trigger&lt;/span&gt;
     &lt;p&gt;
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
     &lt;/p&gt;
     &lt;p&gt;
       Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-    &lt;/p&gt;
-    &lt;p&gt;
-      Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-    &lt;/p&gt;
-    &lt;p&gt;
-      Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
     &lt;/p&gt;
   &lt;/auro-accordion&gt;
-  &lt;auro-accordion&gt;
+  &lt;auro-accordion chevron="none"&gt;
     &lt;span slot="trigger"&gt;Trigger&lt;/span&gt;
     &lt;p&gt;
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
     &lt;/p&gt;
     &lt;p&gt;
       Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-    &lt;/p&gt;
-    &lt;p&gt;
-      Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-    &lt;/p&gt;
-    &lt;p&gt;
-      Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
     &lt;/p&gt;
   &lt;/auro-accordion&gt;
 &lt;/auro-accordion-group&gt;</code></pre>
