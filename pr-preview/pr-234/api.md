@@ -92,23 +92,23 @@ The `auro-accordion-group` element allows users to group accordions together and
 </div>
 <auro-accordion alignRight>
 <span slot="trigger">See code</span>
-<!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/basic.html) -->
-<!-- The below content is automatically added from ./../apiExamples/basic.html -->
-<auro-accordion>
-<span slot="trigger">Trigger</span>
-<p>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-</p>
-<p>
-      Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-</p>
-<p>
-      Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-</p>
-<p>
-      Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-</p>
-</auro-accordion>
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/basic.html) -->
+<!-- The below code snippet is automatically added from ./../apiExamples/basic.html -->
+<pre class="language-html"><code class="language-html">&lt;auro-accordion&gt;
+  &lt;span slot="trigger"&gt;Trigger&lt;/span&gt;
+  &lt;p&gt;
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+  &lt;/p&gt;
+  &lt;p&gt;
+    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+  &lt;/p&gt;
+  &lt;p&gt;
+    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+  &lt;/p&gt;
+  &lt;p&gt;
+    Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+  &lt;/p&gt;
+&lt;/auro-accordion&gt;</code></pre>
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
 
