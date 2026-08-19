@@ -109,10 +109,12 @@
 }
 
 :host([alignRight]) {
-  .componentWrapper {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
+  // Block wrapper (not flex) keeps content height animation smooth; flex re-resolves item size
+  // every frame and causes janky open/close when right-aligned. Block + margin-left:auto aligns.
+  .trigger {
+    display: block;
+    width: fit-content;
+    margin-left: auto;
   }
 }
 
