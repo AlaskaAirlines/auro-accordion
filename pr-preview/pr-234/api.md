@@ -961,11 +961,11 @@ Using the `noToggleExpanded` attribute will allow for multiple accordions in an 
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
 
-## Variant Examples
+### Variant Examples
 
 Setting `variant` on the group applies the same trigger size and spacing to every accordion it contains. Omit it for the default (medium) trigger, or use one of the options below.
 
-### Small
+#### Small
 
 `variant="sm"` renders smaller triggers with reduced padding across the group.
 
@@ -1076,7 +1076,7 @@ Setting `variant` on the group applies the same trigger size and spacing to ever
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
 
-### Large
+#### Large
 
 `variant="lg"` renders larger triggers with increased padding across the group.
 
@@ -1187,7 +1187,7 @@ Setting `variant` on the group applies the same trigger size and spacing to ever
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
 
-### Minimal
+#### Minimal
 
 `variant="min"` strips all trigger padding across the group so slotted trigger content controls each trigger's size. Best paired with `chevron="none"` on each accordion.
 
