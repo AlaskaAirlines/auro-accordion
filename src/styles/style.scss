@@ -84,8 +84,14 @@
   }
 }
 
-:host(:focus) {
-  .trigger {
+// The focus border keys on `.trigger:focus-within`, not `:host(:focus)`. The
+// accordion uses `delegatesFocus: true` and the real focus target (the native
+// <button>) sits two shadow boundaries deep, so `:host(:focus)` propagation is
+// unreliable for programmatic `focus()`. `:focus-within` is computed from the
+// flat tree, crosses both shadow roots, and is scoped to `.trigger` so focus
+// inside the expanded content does not light up the trigger border.
+.trigger {
+  &:focus-within {
     border-width: 1px;
     border-style: solid;
   }
@@ -167,7 +173,7 @@
       border-left-width: 2px;
     }
 
-    &:focus {
+    &:focus-within {
       border-left-width: 1px;
       margin-left: 1px;
     }

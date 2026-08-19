@@ -135,6 +135,25 @@ describe("auro-accordion", () => {
     await expect(trigger.shadowRoot.activeElement).to.equal(button);
   });
 
+  it("applies the focused-state trigger border after focus()", async () => {
+    const el = await defaultFixture();
+    const trigger = el.shadowRoot.querySelector(".trigger");
+
+    const borderBeforeFocus = getComputedStyle(trigger).borderColor;
+
+    el.focus();
+    await elementUpdated(el);
+
+    // The focus border keys on `.trigger:focus-within` (reliable across the
+    // nested shadow boundary) rather than `:host(:focus)`, which delegatesFocus
+    // left unreliable for a programmatic focus(). Both the pseudo-class match
+    // and the resulting border color must react to focus landing on the trigger.
+    await expect(trigger.matches(":focus-within")).to.be.true;
+    await expect(getComputedStyle(trigger).borderColor).to.not.equal(
+      borderBeforeFocus,
+    );
+  });
+
   it("focus() does not move focus when disabled", async () => {
     const el = await fixture(html`
       <auro-accordion disabled>
