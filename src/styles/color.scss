@@ -29,8 +29,12 @@
   }
 }
 
-:host(:focus) {
-  --ds-auro-accordion-trigger-border-color: var(--ds-advanced-color-state-focused, #{v.$ds-advanced-color-state-focused});
+// Keyed on `.trigger:focus-within` rather than `:host(:focus)` so the focused
+// border color applies reliably for programmatic `focus()` — see style.scss.
+.trigger {
+  &:focus-within {
+    --ds-auro-accordion-trigger-border-color: var(--ds-advanced-color-state-focused, #{v.$ds-advanced-color-state-focused});
+  }
 }
 
 :host([grouped]) {
@@ -45,14 +49,14 @@
       border-color: var(--ds-auro-accordion-trigger-border-color);
     }
 
-    &:focus,
+    &:focus-within,
     &:hover {
       &:before {
         --ds-auro-accordion-trigger-border-color: var(--ds-advanced-color-state-selected, #{v.$ds-advanced-color-state-selected});
       }
     }
 
-    &:focus {
+    &:focus-within {
       --ds-auro-accordion-trigger-border-color: var(--ds-advanced-color-state-focused, #{v.$ds-advanced-color-state-focused});
     }
   }
