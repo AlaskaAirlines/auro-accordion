@@ -76,7 +76,167 @@ describe("auro-accordion", () => {
 
     await expect(trigger.hasAttribute("chevron")).to.be.false;
   });
+
+  it('keeps the default trigger padding without variant="min"', async () => {
+    const el = await defaultFixture();
+
+    const button = el.shadowRoot
+      .querySelector(".trigger")
+      .shadowRoot.querySelector("button");
+    const slotted = el.querySelector('[slot="trigger"]');
+
+    await expect(getComputedStyle(button).paddingTop).to.not.equal("0px");
+    await expect(getComputedStyle(slotted).paddingLeft).to.not.equal("0px");
+  });
+
+  it('removes all trigger padding with variant="min"', async () => {
+    const el = await minFixture();
+
+    const button = el.shadowRoot
+      .querySelector(".trigger")
+      .shadowRoot.querySelector("button");
+    const buttonStyles = getComputedStyle(button);
+
+    await expect(buttonStyles.paddingTop).to.equal("0px");
+    await expect(buttonStyles.paddingRight).to.equal("0px");
+    await expect(buttonStyles.paddingBottom).to.equal("0px");
+    await expect(buttonStyles.paddingLeft).to.equal("0px");
+
+    const slottedStyles = getComputedStyle(
+      el.querySelector('[slot="trigger"]'),
+    );
+
+    await expect(slottedStyles.paddingLeft).to.equal("0px");
+    await expect(slottedStyles.paddingRight).to.equal("0px");
+  });
+
+  it("reflects the variant property to the variant attribute", async () => {
+    const el = await defaultFixture();
+
+    el.variant = "min";
+    await elementUpdated(el);
+
+    await expect(el.getAttribute("variant")).to.equal("min");
+  });
+
+  it("focus() moves focus to the trigger button", async () => {
+    const el = await defaultFixture();
+
+    const trigger = el.shadowRoot.querySelector(".trigger");
+    const button = trigger.shadowRoot.querySelector("button");
+
+    // Before focusing, nothing inside the accordion's shadow root is focused.
+    await expect(el.shadowRoot.activeElement).to.be.null;
+
+    el.focus();
+
+    // Focus delegates host -> auro-accordion-button -> native <button>.
+    await expect(el.shadowRoot.activeElement).to.equal(trigger);
+    await expect(trigger.shadowRoot.activeElement).to.equal(button);
+  });
+
+  it("applies the focused-state trigger border after focus()", async () => {
+    const el = await defaultFixture();
+    const trigger = el.shadowRoot.querySelector(".trigger");
+
+    const borderBeforeFocus = getComputedStyle(trigger).borderColor;
+
+    el.focus();
+    await elementUpdated(el);
+
+    // The focus border keys on `.trigger:focus-within` (reliable across the
+    // nested shadow boundary) rather than `:host(:focus)`, which delegatesFocus
+    // left unreliable for a programmatic focus(). Both the pseudo-class match
+    // and the resulting border color must react to focus landing on the trigger.
+    await expect(trigger.matches(":focus-within")).to.be.true;
+    await expect(getComputedStyle(trigger).borderColor).to.not.equal(
+      borderBeforeFocus,
+    );
+  });
+
+  it("focus() does not move focus when disabled", async () => {
+    const el = await fixture(html`
+      <auro-accordion disabled>
+        <span slot="trigger">Trigger</span>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        </p>
+      </auro-accordion>
+    `);
+
+    el.focus();
+
+    // A disabled trigger's native <button> is not focusable, so focus stays put.
+    await expect(el.shadowRoot.activeElement).to.be.null;
+  });
+
+  it("focus() does not throw before the shadow root exists", async () => {
+    // A framework ref can call focus() between connection and first render,
+    // when shadowRoot is still null. Native focus() never throws, so ours
+    // must not either.
+    const el = document.createElement("auro-accordion");
+
+    await expect(el.shadowRoot).to.be.null;
+    await expect(() => el.focus()).to.not.throw();
+  });
+
+  it('announces "Expanded" when expanded programmatically', async () => {
+    const el = await defaultFixture();
+
+    const announcer = el.shadowRoot.querySelector(".srAnnouncer");
+
+    // Nothing is announced on initial render.
+    await expect(announcer.getAttribute("aria-live")).to.equal("polite");
+    await expect(announcer.textContent).to.equal("");
+
+    el.expanded = true;
+    await elementUpdated(el);
+
+    await expect(announcer.textContent).to.equal("Expanded");
+  });
+
+  it('announces "Collapsed" when collapsed programmatically', async () => {
+    const el = await defaultFixture();
+
+    const announcer = el.shadowRoot.querySelector(".srAnnouncer");
+
+    el.expanded = true;
+    await elementUpdated(el);
+    el.expanded = false;
+    await elementUpdated(el);
+
+    await expect(announcer.textContent).to.equal("Collapsed");
+  });
+
+  it("does not announce when the user activates the trigger", async () => {
+    const el = await defaultFixture();
+
+    const announcer = el.shadowRoot.querySelector(".srAnnouncer");
+    const trigger = el.shadowRoot.querySelector("#accordionTrigger");
+
+    // Focus the trigger, then activate it as a user would. The focused button
+    // already announces its aria-expanded change, so the live region stays
+    // silent to avoid a double announcement.
+    el.focus();
+    await elementUpdated(el);
+    trigger.click();
+    await elementUpdated(el);
+
+    await expect(el.expanded).to.be.true;
+    await expect(announcer.textContent).to.equal("");
+  });
 });
+
+async function minFixture() {
+  return await fixture(html`
+  <auro-accordion variant="min">
+    <span slot="trigger">Trigger</span>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+    </p>
+  </auro-accordion>
+  `);
+}
 
 async function defaultFixture() {
   return await fixture(html`

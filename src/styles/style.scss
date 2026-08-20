@@ -70,10 +70,28 @@
     padding-left: var(--ds-size-400, vac.$ds-size-400);
     padding-bottom: var(--ds-size-300, vac.$ds-size-300);
   }
+
+  // Visually hidden but available to screen readers (aria-live announcer).
+  // Mirrors webcorestylesheets util_displayHiddenVisually.
+  .srAnnouncer {
+    position: absolute;
+    overflow: hidden;
+    clip: rect(1px, 1px, 1px, 1px);
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    border: 0;
+  }
 }
 
-:host(:focus) {
-  .trigger {
+// The focus border keys on `.trigger:focus-within`, not `:host(:focus)`. The
+// accordion uses `delegatesFocus: true` and the real focus target (the native
+// <button>) sits two shadow boundaries deep, so `:host(:focus)` propagation is
+// unreliable for programmatic `focus()`. `:focus-within` is computed from the
+// flat tree, crosses both shadow roots, and is scoped to `.trigger` so focus
+// inside the expanded content does not light up the trigger border.
+.trigger {
+  &:focus-within {
     border-width: 1px;
     border-style: solid;
   }
@@ -91,10 +109,12 @@
 }
 
 :host([alignRight]) {
-  .componentWrapper {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
+  // Block wrapper (not flex) keeps content height animation smooth; flex re-resolves item size
+  // every frame and causes janky open/close when right-aligned. Block + margin-left:auto aligns.
+  .trigger {
+    display: block;
+    width: fit-content;
+    margin-left: auto;
   }
 }
 
@@ -155,7 +175,7 @@
       border-left-width: 2px;
     }
 
-    &:focus {
+    &:focus-within {
       border-left-width: 1px;
       margin-left: 1px;
     }
@@ -186,5 +206,12 @@
   ::slotted([slot="trigger"]),
   .contentWrapper {
     padding-left: unset;
+  }
+}
+
+:host([variant="min"]) {
+  ::slotted([slot="trigger"]) {
+    padding-left: 0;
+    padding-right: 0;
   }
 }

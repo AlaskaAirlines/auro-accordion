@@ -45,9 +45,9 @@ export class AuroAccordionGroup extends LitElement {
         reflect: true,
       },
 
-      /** 
-       * Sets accordion variant option.
-       * @type {'sm' | 'lg'}
+      /**
+       * Sets the variant for every accordion in the group. `sm` and `lg` adjust the trigger size; `min` removes all trigger padding so slotted trigger content controls the trigger size.
+       * @type {'sm' | 'lg' | 'min'}
        */
       variant: {
         type: String,
@@ -105,18 +105,8 @@ export class AuroAccordionGroup extends LitElement {
         item.emphasis = true;
       }
 
-      if (
-        this.hasAttribute("variant") &&
-        this.getAttribute("variant") === "sm"
-      ) {
-        item.setAttribute("variant", "sm");
-      }
-
-      if (
-        this.hasAttribute("variant") &&
-        this.getAttribute("variant") === "lg"
-      ) {
-        item.setAttribute("variant", "lg");
+      if (this.hasAttribute("variant")) {
+        item.setAttribute("variant", this.getAttribute("variant"));
       }
 
       item.grouped = true;
@@ -136,10 +126,17 @@ export class AuroAccordionGroup extends LitElement {
         }
       });
 
-      this.scrollIntoView({
-        behavior: "smooth",
-        block: "nearest",
-      });
+      // Treat the group as "in view" when any part of it intersects the
+      // viewport so we only scroll when it is entirely above or below the fold.
+      const rect = this.getBoundingClientRect();
+      const inView = rect.bottom > 0 && rect.top < window.innerHeight;
+
+      if (!inView) {
+        this.scrollIntoView({
+          behavior: "smooth",
+          block: "nearest",
+        });
+      }
     }
   }
 

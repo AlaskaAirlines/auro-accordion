@@ -137,9 +137,9 @@ export class AuroAccordion extends LitElement {
         reflect: true,
       },
 
-      /** 
-       * Sets accordion variant option.
-       * @type {'sm' | 'lg'}
+      /**
+       * Sets accordion variant option. `sm` and `lg` adjust the trigger size; `min` removes all trigger padding so slotted trigger content controls the trigger size (best paired with `chevron="none"` for a fully flush trigger).
+       * @type {'sm' | 'lg' | 'min'}
        */
       variant: {
         type: String,
@@ -177,6 +177,20 @@ export class AuroAccordion extends LitElement {
       const button = this.shadowRoot.querySelector("#accordionTrigger");
       if (button) {
         button.ariaExpanded = this.expanded;
+      }
+
+      // Announce state changes that assistive tech wouldn't otherwise voice. A
+      // manual activation focuses the trigger, whose aria-expanded change is
+      // already announced — so only announce when the trigger is NOT the
+      // focused element (programmatic set, programmatic toggle(), or group
+      // auto-close) to avoid a double announcement.
+      const isInitialRender = changedProperties.get("expanded") === undefined;
+      const triggerFocused = button && this.shadowRoot.activeElement === button;
+      if (!isInitialRender && !triggerFocused) {
+        const announcer = this.shadowRoot.querySelector(".srAnnouncer");
+        if (announcer) {
+          announcer.textContent = this.expanded ? "Expanded" : "Collapsed";
+        }
       }
     }
   }
@@ -239,6 +253,13 @@ export class AuroAccordion extends LitElement {
   }
 
   /**
+   * Moves keyboard focus to the accordion's trigger (the header that expands/collapses the accordion).
+   */
+  focus() {
+    this.shadowRoot?.querySelector("#accordionTrigger")?.focus();
+  }
+
+  /**
    * Toggles the visibility of the accordion content when button gets clicked.
    * @private
    * @param {Event} event - The event object.
@@ -259,6 +280,7 @@ export class AuroAccordion extends LitElement {
       iconNone: this.getAttribute("chevron") === "none",
       sm: this.getAttribute("variant") === "sm",
       lg: this.getAttribute("variant") === "lg",
+      min: this.getAttribute("variant") === "min",
     };
 
     const variantClassMap = {
@@ -293,6 +315,8 @@ export class AuroAccordion extends LitElement {
             <slot></slot>
           </div>
         </div>
+
+        <div class="srAnnouncer" aria-live="polite" aria-atomic="true"></div>
       </div>
     `;
   }

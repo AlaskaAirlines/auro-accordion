@@ -41,6 +41,26 @@ describe("auro-accordion-group", () => {
     await expect(accordion.getAttribute("variant") === "lg").to.be.true;
   });
 
+  it('variant="min" is passed down to the accordion', async () => {
+    const el = await minFixture();
+    const accordion = el.querySelector("auro-accordion");
+
+    await expect(accordion.getAttribute("variant") === "min").to.be.true;
+  });
+
+  it('variant="min" removes the child accordion\'s trigger padding', async () => {
+    const el = await minFixture();
+    const accordion = el.querySelector("auro-accordion");
+    await elementUpdated(accordion);
+
+    const button = accordion.shadowRoot
+      .querySelector(".trigger")
+      .shadowRoot.querySelector("button");
+
+    await expect(getComputedStyle(button).paddingTop).to.equal("0px");
+    await expect(getComputedStyle(button).paddingLeft).to.equal("0px");
+  });
+
   it("one accordion closes when another accordion opens", async () => {
     const el = await expandedFixture();
 
@@ -79,6 +99,145 @@ describe("auro-accordion-group", () => {
 
     await expect(firstAccordion.hasAttribute("expanded")).to.be.true;
     await expect(secondAccordion.hasAttribute("expanded")).to.be.true;
+  });
+
+  it("does not scroll when accordion group is already in view", async () => {
+    const el = await expandedFixture();
+
+    let scrollCalled = false;
+    const originalScrollIntoView = el.scrollIntoView;
+    const originalGetBoundingClientRect = el.getBoundingClientRect;
+
+    try {
+      el.scrollIntoView = () => { scrollCalled = true; };
+
+      // Stub getBoundingClientRect to an explicit in-viewport rect so the
+      // result does not depend on the expanded content's rendered height.
+      el.getBoundingClientRect = () => ({
+        top: 0,
+        bottom: 100,
+        left: 0,
+        right: 100,
+        width: 100,
+        height: 100,
+      });
+
+      const secondAccordion = [...el.querySelectorAll("auro-accordion")][1];
+      const secondAccordionTrigger = secondAccordion.querySelector("span");
+
+      secondAccordionTrigger.click();
+      await elementUpdated(el);
+
+      await expect(scrollCalled).to.be.false;
+    } finally {
+      el.getBoundingClientRect = originalGetBoundingClientRect;
+      el.scrollIntoView = originalScrollIntoView;
+    }
+  });
+
+  it("scrolls into view when accordion group is out of view", async () => {
+    const el = await expandedFixture();
+
+    let scrollCalled = false;
+    const originalScrollIntoView = el.scrollIntoView;
+    const originalGetBoundingClientRect = el.getBoundingClientRect;
+
+    try {
+      el.scrollIntoView = () => { scrollCalled = true; };
+
+      // Stub getBoundingClientRect to simulate element being out of view
+      el.getBoundingClientRect = () => ({
+        top: -500,
+        bottom: -400,
+        left: 0,
+        right: 100,
+        width: 100,
+        height: 100,
+      });
+
+      const secondAccordion = [...el.querySelectorAll("auro-accordion")][1];
+      const secondAccordionTrigger = secondAccordion.querySelector("span");
+
+      secondAccordionTrigger.click();
+      await elementUpdated(el);
+
+      await expect(scrollCalled).to.be.true;
+    } finally {
+      el.getBoundingClientRect = originalGetBoundingClientRect;
+      el.scrollIntoView = originalScrollIntoView;
+    }
+  });
+
+  it("scrolls into view when accordion group is entirely below the fold", async () => {
+    const el = await expandedFixture();
+
+    let scrollCalled = false;
+    const originalScrollIntoView = el.scrollIntoView;
+    const originalGetBoundingClientRect = el.getBoundingClientRect;
+
+    try {
+      el.scrollIntoView = () => { scrollCalled = true; };
+
+      // Stub getBoundingClientRect to simulate the element sitting entirely
+      // below the fold (top >= innerHeight). This is the symmetric partner to
+      // the "entirely above" case and exercises the `rect.top < innerHeight`
+      // half of the predicate, so a sign-flip there can't pass unnoticed.
+      el.getBoundingClientRect = () => ({
+        top: window.innerHeight + 100,
+        bottom: window.innerHeight + 500,
+        left: 0,
+        right: 100,
+        width: 100,
+        height: 400,
+      });
+
+      const secondAccordion = [...el.querySelectorAll("auro-accordion")][1];
+      const secondAccordionTrigger = secondAccordion.querySelector("span");
+
+      secondAccordionTrigger.click();
+      await elementUpdated(el);
+
+      await expect(scrollCalled).to.be.true;
+    } finally {
+      el.getBoundingClientRect = originalGetBoundingClientRect;
+      el.scrollIntoView = originalScrollIntoView;
+    }
+  });
+
+  it("does not scroll when accordion group is taller than the viewport but partially in view", async () => {
+    const el = await expandedFixture();
+
+    let scrollCalled = false;
+    const originalScrollIntoView = el.scrollIntoView;
+    const originalGetBoundingClientRect = el.getBoundingClientRect;
+
+    try {
+      el.scrollIntoView = () => { scrollCalled = true; };
+
+      // A group taller than the viewport is still "in view" when any part of
+      // it overlaps the fold. This is the case the intersection predicate
+      // handles and the rejected containment predicate did not: top < 0 and
+      // bottom > innerHeight simultaneously, yet the group is clearly on screen.
+      el.getBoundingClientRect = () => ({
+        top: -500,
+        bottom: window.innerHeight + 500,
+        left: 0,
+        right: 100,
+        width: 100,
+        height: window.innerHeight + 1000,
+      });
+
+      const secondAccordion = [...el.querySelectorAll("auro-accordion")][1];
+      const secondAccordionTrigger = secondAccordion.querySelector("span");
+
+      secondAccordionTrigger.click();
+      await elementUpdated(el);
+
+      await expect(scrollCalled).to.be.false;
+    } finally {
+      el.getBoundingClientRect = originalGetBoundingClientRect;
+      el.scrollIntoView = originalScrollIntoView;
+    }
   });
 
   it("render with disabled attribute", async () => {
@@ -142,6 +301,19 @@ async function emphasisFixture() {
       </auro-accordion>
     </auro-accordion-group>
 
+  `);
+}
+
+async function minFixture() {
+  return await fixture(html`
+    <auro-accordion-group variant="min">
+      <auro-accordion>
+        <span slot="trigger">Trigger</span>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        </p>
+      </auro-accordion>
+    </auro-accordion-group>
   `);
 }
 
