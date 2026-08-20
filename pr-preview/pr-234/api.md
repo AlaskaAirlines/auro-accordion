@@ -511,9 +511,9 @@ Keep the slotted trigger content **presentational only** (e.g. a styled `<span>`
 Because `variant="min"` hands sizing to the slotted trigger content, you can style that content to give the trigger a custom size and appearance — here a full-width, fixed-height block.
 
 <div class="exampleWrapper">
-<!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/no-spacing-custom.html) -->
-<!-- The below content is automatically added from ./../apiExamples/no-spacing-custom.html -->
-<auro-accordion no-spacing chevron="none">
+<!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/variant-min-custom.html) -->
+<!-- The below content is automatically added from ./../apiExamples/variant-min-custom.html -->
+<auro-accordion variant="min" chevron="none">
 <span slot="trigger" style="display: flex; align-items: center; justify-content: center; width: 100%; height: 96px; background: #0074c8; color: #fff; font-weight: 700; font-size: 1.25rem; border-radius: 8px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);">
       Custom-sized trigger
 </span>
@@ -528,10 +528,10 @@ Because `variant="min"` hands sizing to the slotted trigger content, you can sty
 </div>
 <auro-accordion alignRight>
 <span slot="trigger">See code</span>
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/no-spacing-custom.html) -->
-<!-- The below code snippet is automatically added from ./../apiExamples/no-spacing-custom.html -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/variant-min-custom.html) -->
+<!-- The below code snippet is automatically added from ./../apiExamples/variant-min-custom.html -->
 
-<pre class="language-html"><code class="language-html">&lt;auro-accordion no-spacing chevron="none"&gt;
+<pre class="language-html"><code class="language-html">&lt;auro-accordion variant="min" chevron="none"&gt;
   &lt;span slot="trigger" style="display: flex; align-items: center; justify-content: center; width: 100%; height: 96px; background: #0074c8; color: #fff; font-weight: 700; font-size: 1.25rem; border-radius: 8px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);"&gt;
     Custom-sized trigger
   &lt;/span&gt;
