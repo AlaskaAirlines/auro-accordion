@@ -26,157 +26,153 @@ The `<auro-accordion>` element should be used in situations where users may:
 ### Basic
 
 <div class="exampleWrapper">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/basic.html) -->
-  <!-- The below content is automatically added from ./../apiExamples/basic.html -->
-  <auro-accordion>
-    <span slot="trigger">Trigger</span>
-    <p>
+<!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/basic.html) -->
+<!-- The below content is automatically added from ./../apiExamples/basic.html -->
+<auro-accordion>
+<span slot="trigger">Trigger</span>
+<p>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-    </p>
-    <p>
+</p>
+<p>
       Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-    </p>
-    <p>
+</p>
+<p>
       Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-    </p>
-    <p>
+</p>
+<p>
       Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-    </p>
-  </auro-accordion>
-  <!-- AURO-GENERATED-CONTENT:END -->
+</p>
+</auro-accordion>
+<!-- AURO-GENERATED-CONTENT:END -->
 </div>
 <auro-accordion alignRight>
-  <span slot="trigger">See code</span>
+<span slot="trigger">See code</span>
 <!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/basic.html) -->
 <!-- The below code snippet is automatically added from ./../apiExamples/basic.html -->
 
-```html
-<auro-accordion>
-  <span slot="trigger">Trigger</span>
-  <p>
+<pre class="language-html"><code class="language-html">&lt;auro-accordion&gt;
+  &lt;span slot="trigger"&gt;Trigger&lt;/span&gt;
+  &lt;p&gt;
     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-  </p>
-  <p>
+  &lt;/p&gt;
+  &lt;p&gt;
     Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-  </p>
-  <p>
+  &lt;/p&gt;
+  &lt;p&gt;
     Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-  </p>
-  <p>
+  &lt;/p&gt;
+  &lt;p&gt;
     Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-  </p>
-</auro-accordion>
-```
+  &lt;/p&gt;
+&lt;/auro-accordion&gt;</code></pre>
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
 
 ### Accordion Group
 
 <div class="exampleWrapper">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/accordion-group.html) -->
-  <!-- The below content is automatically added from ./../apiExamples/accordion-group.html -->
-  <auro-accordion-group>
-    <auro-accordion>
-      <span slot="trigger">Trigger</span>
-      <p>
+<!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/accordion-group.html) -->
+<!-- The below content is automatically added from ./../apiExamples/accordion-group.html -->
+<auro-accordion-group>
+<auro-accordion>
+<span slot="trigger">Trigger</span>
+<p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-      </p>
-      <p>
+</p>
+<p>
         Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-      </p>
-      <p>
+</p>
+<p>
         Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-      </p>
-      <p>
+</p>
+<p>
         Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-      </p>
-    </auro-accordion>
-    <auro-accordion>
-      <span slot="trigger">Trigger</span>
-      <p>
+</p>
+</auro-accordion>
+<auro-accordion>
+<span slot="trigger">Trigger</span>
+<p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-      </p>
-      <p>
+</p>
+<p>
         Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-      </p>
-      <p>
+</p>
+<p>
         Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-      </p>
-      <p>
+</p>
+<p>
         Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-      </p>
-    </auro-accordion>
-    <auro-accordion>
-      <span slot="trigger">Trigger</span>
-      <p>
+</p>
+</auro-accordion>
+<auro-accordion>
+<span slot="trigger">Trigger</span>
+<p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-      </p>
-      <p>
+</p>
+<p>
         Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-      </p>
-      <p>
+</p>
+<p>
         Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-      </p>
-      <p>
+</p>
+<p>
         Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-      </p>
-    </auro-accordion>
-  </auro-accordion-group>
-  <!-- AURO-GENERATED-CONTENT:END -->
+</p>
+</auro-accordion>
+</auro-accordion-group>
+<!-- AURO-GENERATED-CONTENT:END -->
 </div>
 <auro-accordion alignRight>
-  <span slot="trigger">See code</span>
+<span slot="trigger">See code</span>
 <!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/accordion-group.html) -->
 <!-- The below code snippet is automatically added from ./../apiExamples/accordion-group.html -->
 
-```html
-<auro-accordion-group>
-  <auro-accordion>
-    <span slot="trigger">Trigger</span>
-    <p>
+<pre class="language-html"><code class="language-html">&lt;auro-accordion-group&gt;
+  &lt;auro-accordion&gt;
+    &lt;span slot="trigger"&gt;Trigger&lt;/span&gt;
+    &lt;p&gt;
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-    </p>
-    <p>
+    &lt;/p&gt;
+    &lt;p&gt;
       Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-    </p>
-    <p>
+    &lt;/p&gt;
+    &lt;p&gt;
       Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-    </p>
-    <p>
+    &lt;/p&gt;
+    &lt;p&gt;
       Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-    </p>
-  </auro-accordion>
-  <auro-accordion>
-    <span slot="trigger">Trigger</span>
-    <p>
+    &lt;/p&gt;
+  &lt;/auro-accordion&gt;
+  &lt;auro-accordion&gt;
+    &lt;span slot="trigger"&gt;Trigger&lt;/span&gt;
+    &lt;p&gt;
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-    </p>
-    <p>
+    &lt;/p&gt;
+    &lt;p&gt;
       Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-    </p>
-    <p>
+    &lt;/p&gt;
+    &lt;p&gt;
       Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-    </p>
-    <p>
+    &lt;/p&gt;
+    &lt;p&gt;
       Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-    </p>
-  </auro-accordion>
-  <auro-accordion>
-    <span slot="trigger">Trigger</span>
-    <p>
+    &lt;/p&gt;
+  &lt;/auro-accordion&gt;
+  &lt;auro-accordion&gt;
+    &lt;span slot="trigger"&gt;Trigger&lt;/span&gt;
+    &lt;p&gt;
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-    </p>
-    <p>
+    &lt;/p&gt;
+    &lt;p&gt;
       Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-    </p>
-    <p>
+    &lt;/p&gt;
+    &lt;p&gt;
       Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-    </p>
-    <p>
+    &lt;/p&gt;
+    &lt;p&gt;
       Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-    </p>
-  </auro-accordion>
-</auro-accordion-group>
-```
+    &lt;/p&gt;
+  &lt;/auro-accordion&gt;
+&lt;/auro-accordion-group&gt;</code></pre>
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
