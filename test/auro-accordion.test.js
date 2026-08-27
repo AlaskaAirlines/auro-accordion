@@ -284,6 +284,20 @@ describe("auro-accordion", () => {
     await expect(getComputedStyle(wrapper).display).to.not.equal("flex");
   });
 
+  it("keeps the trigger at fit-content width in expandUp mode", async () => {
+    // Regression guard: the trigger is a grid item in expandUp mode and would
+    // default to justify-self: stretch, filling the full column width instead of
+    // sizing to its content like the default (inline-block) layout does.
+    const el = await expandUpFixture();
+
+    const wrapper = el.shadowRoot.querySelector(".componentWrapper");
+    const trigger = wrapper.querySelector("#accordionTrigger");
+
+    await expect(trigger.getBoundingClientRect().width).to.be.lessThan(
+      wrapper.getBoundingClientRect().width,
+    );
+  });
+
   it("keeps trigger before content in DOM order with expandUp (reading order)", async () => {
     const el = await expandUpFixture();
 

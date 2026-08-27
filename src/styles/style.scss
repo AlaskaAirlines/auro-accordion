@@ -138,8 +138,12 @@
     grid-template-rows: auto;
   }
 
+  // justify-self: start keeps the trigger at its intrinsic (fit-content) width
+  // to match the default layout. Without it the trigger is a grid item and
+  // stretches to fill the full column width.
   .trigger {
     grid-row: 2;
+    justify-self: start;
   }
 
   // grid-row: 1 places content above the trigger. overflow: hidden clips the
