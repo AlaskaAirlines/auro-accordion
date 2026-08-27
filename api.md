@@ -14,6 +14,7 @@ The `auro-accordion` element provides users a way to have collapsible content on
 | disabled   | disabled   |           | boolean               |         | If set, the accordion is disabled and have reduced opacity.                                                                                                                                                                 |
 | emphasis   | emphasis   |           | boolean               |         | If set, emphasis styles will be applied to the auro-accordion. This feature is best used on the auro-accordion-group component.                                                                                             |
 | expanded   | expanded   |           | boolean               | `false` | If set, the accordion is expanded.                                                                                                                                                                                          |
+| expandUp   | expandUp   |           | boolean               |         | If set, expanded content is revealed above the trigger instead of below it.                                                                                                                                                 |
 | grouped    | grouped    |           | boolean               |         | Attribute will be set on accordion when it appears in an accordion group.                                                                                                                                                   |
 | variant    | variant    |           | `sm` \| `lg` \| `min` |         | Sets accordion variant option. `sm` and `lg` adjust the trigger size; `min` removes all trigger padding so slotted trigger content controls the trigger size (best paired with `chevron="none"` for a fully flush trigger). |
 
@@ -144,6 +145,55 @@ Using the `alignRight` attribute will cause the trigger to align to the right ed
 <!-- The below code snippet is automatically added from ./../apiExamples/align-right.html -->
 
 <pre class="language-html"><code class="language-html">&lt;auro-accordion alignRight&gt;
+  &lt;span slot="trigger"&gt;Trigger&lt;/span&gt;
+  &lt;p&gt;
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+  &lt;/p&gt;
+  &lt;p&gt;
+    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+  &lt;/p&gt;
+  &lt;p&gt;
+    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+  &lt;/p&gt;
+  &lt;p&gt;
+    Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+  &lt;/p&gt;
+&lt;/auro-accordion&gt;</code></pre>
+<!-- AURO-GENERATED-CONTENT:END -->
+</auro-accordion>
+
+### Expand Up
+
+Using the `expandUp` attribute will reveal the expanded content above the trigger instead of below it. This is useful when the accordion sits near the bottom of a layout or should push existing content upward. Reading order is unchanged — the trigger still precedes its content in the DOM.
+
+> Note: `expandUp` is not supported on `auro-accordion-group`.
+
+<div class="exampleWrapper">
+<!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/expand-up.html) -->
+<!-- The below content is automatically added from ./../apiExamples/expand-up.html -->
+<auro-accordion expandUp>
+<span slot="trigger">Trigger</span>
+<p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+</p>
+<p>
+      Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+</p>
+<p>
+      Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+</p>
+<p>
+      Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+</p>
+</auro-accordion>
+<!-- AURO-GENERATED-CONTENT:END -->
+</div>
+<auro-accordion alignRight>
+<span slot="trigger">See code</span>
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/expand-up.html) -->
+<!-- The below code snippet is automatically added from ./../apiExamples/expand-up.html -->
+
+<pre class="language-html"><code class="language-html">&lt;auro-accordion expandUp&gt;
   &lt;span slot="trigger"&gt;Trigger&lt;/span&gt;
   &lt;p&gt;
     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
