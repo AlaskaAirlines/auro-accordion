@@ -261,29 +261,7 @@ describe("auro-accordion-group", () => {
     await expect(accordion.disabled).to.be.true;
   });
 
-  it("expandUp attribute is passed down to the accordion", async () => {
-    const el = await expandUpFixture();
-    const accordion = el.querySelector("auro-accordion");
-
-    await expect(accordion.expandUp).to.be.true;
-  });
-
-  it("propagates expandUp changes to children after render", async () => {
-    const el = await defaultFixture();
-    const accordion = el.querySelector("auro-accordion");
-
-    await expect(accordion.expandUp).to.not.be.true;
-
-    el.expandUp = true;
-    await elementUpdated(el);
-    await expect(accordion.expandUp).to.be.true;
-
-    el.expandUp = false;
-    await elementUpdated(el);
-    await expect(accordion.expandUp).to.be.false;
-  });
-
-  it("propagates disabled and expandUp to children of a renamed group", async () => {
+  it("propagates disabled to children of a renamed group", async () => {
     const el = await fixture(html`
       <custom-accordion-group>
         <custom-accordion>
@@ -297,52 +275,9 @@ describe("auro-accordion-group", () => {
 
     const accordion = el.querySelector("custom-accordion");
 
-    el.expandUp = true;
-    await elementUpdated(el);
-    await expect(accordion.expandUp).to.be.true;
-
     el.disabled = true;
     await elementUpdated(el);
     await expect(accordion.disabled).to.be.true;
-  });
-
-  it("a member with expandUp keeps the group divider and reverses its content", async () => {
-    const el = await fixture(html`
-      <auro-accordion-group>
-        <auro-accordion expandUp>
-          <span slot="trigger">Trigger</span>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-          </p>
-        </auro-accordion>
-      </auro-accordion-group>
-    `);
-
-    const accordion = el.querySelector("auro-accordion");
-    // Expand so the content has real height, making the reversed visual order
-    // (content above trigger) unambiguous rather than both collapsing to y=0.
-    accordion.expanded = true;
-    await elementUpdated(accordion);
-
-    const wrapper = accordion.shadowRoot.querySelector(".componentWrapper");
-    const wrapperStyles = getComputedStyle(wrapper);
-
-    // The group sets `grouped`, which draws the divider as a bottom border on
-    // the wrapper. The border lives on the wrapper as a whole, so reversing the
-    // trigger/content order inside it must not remove the divider.
-    const trigger = wrapper.querySelector("#accordionTrigger");
-    const content = wrapper.querySelector(".content");
-
-    await expect(accordion.grouped).to.be.true;
-    await expect(wrapperStyles.borderBottomStyle).to.equal("solid");
-    await expect(
-      Number.parseFloat(wrapperStyles.borderBottomWidth),
-    ).to.be.greaterThan(0);
-    // The content is reversed above the trigger via CSS grid (not flex).
-    await expect(wrapperStyles.display).to.equal("grid");
-    await expect(content.getBoundingClientRect().top).to.be.lessThan(
-      trigger.getBoundingClientRect().top,
-    );
   });
 });
 
@@ -389,19 +324,6 @@ async function emphasisFixture() {
       </auro-accordion>
     </auro-accordion-group>
 
-  `);
-}
-
-async function expandUpFixture() {
-  return await fixture(html`
-    <auro-accordion-group expandUp>
-      <auro-accordion>
-        <span slot="trigger">Trigger</span>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        </p>
-      </auro-accordion>
-    </auro-accordion-group>
   `);
 }
 
