@@ -5,6 +5,10 @@ import { AuroAccordionGroup } from "../src/auro-accordion-group";
 AuroAccordion.register();
 AuroAccordionGroup.register();
 
+// Registered under custom tag names to exercise the tag-rename path.
+AuroAccordion.register("custom-accordion");
+AuroAccordionGroup.register("custom-accordion-group");
+
 describe("auro-accordion-group", () => {
   it("auro-accordion-group is accessible", async () => {
     const el = await defaultFixture();
@@ -277,6 +281,29 @@ describe("auro-accordion-group", () => {
     el.expandUp = false;
     await elementUpdated(el);
     await expect(accordion.expandUp).to.be.false;
+  });
+
+  it("propagates disabled and expandUp to children of a renamed group", async () => {
+    const el = await fixture(html`
+      <custom-accordion-group>
+        <custom-accordion>
+          <span slot="trigger">Trigger</span>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          </p>
+        </custom-accordion>
+      </custom-accordion-group>
+    `);
+
+    const accordion = el.querySelector("custom-accordion");
+
+    el.expandUp = true;
+    await elementUpdated(el);
+    await expect(accordion.expandUp).to.be.true;
+
+    el.disabled = true;
+    await elementUpdated(el);
+    await expect(accordion.disabled).to.be.true;
   });
 
   it("a member with expandUp keeps the group divider and reverses its content", async () => {
