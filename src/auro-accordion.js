@@ -121,7 +121,7 @@ export class AuroAccordion extends LitElement {
         reflect: true,
       },
 
-      /** 
+      /**
        * If set, the accordion is expanded.
        */
       expanded: {
@@ -129,7 +129,15 @@ export class AuroAccordion extends LitElement {
         reflect: true,
       },
 
-      /** 
+      /**
+       * If set, expanded content is revealed above the trigger instead of below it.
+       */
+      expandUp: {
+        type: Boolean,
+        reflect: true,
+      },
+
+      /**
        * Attribute will be set on accordion when it appears in an accordion group.
        */
       grouped: {

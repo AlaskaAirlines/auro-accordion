@@ -225,11 +225,141 @@ describe("auro-accordion", () => {
     await expect(el.expanded).to.be.true;
     await expect(announcer.textContent).to.equal("");
   });
+
+  it("renders content below the trigger by default", async () => {
+    const el = await defaultFixture();
+    // Expand so content has real height; otherwise both collapse to y=0 and the
+    // vertical order is ambiguous.
+    el.expanded = true;
+    await elementUpdated(el);
+
+    const wrapper = el.shadowRoot.querySelector(".componentWrapper");
+    const trigger = wrapper.querySelector("#accordionTrigger");
+    const content = wrapper.querySelector(".content");
+
+    await expect(el.hasAttribute("expandup")).to.be.false;
+    await expect(content.getBoundingClientRect().top).to.be.greaterThan(
+      trigger.getBoundingClientRect().top,
+    );
+  });
+
+  it("reflects the expandUp property to the expandup attribute", async () => {
+    const el = await defaultFixture();
+
+    el.expandUp = true;
+    await elementUpdated(el);
+
+    await expect(el.hasAttribute("expandup")).to.be.true;
+  });
+
+  it("reveals content above the trigger when expandUp is set", async () => {
+    const el = await expandUpFixture();
+    // Expand so the content has real height, making the reversed visual order
+    // (content above trigger) unambiguous rather than both collapsing to y=0.
+    el.expanded = true;
+    await elementUpdated(el);
+
+    const wrapper = el.shadowRoot.querySelector(".componentWrapper");
+    const trigger = wrapper.querySelector("#accordionTrigger");
+    const content = wrapper.querySelector(".content");
+
+    // The visual order is reversed via CSS grid (not flex — see the alignRight
+    // regression test below), so the content renders above the trigger.
+    await expect(getComputedStyle(wrapper).display).to.equal("grid");
+    await expect(content.getBoundingClientRect().top).to.be.lessThan(
+      trigger.getBoundingClientRect().top,
+    );
+  });
+
+  it("uses grid (not flex) for expandUp so alignRight animation stays smooth", async () => {
+    // Regression guard for AB#1623779: alignRight avoids a flex wrapper because
+    // flex re-resolves item size every frame and makes the height animation
+    // janky. expandUp must not reintroduce flex on the wrapper, or combining
+    // alignRight + expandUp brings the jank back.
+    const el = await expandUpAlignRightFixture();
+
+    const wrapper = el.shadowRoot.querySelector(".componentWrapper");
+
+    await expect(getComputedStyle(wrapper).display).to.equal("grid");
+    await expect(getComputedStyle(wrapper).display).to.not.equal("flex");
+  });
+
+  it("keeps trigger before content in DOM order with expandUp (reading order)", async () => {
+    const el = await expandUpFixture();
+
+    const wrapper = el.shadowRoot.querySelector(".componentWrapper");
+    const trigger = wrapper.querySelector("#accordionTrigger");
+    const content = wrapper.querySelector(".content");
+    const children = Array.from(wrapper.children);
+
+    // Only the visual order flips; DOM source order (and thus screen-reader
+    // reading order) still places the trigger before its content.
+    await expect(children.indexOf(trigger)).to.be.lessThan(
+      children.indexOf(content),
+    );
+    await expect(content.id).to.not.be.empty;
+  });
+
+  it("collapses content in expandUp mode", async () => {
+    const el = await expandUpFixture();
+
+    const content = el.shadowRoot.querySelector(".content");
+    const contentStyles = getComputedStyle(content);
+
+    // The reversed grid item must still collapse to height 0. overflow: hidden
+    // gives the grid item an automatic minimum size of 0, so height: 0 is not
+    // floored at the content's intrinsic height.
+    await expect(contentStyles.height).to.equal("0px");
+    // The content must clip its own overflow. Reversed, the collapsed content
+    // sits above the trigger, so its overflow spills down over the trigger
+    // instead of past the wrapper's bottom edge where it would be clipped.
+    await expect(contentStyles.overflow).to.equal("hidden");
+  });
+
+  it("still toggles expanded state when expandUp is set", async () => {
+    const el = await expandUpFixture();
+
+    const trigger = el.shadowRoot.querySelector(".trigger");
+    const shadowButton = trigger.shadowRoot.querySelector("button");
+
+    trigger.click();
+    await elementUpdated(trigger);
+
+    await expect(shadowButton.getAttribute("aria-expanded")).to.equal("true");
+  });
+
+  it("auro-accordion with expandUp is accessible", async () => {
+    const el = await expandUpFixture();
+
+    await expect(el).to.be.accessible();
+  });
 });
 
 async function minFixture() {
   return await fixture(html`
   <auro-accordion variant="min">
+    <span slot="trigger">Trigger</span>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+    </p>
+  </auro-accordion>
+  `);
+}
+
+async function expandUpFixture() {
+  return await fixture(html`
+  <auro-accordion expandUp>
+    <span slot="trigger">Trigger</span>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+    </p>
+  </auro-accordion>
+  `);
+}
+
+async function expandUpAlignRightFixture() {
+  return await fixture(html`
+  <auro-accordion expandUp alignRight>
     <span slot="trigger">Trigger</span>
     <p>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
