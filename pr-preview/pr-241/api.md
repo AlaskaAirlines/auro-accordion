@@ -58,7 +58,6 @@ The `auro-accordion-group` element allows users to group accordions together and
 | ---------- | ---------- | --------- | --------------------- | ------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | disabled   | disabled   |           | boolean               |         | If set, the whole accordion inside the group are disabled and have reduced opacity.                                                                                               |
 | emphasis   | emphasis   |           | boolean               |         | If set, emphasis styles will be applied to the auro-accordions.                                                                                                                   |
-| expandUp   | expandUp   |           | boolean               |         | If set, expanded content is revealed above the trigger instead of below it for every accordion in the group.                                                                      |
 | variant    | variant    |           | `sm` \| `lg` \| `min` |         | Sets the variant for every accordion in the group. `sm` and `lg` adjust the trigger size; `min` removes all trigger padding so slotted trigger content controls the trigger size. |
 
 ### Methods
@@ -166,6 +165,8 @@ Using the `alignRight` attribute will cause the trigger to align to the right ed
 ### Expand Up
 
 Using the `expandUp` attribute will reveal the expanded content above the trigger instead of below it. This is useful when the accordion sits near the bottom of a layout or should push existing content upward. Reading order is unchanged — the trigger still precedes its content in the DOM.
+
+> Note: `expandUp` is not supported on `auro-accordion-group`.
 
 <div class="exampleWrapper">
 <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/expand-up.html) -->
@@ -1040,81 +1041,6 @@ Using the `noToggleExpanded` attribute will allow for multiple accordions in an 
     &lt;/p&gt;
     &lt;p&gt;
       Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-    &lt;/p&gt;
-  &lt;/auro-accordion&gt;
-&lt;/auro-accordion-group&gt;</code></pre>
-<!-- AURO-GENERATED-CONTENT:END -->
-</auro-accordion>
-
-### Expand Up
-
-Set the `expandUp` attribute on the group to reveal expanded content above the trigger instead of below it for every accordion it contains.
-
-<div class="exampleWrapper">
-<!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/expand-up-group.html) -->
-<!-- The below content is automatically added from ./../apiExamples/expand-up-group.html -->
-<auro-accordion-group expandUp>
-<auro-accordion>
-<span slot="trigger">Trigger</span>
-<p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-</p>
-<p>
-        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-</p>
-</auro-accordion>
-<auro-accordion>
-<span slot="trigger">Trigger</span>
-<p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-</p>
-<p>
-        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-</p>
-</auro-accordion>
-<auro-accordion>
-<span slot="trigger">Trigger</span>
-<p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-</p>
-<p>
-        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-</p>
-</auro-accordion>
-</auro-accordion-group>
-<!-- AURO-GENERATED-CONTENT:END -->
-</div>
-<auro-accordion alignRight>
-<span slot="trigger">See code</span>
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/expand-up-group.html) -->
-<!-- The below code snippet is automatically added from ./../apiExamples/expand-up-group.html -->
-
-<pre class="language-html"><code class="language-html">&lt;auro-accordion-group expandUp&gt;
-  &lt;auro-accordion&gt;
-    &lt;span slot="trigger"&gt;Trigger&lt;/span&gt;
-    &lt;p&gt;
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-    &lt;/p&gt;
-    &lt;p&gt;
-      Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-    &lt;/p&gt;
-  &lt;/auro-accordion&gt;
-  &lt;auro-accordion&gt;
-    &lt;span slot="trigger"&gt;Trigger&lt;/span&gt;
-    &lt;p&gt;
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-    &lt;/p&gt;
-    &lt;p&gt;
-      Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-    &lt;/p&gt;
-  &lt;/auro-accordion&gt;
-  &lt;auro-accordion&gt;
-    &lt;span slot="trigger"&gt;Trigger&lt;/span&gt;
-    &lt;p&gt;
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-    &lt;/p&gt;
-    &lt;p&gt;
-      Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
     &lt;/p&gt;
   &lt;/auro-accordion&gt;
 &lt;/auro-accordion-group&gt;</code></pre>
