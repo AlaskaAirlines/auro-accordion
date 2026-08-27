@@ -46,14 +46,6 @@ export class AuroAccordionGroup extends LitElement {
       },
 
       /**
-       * If set, expanded content is revealed above the trigger instead of below it for every accordion in the group.
-       */
-      expandUp: {
-        type: Boolean,
-        reflect: true,
-      },
-
-      /**
        * Sets the variant for every accordion in the group. `sm` and `lg` adjust the trigger size; `min` removes all trigger padding so slotted trigger content controls the trigger size.
        * @type {'sm' | 'lg' | 'min'}
        */
@@ -88,10 +80,6 @@ export class AuroAccordionGroup extends LitElement {
     if (changedProperties.has("disabled")) {
       this.updateDisabledState();
     }
-
-    if (changedProperties.has("expandUp")) {
-      this.updateExpandUpState();
-    }
   }
 
   /**
@@ -103,18 +91,6 @@ export class AuroAccordionGroup extends LitElement {
     this.handleItems();
     this.items.forEach((accordion) => {
       accordion.disabled = this.disabled;
-    });
-  }
-
-  /**
-   * Updates the expandUp state of all child `<auro-accordion>` elements
-   * to match the expandUp state of the `<auro-accordion-group>` element.
-   * @private
-   */
-  updateExpandUpState() {
-    this.handleItems();
-    this.items.forEach((accordion) => {
-      accordion.expandUp = this.expandUp;
     });
   }
 
@@ -131,10 +107,6 @@ export class AuroAccordionGroup extends LitElement {
 
       if (this.hasAttribute("variant")) {
         item.setAttribute("variant", this.getAttribute("variant"));
-      }
-
-      if (this.hasAttribute("expandUp")) {
-        item.expandUp = true;
       }
 
       item.grouped = true;

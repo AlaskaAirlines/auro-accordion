@@ -55,7 +55,6 @@ The `auro-accordion-group` element allows users to group accordions together and
 | ---------- | ---------- | --------- | --------------------- | ------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | disabled   | disabled   |           | boolean               |         | If set, the whole accordion inside the group are disabled and have reduced opacity.                                                                                               |
 | emphasis   | emphasis   |           | boolean               |         | If set, emphasis styles will be applied to the auro-accordions.                                                                                                                   |
-| expandUp   | expandUp   |           | boolean               |         | If set, expanded content is revealed above the trigger instead of below it for every accordion in the group.                                                                      |
 | variant    | variant    |           | `sm` \| `lg` \| `min` |         | Sets the variant for every accordion in the group. `sm` and `lg` adjust the trigger size; `min` removes all trigger padding so slotted trigger content controls the trigger size. |
 
 ### Methods
