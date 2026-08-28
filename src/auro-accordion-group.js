@@ -88,8 +88,8 @@ export class AuroAccordionGroup extends LitElement {
    * @private
    */
   updateDisabledState() {
-    const accordions = this.querySelectorAll("auro-accordion");
-    accordions.forEach((accordion) => {
+    this.handleItems();
+    this.items.forEach((accordion) => {
       accordion.disabled = this.disabled;
     });
   }
@@ -145,6 +145,7 @@ export class AuroAccordionGroup extends LitElement {
    * @private
    */
   handleItems() {
+    // Derive the child tag from our own tag so renamed/custom-registered groups resolve their accordions.
     const groupTagName = this.tagName.toLowerCase();
     const accordionTagName = groupTagName.substring(
       0,

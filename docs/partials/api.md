@@ -37,6 +37,25 @@ Using the `alignRight` attribute will cause the trigger to align to the right ed
 
 </auro-accordion>
 
+### Expand Up
+
+Using the `expandUp` attribute will reveal the expanded content above the trigger instead of below it. This is useful when the accordion sits near the bottom of a layout or should push existing content upward. Reading order is unchanged — the trigger still precedes its content in the DOM.
+
+> Note: `expandUp` is not supported on `auro-accordion-group`.
+
+<div class="exampleWrapper">
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/expand-up.html) -->
+  <!-- AURO-GENERATED-CONTENT:END -->
+</div>
+
+<auro-accordion alignRight>
+  <span slot="trigger">See code</span>
+
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/expand-up.html) -->
+<!-- AURO-GENERATED-CONTENT:END -->
+
+</auro-accordion>
+
 ### Chevron Right
 
 Using the `chevron="right"` will cause the chevron to appear on the right side of the accordion label.
