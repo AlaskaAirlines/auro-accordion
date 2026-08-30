@@ -94,6 +94,7 @@ export class AuroAccordion extends LitElement {
       alignRight: {
         type: Boolean,
         reflect: true,
+        attribute: "alignright",
       },
 
       /** 
@@ -135,6 +136,7 @@ export class AuroAccordion extends LitElement {
       expandUp: {
         type: Boolean,
         reflect: true,
+        attribute: "expandup",
       },
 
       /**
