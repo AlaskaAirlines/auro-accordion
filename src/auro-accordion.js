@@ -43,6 +43,7 @@ import tokensCss from "./styles/tokens.scss";
 export class AuroAccordion extends LitElement {
   /**
    * @private
+   * @type {ShadowRootInit}
    */
   static shadowRootOptions = {
     ...LitElement.shadowRootOptions,
