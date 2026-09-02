@@ -75,7 +75,7 @@
   // Mirrors webcorestylesheets util_displayHiddenVisually.
   .srAnnouncer {
     // position: absolute keeps this out of the expandUp grid auto-placement
-    // (:host([expandUp]) .componentWrapper). If it stops being absolutely
+    // (:host([expandup]) .componentWrapper). If it stops being absolutely
     // positioned it becomes a grid item and adds a phantom row below content.
     position: absolute;
     overflow: hidden;
@@ -111,7 +111,7 @@
   }
 }
 
-:host([alignRight]) {
+:host([alignright]) {
   // Block wrapper (not flex) keeps content height animation smooth; flex re-resolves item size
   // every frame and causes janky open/close when right-aligned. Block + margin-left:auto aligns.
   .trigger {
@@ -127,7 +127,7 @@
   }
 }
 
-:host([expandUp]) {
+:host([expandup]) {
   // Reverse the visual order (content above trigger) via explicit grid-row
   // placement while DOM order (trigger -> content) is preserved for reading
   // order and aria-controls. Grid is used instead of flex column-reverse because
