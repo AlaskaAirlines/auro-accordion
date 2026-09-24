@@ -252,6 +252,15 @@ describe("auro-accordion", () => {
     await expect(el.hasAttribute("expandup")).to.be.true;
   });
 
+  it("reflects the alignRight property to the alignright attribute", async () => {
+    const el = await defaultFixture();
+
+    el.alignRight = true;
+    await elementUpdated(el);
+
+    await expect(el.hasAttribute("alignright")).to.be.true;
+  });
+
   it("reveals content above the trigger when expandUp is set", async () => {
     const el = await expandUpFixture();
     // Expand so the content has real height, making the reversed visual order
