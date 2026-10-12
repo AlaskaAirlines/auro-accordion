@@ -108,8 +108,7 @@ You can do this by importing only the component class and using the `register(na
 
 <pre class="language-js"><code class="language-js">// Import the class only
 import { AuroAccordion, AuroAccordionGroup } from '@aurodesignsystem/auro-accordion/class';
-​
-// Register with a custom name if desired
+&#10;// Register with a custom name if desired
 AuroAccordion.register('custom-accordion');
 AuroAccordionGroup.register('custom-accordion-group');</code></pre>
 
