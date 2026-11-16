@@ -52,6 +52,8 @@ import tokensCss from "./styles/tokens.scss";
  * @csspart trigger - The button that expands and collapses the accordion.
  * @csspart chevron - The chevron icon in the trigger. Doesn't exist when `chevron="none"`.
  * @csspart content - The container that holds the expanded content.
+ * @csspart contentWrapper - The inner container around the expanded content that sets its padding.
+ * @csspart triggerSlot - The element that holds the content slotted into `trigger`.
  * @cssprop --ds-auro-accordion-content-border-color - Color of the left border beside the expanded content. Applies only when `emphasis` is set.
  * @cssprop --ds-auro-accordion-group-border-color - Color of the divider below each accordion in a group. Applies only inside `auro-accordion-group`.
  * @cssprop --ds-auro-accordion-trigger-border-color - Color of the trigger's border, including the ring shown when the trigger has keyboard focus.

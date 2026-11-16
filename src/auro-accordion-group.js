@@ -29,6 +29,8 @@ import AuroLibraryRuntimeUtils from "@aurodesignsystem/auro-library/scripts/util
  *
  * @summary A wrapper that closes other accordions when one opens and shares size, emphasis, and disabled settings.
  * @customElement auro-accordion-group
+ *
+ * @slot - The `auro-accordion` elements to group.
  */
 export class AuroAccordionGroup extends LitElement {
   constructor() {
@@ -169,6 +171,10 @@ export class AuroAccordionGroup extends LitElement {
     });
   }
 
+  /**
+   * Called when the slotted accordions change. Applies the group's emphasis and variant settings to each accordion and marks each as grouped.
+   * @private
+   */
   handleSlotContentChange() {
     this.addEventListener("toggleExpanded", this.handleToggleExpanded);
 
