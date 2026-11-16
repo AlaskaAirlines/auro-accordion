@@ -105,6 +105,57 @@ describe("auro-accordion-group", () => {
     await expect(secondAccordion.hasAttribute("expanded")).to.be.true;
   });
 
+  it("noToggleExpanded is a declared boolean property", async () => {
+    const el = await expandedFixture();
+
+    await expect(el.noToggleExpanded).to.be.false;
+
+    el.noToggleExpanded = true;
+    await elementUpdated(el);
+
+    await expect(el.hasAttribute("notoggleexpanded")).to.be.true;
+  });
+
+  it("updates accordions when variant changes after the first render", async () => {
+    const el = await expandedFixture();
+    const accordions = [...el.querySelectorAll("auro-accordion")];
+
+    el.variant = "lg";
+    await elementUpdated(el);
+
+    accordions.forEach((accordion) => {
+      expect(accordion.getAttribute("variant")).to.equal("lg");
+    });
+
+    el.variant = undefined;
+    await elementUpdated(el);
+
+    accordions.forEach((accordion) => {
+      expect(accordion.hasAttribute("variant")).to.be.false;
+    });
+  });
+
+  it("updates accordions when emphasis changes after the first render", async () => {
+    const el = await expandedFixture();
+    const accordions = [...el.querySelectorAll("auro-accordion")];
+
+    el.emphasis = true;
+    await elementUpdated(el);
+
+    accordions.forEach((accordion) => {
+      expect(accordion.emphasis).to.be.true;
+      expect(accordion.getAttribute("chevron")).to.equal("right");
+    });
+
+    el.emphasis = false;
+    await elementUpdated(el);
+
+    accordions.forEach((accordion) => {
+      expect(accordion.emphasis).to.be.false;
+      expect(accordion.hasAttribute("chevron")).to.be.false;
+    });
+  });
+
   it("does not scroll when accordion group is already in view", async () => {
     const el = await expandedFixture();
 

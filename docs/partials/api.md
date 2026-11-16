@@ -18,11 +18,11 @@
 
 </auro-accordion>
 
-## Property & Attribute Examples
+## Property and attribute examples
 
-### Align Trigger Right
+### Align trigger right
 
-Using the `alignRight` attribute will cause the trigger to align to the right edge of the accordion container.
+Use `alignRight` to align the trigger to the right edge of the accordion's container.
 
 <div class="exampleWrapper">
   <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/align-right.html) -->
@@ -37,11 +37,11 @@ Using the `alignRight` attribute will cause the trigger to align to the right ed
 
 </auro-accordion>
 
-### Expand Up
+### Expand up
 
-Using the `expandUp` attribute will reveal the expanded content above the trigger instead of below it. This is useful when the accordion sits near the bottom of a layout or should push existing content upward. Reading order is unchanged — the trigger still precedes its content in the DOM.
+Use `expandUp` to reveal the expanded content above the trigger instead of below it. This is useful when the accordion sits near the bottom of a layout or should push existing content upward. Reading order is unchanged: the trigger still comes before its content in the DOM.
 
-> Note: `expandUp` is not supported on `auro-accordion-group`.
+> Note: `expandUp` isn't supported on `auro-accordion-group`.
 
 <div class="exampleWrapper">
   <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/expand-up.html) -->
@@ -56,9 +56,9 @@ Using the `expandUp` attribute will reveal the expanded content above the trigge
 
 </auro-accordion>
 
-### Chevron Right
+### Chevron right
 
-Using the `chevron="right"` will cause the chevron to appear on the right side of the accordion label.
+Use `chevron="right"` to move the chevron to the right end of the trigger.
 
 <div class="exampleWrapper">
   <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/chevron-right.html) -->
@@ -73,9 +73,9 @@ Using the `chevron="right"` will cause the chevron to appear on the right side o
 
 </auro-accordion>
 
-### No Chevron
+### No chevron
 
-The chevron icon within the trigger of the `auro-accordion` will not render when `chevron="none"` is present on the element.
+Use `chevron="none"` to hide the chevron icon in the trigger.
 
 <div class="exampleWrapper">
   <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/chevron-none.html) -->
@@ -92,7 +92,7 @@ The chevron icon within the trigger of the `auro-accordion` will not render when
 
 ### Disabled
 
-Use the `disabled` attribute to disable the expand/collapse function and reduce the opacity of the element.
+Use the `disabled` attribute to stop people from expanding or collapsing the accordion. The trigger is shown in a muted color.
 
 <div class="exampleWrapper">
   <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/disabled.html) -->
@@ -109,7 +109,7 @@ Use the `disabled` attribute to disable the expand/collapse function and reduce 
 
 ### Expanded
 
-The accordion can be programatically expanded or collapsed by setting the `expanded` attribute to `true` or `false`.
+Set the `expanded` property to `true` or `false` in JavaScript to expand or collapse the accordion. As an HTML attribute, `expanded` is on whenever it's present.
 
 <div class="exampleWrapper">
   <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/expanded.html) -->
@@ -167,9 +167,9 @@ The `variant` attribute sets the size and spacing of the accordion trigger. Omit
 
 #### Minimal
 
-`variant="min"` strips all padding from the trigger so the slotted trigger content controls its size — letting the accordion sit flush against adjacent content. Best paired with `chevron="none"`.
+`variant="min"` strips all padding from the trigger so the slotted trigger content controls its size. This lets the accordion sit flush against adjacent content. Best paired with `chevron="none"`.
 
-Keep the slotted trigger content **presentational only** (e.g. a styled `<span>`). The trigger is a native `<button>`, so do not nest interactive or focusable elements (links, buttons, inputs, `tabindex`) inside it, and ensure the trigger still has a discernible accessible name.
+Keep the slotted trigger content **presentational only** (for example, a styled `<span>`). The trigger is a native `<button>`, so don't nest interactive or focusable elements (links, buttons, inputs, `tabindex`) inside it, and ensure the trigger still has a discernible accessible name.
 
 <div class="exampleWrapper">
   <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/variant-min.html) -->
@@ -184,7 +184,7 @@ Keep the slotted trigger content **presentational only** (e.g. a styled `<span>`
 
 </auro-accordion>
 
-Because `variant="min"` hands sizing to the slotted trigger content, you can style that content to give the trigger a custom size and appearance — here a full-width, fixed-height block.
+Because `variant="min"` hands sizing to the slotted trigger content, style that content to set a custom trigger size and appearance, such as the full-width, fixed-height block below.
 
 <div class="exampleWrapper">
   <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/variant-min-custom.html) -->
@@ -199,11 +199,11 @@ Because `variant="min"` hands sizing to the slotted trigger content, you can sty
 
 </auro-accordion>
 
-## Method Examples
+## Method examples
 
 ### Toggle
 
-Using the `toggle()` method will change the state of the accordion from expanded to collapsed, or from collapsed to expanded.
+Call `toggle()` to expand a collapsed accordion or collapse an expanded one.
 
 <div class="exampleWrapper">
   <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/toggle.html) -->
@@ -221,11 +221,11 @@ Using the `toggle()` method will change the state of the accordion from expanded
 
 </auro-accordion>
 
-## Common Usage Patterns & Functional Examples
+## Common usage patterns
 
-### Align Chevron & Trigger Right
+### Align chevron and trigger right
 
-Using the `alignRight` attribute in conjuction with the `chevron="right"` attribute will cause the trigger to align to the right edge of the accordion, with the chevron appearing on the right side of the trigger.
+Use `alignRight` with `chevron="right"` to align the trigger to the right edge of the accordion, with the chevron at the right end of the trigger.
 
 <div class="exampleWrapper">
   <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/align-chevron-right.html) -->
@@ -242,11 +242,11 @@ Using the `alignRight` attribute in conjuction with the `chevron="right"` attrib
 
 # auro-accordion-group 
 
-## Property & Attribute Examples
+## Property and attribute examples
 
 ### Disabled
 
-Use the `disabled` attribute to disable the expand/collapse function and reduce the opacity for all accordions inside of the group.
+Use the `disabled` attribute to stop people from expanding or collapsing any accordion in the group. The triggers are shown in a muted color.
 
 <div class="exampleWrapper">
   <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/disabled-group.html) -->
@@ -276,9 +276,9 @@ Use the `emphasis` attribute to apply border highlights to the `auro-accordion` 
 
 </auro-accordion>
 
-### No Toggle Expanded
+### No toggle expanded
 
-Using the `noToggleExpanded` attribute will allow for multiple accordions in an group to be open at the same time.
+Use `noToggleExpanded` to let several accordions in a group stay open at the same time.
 
 <div class="exampleWrapper">
   <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/no-toggle-expanded.html) -->
@@ -292,7 +292,7 @@ Using the `noToggleExpanded` attribute will allow for multiple accordions in an 
 
 </auro-accordion>
 
-### Variant Examples
+### Variant examples
 
 Setting `variant` on the group applies the same trigger size and spacing to every accordion it contains. Omit it for the default (medium) trigger, or use one of the options below.
 
@@ -344,9 +344,9 @@ Setting `variant` on the group applies the same trigger size and spacing to ever
 
 </auro-accordion>
 
-## Restyle Component with CSS Variables
+## Restyle with CSS custom properties
 
-The component may be restyled by changing the values of the following token(s).
+Restyle the component by changing the values of the following tokens.
 
 <!-- AURO-GENERATED-CONTENT:START (CODE:src=./../src/styles/tokens.scss) -->
 <!-- AURO-GENERATED-CONTENT:END -->

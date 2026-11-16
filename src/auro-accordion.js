@@ -27,16 +27,37 @@ import tokensCss from "./styles/tokens.scss";
 
 // See https://git.io/JJ6SJ for "How to document your components using JSDoc"
 /**
- * The `auro-accordion` element provides users a way to have collapsible content on a page.
+ * An accordion that shows or hides a section of content when someone selects its trigger.
+ *
+ * **Key capabilities:**
+ * - **Chevron placement**: Use `chevron="right"` to move the chevron to the right end of the trigger or `chevron="none"` to hide it.
+ * - **Trigger size**: Set `variant` to `sm`, `lg`, or `min` to change the trigger size.
+ * - **Expand upward**: Set `expandUp` to reveal the content above the trigger.
+ * - **Grouping**: Wrap accordions in `auro-accordion-group` so opening one closes the others.
+ *
+ * **Example:**
+ * ```html
+ * <auro-accordion>
+ *   <span slot="trigger">Trigger</span>
+ *   <p>Content</p>
+ * </auro-accordion>
+ * ```
+ *
+ * @summary An accessible accordion with chevron, size, and expand-up options.
  * @customElement auro-accordion
  *
- * @slot - Default slot for the accordion content.
- * @slot trigger - Defines the content of the trigger element.
- * @csspart accordion - Apply CSS to Accordion wrapper.
- * @csspart trigger - Apply CSS to trigger element.
- * @csspart chevron - Apply CSS to chevron icon.
- * @csspart content - Apply CSS to the accordion content.
- * @event toggleExpanded - Notifies that the accordion has been expanded or closed.
+ * @slot - The content revealed when the accordion expands.
+ * @slot trigger - The text or content shown in the trigger, such as a short heading. Use presentational content only, because the trigger is a native `<button>`.
+ * @csspart accordion - The wrapper around the trigger and the content.
+ * @csspart trigger - The button that expands and collapses the accordion.
+ * @csspart chevron - The chevron icon in the trigger. Doesn't exist when `chevron="none"`.
+ * @csspart content - The container that holds the expanded content.
+ * @cssprop --ds-auro-accordion-content-border-color - Color of the left border beside the expanded content. Applies only when `emphasis` is set.
+ * @cssprop --ds-auro-accordion-group-border-color - Color of the divider below each accordion in a group. Applies only inside `auro-accordion-group`.
+ * @cssprop --ds-auro-accordion-trigger-border-color - Color of the trigger's border, including the ring shown when the trigger has keyboard focus.
+ * @cssprop --ds-auro-accordion-trigger-color - Color of the trigger text.
+ * @cssprop --ds-auro-accordion-trigger-icon-color - Color of the chevron icon.
+ * @event toggleExpanded - Fires when someone expands or collapses the accordion, or when `toggle()` is called. Doesn't fire when `expanded` is set directly. `detail.expanded` holds the new state.
  */
 
 // build the component class
@@ -90,7 +111,7 @@ export class AuroAccordion extends LitElement {
       // ...super.properties,
 
       /**
-       * If set, the trigger content will align right.
+       * Aligns the trigger to the right edge of the accordion's container.
        */
       alignRight: {
         type: Boolean,
@@ -99,7 +120,7 @@ export class AuroAccordion extends LitElement {
       },
 
       /** 
-       * Sets chevron variant option.
+       * Sets where the chevron appears. Use `right` to place it at the right end of the trigger, or `none` to hide it. When not set, the chevron appears before the trigger text.
        * @type {'none' | 'right'}
        */
       chevron: {
@@ -108,7 +129,7 @@ export class AuroAccordion extends LitElement {
       },
 
       /** 
-       * If set, the accordion is disabled and have reduced opacity.
+       * Turns the accordion off. A disabled trigger is shown in a muted color and can't be selected to expand or collapse the content. Calling `toggle()` or setting `expanded` still works.
        */
       disabled: {
         type: Boolean,
@@ -116,7 +137,7 @@ export class AuroAccordion extends LitElement {
       },
 
       /** 
-       * If set, emphasis styles will be applied to the auro-accordion. This feature is best used on the auro-accordion-group component.
+       * Adds a highlighted left border to the trigger and the expanded content. Set `emphasis` on `auro-accordion-group` instead to also move each chevron to the right.
        */
       emphasis: {
         type: Boolean,
@@ -124,7 +145,7 @@ export class AuroAccordion extends LitElement {
       },
 
       /**
-       * If set, the accordion is expanded.
+       * Expands the accordion to show its content.
        */
       expanded: {
         type: Boolean,
@@ -132,7 +153,7 @@ export class AuroAccordion extends LitElement {
       },
 
       /**
-       * If set, expanded content is revealed above the trigger instead of below it.
+       * Reveals the expanded content above the trigger instead of below it.
        */
       expandUp: {
         type: Boolean,
@@ -141,7 +162,7 @@ export class AuroAccordion extends LitElement {
       },
 
       /**
-       * Attribute will be set on accordion when it appears in an accordion group.
+       * Marks the accordion as part of a group and adds a divider below it. The group sets this automatically.
        */
       grouped: {
         type: Boolean,
@@ -149,7 +170,7 @@ export class AuroAccordion extends LitElement {
       },
 
       /**
-       * Sets accordion variant option. `sm` and `lg` adjust the trigger size; `min` removes all trigger padding so slotted trigger content controls the trigger size (best paired with `chevron="none"` for a fully flush trigger).
+       * Sets the size of the trigger. Use `sm` for a smaller trigger, `lg` for a larger one, or `min` to remove all trigger padding so the slotted content sets the size, ideally with `chevron="none"`. Omit it for the default, medium size.
        * @type {'sm' | 'lg' | 'min'}
        */
       variant: {
@@ -164,11 +185,11 @@ export class AuroAccordion extends LitElement {
   }
 
   /**
-   * This will register this element with the browser.
-   * @param {string} [name="auro-accordion"] - The name of the element that you want to register.
+   * Registers the element with the browser under a tag name. Also registers the group element as that name plus `-group`.
+   * @param {string} [name="auro-accordion"] - The tag name to register the element under.
    *
    * @example
-   * AuroAccordion.register("custom-accordion") // this will register this element to <custom-accordion/>
+   * AuroAccordion.register("custom-accordion") // registers <custom-accordion> and <custom-accordion-group>
    *
    */
   static register(name = "auro-accordion") {
@@ -247,7 +268,7 @@ export class AuroAccordion extends LitElement {
   }
 
   /**
-   * Toggles the visibility of the accordion content.
+   * Expands the accordion if it's collapsed, or collapses it if it's expanded, and fires `toggleExpanded`. Works even when the accordion is disabled.
    */
   toggle() {
     this.expanded = !this.expanded;
