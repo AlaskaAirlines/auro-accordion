@@ -9,7 +9,25 @@ import AuroLibraryRuntimeUtils from "@aurodesignsystem/auro-library/scripts/util
 
 // See https://git.io/JJ6SJ for "How to document your components using JSDoc"
 /**
- * The `auro-accordion-group` element allows users to group accordions together and give them an auto closing functionality when others are selected.
+ * Groups accordions so that opening one closes the others.
+ *
+ * **Key capabilities:**
+ * - **Several open at once**: Set `noToggleExpanded` to let more than one accordion stay open.
+ * - **Disable all**: Set `disabled` to turn off every accordion in the group.
+ * - **Emphasis**: Set `emphasis` to add the emphasis border to every accordion and move each chevron to the right.
+ * - **Trigger size**: Set `variant` to `sm`, `lg`, or `min` to size every trigger.
+ *
+ * **Example:**
+ * ```html
+ * <auro-accordion-group>
+ *   <auro-accordion>
+ *     <span slot="trigger">Trigger</span>
+ *     <p>Content</p>
+ *   </auro-accordion>
+ * </auro-accordion-group>
+ * ```
+ *
+ * @summary A wrapper that closes other accordions when one opens and shares size, emphasis, and disabled settings.
  * @customElement auro-accordion-group
  */
 export class AuroAccordionGroup extends LitElement {
@@ -20,6 +38,8 @@ export class AuroAccordionGroup extends LitElement {
      * @private
      */
     this.runtimeUtils = new AuroLibraryRuntimeUtils();
+
+    this.noToggleExpanded = false;
   }
 
   // This function is to define props used within the scope of this component
@@ -30,7 +50,7 @@ export class AuroAccordionGroup extends LitElement {
       // ...super.properties,
 
       /** 
-       * If set, the whole accordion inside the group are disabled and have reduced opacity.
+       * Turns off every accordion in the group. Disabled triggers are shown in a muted color and can't be selected.
        */
       disabled: {
         type: Boolean,
@@ -38,7 +58,7 @@ export class AuroAccordionGroup extends LitElement {
       },
 
       /**
-       * If set, emphasis styles will be applied to the auro-accordions.
+       * Adds the emphasis border to every accordion in the group and moves each chevron to the right.
        */
       emphasis: {
         type: Boolean,
@@ -46,7 +66,16 @@ export class AuroAccordionGroup extends LitElement {
       },
 
       /**
-       * Sets the variant for every accordion in the group. `sm` and `lg` adjust the trigger size; `min` removes all trigger padding so slotted trigger content controls the trigger size.
+       * Lets several accordions in the group stay open at the same time. By default, opening one accordion closes the others.
+       */
+      noToggleExpanded: {
+        type: Boolean,
+        reflect: true,
+        attribute: "notoggleexpanded",
+      },
+
+      /**
+       * Sets the trigger size for every accordion in the group. Use `sm` for smaller triggers, `lg` for larger ones, or `min` to remove all trigger padding so the slotted content sets each size.
        * @type {'sm' | 'lg' | 'min'}
        */
       variant: {
@@ -57,11 +86,11 @@ export class AuroAccordionGroup extends LitElement {
   }
 
   /**
-   * This will register this element with the browser.
-   * @param {string} [name="auro-accordion-group"] - The name of the element that you want to register.
+   * Registers the element with the browser under a tag name. Register the group as the accordion's tag name plus `-group`, so the group can find its accordions.
+   * @param {string} [name="auro-accordion-group"] - The tag name to register the element under.
    *
    * @example
-   * AuroAccordionGroup.register("custom-accordion-button") // this will register this element to <custom-accordion-group/>
+   * AuroAccordionGroup.register("custom-accordion-group") // registers <custom-accordion-group>
    *
    */
   static register(name = "auro-accordion-group") {
@@ -80,6 +109,52 @@ export class AuroAccordionGroup extends LitElement {
     if (changedProperties.has("disabled")) {
       this.updateDisabledState();
     }
+
+    if (changedProperties.has("emphasis")) {
+      this.updateEmphasisState(changedProperties.get("emphasis"));
+    }
+
+    if (changedProperties.has("variant")) {
+      this.updateVariantState();
+    }
+  }
+
+  /**
+   * Applies or removes the emphasis styles on all child `<auro-accordion>` elements
+   * to match the emphasis state of the `<auro-accordion-group>` element.
+   * @private
+   * @param {boolean} [previous] - The previous value of `emphasis`.
+   */
+  updateEmphasisState(previous) {
+    this.handleItems();
+    this.items.forEach((accordion) => {
+      if (this.emphasis) {
+        accordion.setAttribute("chevron", "right");
+        accordion.emphasis = true;
+      } else if (previous) {
+        accordion.emphasis = false;
+
+        if (accordion.getAttribute("chevron") === "right") {
+          accordion.removeAttribute("chevron");
+        }
+      }
+    });
+  }
+
+  /**
+   * Updates the variant of all child `<auro-accordion>` elements
+   * to match the variant of the `<auro-accordion-group>` element.
+   * @private
+   */
+  updateVariantState() {
+    this.handleItems();
+    this.items.forEach((accordion) => {
+      if (this.variant) {
+        accordion.setAttribute("variant", this.variant);
+      } else {
+        accordion.removeAttribute("variant");
+      }
+    });
   }
 
   /**
@@ -119,7 +194,7 @@ export class AuroAccordionGroup extends LitElement {
    * @param {object} event - Standard event parameter.
    */
   handleToggleExpanded(event) {
-    if (!this.hasAttribute("noToggleExpanded")) {
+    if (!this.noToggleExpanded) {
       this.items.forEach((item) => {
         if (item !== event.target && item.expanded) {
           item.expanded = false;
