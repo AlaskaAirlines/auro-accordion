@@ -195,9 +195,9 @@ export class AuroAccordionGroup extends LitElement {
   }
 
   /**
-   * Internal function to toggle any expanded panels if it is not the one selected.
+   * Called when an accordion in the group expands or collapses. Closes the other accordions unless `noToggleExpanded` is set, then scrolls the group into view if it's out of view.
    * @private
-   * @param {object} event - Standard event parameter.
+   * @param {object} event - The `toggleExpanded` event.
    */
   handleToggleExpanded(event) {
     if (!this.noToggleExpanded) {
@@ -222,7 +222,7 @@ export class AuroAccordionGroup extends LitElement {
   }
 
   /**
-   * Internal function to add all accordions into an array.
+   * Gets the accordions in the group and stores them in `items`.
    * @private
    */
   handleItems() {
