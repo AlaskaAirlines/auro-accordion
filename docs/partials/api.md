@@ -262,7 +262,7 @@ Use the `disabled` attribute to stop people from expanding or collapsing any acc
 
 ### Emphasis
 
-Use the `emphasis` attribute to apply border highlights to the `auro-accordion` on hover and move the chevron to the right side of the trigger.
+Use the `emphasis` attribute to add a border highlight to each accordion when it's hovered, focused, or expanded, and to move each chevron to the right end of the trigger.
 
 <div class="exampleWrapper">
   <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/emphasis-group.html) -->

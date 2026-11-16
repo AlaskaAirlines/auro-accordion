@@ -52,12 +52,14 @@ An accordion that shows or hides a section of content when someone selects its t
 
 ### CSS shadow parts
 
-| Name      | Description                                                           |
-| --------- | --------------------------------------------------------------------- |
-| accordion | The wrapper around the trigger and the content.                       |
-| chevron   | The chevron icon in the trigger. Doesn't exist when `chevron="none"`. |
-| content   | The container that holds the expanded content.                        |
-| trigger   | The button that expands and collapses the accordion.                  |
+| Name           | Description                                                            |
+| -------------- | ---------------------------------------------------------------------- |
+| accordion      | The wrapper around the trigger and the content.                        |
+| chevron        | The chevron icon in the trigger. Doesn't exist when `chevron="none"`.  |
+| content        | The container that holds the expanded content.                         |
+| contentWrapper | The inner container around the expanded content that sets its padding. |
+| trigger        | The button that expands and collapses the accordion.                   |
+| triggerSlot    | The element that holds the content slotted into `trigger`.             |
 
 ### CSS custom properties
 
@@ -103,3 +105,9 @@ Groups accordions so that opening one closes the others.
 | Name     | Parameters                                                    | Return | Description                                                                                                                                                  |
 | -------- | ------------------------------------------------------------- | ------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | register | `name` (string) - The tag name to register the element under. |        | Registers the element with the browser under a tag name. Register the group as the accordion's tag name plus `-group`, so the group can find its accordions. |
+
+### Slots
+
+| Name      | Description                             |
+| --------- | --------------------------------------- |
+| (default) | The `auro-accordion` elements to group. |
