@@ -3,68 +3,113 @@
 
 # auro-accordion
 
-The `auro-accordion` element provides users a way to have collapsible content on a page.
+An accordion that shows or hides a section of content when someone selects its trigger.
 
-### Properties & Attributes
+**Key capabilities:**
+- **Chevron placement**: Use `chevron="right"` to move the chevron to the right end of the trigger or `chevron="none"` to hide it.
+- **Trigger size**: Set `variant` to `sm`, `lg`, or `min` to change the trigger size.
+- **Expand upward**: Set `expandUp` to reveal the content above the trigger.
+- **Grouping**: Wrap accordions in `auro-accordion-group` so opening one closes the others.
 
-| Properties | Attributes | Modifiers | Type                  | Default | Description                                                                                                                                                                                                                 |
-| ---------- | ---------- | --------- | --------------------- | ------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| alignRight | alignright |           | boolean               |         | If set, the trigger content will align right.                                                                                                                                                                               |
-| chevron    | chevron    |           | `none` \| `right`     |         | Sets chevron variant option.                                                                                                                                                                                                |
-| disabled   | disabled   |           | boolean               |         | If set, the accordion is disabled and have reduced opacity.                                                                                                                                                                 |
-| emphasis   | emphasis   |           | boolean               |         | If set, emphasis styles will be applied to the auro-accordion. This feature is best used on the auro-accordion-group component.                                                                                             |
-| expanded   | expanded   |           | boolean               | `false` | If set, the accordion is expanded.                                                                                                                                                                                          |
-| expandUp   | expandup   |           | boolean               |         | If set, expanded content is revealed above the trigger instead of below it.                                                                                                                                                 |
-| grouped    | grouped    |           | boolean               |         | Attribute will be set on accordion when it appears in an accordion group.                                                                                                                                                   |
-| variant    | variant    |           | `sm` \| `lg` \| `min` |         | Sets accordion variant option. `sm` and `lg` adjust the trigger size; `min` removes all trigger padding so slotted trigger content controls the trigger size (best paired with `chevron="none"` for a fully flush trigger). |
+**Example:**
+<pre class="language-html"><code class="language-html">&lt;auro-accordion&gt;
+  &lt;span slot="trigger"&gt;Trigger&lt;/span&gt;
+  &lt;p&gt;Content&lt;/p&gt;
+&lt;/auro-accordion&gt;</code></pre>
+
+### Properties and attributes
+
+| Properties | Attributes | Modifiers | Type                  | Default | Description                                                                                                                                                                                                                            |
+| ---------- | ---------- | --------- | --------------------- | ------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| alignRight | alignright |           | boolean               |         | Aligns the trigger to the right edge of the accordion's container.                                                                                                                                                                     |
+| chevron    | chevron    |           | `none` \| `right`     |         | Sets where the chevron appears. Use `right` to place it at the right end of the trigger, or `none` to hide it. When not set, the chevron appears before the trigger text.                                                              |
+| disabled   | disabled   |           | boolean               |         | Turns the accordion off. A disabled trigger is shown in a muted color and can't be selected to expand or collapse the content. Calling `toggle()` or setting `expanded` still works.                                                   |
+| emphasis   | emphasis   |           | boolean               |         | Adds a highlighted left border to the trigger and the expanded content. Set `emphasis` on `auro-accordion-group` instead to also move each chevron to the right.                                                                       |
+| expanded   | expanded   |           | boolean               | `false` | Expands the accordion to show its content.                                                                                                                                                                                             |
+| expandUp   | expandup   |           | boolean               |         | Reveals the expanded content above the trigger instead of below it.                                                                                                                                                                    |
+| grouped    | grouped    |           | boolean               |         | Marks the accordion as part of a group and adds a divider below it. The group sets this automatically.                                                                                                                                 |
+| variant    | variant    |           | `sm` \| `lg` \| `min` |         | Sets the size of the trigger. Use `sm` for a smaller trigger, `lg` for a larger one, or `min` to remove all trigger padding so the slotted content sets the size, ideally with `chevron="none"`. Omit it for the default, medium size. |
 
 ### Methods
 
-| Name     | Parameters                                                           | Return | Description                                                                                        |
-| -------- | -------------------------------------------------------------------- | ------ | -------------------------------------------------------------------------------------------------- |
-| focus    | None                                                                 |        | Moves keyboard focus to the accordion's trigger (the header that expands/collapses the accordion). |
-| register | `name` (string) - The name of the element that you want to register. |        | This will register this element with the browser.                                                  |
-| toggle   | None                                                                 |        | Toggles the visibility of the accordion content.                                                   |
+| Name     | Parameters                                                    | Return | Description                                                                                                                                       |
+| -------- | ------------------------------------------------------------- | ------ | ------------------------------------------------------------------------------------------------------------------------------------------------- |
+| focus    | None                                                          |        | Moves keyboard focus to the accordion's trigger (the header that expands/collapses the accordion).                                                |
+| register | `name` (string) - The tag name to register the element under. |        | Registers the element with the browser under a tag name. Also registers the group element as that name plus `-group`.                             |
+| toggle   | None                                                          |        | Expands the accordion if it's collapsed, or collapses it if it's expanded, and fires `toggleExpanded`. Works even when the accordion is disabled. |
 
 ### Events
 
-| Name           | Description                                              |
-| -------------- | -------------------------------------------------------- |
-| toggleExpanded | Notifies that the accordion has been expanded or closed. |
+| Name           | Description                                                                                                                                                               |
+| -------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| toggleExpanded | Fires when someone expands or collapses the accordion, or when `toggle()` is called. Doesn't fire when `expanded` is set directly. `detail.expanded` holds the new state. |
 
 ### Slots
 
-| Name      | Description                                 |
-| --------- | ------------------------------------------- |
-| (default) | Default slot for the accordion content.     |
-| trigger   | Defines the content of the trigger element. |
+| Name      | Description                                                                                                                                     |
+| --------- | ----------------------------------------------------------------------------------------------------------------------------------------------- |
+| (default) | The content revealed when the accordion expands.                                                                                                |
+| trigger   | The text or content shown in the trigger, such as a short heading. Use presentational content only, because the trigger is a native `<button>`. |
 
-### CSS Shadow Parts
+### CSS shadow parts
 
-| Name      | Description                         |
-| --------- | ----------------------------------- |
-| accordion | Apply CSS to Accordion wrapper.     |
-| chevron   | Apply CSS to chevron icon.          |
-| content   | Apply CSS to the accordion content. |
-| trigger   | Apply CSS to trigger element.       |
+| Name           | Description                                                            |
+| -------------- | ---------------------------------------------------------------------- |
+| accordion      | The wrapper around the trigger and the content.                        |
+| chevron        | The chevron icon in the trigger. Doesn't exist when `chevron="none"`.  |
+| content        | The container that holds the expanded content.                         |
+| contentWrapper | The inner container around the expanded content that sets its padding. |
+| trigger        | The button that expands and collapses the accordion.                   |
+| triggerSlot    | The element that holds the content slotted into `trigger`.             |
+
+### CSS custom properties
+
+| Name                                     | Description                                                                                       |
+| ---------------------------------------- | ------------------------------------------------------------------------------------------------- |
+| --ds-auro-accordion-content-border-color | Color of the left border beside the expanded content. Applies only when `emphasis` is set.        |
+| --ds-auro-accordion-group-border-color   | Color of the divider below each accordion in a group. Applies only inside `auro-accordion-group`. |
+| --ds-auro-accordion-trigger-border-color | Color of the trigger's border, including the ring shown when the trigger has keyboard focus.      |
+| --ds-auro-accordion-trigger-color        | Color of the trigger text.                                                                        |
+| --ds-auro-accordion-trigger-icon-color   | Color of the chevron icon.                                                                        |
 
 # auro-accordion-group
 
-The `auro-accordion-group` element allows users to group accordions together and give them an auto closing functionality when others are selected.
+Groups accordions so that opening one closes the others.
 
-### Properties & Attributes
+**Key capabilities:**
+- **Several open at once**: Set `noToggleExpanded` to let more than one accordion stay open.
+- **Disable all**: Set `disabled` to turn off every accordion in the group.
+- **Emphasis**: Set `emphasis` to add the emphasis border to every accordion and move each chevron to the right.
+- **Trigger size**: Set `variant` to `sm`, `lg`, or `min` to size every trigger.
 
-| Properties | Attributes | Modifiers | Type                  | Default | Description                                                                                                                                                                       |
-| ---------- | ---------- | --------- | --------------------- | ------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| disabled   | disabled   |           | boolean               |         | If set, the whole accordion inside the group are disabled and have reduced opacity.                                                                                               |
-| emphasis   | emphasis   |           | boolean               |         | If set, emphasis styles will be applied to the auro-accordions.                                                                                                                   |
-| variant    | variant    |           | `sm` \| `lg` \| `min` |         | Sets the variant for every accordion in the group. `sm` and `lg` adjust the trigger size; `min` removes all trigger padding so slotted trigger content controls the trigger size. |
+**Example:**
+<pre class="language-html"><code class="language-html">&lt;auro-accordion-group&gt;
+  &lt;auro-accordion&gt;
+    &lt;span slot="trigger"&gt;Trigger&lt;/span&gt;
+    &lt;p&gt;Content&lt;/p&gt;
+  &lt;/auro-accordion&gt;
+&lt;/auro-accordion-group&gt;</code></pre>
+
+### Properties and attributes
+
+| Properties       | Attributes       | Modifiers | Type                  | Default | Description                                                                                                                                                                                |
+| ---------------- | ---------------- | --------- | --------------------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| disabled         | disabled         |           | boolean               |         | Turns off every accordion in the group. Disabled triggers are shown in a muted color and can't be selected.                                                                                |
+| emphasis         | emphasis         |           | boolean               |         | Adds the emphasis border to every accordion in the group and moves each chevron to the right.                                                                                              |
+| noToggleExpanded | notoggleexpanded |           | boolean               | `false` | Lets several accordions in the group stay open at the same time. By default, opening one accordion closes the others.                                                                      |
+| variant          | variant          |           | `sm` \| `lg` \| `min` |         | Sets the trigger size for every accordion in the group. Use `sm` for smaller triggers, `lg` for larger ones, or `min` to remove all trigger padding so the slotted content sets each size. |
 
 ### Methods
 
-| Name     | Parameters                                                           | Return | Description                                       |
-| -------- | -------------------------------------------------------------------- | ------ | ------------------------------------------------- |
-| register | `name` (string) - The name of the element that you want to register. |        | This will register this element with the browser. |
+| Name     | Parameters                                                    | Return | Description                                                                                                                                                  |
+| -------- | ------------------------------------------------------------- | ------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| register | `name` (string) - The tag name to register the element under. |        | Registers the element with the browser under a tag name. Register the group as the accordion's tag name plus `-group`, so the group can find its accordions. |
+
+### Slots
+
+| Name      | Description                             |
+| --------- | --------------------------------------- |
+| (default) | The `auro-accordion` elements to group. |
 <!-- AURO-GENERATED-CONTENT:END -->
 
 # auro-accordion
@@ -113,11 +158,11 @@ The `auro-accordion-group` element allows users to group accordions together and
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
 
-## Property & Attribute Examples
+## Property and attribute examples
 
-### Align Trigger Right
+### Align trigger right
 
-Using the `alignRight` attribute will cause the trigger to align to the right edge of the accordion container.
+Use `alignRight` to align the trigger to the right edge of the accordion's container.
 
 <div class="exampleWrapper">
 <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/align-right.html) -->
@@ -162,11 +207,11 @@ Using the `alignRight` attribute will cause the trigger to align to the right ed
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
 
-### Expand Up
+### Expand up
 
-Using the `expandUp` attribute will reveal the expanded content above the trigger instead of below it. This is useful when the accordion sits near the bottom of a layout or should push existing content upward. Reading order is unchanged — the trigger still precedes its content in the DOM.
+Use `expandUp` to reveal the expanded content above the trigger instead of below it. This is useful when the accordion sits near the bottom of a layout or should push existing content upward. Reading order is unchanged: the trigger still comes before its content in the DOM.
 
-> Note: `expandUp` is not supported on `auro-accordion-group`.
+> Note: `expandUp` isn't supported on `auro-accordion-group`.
 
 <div class="exampleWrapper">
 <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/expand-up.html) -->
@@ -211,9 +256,9 @@ Using the `expandUp` attribute will reveal the expanded content above the trigge
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
 
-### Chevron Right
+### Chevron right
 
-Using the `chevron="right"` will cause the chevron to appear on the right side of the accordion label.
+Use `chevron="right"` to move the chevron to the right end of the trigger.
 
 <div class="exampleWrapper">
 <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/chevron-right.html) -->
@@ -258,9 +303,9 @@ Using the `chevron="right"` will cause the chevron to appear on the right side o
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
 
-### No Chevron
+### No chevron
 
-The chevron icon within the trigger of the `auro-accordion` will not render when `chevron="none"` is present on the element.
+Use `chevron="none"` to hide the chevron icon in the trigger.
 
 <div class="exampleWrapper">
 <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/chevron-none.html) -->
@@ -307,7 +352,7 @@ The chevron icon within the trigger of the `auro-accordion` will not render when
 
 ### Disabled
 
-Use the `disabled` attribute to disable the expand/collapse function and reduce the opacity of the element.
+Use the `disabled` attribute to stop people from expanding or collapsing the accordion. The trigger is shown in a muted color.
 
 <div class="exampleWrapper">
 <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/disabled.html) -->
@@ -354,13 +399,13 @@ Use the `disabled` attribute to disable the expand/collapse function and reduce 
 
 ### Expanded
 
-The accordion can be programatically expanded or collapsed by setting the `expanded` attribute to `true` or `false`.
+Set the `expanded` property to `true` or `false` in JavaScript to expand or collapse the accordion. As an HTML attribute, `expanded` is on whenever it's present.
 
 <div class="exampleWrapper">
 <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/expanded.html) -->
 <!-- The below content is automatically added from ./../apiExamples/expanded.html -->
-<auro-button id="accordionExpandedExampleBtnTrue">Set expanded = "true"</auro-button>
-<auro-button id="accordionExpandedExampleBtnFalse">Set expanded = "false"</auro-button>
+<auro-button id="accordionExpandedExampleBtnTrue">Expand accordion</auro-button>
+<auro-button id="accordionExpandedExampleBtnFalse">Collapse accordion</auro-button>
 <auro-accordion id="accordionExpandedExample">
 <span slot="trigger">Trigger</span>
 <p>
@@ -383,8 +428,8 @@ The accordion can be programatically expanded or collapsed by setting the `expan
 <!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/expanded.html) -->
 <!-- The below code snippet is automatically added from ./../apiExamples/expanded.html -->
 
-<pre class="language-html"><code class="language-html">&lt;auro-button id="accordionExpandedExampleBtnTrue"&gt;Set expanded = "true"&lt;/auro-button&gt;
-&lt;auro-button id="accordionExpandedExampleBtnFalse"&gt;Set expanded = "false"&lt;/auro-button&gt;
+<pre class="language-html"><code class="language-html">&lt;auro-button id="accordionExpandedExampleBtnTrue"&gt;Expand accordion&lt;/auro-button&gt;
+&lt;auro-button id="accordionExpandedExampleBtnFalse"&gt;Collapse accordion&lt;/auro-button&gt;
 &lt;auro-accordion id="accordionExpandedExample"&gt;
   &lt;span slot="trigger"&gt;Trigger&lt;/span&gt;
   &lt;p&gt;
@@ -408,14 +453,12 @@ The accordion can be programatically expanded or collapsed by setting the `expan
   const expandedExampleElem = document.querySelector(
     "#accordionExpandedExample",
   );
-​
-  document
+&#10;  document
     .querySelector("#accordionExpandedExampleBtnTrue")
     .addEventListener("click", () =&gt; {
       expandedExampleElem.expanded = true;
     });
-​
-  document
+&#10;  document
     .querySelector("#accordionExpandedExampleBtnFalse")
     .addEventListener("click", () =&gt; {
       expandedExampleElem.expanded = false;
@@ -524,9 +567,9 @@ The `variant` attribute sets the size and spacing of the accordion trigger. Omit
 
 #### Minimal
 
-`variant="min"` strips all padding from the trigger so the slotted trigger content controls its size — letting the accordion sit flush against adjacent content. Best paired with `chevron="none"`.
+`variant="min"` strips all padding from the trigger so the slotted trigger content controls its size. This lets the accordion sit flush against adjacent content. Best paired with `chevron="none"`.
 
-Keep the slotted trigger content **presentational only** (e.g. a styled `<span>`). The trigger is a native `<button>`, so do not nest interactive or focusable elements (links, buttons, inputs, `tabindex`) inside it, and ensure the trigger still has a discernible accessible name.
+Keep the slotted trigger content **presentational only** (for example, a styled `<span>`). The trigger is a native `<button>`, so don't nest interactive or focusable elements (links, buttons, inputs, `tabindex`) inside it, and ensure the trigger still has a discernible accessible name.
 
 <div class="exampleWrapper">
 <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/variant-min.html) -->
@@ -558,7 +601,7 @@ Keep the slotted trigger content **presentational only** (e.g. a styled `<span>`
 &lt;/auro-accordion&gt;</code></pre>
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
-Because `variant="min"` hands sizing to the slotted trigger content, you can style that content to give the trigger a custom size and appearance — here a full-width, fixed-height block.
+Because `variant="min"` hands sizing to the slotted trigger content, style that content to set a custom trigger size and appearance, such as the full-width, fixed-height block below.
 
 <div class="exampleWrapper">
 <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/variant-min-custom.html) -->
@@ -595,16 +638,16 @@ Because `variant="min"` hands sizing to the slotted trigger content, you can sty
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
 
-## Method Examples
+## Method examples
 
 ### Toggle
 
-Using the `toggle()` method will change the state of the accordion from expanded to collapsed, or from collapsed to expanded.
+Call `toggle()` to expand a collapsed accordion or collapse an expanded one.
 
 <div class="exampleWrapper">
 <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/toggle.html) -->
 <!-- The below content is automatically added from ./../apiExamples/toggle.html -->
-<auro-button id="accordionToggleExampleBtn">Toggle Accordion</auro-button>
+<auro-button id="accordionToggleExampleBtn">Toggle accordion</auro-button>
 <auro-accordion id="accordionToggleExample">
 <span slot="trigger">Trigger</span>
 <p>
@@ -627,7 +670,7 @@ Using the `toggle()` method will change the state of the accordion from expanded
 <!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/toggle.html) -->
 <!-- The below code snippet is automatically added from ./../apiExamples/toggle.html -->
 
-<pre class="language-html"><code class="language-html">&lt;auro-button id="accordionToggleExampleBtn"&gt;Toggle Accordion&lt;/auro-button&gt;
+<pre class="language-html"><code class="language-html">&lt;auro-button id="accordionToggleExampleBtn"&gt;Toggle accordion&lt;/auro-button&gt;
 &lt;auro-accordion id="accordionToggleExample"&gt;
   &lt;span slot="trigger"&gt;Trigger&lt;/span&gt;
   &lt;p&gt;
@@ -651,8 +694,7 @@ Using the `toggle()` method will change the state of the accordion from expanded
   const expandedExampleElem = document.querySelector(
     "#accordionToggleExample",
   );
-​
-  document
+&#10;  document
     .querySelector("#accordionToggleExampleBtn")
     .addEventListener("click", () =&gt; {
       expandedExampleElem.toggle();
@@ -661,11 +703,11 @@ Using the `toggle()` method will change the state of the accordion from expanded
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
 
-## Common Usage Patterns & Functional Examples
+## Common usage patterns
 
-### Align Chevron & Trigger Right
+### Align chevron and trigger right
 
-Using the `alignRight` attribute in conjuction with the `chevron="right"` attribute will cause the trigger to align to the right edge of the accordion, with the chevron appearing on the right side of the trigger.
+Use `alignRight` with `chevron="right"` to align the trigger to the right edge of the accordion, with the chevron at the right end of the trigger.
 
 <div class="exampleWrapper">
 <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/align-chevron-right.html) -->
@@ -712,11 +754,11 @@ Using the `alignRight` attribute in conjuction with the `chevron="right"` attrib
 
 # auro-accordion-group 
 
-## Property & Attribute Examples
+## Property and attribute examples
 
 ### Disabled
 
-Use the `disabled` attribute to disable the expand/collapse function and reduce the opacity for all accordions inside of the group.
+Use the `disabled` attribute to stop people from expanding or collapsing any accordion in the group. The triggers are shown in a muted color.
 
 <div class="exampleWrapper">
 <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/disabled-group.html) -->
@@ -827,7 +869,7 @@ Use the `disabled` attribute to disable the expand/collapse function and reduce 
 
 ### Emphasis
 
-Use the `emphasis` attribute to apply border highlights to the `auro-accordion` on hover and move the chevron to the right side of the trigger.
+Use the `emphasis` attribute to add a border highlight to each accordion when it's hovered, focused, or expanded, and to move each chevron to the right end of the trigger.
 
 <div class="exampleWrapper">
 <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/emphasis-group.html) -->
@@ -936,9 +978,9 @@ Use the `emphasis` attribute to apply border highlights to the `auro-accordion` 
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
 
-### No Toggle Expanded
+### No toggle expanded
 
-Using the `noToggleExpanded` attribute will allow for multiple accordions in an group to be open at the same time.
+Use `noToggleExpanded` to let several accordions in a group stay open at the same time.
 
 <div class="exampleWrapper">
 <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/no-toggle-expanded.html) -->
@@ -1047,7 +1089,7 @@ Using the `noToggleExpanded` attribute will allow for multiple accordions in an 
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
 
-### Variant Examples
+### Variant examples
 
 Setting `variant` on the group applies the same trigger size and spacing to every accordion it contains. Omit it for the default (medium) trigger, or use one of the options below.
 
@@ -1348,16 +1390,15 @@ Setting `variant` on the group applies the same trigger size and spacing to ever
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
 
-## Restyle Component with CSS Variables
+## Restyle with CSS custom properties
 
-The component may be restyled by changing the values of the following token(s).
+Restyle the component by changing the values of the following tokens.
 
 <!-- AURO-GENERATED-CONTENT:START (CODE:src=./../src/styles/tokens.scss) -->
 <!-- The below code snippet is automatically added from ./../src/styles/tokens.scss -->
 
 <pre class="language-scss"><code class="language-scss">@use "@aurodesignsystem/design-tokens/dist/themes/alaska/SCSSVariables--alaska" as v;
-​
-:host {
+&#10;:host {
   --ds-auro-accordion-content-border-color: transparent;
   --ds-auro-accordion-group-border-color: var(--ds-basic-color-border-divider, #{v.$ds-basic-color-border-divider});
   --ds-auro-accordion-trigger-border-color: transparent;
