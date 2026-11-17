@@ -9,7 +9,7 @@ import * as RuntimeUtils from "@aurodesignsystem/auro-library/scripts/utils/runt
 import styleButtonCss from "./styles/style-button.scss";
 
 /**
- * Auro-accordion-button is the trigger element for Auro-accordion.
+ * The button that expands and collapses an accordion.
  */
 
 // build the component class
@@ -50,11 +50,11 @@ export class AuroAccordionButton extends AuroButton {
   }
 
   /**
-   * This will register this element with the browser.
-   * @param {string} [name="auro-accordion-button"] - The name of element that you want to register to.
+   * Registers the element with the browser under a tag name.
+   * @param {string} [name="auro-accordion-button"] - The tag name to register the element under.
    *
    * @example
-   * AuroAccordionButton.register("custom-accordion-button") // this will register this element to <custom-accordion-button/>
+   * AuroAccordionButton.register("custom-accordion-button") // registers <custom-accordion-button>
    *
    */
   static register(name = "auro-accordion-button") {
