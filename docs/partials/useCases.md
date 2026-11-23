@@ -1,4 +1,4 @@
-The `<auro-accordion>` element should be used in situations where users may:
+Use `<auro-accordion>` when people need to:
 
-- Hide/show long sub-content based on headline trigger
-- Use is for in-page content only when excessive content length is distracting to the specific experience
+- Show or hide a long section of content from a short headline.
+- Keep long, in-page content out of the way when its length would distract from the main experience.
